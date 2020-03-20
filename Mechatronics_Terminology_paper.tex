@@ -1,21 +1,52 @@
-\documentclass{beamer}% This is the file main.tex
-\usepackage{graphicx}
+\documentclass{article}% This is the file main.tex
+
 \usepackage{outlines}
+
+\PassOptionsToPackage{svgnames}{xcolor}
+
+\usepackage{graphicx}
+
 \usepackage{gensymb}
 \usepackage{tikz}
+\usepackage{tcolorbox}
 
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{shadings, shadows}
 
-\usetheme{Boadilla}
 \title{Introduction to Mechatronics Terms}
 \author{Thad Hughes}
 \date{\today}
+
+
+\newenvironment{block}[1]{
+	\tcolorbox[beamer,
+	noparskip,breakable,
+	colback=LightGreen,colframe=DarkGreen,
+	colbacklower=LimeGreen!75!LightGreen,
+	title=#1]}
+	{\endtcolorbox}
+	
+\newenvironment{alertblock}[1]{
+	\tcolorbox[beamer,
+	noparskip,breakable,
+	colback=LightGreen,colframe=DarkGreen,
+	colbacklower=LimeGreen!75!LightGreen,
+	title=#1]}
+	{\endtcolorbox}
+
+\newenvironment{example}{
+	\tcolorbox[beamer,
+	noparskip,breakable,
+	colback=LightGreen,colframe=DarkGreen,
+	colbacklower=LimeGreen!75!LightGreen,
+	title=Examples]}
+	{\endtcolorbox}
+
 \begin{document}
 
 \maketitle
 
-\begin{frame}
-\frametitle{Outline}
-\framesubtitle{Where are we going today?}
+\section{Outline}
 
 \begin{itemize}
 	\item Mass
@@ -29,13 +60,8 @@
 	This may or may not be physics review for you. If it is, skim through, make sure you're comfy. If not, let this be a fun first foray!
 \end{block}
 
-\end{frame}
 
-
-
-\begin{frame}
-\frametitle{Mass}
-\framesubtitle{Sitting around like a bump on a log}
+\section{mass}
 
 \begin{outline}
 	\1 Mass ($m$) is "how much stuff is there?"
@@ -43,24 +69,20 @@
 		\2 (ignoring buoyancy) things of the same mass weigh the same in a constant gravitational field
 \end{outline}
 
-\begin{examples}
+\begin{example}
 \begin{outline}
 	\1 Kilograms (kg)
 	\1 Slugs (slug)
 	\1 Pounds-mass (lbm)
 \end{outline}
-\end{examples}
+\end{example}
 
 \begin{alertblock}{Warning}
 	Pounds-Mass is not the same unit as Pounds-Force!
 \end{alertblock}
 
-\end{frame}
 
-
-\begin{frame}
-\frametitle{Velocity and Speed}
-\framesubtitle{Gotta go Fast!}
+\section{Velocity and Speed}
 
 \begin{outline}
 	\1 Speed is how fast something is going- a scalar quantity
@@ -71,23 +93,18 @@
 		\2 "Travelling 30 MPH, Northeast"
 \end{outline}
 
-\begin{examples}
+\begin{example}
 \begin{outline}
 	\1 Miles per Hour (mph)
 	\1 Meters per Second (m/s)
 \end{outline}
-\end{examples}
+\end{example}
 
 \begin{alertblock}{Warning}
 	Rotational speed / velocity are different quantities. We'll get there!
 \end{alertblock}
 
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Acceleration}
-\framesubtitle{A thrill better than speed!}
+\section{Acceleration}
 
 Acceleration ($a$) is how fast your velocity is changing.
 
@@ -95,25 +112,17 @@ If you accelerate from 30 ft/s to 10 ft/s in 4 s, that's
 \begin{equation}
 	a = \frac{\Delta v}{\Delta t} = \frac{10 \ \mbox{ft/s} - 30 \ \mbox{ft/s}}{4 s} = - 5 \frac{ft}{s^2} \nonumber
 \end{equation} 
-\begin{columns}
-\column{0.5\textwidth}
+
 Note: direction matters! You can have acceleration perpindicular to your movement. In the case of circular motion, this is known as centripetal acceleration. The tread of a spinning tire is always accelerating inwards.
 
-\column{0.5\textwidth}
 \includegraphics[width=1.0\textwidth]{img_Mechatronics_Terminology_centrip.png}
-\end{columns}
 
-\end{frame}
-
-\begin{frame}
-\frametitle{Force}
-\framesubtitle{May the rate of change of momentum for a closed system be with you.}
+\section{Force}
 
 A long while ago, this fellow Newton had an idea: what if objects interacted with each other via forces?
 Turns out, it's at least a really good model.
 
-\begin{columns}
-\column{0.48\textwidth}
+
 \begin{block}{Principle 1 - Proportionality}
 	The net force $F$ on an object causes acceleration inversely proportional to its mass.
 	\begin{equation}
@@ -121,7 +130,7 @@ Turns out, it's at least a really good model.
 	\end{equation}
 \end{block}
 
-\column{0.48\textwidth}
+
 \begin{block}{Principle 2 - Reciprocity}
 	When a force is imposed upon object A by B, B sees a force of equal magnitude and opposite direction.
 	\begin{equation}
@@ -129,13 +138,8 @@ Turns out, it's at least a really good model.
 	\end{equation}
 \end{block}
 
-\end{columns}
 
-\end{frame}
-
-\begin{frame}
-\frametitle{Rotational Terms}
-\framesubtitle{Let's put a twist on things!}
+\section{Rotational Terms}
 
 We design a lot of things that spin, so we obviously need to describe them. There are three main units for rotation:
 \begin{equation}
@@ -152,12 +156,9 @@ We can convert the surface AKA tangential position $x$ of a wheel of radius $r$ 
 \begin{block}{Note}
 	All points in a rigid body actually have the same rotational velocity, but may have different linear velocities.
 \end{block}
-\end{frame}
 
-\begin{frame}
-\frametitle{Torques / Moments}
-\begin{columns}
-\column{0.35\textwidth}
+\section{Torques}
+
 A torque, often called a "Moment" ($\tau$, $T$ or $M$) is quite simply put, a force acting on a lever arm.
 
 \begin{equation}
@@ -170,7 +171,6 @@ or
 	M = r_p \ F
 \end{equation}
 
-\column{0.55\textwidth}
 \begin{tikzpicture}[x={(0.9in,0.1in)},y={(-0.1,0.9in)}]
 
 %\draw[blue, ultra thick] (0,0)--(0,2)--(2,2)--(2,0)--cycle;
@@ -197,20 +197,14 @@ or
 \draw[ultra thick, purple, ->] (0,0.3) arc[start angle=90, end angle=200, radius=0.3] node[pos=0.5, left] {$M\mbox{     }$};
 
 \end{tikzpicture}
-\end{columns}
 
 \begin{example}
-\begin{itemize}
-\item Newton-Meters ($N\mbox{-}m$)
-\item Foot-Pounds ($ft\mbox{-}lbf$)
-\item Ounce-Inches ($oz\mbox{-}in$)
-\end{itemize}
+\begin{outline}
+\1 Newton-Meters ($N\mbox{-}m$)
+\1 Foot-Pounds ($ft\mbox{-}lbf$)
+\1 Ounce-Inches ($oz\mbox{-}in$)
+\end{outline}
 \end{example}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Moments of Inertia}
 
 Moments produce angular accleration $\alpha$ inversely proportional to the 'moment of inertia' $I$ (sometimes abbreviated MOI)
 
@@ -226,63 +220,5 @@ Moment of inertia of a flywheel
 	I_{CG, solid disk} = \frac{m r^2}{2}
 \end{equation}
 \end{example}
-
-\end{frame}
-
-\begin{frame}
-	\frametitle{Energy}
-	
-	There's this little idea called 'energy' ($E$) that we came up with, and it too, seems to hold up as a useful model. There are a lot of different types of energy:
-	\begin{outline}
-		\1 Kinetic energy
-		\1 Gravitational potential energy
-		\1 Strain potential energy
-		\1 Sound energy
-		\1 Thermal energy
-		\1 Chemical energy
-		\1 Many more...
-	\end{outline}
-	
-	Units may be Joules ($J$), British Thermal Units ($BTU$).
-	The dimensions are the same as $force \cdot length$.
-\end{frame}
-
-\begin{frame}
-	\frametitle{Work}
-	
-	You can transfer energy from one thing to another by Work. Work is exerting a force $F$ over a distance $l$.
-	
-	\begin{equation}
-		\Delta E = W = F \cdot l
-	\end{equation}
-	
-	Work can also be transferred by rotational motion.
-	
-	\begin{equation}
-		\Delta E = W = M \cdot \theta
-	\end{equation}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Power}
-	\framesubtitle{More power, more better}
-	
-	The rate at which work is done is power ($P$). Untis can be Watts ($W$), Horsepower ($HP$) amongst others. For example,
-	
-	\begin{equation}
-		1 \ \mbox{Watt} = \frac{1 \ \mbox{Joule}}{1 \ \mbox{second}} \nonumber
-	\end{equation}
-	
-	Power can be calculating by looking at the force and velocity.
-	
-	\begin{equation}
-		\frac{d}{dt} E = P = F \cdot v
-	\end{equation}
-	
-	\begin{equation}
-		\frac{d}{dt} E = P = M \cdot \omega
-	\end{equation}
-\end{frame}
 
 \end{document}
