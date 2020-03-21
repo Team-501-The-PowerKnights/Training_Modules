@@ -29,11 +29,14 @@
 \begin{outline}
 	\1 Goals
 	\1 The general DE and Behavior
+	\1 Solving the Calculus Way
+	\1 Simulating
+	\1 Making practical use of solutions/simulations
 \end{outline}
 
-\begin{block}{}
-	This may or may not be review for you. If it is, skim through, make sure you're comfy. If not, let this be a fun first foray!
-\end{block}
+\begin{alertblock}{Here Be Dragons}
+	This presentation contains a lot of math. It's mostly for your interest, and doesn't really reinforce the points abotu design too much, but it might be interesting to you.
+\end{alertblock}
 
 \end{frame}
 
@@ -174,6 +177,74 @@
 
 \begin{frame}
 	\frametitle{Simulating (Actually... is easier!)}
+	
+	Newton's Method of numerically solving differential equations:
+	\begin{equation}
+		\frac{d}{dt} f(t) \approx \frac{\Delta f(t)}{\Delta t}
+	\end{equation}\begin{equation}
+		f(t_{i+1}) = f(t_{i}) + \frac{d}{dt}[f(t_{i})]\ {\Delta t}
+	\end{equation}
+	
+	Another way of putting it... "the next value is the current value, plus the rate of change times the timestep of the simulation"
+	
+	We just need to get an expression for the $\frac{d}{dt}f(t)$ we are interested in.
+	
+	This process is sometimes called 'discretization' since we are taking a continuous field of time $t$ and separating it into little $\Delta t$ chunks.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Simulating a more complex example}
+	\centering
+	Let's consider a flywheel with resistance $M_{resist}$ on it.	
+	
+	\begin{columns}
+	\column{0.3\textwidth}
+	\begin{tikzpicture}[x=1.0in,y=1.0in]
+		\draw[ultra thick] (0,0) circle (0.1);
+		\fill[black] (0,0.1)--(0,0)--(0.1,0) arc[start angle=0, end angle=90, radius=0.1]--cycle;
+		\fill[black] (0,-0.1)--(0,0)--(-0.1,0) arc[start angle=180, end angle=270, radius=0.1]--cycle;
+		\draw[ultra thick, teal] (0,0) circle (0.5);
+		
+		\draw[ultra thick, red, ->] (0,0.6) arc[start angle=90, end angle=180, radius=0.6] node[pos=0.7,left]{$M_{resist}$};
+		\draw[ultra thick, green, ->] (0,0.6) arc[start angle=90, end angle=0, radius=0.6] node[pos=0.7,right]{$T_{gbx}$};
+		
+		\draw[ultra thick, blue, ->] (0,0.2) arc[start angle=90, end angle=-30, radius=0.2] node[pos=0.7,right]{$I \alpha$};
+	\end{tikzpicture}	
+	\column{0.7\textwidth}
+	\begin{equation}
+		\sum M = I \alpha
+	\end{equation} 
+	\begin{equation}
+		T_{gbx} - M_{resist} = I \alpha_{wheel}
+	\end{equation}\begin{equation}
+		\alpha_{wheel} = \frac{d}{dt} \omega_{wheel}
+	\end{equation}
+
+	\end{columns}		
+	
+	\begin{equation}
+		\frac{d}{dt} \omega_{wheel} = \frac{T_{gbx} - M_{resist}}{I}
+	\end{equation}
+	\begin{equation}
+		\frac{d}{dt} \theta_{wheel} = \omega_{wheel}
+	\end{equation}
+	
+	
+	
+	\begin{block}{}
+		This model in equations 20 and 21 actually contains all elements that we care about, if we consider $M_{resist}$ could be a function of the gearbox velocity or other factors as well.
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Using Simulators}
+	
+	Ari Meles-Braverman (AMB) has a nice little spreadsheet that builds hugely on the work of Jon Von Neun (JVN)
+	
+	https://arimb.github.io/AMB_Design_Spreadsheet/
+	
+	It actually takes into consideration even more than we've talked about here (like voltage drop).
 \end{frame}
 
 \end{document}
