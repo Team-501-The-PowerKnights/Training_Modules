@@ -7,7 +7,7 @@
 \usepackage{enumitem}
 \usepackage{subcaption}
 \usepackage{multirow}
-
+\usepackage{cancel}
 \usepackage{float}
 
 \usepackage{slantsc,lmodern}
@@ -67,11 +67,13 @@
 \tableofcontents
 
 \chapter{Introduction}
+ 
  {\slshape \scshape ``Insert a Witty Quote Here" - And That Kid, was Albert Einstein}
 
 Mechatronics is an amalgam of mechanical electronics - systems that contain both mechanical and electrical components.
 
 \chapter{Construction}
+ 
  {\slshape \scshape ``The first little pig was very lazy. He didn't want to work at all and he built his house out of straw. The second little pig worked a little bit harder but he was somewhat lazy too and he built his house out of sticks. The third little pig worked hard all day and built his house with bricks. It looked like it could withstand the strongest winds." - English Folk Tale}
  
  The parable of the three little pigs reminds us that how we build things is important. And while at first blush, the story seems to be about how you should always build strong out of brick, sometimes we should learn from the first pig, and build fast. Having a suite of different fabrication techniques at hand can be incredibly handy.
@@ -735,7 +737,29 @@ Mechatronics is an amalgam of mechanical electronics - systems that contain both
 		\item Velcro and dual-lock can produce easy-but-secure removable components.
 	\end{enumerate}
 
+\chapter{Complex Components}
+
+\section{Axial Power Transmission}
+\subsection{Shafts, Hubs, and Interfaces}
+	
+\subsection{Bearings, Bushings}
+
+\subsection{Drive Couplings}
+
+\section{Nonaxial Power Transmission}
+\subsection{Gears}
+
+\subsection{Chain, Sprockets}
+
+\subsection{Belts, Pulleys}
+
+\section{Brakes, Clutches, PTOs}
+
+\section{Nonlinear/nonrotary motion}
+
+
 \chapter{Motors}
+
  {\slshape \scshape ``Move That Gear Up!"}
  \\
  
@@ -886,30 +910,188 @@ There is a lot going on in this graph! Let's look at some key takeaways:
 	\item Maximum efficiency occurs somewhere between 75\% and 90\% of free speed.
 \end{itemize}
 
-\chapter{Gears, gears, and more gears}
+\chapter{Pneumatics}
+\chapter{Complex Systems}
+
+% Intakes
+% Vibe feeders
+% Elevators
+% Arms
+% Claws
+% Flywheel-based launcher
+% Catapult and punch
+% Drivetrains
+% Swerve Modules
+
+
+
+\chapter{Choosing Gear Ratios}
+
  {\slshape \scshape ``Power is worthless, if improperly wielded"}
  \\
 
 If we have a motor with a pinion of $N_m$ teeth, mating with a driven gear of $N_d$ teeth, we would achieve a gear ratio of
 
-\begin{equation}
+\begin{align}
   G = \frac{N_d}{N_m} = \frac{\omega_m}{\omega_d} = \frac{T_d}{T_m}
-\end{equation}
+\end{align}
 
 This also works with belts or sprockets and chain (though you may need to keep an eye on the direction of rotation, as gears can reverse the direction of rotation).
 
+
+\begin{figure}[H] \centering
 \begin{tikzpicture}[x=3.5in,y=2.0in]
   %\fill[lightgray] (1.0,0)--(0,1.0)--(0,0)--cycle;
   \draw[black] (-0.1,0)--(1.2,0) node[pos=0.5,below]{Gearbox speed $\omega$, RPM};
   \draw[black] (0,-0.1)--(0,1.2) node[pos=0.5,above,rotate=90,teal]{Torque $T$, N-m};
 
-  \draw[teal, ultra thick] (1.0,0)--(0,0.3) node[pos=0.3, above, black]{1:1 (No) Reduction};
-  \draw[teal, ultra thick] (0.3,0)--(0,1.0) node[pos=0.7, right, black]{3:1 Reduction};
+  \draw[teal, ultra thick] (1.0,0)--(0,0.3) node[pos=0.6, right, black]{\ \ \ \ \ \ \ 1:1 (No) Reduction};
+  \draw[teal, ultra thick] (0.3,0)--(0,1.0) node[pos=0.7, right, black]{\ 3:1 Reduction};
 \end{tikzpicture}
-
+\caption{3:1 gear reduction shifting the effective motor curve.}
+\end{figure}
 
 The 3:1 ratio reduces maximum speed, but increases the maximum torque.
 It also changes the RPM at which maximum power and efficiency occur.
 
+\section{Developing a Generalized Mechanism Model}
+
+\subsection{The Simple Flywheel Case}
+
+Let's examine a simple case of a motor accelerating a flywheel. This is also (essentially) the same as any system with no friction or gravity-fighting (like an ideal drivetrain).
+	
+	\begin{figure}[H] \centering
+	\begin{tikzpicture}[x=1.0in,y=1.0in]
+		\draw[ultra thick] (0,0) circle (0.1);
+		\fill[black] (0,0.1)--(0,0)--(0.1,0) arc[start angle=0, end angle=90, radius=0.1]--cycle;
+		\fill[black] (0,-0.1)--(0,0)--(-0.1,0) arc[start angle=180, end angle=270, radius=0.1]--cycle;
+		\draw[ultra thick, teal] (0,0) circle (0.5);
+		
+		%\draw[ultra thick, red, ->] (0,0.6) arc[start angle=90, end angle=180, radius=0.6] node[pos=0.7,left]{$M_{resist}$};
+		\draw[ultra thick, green, ->] (0,0.6) arc[start angle=90, end angle=0, radius=0.6] node[pos=0.7,right]{$T_{gbx}$};
+		
+		\draw[ultra thick, blue, ->] (0,0.2) arc[start angle=90, end angle=-30, radius=0.2] node[pos=0.7,right]{$I \alpha$};
+	\end{tikzpicture}	
+	\caption{Free-Body Diagram of the Flywheel}
+	\end{figure}	
+	
+	We can apply conservation of angular momentum to the flywheel.
+	\begin{align}
+		\sum M &= I \alpha + \cancelto{0 \ \mbox{(no mass transfer)}}{\sum \dot{m}(...)} \\
+		T_{gbx} &= I \ \alpha_{wheel}
+	\end{align}
+	
+	This tells us about the rate of acceleration $\alpha$, but what about the velocity $\omega$? 
+		
+	\begin{align}
+		\alpha_{wheel} &= \frac{d \omega_{wheel}}{dt} \\
+		\omega_{motor} &= G \omega_{wheel} \\
+		G T_{max} \frac{\omega_{max} - \omega}{\omega_{max}} &= \frac{I}{G} \frac{d \omega}{dt}
+	\end{align}
+	
+		This is a "differential equation" ($\frac{d \omega}{dt}$ and $\omega$ appear in the same equation). These are tricky to solve.
+		
+	\subsection{The Full-Blown Calculus Approach}
+	
+	We can solve differential equations with calculus!	
+	\begin{align}
+		\mbox{let }& &B  &= \frac{G^2 T_{max}}{I} \\
+		\mbox{Substitute: }& & B\ \frac{\omega_{max} - \omega}{\omega_{max}} &= \frac{d \omega}{d t} \\
+		\mbox{Separate and integrate: }& & \int B\ dt &= \int \frac{\omega_{max}}{\omega_{max} - \omega} d \omega \\
+		\mbox{Compute integral (introduces $C$): }& & B t + C &= -\omega_{max}\ ln[\omega_{max} - \omega] \\
+		\mbox{Solve for $\omega$: }& & \omega &= \omega_{max} - C\ e^{-\frac{B t}{\omega{max}}} \\
+		\mbox{Solve for C with initial condition }& & \omega(0) &= 0 \rightarrow C = \omega_{max} \\
+		& &\omega &= \omega_{max}\ [1 - e^{-\frac{G^2\ T_{max}\ t}{I\ \omega{max}}}] \\
+		& &\omega_{gbx} &= \frac{\omega_{max}}{G}\ [1 - e^{-\frac{G^2\ T_{max}\ t}{I\ \omega{max}}}]
+	\end{align}	
+	
+	If we plot this algebraic solution with some generalized values, we can start to investigate what it really means.	
+	
+	\begin{figure}[H] \centering
+	\begin{tikzpicture}[x=3.0in,y=1.5in]
+		%\draw[gray] (0,0)--(3,0) node[pos=0.5,below,black]{Time $t$};
+		%\draw[gray] (0,0)--(0,2) node[pos=0.5,above,rotate=90,black]{Ang. Velocity $\omega_{gbx}$};
+		
+		%\draw[red] (0,0)
+		
+		\begin{axis}[grid=both,
+          xmax=5,ymax=1,
+          xticklabel=\empty, yticklabel=\empty,
+          axis lines=middle,
+          restrict y to domain=-7:12,
+          xlabel={Time $t$},
+          ylabel={Velocity $\omega_{gbx}$}
+          ]
+		\addplot[blue,domain=0:5,samples=100]  {1*(1-exp(-1^2*x))} node[pos=0.8,below] {Baseline};
+		\addplot[purple,domain=0:5,samples=100]  {1*(1-exp(-1^2/2*x))} node[pos=0.7,below right] {Lower $\frac{T_{max}}{I}$};
+		\addplot[red,domain=0:5,samples=100]  {1/2*(1-exp(-2^2*x))} node[above left] {Higher G};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Flywheel example solution, with different representative parameters}
+	\end{figure}
+		
+	This assumes that there is no constant load, or friction.
+	This behavior is generally true, but not exactly true.
+	
+	\subsection{A Brute-Force Approach}
+	We don't need to solve that differential equation using calculus. Or math. We can use basic arithmetic and computers to simulate it! We can do this with a 'numeric differential equation solver', like Newton's Method:
+	\begin{equation}
+		\frac{d}{dt} f(t) \approx \frac{\Delta f(t)}{\Delta t}
+	\end{equation}\begin{equation}
+		f(t_{i+1}) = f(t_{i}) + \frac{d}{dt}[f(t_{i})]\ {\Delta t}
+	\end{equation}
+	
+	Another way of putting it... "the next value is the current value, plus the rate of change times the timestep of the simulation". 	We just need to get an expression for the $\frac{d}{dt}f(t)$ we are interested in, and write some code that will repeat this process with a small enough $\Delta t$. This process is sometimes called 'discretization' since we are taking a continuous field of time $t$ and separating it into little $\Delta t$ chunks.	
+		
+	Let's go back to our flywheel example, and add resistance $M_{resist}$ to it. This $M_{resist}$ can be anything- it can represent friction, air resistance, a spring, you name it! The numeric simulation approach makes this trivial.
+	
+	\begin{figure}[H] \centering
+	\begin{tikzpicture}[x=1.0in,y=1.0in]
+		\draw[ultra thick] (0,0) circle (0.1);
+		\fill[black] (0,0.1)--(0,0)--(0.1,0) arc[start angle=0, end angle=90, radius=0.1]--cycle;
+		\fill[black] (0,-0.1)--(0,0)--(-0.1,0) arc[start angle=180, end angle=270, radius=0.1]--cycle;
+		\draw[ultra thick, teal] (0,0) circle (0.5);
+		
+		\draw[ultra thick, red, ->] (0,0.6) arc[start angle=90, end angle=180, radius=0.6] node[pos=0.7,left]{$M_{resist}$};
+		\draw[ultra thick, green, ->] (0,0.6) arc[start angle=90, end angle=0, radius=0.6] node[pos=0.7,right]{$T_{gbx}$};
+		
+		\draw[ultra thick, blue, ->] (0,0.2) arc[start angle=90, end angle=-30, radius=0.2] node[pos=0.7,right]{$I \alpha$};
+	\end{tikzpicture}	
+	\caption{Free-body diagram for the flywheel, with additional resistance.}
+	\end{figure}
+	
+	We can go through and repeat the same analysis as before.
+	\begin{align}
+		\sum M &= I \alpha + \cancelto{0 \ \mbox{(no mass transfer)}}{\sum \dot{m}(...)}  \\
+		T_{gbx} - M_{resist} &= I \alpha_{wheel} \\
+		\alpha_{wheel} &= \frac{d}{dt} \omega_{wheel} \\
+		\frac{d}{dt} \omega_{wheel} &= \frac{T_{gbx} - M_{resist}}{I} \\
+		\frac{d}{dt} \theta_{wheel} &= \omega_{wheel}
+	\end{align}
+	
+	My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}Swiss Army Engineer} tool contains a Simple Mechanism Calculator you can use to leverage these physics.
+
+	
+\section{Using the Simulations: some analysis/optimization examples}
+
+Let's consider an example drivetrain, with 4 NEOs, 8" diameter wheels, weighing about 143 pounds, meeting 30 N of resistive force. We want to go 10 meters. We have two gear ratio options to consider: a 10:1 gearbox, and a 7:1 gearbox. Which should we pick?
+
+Before you look at the plots, go to the simulator and plug in those values, see if you can come up with an answer of which gets to the destination faster.
+
+\clearpage
+	
+	\begin{figure}[H] \centering
+	\includegraphics[width=0.8\textwidth]{imgs/thsae_1.png}
+	\caption{Baseline simulation, G = 10, t = 2.03 s}
+	\end{figure}
+	
+	\begin{figure}[H] \centering
+	\includegraphics[width=0.8\textwidth]{imgs/thsae_2.png}
+	\caption{Alternative simulation, G = 7, t = 1.88 s}
+	\end{figure}
+	
+	It looks like the ratio of 7 will get to our destination faster!
+	
+	However, maybe this isn't our only concern. Drivetrains are complex mechanisms with many objectives (as we'll discuss later). The G = 10 case has lower current consumption (almost half!) in this maneuver. It has more initial pushing power. It also gets to positions less than 3 meters away faster. There are a lot of tradeoffs!
 
 \end{document}
