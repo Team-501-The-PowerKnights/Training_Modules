@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.27)  31 MAR 2020 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.2.27)  1 APR 2020 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,6 +551,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks34
 \@floatcapt=\box41
 )
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
 (/usr/share/texlive/texmf-dist/tex/latex/slantsc/slantsc.sty
 Package: slantsc 2012/01/01 v2.11 Provide Slanted an Italic Small Caps
 LaTeX Info: Redefining \upshape on input line 35.
@@ -756,45 +759,73 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 )
 (/usr/share/texlive/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
-) (./Mechatronics.aux
+)
+(/usr/share/texlive/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip53
+\plpartopsep=\skip54
+\plitemsep=\skip55
+\plparsep=\skip56
+\pl@lab=\toks40
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count147
+\Gm@cntv=\count148
+\c@Gm@tempcnt=\count149
+\Gm@bindingoffset=\dimen262
+\Gm@wd@mp=\dimen263
+\Gm@odd@mp=\dimen264
+\Gm@even@mp=\dimen265
+\Gm@layoutwidth=\dimen266
+\Gm@layoutheight=\dimen267
+\Gm@layouthoffset=\dimen268
+\Gm@layoutvoffset=\dimen269
+\Gm@dimlist=\toks41
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count150
+)
+(./Mechatronics.aux
 
 LaTeX Warning: Label `fig:motor_torque_curve' multiply defined.
 
 )
 \openout1 = `Mechatronics.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 45.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count147
-\scratchdimen=\dimen262
+\scratchcounter=\count151
+\scratchdimen=\dimen270
 \scratchbox=\box43
-\nofMPsegments=\count148
-\nofMParguments=\count149
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count150
-\MPscratchDim=\dimen263
-\MPnumerator=\count151
-\makeMPintoPDFobject=\count152
-\everyMPtoPDFconversion=\toks41
+\nofMPsegments=\count152
+\nofMParguments=\count153
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count154
+\MPscratchDim=\dimen271
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
+\everyMPtoPDFconversion=\toks43
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -813,7 +844,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring OFF on input line 28.
+Package hyperref Info: Link coloring OFF on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -821,11 +852,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count153
+\c@section@level=\count157
 )
-LaTeX Info: Redefining \ref on input line 28.
-LaTeX Info: Redefining \pageref on input line 28.
-LaTeX Info: Redefining \nameref on input line 28.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
 
 (./Mechatronics.out) (./Mechatronics.out)
 \@outlinefile=\write4
@@ -839,23 +870,91 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
 your preamble.
- on input line 28.
+ on input line 45.
 
-LaTeX Info: Redefining \celsius on input line 28.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 28.
+LaTeX Info: Redefining \celsius on input line 45.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 45.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 28.
-Package gensymb Info: Using \Omega for \ohm on input line 28.
+LaTeX Info: Redefining \ohm on input line 45.
+Package gensymb Info: Using \Omega for \ohm on input line 45.
 
 Package gensymb Warning: Not defining \micro.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-30.06749pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=125.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(90.3375pt, 452.96788pt, 54.2025pt)
+* v-part:(T,H,B)=(54.2025pt, 736.64185pt, 54.2025pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.96788pt
+* \textheight=736.64185pt
+* \oddsidemargin=18.0675pt
+* \evensidemargin=-18.06749pt
+* \topmargin=-48.13498pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=125.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ [2
+
 
 ] (./Mechatronics.toc
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 3.
@@ -891,460 +990,470 @@ Chapter 1.
 
 ]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 86.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 104.
+
 (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 86.
- [7] [8]
-<imgs/extrusions.jpeg, id=274, 1204.5pt x 657.2053pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 104.
+ [7]
+<imgs/shore_hardness.jpeg, id=273, 722.7pt x 240.9pt>
+File: imgs/shore_hardness.jpeg Graphic file (type jpg)
+<use imgs/shore_hardness.jpeg>
+Package pdftex.def Info: imgs/shore_hardness.jpeg  used on input line 152.
+(pdftex.def)             Requested size: 385.02545pt x 128.3417pt.
+ [8 <./imgs/shore_hardness.jpeg>]
+<imgs/casting_proc.jpeg, id=287, 1284.8pt x 722.7pt>
+File: imgs/casting_proc.jpeg Graphic file (type jpg)
+<use imgs/casting_proc.jpeg>
+Package pdftex.def Info: imgs/casting_proc.jpeg  used on input line 185.
+(pdftex.def)             Requested size: 249.13371pt x 140.13747pt.
+<imgs/casting_part.jpeg, id=288, 361.35pt x 361.35pt>
+File: imgs/casting_part.jpeg Graphic file (type jpg)
+<use imgs/casting_part.jpeg>
+Package pdftex.def Info: imgs/casting_part.jpeg  used on input line 187.
+(pdftex.def)             Requested size: 135.89174pt x 135.89188pt.
+<imgs/billet.jpeg, id=289, 475.7775pt x 266.9975pt>
+File: imgs/billet.jpeg Graphic file (type jpg)
+<use imgs/billet.jpeg>
+Package pdftex.def Info: imgs/billet.jpeg  used on input line 195.
+(pdftex.def)             Requested size: 271.78348pt x 152.52422pt.
+
+[9 <./imgs/casting_proc.jpeg> <./imgs/casting_part.jpeg> <./imgs/billet.jpeg>]
+<imgs/extrusions.jpeg, id=296, 1204.5pt x 657.2053pt>
 File: imgs/extrusions.jpeg Graphic file (type jpg)
 <use imgs/extrusions.jpeg>
-Package pdftex.def Info: imgs/extrusions.jpeg  used on input line 166.
-(pdftex.def)             Requested size: 377.17943pt x 205.79733pt.
- [9 <./imgs/extrusions.jpeg>]
-<imgs/welded_tube_seam.png, id=280, 401.5pt x 301.125pt>
+Package pdftex.def Info: imgs/extrusions.jpeg  used on input line 205.
+(pdftex.def)             Requested size: 362.37567pt x 197.72469pt.
+<imgs/welded_tube_seam.png, id=297, 401.5pt x 301.125pt>
 File: imgs/welded_tube_seam.png Graphic file (type png)
 <use imgs/welded_tube_seam.png>
-Package pdftex.def Info: imgs/welded_tube_seam.png  used on input line 176.
-(pdftex.def)             Requested size: 188.5861pt x 141.44145pt.
-<imgs/drillpress.png, id=281, 186.6975pt x 230.36063pt>
+Package pdftex.def Info: imgs/welded_tube_seam.png  used on input line 215.
+(pdftex.def)             Requested size: 181.18439pt x 135.89095pt.
+
+[10 <./imgs/extrusions.jpeg> <./imgs/welded_tube_seam.png>]
+<imgs/drillpress.png, id=304, 186.6975pt x 230.36063pt>
 File: imgs/drillpress.png Graphic file (type png)
 <use imgs/drillpress.png>
-Package pdftex.def Info: imgs/drillpress.png  used on input line 207.
-(pdftex.def)             Requested size: 107.49782pt x 132.6391pt.
-<imgs/mill.png, id=282, 293.59688pt x 330.48468pt>
+Package pdftex.def Info: imgs/drillpress.png  used on input line 246.
+(pdftex.def)             Requested size: 103.27869pt x 127.43336pt.
+<imgs/mill.png, id=305, 293.59688pt x 330.48468pt>
 File: imgs/mill.png Graphic file (type png)
 <use imgs/mill.png>
-Package pdftex.def Info: imgs/mill.png  used on input line 210.
-(pdftex.def)             Requested size: 152.28346pt x 171.41429pt.
-<imgs/lathe.png, id=283, 315.42844pt x 237.13594pt>
+Package pdftex.def Info: imgs/mill.png  used on input line 249.
+(pdftex.def)             Requested size: 146.30656pt x 164.68723pt.
+<imgs/lathe.png, id=306, 315.42844pt x 237.13594pt>
 File: imgs/lathe.png Graphic file (type png)
 <use imgs/lathe.png>
-Package pdftex.def Info: imgs/lathe.png  used on input line 213.
-(pdftex.def)             Requested size: 179.15622pt x 134.68762pt.
-
-[10 <./imgs/welded_tube_seam.png>]
-<imgs/drillbit.png, id=289, 432.61626pt x 26.0975pt>
+Package pdftex.def Info: imgs/lathe.png  used on input line 252.
+(pdftex.def)             Requested size: 172.1246pt x 129.40115pt.
+ [11 <./imgs/drillpress.png (PNG copy)> <./imgs/mill.png (PNG copy)> <./imgs/la
+the.png (PNG copy)>]
+<imgs/drillbit.png, id=315, 432.61626pt x 26.0975pt>
 File: imgs/drillbit.png Graphic file (type png)
 <use imgs/drillbit.png>
-Package pdftex.def Info: imgs/drillbit.png  used on input line 229.
-(pdftex.def)             Requested size: 85.1016pt x 5.13379pt.
-<imgs/centerdrill.png, id=290, 125.46875pt x 43.16125pt>
+Package pdftex.def Info: imgs/drillbit.png  used on input line 272.
+(pdftex.def)             Requested size: 81.76147pt x 4.93228pt.
+<imgs/centerdrill.png, id=316, 125.46875pt x 43.16125pt>
 File: imgs/centerdrill.png Graphic file (type png)
 <use imgs/centerdrill.png>
-Package pdftex.def Info: imgs/centerdrill.png  used on input line 232.
-(pdftex.def)             Requested size: 85.1016pt x 29.27614pt.
-<imgs/endmill.png, id=291, 231.86626pt x 90.3375pt>
+Package pdftex.def Info: imgs/centerdrill.png  used on input line 275.
+(pdftex.def)             Requested size: 81.76147pt x 28.12756pt.
+<imgs/endmill.png, id=317, 231.86626pt x 90.3375pt>
 File: imgs/endmill.png Graphic file (type png)
 <use imgs/endmill.png>
-Package pdftex.def Info: imgs/endmill.png  used on input line 235.
-(pdftex.def)             Requested size: 85.1016pt x 33.15692pt.
-<imgs/ball_endmill.png, id=292, 213.79875pt x 87.32625pt>
+Package pdftex.def Info: imgs/endmill.png  used on input line 278.
+(pdftex.def)             Requested size: 81.76147pt x 31.85568pt.
+<imgs/ball_endmill.png, id=318, 213.79875pt x 87.32625pt>
 File: imgs/ball_endmill.png Graphic file (type png)
 <use imgs/ball_endmill.png>
-Package pdftex.def Info: imgs/ball_endmill.png  used on input line 238.
-(pdftex.def)             Requested size: 85.1016pt x 34.75931pt.
-<imgs/lathetool.png, id=293, 100.375pt x 46.1725pt>
+Package pdftex.def Info: imgs/ball_endmill.png  used on input line 281.
+(pdftex.def)             Requested size: 81.76147pt x 33.39485pt.
+<imgs/lathetool.png, id=319, 100.375pt x 46.1725pt>
 File: imgs/lathetool.png Graphic file (type png)
 <use imgs/lathetool.png>
-Package pdftex.def Info: imgs/lathetool.png  used on input line 241.
-(pdftex.def)             Requested size: 85.1016pt x 39.14955pt.
-<imgs/nonmill_sharpins.png, id=294, 520.19344pt x 422.32782pt>
+Package pdftex.def Info: imgs/lathetool.png  used on input line 284.
+(pdftex.def)             Requested size: 81.76147pt x 37.61296pt.
+<imgs/nonmill_sharpins.png, id=320, 520.19344pt x 422.32782pt>
 File: imgs/nonmill_sharpins.png Graphic file (type png)
 <use imgs/nonmill_sharpins.png>
-Package pdftex.def Info: imgs/nonmill_sharpins.png  used on input line 263.
-(pdftex.def)             Requested size: 101.83968pt x 82.67902pt.
-<imgs/nonmill_dtod.png, id=295, 345.54094pt x 446.41782pt>
+Package pdftex.def Info: imgs/nonmill_sharpins.png  used on input line 304.
+(pdftex.def)             Requested size: 97.84262pt x 79.43114pt.
+<imgs/nonmill_dtod.png, id=321, 345.54094pt x 446.41782pt>
 File: imgs/nonmill_dtod.png Graphic file (type png)
 <use imgs/nonmill_dtod.png>
-Package pdftex.def Info: imgs/nonmill_dtod.png  used on input line 266.
-(pdftex.def)             Requested size: 101.83968pt x 131.56949pt.
-
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
- [11 <./imgs/drillpress.png (PNG copy)> <./imgs/mill.png (PNG copy)> <./imgs/la
-the.png (PNG copy)> <./imgs/drillbit.png> <./imgs/centerdrill.png> <./imgs/endm
-ill.png> <./imgs/ball_endmill.png> <./imgs/lathetool.png>]
-<imgs/broach_detail.jpeg, id=315, 706.13812pt x 350.81062pt>
-File: imgs/broach_detail.jpeg Graphic file (type jpg)
-<use imgs/broach_detail.jpeg>
-Package pdftex.def Info: imgs/broach_detail.jpeg  used on input line 283.
-(pdftex.def)             Requested size: 471.47249pt x 234.22824pt.
-<imgs/broach_examples.jpeg, id=316, 608.2725pt x 622.325pt>
+Package pdftex.def Info: imgs/nonmill_dtod.png  used on input line 307.
+(pdftex.def)             Requested size: 97.84262pt x 126.40617pt.
+<imgs/broach_examples.jpeg, id=322, 608.2725pt x 622.325pt>
 File: imgs/broach_examples.jpeg Graphic file (type jpg)
 <use imgs/broach_examples.jpeg>
-Package pdftex.def Info: imgs/broach_examples.jpeg  used on input line 288.
-(pdftex.def)             Requested size: 330.0293pt x 337.6648pt.
+Package pdftex.def Info: imgs/broach_examples.jpeg  used on input line 323.
+(pdftex.def)             Requested size: 271.78348pt x 278.06851pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2707) has occurred while \output is active []
 
- [12 <./imgs/nonmill_sharpins.png (PNG copy)> <./imgs/nonmill_dtod.png (PNG cop
-y)> <./imgs/broach_detail.jpeg>]
-<imgs/plasmacut.jpeg, id=326, 301.125pt x 250.9375pt>
+ [12 <./imgs/drillbit.png> <./imgs/centerdrill.png> <./imgs/endmill.png> <./img
+s/ball_endmill.png> <./imgs/lathetool.png> <./imgs/nonmill_sharpins.png (PNG co
+py)> <./imgs/nonmill_dtod.png (PNG copy)>]
+<imgs/broach_detail.jpeg, id=343, 706.13812pt x 350.81062pt>
+File: imgs/broach_detail.jpeg Graphic file (type jpg)
+<use imgs/broach_detail.jpeg>
+Package pdftex.def Info: imgs/broach_detail.jpeg  used on input line 330.
+(pdftex.def)             Requested size: 317.07613pt x 157.52608pt.
+<imgs/plasmacut.jpeg, id=344, 301.125pt x 250.9375pt>
 File: imgs/plasmacut.jpeg Graphic file (type jpg)
 <use imgs/plasmacut.jpeg>
-Package pdftex.def Info: imgs/plasmacut.jpeg  used on input line 299.
-(pdftex.def)             Requested size: 101.83968pt x 84.86578pt.
-<imgs/lasercut.jpeg, id=327, 967.615pt x 672.5125pt>
+Package pdftex.def Info: imgs/plasmacut.jpeg  used on input line 341.
+(pdftex.def)             Requested size: 97.84262pt x 81.53456pt.
+<imgs/lasercut.jpeg, id=345, 967.615pt x 672.5125pt>
 File: imgs/lasercut.jpeg Graphic file (type jpg)
 <use imgs/lasercut.jpeg>
-Package pdftex.def Info: imgs/lasercut.jpeg  used on input line 302.
-(pdftex.def)             Requested size: 101.83968pt x 70.77495pt.
-<imgs/waterjet.jpeg, id=328, 1284.8pt x 722.7pt>
+Package pdftex.def Info: imgs/lasercut.jpeg  used on input line 344.
+(pdftex.def)             Requested size: 97.84262pt x 67.99402pt.
+<imgs/waterjet.jpeg, id=346, 1284.8pt x 722.7pt>
 File: imgs/waterjet.jpeg Graphic file (type jpg)
 <use imgs/waterjet.jpeg>
-Package pdftex.def Info: imgs/waterjet.jpeg  used on input line 305.
-(pdftex.def)             Requested size: 101.83968pt x 57.27682pt.
-<imgs/edm.jpeg, id=329, 347.2975pt x 276.03125pt>
+Package pdftex.def Info: imgs/waterjet.jpeg  used on input line 347.
+(pdftex.def)             Requested size: 97.84262pt x 55.02722pt.
+<imgs/edm.jpeg, id=347, 347.2975pt x 276.03125pt>
 File: imgs/edm.jpeg Graphic file (type jpg)
 <use imgs/edm.jpeg>
-Package pdftex.def Info: imgs/edm.jpeg  used on input line 308.
-(pdftex.def)             Requested size: 101.83968pt x 80.93993pt.
- [13 <./imgs/broach_examples.jpeg> <./imgs/plasmacut.jpeg> <./imgs/lasercut.jpe
-g> <./imgs/waterjet.jpeg> <./imgs/edm.jpeg>]
-<imgs/waterjet_draft.jpeg, id=341, 557.08125pt x 148.555pt>
-File: imgs/waterjet_draft.jpeg Graphic file (type jpg)
-<use imgs/waterjet_draft.jpeg>
-Package pdftex.def Info: imgs/waterjet_draft.jpeg  used on input line 325.
-(pdftex.def)             Requested size: 424.32236pt x 113.15457pt.
-<imgs/lasercut_focus.jpeg, id=342, 433.62pt x 307.1475pt>
+Package pdftex.def Info: imgs/edm.jpeg  used on input line 350.
+(pdftex.def)             Requested size: 97.84262pt x 77.76416pt.
+
+Underfull \vbox (badness 4036) has occurred while \output is active []
+
+ [13 <./imgs/broach_examples.jpeg> <./imgs/broach_detail.jpeg>]
+<imgs/lasercut_focus.jpeg, id=355, 433.62pt x 307.1475pt>
 File: imgs/lasercut_focus.jpeg Graphic file (type jpg)
 <use imgs/lasercut_focus.jpeg>
-Package pdftex.def Info: imgs/lasercut_focus.jpeg  used on input line 330.
-(pdftex.def)             Requested size: 235.73624pt x 166.98198pt.
-<imgs/sheet_bend.png, id=343, 466.74374pt x 425.33907pt>
+Package pdftex.def Info: imgs/lasercut_focus.jpeg  used on input line 365.
+(pdftex.def)             Requested size: 226.48393pt x 160.42531pt.
+<imgs/waterjet_draft.jpeg, id=356, 557.08125pt x 148.555pt>
+File: imgs/waterjet_draft.jpeg Graphic file (type jpg)
+<use imgs/waterjet_draft.jpeg>
+Package pdftex.def Info: imgs/waterjet_draft.jpeg  used on input line 372.
+(pdftex.def)             Requested size: 407.66832pt x 108.71397pt.
+ [14 <./imgs/plasmacut.jpeg> <./imgs/lasercut.jpeg> <./imgs/waterjet.jpeg> <./i
+mgs/edm.jpeg> <./imgs/lasercut_focus.jpeg> <./imgs/waterjet_draft.jpeg>]
+<imgs/sheet_bend.png, id=368, 466.74374pt x 425.33907pt>
 File: imgs/sheet_bend.png Graphic file (type png)
 <use imgs/sheet_bend.png>
-Package pdftex.def Info: imgs/sheet_bend.png  used on input line 345.
-(pdftex.def)             Requested size: 101.83968pt x 92.80255pt.
-<imgs/sheet_roll.png, id=344, 439.6425pt x 353.06906pt>
+Package pdftex.def Info: imgs/sheet_bend.png  used on input line 387.
+(pdftex.def)             Requested size: 97.84262pt x 89.16158pt.
+<imgs/sheet_roll.png, id=369, 439.6425pt x 353.06906pt>
 File: imgs/sheet_roll.png Graphic file (type png)
 <use imgs/sheet_roll.png>
-Package pdftex.def Info: imgs/sheet_roll.png  used on input line 348.
-(pdftex.def)             Requested size: 101.83968pt x 81.78062pt.
-<imgs/sheet_beadroll.png, id=345, 557.08125pt x 352.31625pt>
+Package pdftex.def Info: imgs/sheet_roll.png  used on input line 390.
+(pdftex.def)             Requested size: 97.84262pt x 78.57512pt.
+<imgs/sheet_beadroll.png, id=370, 557.08125pt x 352.31625pt>
 File: imgs/sheet_beadroll.png Graphic file (type png)
 <use imgs/sheet_beadroll.png>
-Package pdftex.def Info: imgs/sheet_beadroll.png  used on input line 351.
-(pdftex.def)             Requested size: 101.83968pt x 64.40335pt.
-<imgs/sheet_hem.png, id=346, 511.9125pt x 389.95688pt>
+Package pdftex.def Info: imgs/sheet_beadroll.png  used on input line 393.
+(pdftex.def)             Requested size: 97.84262pt x 61.87668pt.
+<imgs/sheet_hem.png, id=371, 511.9125pt x 389.95688pt>
 File: imgs/sheet_hem.png Graphic file (type png)
 <use imgs/sheet_hem.png>
-Package pdftex.def Info: imgs/sheet_hem.png  used on input line 354.
-(pdftex.def)             Requested size: 101.83968pt x 77.57347pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14 <./imgs/waterjet_draft.jpeg> <./imgs/lasercut_focus.jpeg>]
-<imgs/mig.png, id=353, 672.26157pt x 395.97937pt>
+Package pdftex.def Info: imgs/sheet_hem.png  used on input line 396.
+(pdftex.def)             Requested size: 97.84262pt x 74.53288pt.
+<imgs/mig.png, id=372, 672.26157pt x 395.97937pt>
 File: imgs/mig.png Graphic file (type png)
 <use imgs/mig.png>
-Package pdftex.def Info: imgs/mig.png  used on input line 378.
-(pdftex.def)             Requested size: 101.83968pt x 59.98042pt.
-<imgs/tig.png, id=354, 266.49562pt x 252.19218pt>
+Package pdftex.def Info: imgs/mig.png  used on input line 420.
+(pdftex.def)             Requested size: 97.84262pt x 57.63004pt.
+<imgs/tig.png, id=373, 266.49562pt x 252.19218pt>
 File: imgs/tig.png Graphic file (type png)
 <use imgs/tig.png>
-Package pdftex.def Info: imgs/tig.png  used on input line 381.
-(pdftex.def)             Requested size: 101.83968pt x 96.37276pt.
-<imgs/arcweld.png, id=355, 236.38312pt x 179.16937pt>
+Package pdftex.def Info: imgs/tig.png  used on input line 423.
+(pdftex.def)             Requested size: 97.84262pt x 92.59004pt.
+<imgs/arcweld.png, id=374, 236.38312pt x 179.16937pt>
 File: imgs/arcweld.png Graphic file (type png)
 <use imgs/arcweld.png>
-Package pdftex.def Info: imgs/arcweld.png  used on input line 384.
-(pdftex.def)             Requested size: 101.83968pt x 77.19168pt.
-<imgs/braze.png, id=356, 301.8778pt x 197.98969pt>
+Package pdftex.def Info: imgs/arcweld.png  used on input line 426.
+(pdftex.def)             Requested size: 97.84262pt x 74.16252pt.
+<imgs/braze.png, id=375, 301.8778pt x 197.98969pt>
 File: imgs/braze.png Graphic file (type png)
 <use imgs/braze.png>
-Package pdftex.def Info: imgs/braze.png  used on input line 387.
-(pdftex.def)             Requested size: 101.83968pt x 66.79295pt.
+Package pdftex.def Info: imgs/braze.png  used on input line 429.
+(pdftex.def)             Requested size: 97.84262pt x 64.17065pt.
  [15 <./imgs/sheet_bend.png (PNG copy)> <./imgs/sheet_roll.png (PNG copy)> <./i
 mgs/sheet_beadroll.png (PNG copy)> <./imgs/sheet_hem.png (PNG copy)> <./imgs/mi
 g.png (PNG copy)> <./imgs/tig.png (PNG copy)> <./imgs/arcweld.png (PNG copy)> <
 ./imgs/braze.png (PNG copy)>]
-<imgs/cpin.png, id=369, 100.375pt x 52.195pt>
+<imgs/cpin.png, id=387, 100.375pt x 52.195pt>
 File: imgs/cpin.png Graphic file (type png)
 <use imgs/cpin.png>
-Package pdftex.def Info: imgs/cpin.png  used on input line 415.
-(pdftex.def)             Requested size: 105.61179pt x 54.92184pt.
-<imgs/wlpin.png, id=370, 97.36375pt x 100.375pt>
+Package pdftex.def Info: imgs/cpin.png  used on input line 457.
+(pdftex.def)             Requested size: 101.46667pt x 52.7659pt.
+<imgs/wlpin.png, id=388, 97.36375pt x 100.375pt>
 File: imgs/wlpin.png Graphic file (type png)
 <use imgs/wlpin.png>
-Package pdftex.def Info: imgs/wlpin.png  used on input line 418.
-(pdftex.def)             Requested size: 105.61179pt x 108.88123pt.
-<imgs/bdpin.png, id=371, 100.375pt x 35.13126pt>
+Package pdftex.def Info: imgs/wlpin.png  used on input line 460.
+(pdftex.def)             Requested size: 101.46667pt x 104.60806pt.
+<imgs/bdpin.png, id=389, 100.375pt x 35.13126pt>
 File: imgs/bdpin.png Graphic file (type png)
 <use imgs/bdpin.png>
-Package pdftex.def Info: imgs/bdpin.png  used on input line 421.
-(pdftex.def)             Requested size: 105.61179pt x 36.96661pt.
-<imgs/dpin.png, id=372, 100.375pt x 42.1575pt>
+Package pdftex.def Info: imgs/bdpin.png  used on input line 463.
+(pdftex.def)             Requested size: 101.46667pt x 35.5155pt.
+<imgs/dpin.png, id=390, 100.375pt x 42.1575pt>
 File: imgs/dpin.png Graphic file (type png)
 <use imgs/dpin.png>
-Package pdftex.def Info: imgs/dpin.png  used on input line 439.
-(pdftex.def)             Requested size: 79.20883pt x 33.26994pt.
-<imgs/spin.png, id=373, 100.375pt x 42.1575pt>
+Package pdftex.def Info: imgs/dpin.png  used on input line 481.
+(pdftex.def)             Requested size: 76.09999pt x 31.96411pt.
+<imgs/spin.png, id=391, 100.375pt x 42.1575pt>
 File: imgs/spin.png Graphic file (type png)
 <use imgs/spin.png>
-Package pdftex.def Info: imgs/spin.png  used on input line 442.
-(pdftex.def)             Requested size: 79.20883pt x 33.26994pt.
-<imgs/tpin.png, id=374, 86.3225pt x 36.135pt>
+Package pdftex.def Info: imgs/spin.png  used on input line 484.
+(pdftex.def)             Requested size: 76.09999pt x 31.96411pt.
+<imgs/tpin.png, id=392, 86.3225pt x 36.135pt>
 File: imgs/tpin.png Graphic file (type png)
 <use imgs/tpin.png>
-Package pdftex.def Info: imgs/tpin.png  used on input line 445.
-(pdftex.def)             Requested size: 79.20883pt x 33.15746pt.
-<imgs/shpin.png, id=375, 87.32625pt x 46.1725pt>
+Package pdftex.def Info: imgs/tpin.png  used on input line 487.
+(pdftex.def)             Requested size: 76.09999pt x 31.85622pt.
+<imgs/shpin.png, id=393, 87.32625pt x 46.1725pt>
 File: imgs/shpin.png Graphic file (type png)
 <use imgs/shpin.png>
-Package pdftex.def Info: imgs/shpin.png  used on input line 448.
-(pdftex.def)             Requested size: 79.20883pt x 41.88315pt.
- [16 <./imgs/cpin.png> <./imgs/wlpin.png> <./imgs/bdpin.png> <./imgs/dpin.png> 
-<./imgs/spin.png> <./imgs/tpin.png> <./imgs/shpin.png>]
-<imgs/hhcs.png, id=394, 100.375pt x 71.26625pt>
+Package pdftex.def Info: imgs/shpin.png  used on input line 490.
+(pdftex.def)             Requested size: 76.09999pt x 40.23877pt.
+
+[16 <./imgs/cpin.png> <./imgs/wlpin.png> <./imgs/bdpin.png> <./imgs/dpin.png> <
+./imgs/spin.png> <./imgs/tpin.png> <./imgs/shpin.png>]
+<imgs/hhcs.png, id=413, 100.375pt x 71.26625pt>
 File: imgs/hhcs.png Graphic file (type png)
 <use imgs/hhcs.png>
-Package pdftex.def Info: imgs/hhcs.png  used on input line 478.
-(pdftex.def)             Requested size: 79.20883pt x 56.24207pt.
-<imgs/shcs.png, id=395, 100.375pt x 53.19875pt>
+Package pdftex.def Info: imgs/hhcs.png  used on input line 522.
+(pdftex.def)             Requested size: 76.09999pt x 54.03458pt.
+<imgs/shcs.png, id=414, 100.375pt x 53.19875pt>
 File: imgs/shcs.png Graphic file (type png)
 <use imgs/shcs.png>
-Package pdftex.def Info: imgs/shcs.png  used on input line 481.
-(pdftex.def)             Requested size: 79.20883pt x 41.98352pt.
-<imgs/fhcs.png, id=396, 100.375pt x 66.2475pt>
+Package pdftex.def Info: imgs/shcs.png  used on input line 525.
+(pdftex.def)             Requested size: 76.09999pt x 40.33566pt.
+<imgs/fhcs.png, id=415, 100.375pt x 66.2475pt>
 File: imgs/fhcs.png Graphic file (type png)
 <use imgs/fhcs.png>
-Package pdftex.def Info: imgs/fhcs.png  used on input line 484.
-(pdftex.def)             Requested size: 79.20883pt x 52.28136pt.
-<imgs/bhcs.png, id=397, 100.375pt x 59.22125pt>
+Package pdftex.def Info: imgs/fhcs.png  used on input line 528.
+(pdftex.def)             Requested size: 76.09999pt x 50.22932pt.
+<imgs/bhcs.png, id=416, 100.375pt x 59.22125pt>
 File: imgs/bhcs.png Graphic file (type png)
 <use imgs/bhcs.png>
-Package pdftex.def Info: imgs/bhcs.png  used on input line 487.
-(pdftex.def)             Requested size: 79.20883pt x 46.73636pt.
-<imgs/shoulderscrew.png, id=398, 100.375pt x 50.1875pt>
+Package pdftex.def Info: imgs/bhcs.png  used on input line 531.
+(pdftex.def)             Requested size: 76.09999pt x 44.90196pt.
+<imgs/shoulderscrew.png, id=417, 100.375pt x 50.1875pt>
 File: imgs/shoulderscrew.png Graphic file (type png)
 <use imgs/shoulderscrew.png>
-Package pdftex.def Info: imgs/shoulderscrew.png  used on input line 492.
-(pdftex.def)             Requested size: 79.20883pt x 39.60709pt.
-<imgs/stscrew.png, id=399, 100.375pt x 50.1875pt>
+Package pdftex.def Info: imgs/shoulderscrew.png  used on input line 536.
+(pdftex.def)             Requested size: 76.09999pt x 38.05252pt.
+<imgs/stscrew.png, id=418, 100.375pt x 50.1875pt>
 File: imgs/stscrew.png Graphic file (type png)
 <use imgs/stscrew.png>
-Package pdftex.def Info: imgs/stscrew.png  used on input line 495.
-(pdftex.def)             Requested size: 79.20883pt x 39.60709pt.
-<imgs/carriagebolt.png, id=400, 100.375pt x 76.285pt>
+Package pdftex.def Info: imgs/stscrew.png  used on input line 539.
+(pdftex.def)             Requested size: 76.09999pt x 38.05252pt.
+<imgs/carriagebolt.png, id=419, 100.375pt x 76.285pt>
 File: imgs/carriagebolt.png Graphic file (type png)
 <use imgs/carriagebolt.png>
-Package pdftex.def Info: imgs/carriagebolt.png  used on input line 498.
-(pdftex.def)             Requested size: 79.20883pt x 60.20279pt.
-<imgs/grubscrew.png, id=401, 100.375pt x 67.25125pt>
+Package pdftex.def Info: imgs/carriagebolt.png  used on input line 542.
+(pdftex.def)             Requested size: 76.09999pt x 57.83983pt.
+<imgs/grubscrew.png, id=420, 100.375pt x 67.25125pt>
 File: imgs/grubscrew.png Graphic file (type png)
 <use imgs/grubscrew.png>
-Package pdftex.def Info: imgs/grubscrew.png  used on input line 501.
-(pdftex.def)             Requested size: 79.20883pt x 53.0735pt.
+Package pdftex.def Info: imgs/grubscrew.png  used on input line 545.
+(pdftex.def)             Requested size: 76.09999pt x 50.99037pt.
  [17 <./imgs/hhcs.png> <./imgs/shcs.png> <./imgs/fhcs.png> <./imgs/bhcs.png> <.
 /imgs/shoulderscrew.png> <./imgs/stscrew.png> <./imgs/carriagebolt.png> <./imgs
 /grubscrew.png>]
-<imgs/head_ext_hex.png, id=422, 31.11626pt x 27.10126pt>
+<imgs/head_ext_hex.png, id=443, 31.11626pt x 27.10126pt>
 File: imgs/head_ext_hex.png Graphic file (type png)
 <use imgs/head_ext_hex.png>
-Package pdftex.def Info: imgs/head_ext_hex.png  used on input line 523.
-(pdftex.def)             Requested size: 49.50237pt x 43.1189pt.
-<imgs/head_hex.png, id=423, 30.1125pt x 31.11626pt>
+Package pdftex.def Info: imgs/head_ext_hex.png  used on input line 567.
+(pdftex.def)             Requested size: 47.55948pt x 41.42632pt.
+<imgs/head_hex.png, id=444, 30.1125pt x 31.11626pt>
 File: imgs/head_hex.png Graphic file (type png)
 <use imgs/head_hex.png>
-Package pdftex.def Info: imgs/head_hex.png  used on input line 526.
-(pdftex.def)             Requested size: 49.50237pt x 51.15726pt.
-<imgs/head_slot.png, id=424, 30.1125pt x 30.1125pt>
+Package pdftex.def Info: imgs/head_hex.png  used on input line 570.
+(pdftex.def)             Requested size: 47.55948pt x 49.14935pt.
+<imgs/head_slot.png, id=445, 30.1125pt x 30.1125pt>
 File: imgs/head_slot.png Graphic file (type png)
 <use imgs/head_slot.png>
-Package pdftex.def Info: imgs/head_slot.png  used on input line 529.
-(pdftex.def)             Requested size: 49.50237pt x 49.507pt.
-<imgs/head_phil.png, id=425, 30.1125pt x 30.1125pt>
+Package pdftex.def Info: imgs/head_slot.png  used on input line 573.
+(pdftex.def)             Requested size: 47.55948pt x 47.56387pt.
+<imgs/head_phil.png, id=446, 30.1125pt x 30.1125pt>
 File: imgs/head_phil.png Graphic file (type png)
 <use imgs/head_phil.png>
-Package pdftex.def Info: imgs/head_phil.png  used on input line 532.
-(pdftex.def)             Requested size: 49.50237pt x 49.507pt.
-<imgs/head_torx.png, id=426, 29.10875pt x 29.10875pt>
+Package pdftex.def Info: imgs/head_phil.png  used on input line 576.
+(pdftex.def)             Requested size: 47.55948pt x 47.56387pt.
+<imgs/head_torx.png, id=447, 29.10875pt x 29.10875pt>
 File: imgs/head_torx.png Graphic file (type png)
 <use imgs/head_torx.png>
-Package pdftex.def Info: imgs/head_torx.png  used on input line 535.
-(pdftex.def)             Requested size: 49.50237pt x 49.50775pt.
-<imgs/head_robertson.png, id=427, 30.1125pt x 30.1125pt>
+Package pdftex.def Info: imgs/head_torx.png  used on input line 579.
+(pdftex.def)             Requested size: 47.55948pt x 47.56453pt.
+<imgs/head_robertson.png, id=448, 30.1125pt x 30.1125pt>
 File: imgs/head_robertson.png Graphic file (type png)
 <use imgs/head_robertson.png>
-Package pdftex.def Info: imgs/head_robertson.png  used on input line 538.
-(pdftex.def)             Requested size: 49.50237pt x 49.507pt.
-
-
-Package caption Warning: \label without proper reference on input line 555.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:bolted_joint' on page 18 undefined on input line 
-553.
-
-<imgs/bolt_preload.png, id=429, 766.865pt x 444.66125pt>
+Package pdftex.def Info: imgs/head_robertson.png  used on input line 582.
+(pdftex.def)             Requested size: 47.55948pt x 47.56387pt.
+<imgs/bolt_preload.png, id=449, 766.865pt x 444.66125pt>
 File: imgs/bolt_preload.png Graphic file (type png)
 <use imgs/bolt_preload.png>
-Package pdftex.def Info: imgs/bolt_preload.png  used on input line 556.
-(pdftex.def)             Requested size: 235.73624pt x 136.69011pt.
-[18 <./imgs/head_ext_hex.png> <./imgs/head_hex.png> <./imgs/head_slot.png> <./i
-mgs/head_phil.png> <./imgs/head_torx.png> <./imgs/head_robertson.png> <./imgs/b
-olt_preload.png>]
-<imgs/plainwasher.png, id=454, 100.375pt x 49.18375pt>
+Package pdftex.def Info: imgs/bolt_preload.png  used on input line 599.
+(pdftex.def)             Requested size: 226.48393pt x 131.3232pt.
+ [18 <./imgs/head_ext_hex.png> <./imgs/head_hex.png> <./imgs/head_slot.png> <./
+imgs/head_phil.png> <./imgs/head_torx.png> <./imgs/head_robertson.png> <./imgs/
+bolt_preload.png>]
+<imgs/plainwasher.png, id=473, 100.375pt x 49.18375pt>
 File: imgs/plainwasher.png Graphic file (type png)
 <use imgs/plainwasher.png>
-Package pdftex.def Info: imgs/plainwasher.png  used on input line 565.
-(pdftex.def)             Requested size: 79.20883pt x 38.81494pt.
-<imgs/machinewasher.png, id=455, 150.5625pt x 150.5625pt>
+Package pdftex.def Info: imgs/plainwasher.png  used on input line 613.
+(pdftex.def)             Requested size: 76.09999pt x 37.29146pt.
+<imgs/machinewasher.png, id=474, 150.5625pt x 150.5625pt>
 File: imgs/machinewasher.png Graphic file (type png)
 <use imgs/machinewasher.png>
-Package pdftex.def Info: imgs/machinewasher.png  used on input line 568.
-(pdftex.def)             Requested size: 79.20883pt x 79.2119pt.
-<imgs/fenderwasher.png, id=457, 361.35pt x 240.9pt>
+Package pdftex.def Info: imgs/machinewasher.png  used on input line 616.
+(pdftex.def)             Requested size: 76.09999pt x 76.10352pt.
+<imgs/fenderwasher.png, id=476, 361.35pt x 240.9pt>
 File: imgs/fenderwasher.png Graphic file (type png)
 <use imgs/fenderwasher.png>
-Package pdftex.def Info: imgs/fenderwasher.png  used on input line 571.
-(pdftex.def)             Requested size: 79.20883pt x 52.80333pt.
-<imgs/helicoil.png, id=458, 63.23625pt x 100.375pt>
+Package pdftex.def Info: imgs/fenderwasher.png  used on input line 619.
+(pdftex.def)             Requested size: 76.09999pt x 50.73384pt.
+<imgs/helicoil.png, id=477, 63.23625pt x 100.375pt>
 File: imgs/helicoil.png Graphic file (type png)
 <use imgs/helicoil.png>
-Package pdftex.def Info: imgs/helicoil.png  used on input line 582.
-(pdftex.def)             Requested size: 56.57799pt x 89.80824pt.
-<imgs/tanglock.png, id=459, 64.24pt x 100.375pt>
+Package pdftex.def Info: imgs/helicoil.png  used on input line 630.
+(pdftex.def)             Requested size: 54.35738pt x 86.28252pt.
+<imgs/tanglock.png, id=478, 64.24pt x 100.375pt>
 File: imgs/tanglock.png Graphic file (type png)
 <use imgs/tanglock.png>
-Package pdftex.def Info: imgs/tanglock.png  used on input line 585.
-(pdftex.def)             Requested size: 56.57799pt x 88.40378pt.
-<imgs/rivnut.png, id=460, 71.26625pt x 100.375pt>
+Package pdftex.def Info: imgs/tanglock.png  used on input line 633.
+(pdftex.def)             Requested size: 54.35738pt x 84.93471pt.
+<imgs/rivnut.png, id=479, 71.26625pt x 100.375pt>
 File: imgs/rivnut.png Graphic file (type png)
 <use imgs/rivnut.png>
-Package pdftex.def Info: imgs/rivnut.png  used on input line 588.
-(pdftex.def)             Requested size: 56.57799pt x 79.68745pt.
-<imgs/pemnut.png, id=461, 100.375pt x 88.33pt>
+Package pdftex.def Info: imgs/rivnut.png  used on input line 636.
+(pdftex.def)             Requested size: 54.35738pt x 76.55994pt.
+<imgs/pemnut.png, id=480, 100.375pt x 88.33pt>
 File: imgs/pemnut.png Graphic file (type png)
 <use imgs/pemnut.png>
-Package pdftex.def Info: imgs/pemnut.png  used on input line 591.
-(pdftex.def)             Requested size: 56.57799pt x 49.78928pt.
-<imgs/heatset.png, id=462, 64.24pt x 100.375pt>
+Package pdftex.def Info: imgs/pemnut.png  used on input line 639.
+(pdftex.def)             Requested size: 54.35738pt x 47.83495pt.
+<imgs/heatset.png, id=481, 64.24pt x 100.375pt>
 File: imgs/heatset.png Graphic file (type png)
 <use imgs/heatset.png>
-Package pdftex.def Info: imgs/heatset.png  used on input line 596.
-(pdftex.def)             Requested size: 56.57799pt x 88.40378pt.
-<imgs/teenut.png, id=463, 100.375pt x 89.33376pt>
+Package pdftex.def Info: imgs/heatset.png  used on input line 644.
+(pdftex.def)             Requested size: 54.35738pt x 84.93471pt.
+<imgs/teenut.png, id=482, 100.375pt x 89.33376pt>
 File: imgs/teenut.png Graphic file (type png)
 <use imgs/teenut.png>
-Package pdftex.def Info: imgs/teenut.png  used on input line 599.
-(pdftex.def)             Requested size: 56.57799pt x 50.35506pt.
-<imgs/woodsti.png, id=464, 80.3pt x 100.375pt>
+Package pdftex.def Info: imgs/teenut.png  used on input line 647.
+(pdftex.def)             Requested size: 54.35738pt x 48.37854pt.
+<imgs/woodsti.png, id=483, 80.3pt x 100.375pt>
 File: imgs/woodsti.png Graphic file (type png)
 <use imgs/woodsti.png>
-Package pdftex.def Info: imgs/woodsti.png  used on input line 602.
-(pdftex.def)             Requested size: 56.57799pt x 70.72455pt.
+Package pdftex.def Info: imgs/woodsti.png  used on input line 650.
+(pdftex.def)             Requested size: 54.35738pt x 67.94775pt.
  [19 <./imgs/plainwasher.png> <./imgs/machinewasher.png> <./imgs/fenderwasher.p
 ng> <./imgs/helicoil.png> <./imgs/tanglock.png> <./imgs/rivnut.png> <./imgs/pem
 nut.png> <./imgs/heatset.png> <./imgs/teenut.png> <./imgs/woodsti.png>]
-<imgs/lockwire.png, id=488, 566.115pt x 191.21437pt>
+<imgs/lockwire.png, id=508, 566.115pt x 191.21437pt>
 File: imgs/lockwire.png Graphic file (type png)
 <use imgs/lockwire.png>
-Package pdftex.def Info: imgs/lockwire.png  used on input line 623.
-(pdftex.def)             Requested size: 90.52512pt x 30.5745pt.
-<imgs/threadlocker.jpeg, id=489, 250.9375pt x 189.70876pt>
+Package pdftex.def Info: imgs/lockwire.png  used on input line 671.
+(pdftex.def)             Requested size: 86.97214pt x 29.37532pt.
+<imgs/threadlocker.jpeg, id=509, 250.9375pt x 189.70876pt>
 File: imgs/threadlocker.jpeg Graphic file (type jpg)
 <use imgs/threadlocker.jpeg>
-Package pdftex.def Info: imgs/threadlocker.jpeg  used on input line 626.
-(pdftex.def)             Requested size: 90.52512pt x 68.43694pt.
-<imgs/nylock.png, id=490, 99.37125pt x 100.375pt>
+Package pdftex.def Info: imgs/threadlocker.jpeg  used on input line 674.
+(pdftex.def)             Requested size: 86.97214pt x 65.75063pt.
+<imgs/nylock.png, id=510, 99.37125pt x 100.375pt>
 File: imgs/nylock.png Graphic file (type png)
 <use imgs/nylock.png>
-Package pdftex.def Info: imgs/nylock.png  used on input line 629.
-(pdftex.def)             Requested size: 56.57799pt x 57.15154pt.
-<imgs/kaynut.png, id=491, 92.59593pt x 85.06781pt>
+Package pdftex.def Info: imgs/nylock.png  used on input line 677.
+(pdftex.def)             Requested size: 54.35738pt x 54.90775pt.
+<imgs/kaynut.png, id=511, 92.59593pt x 85.06781pt>
 File: imgs/kaynut.png Graphic file (type png)
 <use imgs/kaynut.png>
-Package pdftex.def Info: imgs/kaynut.png  used on input line 632.
-(pdftex.def)             Requested size: 79.20883pt x 72.77007pt.
-<imgs/jamnut.png, id=492, 51.19125pt x 60.225pt>
+Package pdftex.def Info: imgs/kaynut.png  used on input line 680.
+(pdftex.def)             Requested size: 76.09999pt x 69.9144pt.
+<imgs/jamnut.png, id=512, 51.19125pt x 60.225pt>
 File: imgs/jamnut.png Graphic file (type png)
 <use imgs/jamnut.png>
-Package pdftex.def Info: imgs/jamnut.png  used on input line 637.
-(pdftex.def)             Requested size: 56.57799pt x 66.56656pt.
-<imgs/nordlock.png, id=493, 214.8025pt x 121.45375pt>
+Package pdftex.def Info: imgs/jamnut.png  used on input line 685.
+(pdftex.def)             Requested size: 54.35738pt x 63.95396pt.
+<imgs/nordlock.png, id=513, 214.8025pt x 121.45375pt>
 File: imgs/nordlock.png Graphic file (type png)
 <use imgs/nordlock.png>
-Package pdftex.def Info: imgs/nordlock.png  used on input line 640.
-(pdftex.def)             Requested size: 56.57799pt x 31.9905pt.
-<imgs/splitlock.png, id=494, 100.375pt x 60.225pt>
+Package pdftex.def Info: imgs/nordlock.png  used on input line 688.
+(pdftex.def)             Requested size: 54.35738pt x 30.734pt.
+<imgs/splitlock.png, id=514, 100.375pt x 60.225pt>
 File: imgs/splitlock.png Graphic file (type png)
 <use imgs/splitlock.png>
-Package pdftex.def Info: imgs/splitlock.png  used on input line 643.
-(pdftex.def)             Requested size: 56.57799pt x 33.94722pt.
-<imgs/castlenut.png, id=495, 258.9675pt x 276.03125pt>
+Package pdftex.def Info: imgs/splitlock.png  used on input line 691.
+(pdftex.def)             Requested size: 54.35738pt x 32.61473pt.
+<imgs/castlenut.png, id=515, 258.9675pt x 276.03125pt>
 File: imgs/castlenut.png Graphic file (type png)
 <use imgs/castlenut.png>
-Package pdftex.def Info: imgs/castlenut.png  used on input line 646.
-(pdftex.def)             Requested size: 56.57799pt x 60.30586pt.
-<imgs/rivet_proc.jpeg, id=496, 451.6875pt x 212.795pt>
-File: imgs/rivet_proc.jpeg Graphic file (type jpg)
-<use imgs/rivet_proc.jpeg>
-Package pdftex.def Info: imgs/rivet_proc.jpeg  used on input line 670.
-(pdftex.def)             Requested size: 183.87398pt x 86.62633pt.
-<imgs/rivet_install.jpeg, id=497, 690.58pt x 301.125pt>
+Package pdftex.def Info: imgs/castlenut.png  used on input line 694.
+(pdftex.def)             Requested size: 54.35738pt x 57.93878pt.
+<imgs/rivet_install.jpeg, id=516, 690.58pt x 301.125pt>
 File: imgs/rivet_install.jpeg Graphic file (type jpg)
 <use imgs/rivet_install.jpeg>
-Package pdftex.def Info: imgs/rivet_install.jpeg  used on input line 671.
-(pdftex.def)             Requested size: 282.88637pt x 123.35176pt.
+Package pdftex.def Info: imgs/rivet_install.jpeg  used on input line 718.
+(pdftex.def)             Requested size: 407.66832pt x 177.76329pt.
+
+Underfull \vbox (badness 4316) has occurred while \output is active []
+
  [20 <./imgs/lockwire.png (PNG copy)> <./imgs/threadlocker.jpeg> <./imgs/nylock
 .png> <./imgs/kaynut.png (PNG copy)> <./imgs/jamnut.png> <./imgs/nordlock.png> 
 <./imgs/splitlock.png> <./imgs/castlenut.png>]
-<imgs/shaft_snapringgroove.png, id=517, 277.78781pt x 79.04532pt>
+<imgs/shaft_snapringgroove.png, id=536, 277.78781pt x 79.04532pt>
 File: imgs/shaft_snapringgroove.png Graphic file (type png)
 <use imgs/shaft_snapringgroove.png>
-Package pdftex.def Info: imgs/shaft_snapringgroove.png  used on input line 682.
+Package pdftex.def Info: imgs/shaft_snapringgroove.png  used on input line 730.
 
-(pdftex.def)             Requested size: 212.16118pt x 60.37175pt.
-<imgs/snapringtool.jpeg, id=518, 2409.0pt x 1370.11874pt>
+(pdftex.def)             Requested size: 203.83415pt x 58.00171pt.
+<imgs/snapringtool.jpeg, id=537, 2409.0pt x 1370.11874pt>
 File: imgs/snapringtool.jpeg Graphic file (type jpg)
 <use imgs/snapringtool.jpeg>
-Package pdftex.def Info: imgs/snapringtool.jpeg  used on input line 683.
-(pdftex.def)             Requested size: 212.16118pt x 120.65025pt.
-<imgs/eclip.png, id=519, 86.3225pt x 54.2025pt>
-File: imgs/eclip.png Graphic file (type png)
-<use imgs/eclip.png>
-Package pdftex.def Info: imgs/eclip.png  used on input line 690.
-(pdftex.def)             Requested size: 90.52512pt x 56.84233pt.
-<imgs/int_snapring.png, id=520, 100.375pt x 63.23625pt>
-File: imgs/int_snapring.png Graphic file (type png)
-<use imgs/int_snapring.png>
-Package pdftex.def Info: imgs/int_snapring.png  used on input line 693.
-(pdftex.def)             Requested size: 90.52512pt x 57.03462pt.
-<imgs/ext_snapring.png, id=521, 100.375pt x 68.255pt>
-File: imgs/ext_snapring.png Graphic file (type png)
-<use imgs/ext_snapring.png>
-Package pdftex.def Info: imgs/ext_snapring.png  used on input line 696.
-(pdftex.def)             Requested size: 56.57799pt x 38.47353pt.
-<imgs/pushonring.png, id=522, 168.63pt x 102.3825pt>
-File: imgs/pushonring.png Graphic file (type png)
-<use imgs/pushonring.png>
-Package pdftex.def Info: imgs/pushonring.png  used on input line 699.
-(pdftex.def)             Requested size: 79.20883pt x 48.09166pt.
-<imgs/spiralring.png, id=523, 163.61125pt x 102.3825pt>
-File: imgs/spiralring.png Graphic file (type png)
-<use imgs/spiralring.png>
-Package pdftex.def Info: imgs/spiralring.png  used on input line 704.
-(pdftex.def)             Requested size: 79.20883pt x 49.56639pt.
-<imgs/circlip.png, id=524, 100.375pt x 63.23625pt>
-File: imgs/circlip.png Graphic file (type png)
-<use imgs/circlip.png>
-Package pdftex.def Info: imgs/circlip.png  used on input line 707.
-(pdftex.def)             Requested size: 79.20883pt x 49.90494pt.
-<imgs/shaftcollar.png, id=525, 96.36pt x 100.375pt>
+Package pdftex.def Info: imgs/snapringtool.jpeg  used on input line 731.
+(pdftex.def)             Requested size: 203.83415pt x 115.92543pt.
+<imgs/shaftcollar.png, id=538, 96.36pt x 100.375pt>
 File: imgs/shaftcollar.png Graphic file (type png)
 <use imgs/shaftcollar.png>
-Package pdftex.def Info: imgs/shaftcollar.png  used on input line 710.
-(pdftex.def)             Requested size: 79.20883pt x 82.50865pt.
- [21 <./imgs/rivet_proc.jpeg> <./imgs/rivet_install.jpeg> <./imgs/shaft_snaprin
-ggroove.png (PNG copy)> <./imgs/snapringtool.jpeg> <./imgs/eclip.png> <./imgs/i
-nt_snapring.png> <./imgs/ext_snapring.png> <./imgs/pushonring.png> <./imgs/spir
-alring.png> <./imgs/circlip.png> <./imgs/shaftcollar.png>] [22]
+Package pdftex.def Info: imgs/shaftcollar.png  used on input line 738.
+(pdftex.def)             Requested size: 65.22952pt x 67.94623pt.
+<imgs/pushonring.png, id=539, 168.63pt x 102.3825pt>
+File: imgs/pushonring.png Graphic file (type png)
+<use imgs/pushonring.png>
+Package pdftex.def Info: imgs/pushonring.png  used on input line 742.
+(pdftex.def)             Requested size: 76.09999pt x 46.20448pt.
+<imgs/eclip.png, id=540, 86.3225pt x 54.2025pt>
+File: imgs/eclip.png Graphic file (type png)
+<use imgs/eclip.png>
+Package pdftex.def Info: imgs/eclip.png  used on input line 746.
+(pdftex.def)             Requested size: 76.09999pt x 47.78435pt.
+<imgs/ext_snapring.png, id=541, 100.375pt x 68.255pt>
+File: imgs/ext_snapring.png Graphic file (type png)
+<use imgs/ext_snapring.png>
+Package pdftex.def Info: imgs/ext_snapring.png  used on input line 750.
+(pdftex.def)             Requested size: 76.09999pt x 51.75143pt.
+<imgs/int_snapring.png, id=542, 100.375pt x 63.23625pt>
+File: imgs/int_snapring.png Graphic file (type png)
+<use imgs/int_snapring.png>
+Package pdftex.def Info: imgs/int_snapring.png  used on input line 754.
+(pdftex.def)             Requested size: 76.09999pt x 47.94618pt.
+<imgs/spiralring.png, id=543, 163.61125pt x 102.3825pt>
+File: imgs/spiralring.png Graphic file (type png)
+<use imgs/spiralring.png>
+Package pdftex.def Info: imgs/spiralring.png  used on input line 758.
+(pdftex.def)             Requested size: 76.09999pt x 47.61986pt.
+<imgs/circlip.png, id=544, 100.375pt x 63.23625pt>
+File: imgs/circlip.png Graphic file (type png)
+<use imgs/circlip.png>
+Package pdftex.def Info: imgs/circlip.png  used on input line 761.
+(pdftex.def)             Requested size: 76.09999pt x 47.94618pt.
+ [21 <./imgs/rivet_install.jpeg> <./imgs/shaft_snapringgroove.png (PNG copy)> <
+./imgs/snapringtool.jpeg> <./imgs/shaftcollar.png> <./imgs/pushonring.png> <./i
+mgs/eclip.png> <./imgs/ext_snapring.png> <./imgs/int_snapring.png> <./imgs/spir
+alring.png> <./imgs/circlip.png>] [22]
 Chapter 3.
 [23
 
@@ -1353,28 +1462,27 @@ Chapter 3.
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 763--765
+Underfull \hbox (badness 10000) in paragraph at lines 829--831
 
  []
 
-<img_Mechatronics_Motors_brushed.png, id=566, 570.13pt x 468.75125pt>
+<img_Mechatronics_Motors_brushed.png, id=584, 570.13pt x 468.75125pt>
 File: img_Mechatronics_Motors_brushed.png Graphic file (type png)
 <use img_Mechatronics_Motors_brushed.png>
 Package pdftex.def Info: img_Mechatronics_Motors_brushed.png  used on input lin
-e 773.
-(pdftex.def)             Requested size: 282.88637pt x 232.57974pt.
-[25 <./img_Mechatronics_Motors_brushed.png>]
-<img_Mechatronics_Motors_brushless.png, id=574, 605.26125pt x 351.56343pt>
+e 839.
+(pdftex.def)             Requested size: 271.78348pt x 223.45308pt.
+<img_Mechatronics_Motors_brushless.png, id=585, 605.26125pt x 351.56343pt>
 File: img_Mechatronics_Motors_brushless.png Graphic file (type png)
 <use img_Mechatronics_Motors_brushless.png>
 Package pdftex.def Info: img_Mechatronics_Motors_brushless.png  used on input l
-ine 788.
-(pdftex.def)             Requested size: 282.88637pt x 164.31215pt.
-
-Underfull \vbox (badness 3417) has occurred while \output is active []
+ine 852.
+(pdftex.def)             Requested size: 271.78348pt x 157.86412pt.
+[25 <./img_Mechatronics_Motors_brushed.png>]
+Underfull \vbox (badness 2088) has occurred while \output is active []
 
  [26 <./img_Mechatronics_Motors_brushless.png (PNG copy)>]
-Underfull \vbox (badness 5008) has occurred while \output is active []
+Underfull \vbox (badness 1478) has occurred while \output is active []
 
  [27]
 [28]
@@ -1385,62 +1493,70 @@ Chapter 5.
 
 ]
 Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 991--993
+
+ []
+
 [31] [32
 
 ]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 930--932
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1010
 
  []
 
 [33]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6268) has occurred while \output is active []
 
  [34]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-[36]
-<imgs/thsae_1.png, id=666, 963.6pt x 675.27281pt>
+[35] [36]
+<imgs/thsae_1.png, id=685, 963.6pt x 675.27281pt>
 File: imgs/thsae_1.png Graphic file (type png)
 <use imgs/thsae_1.png>
-Package pdftex.def Info: imgs/thsae_1.png  used on input line 1084.
-(pdftex.def)             Requested size: 377.17943pt x 264.31358pt.
-<imgs/thsae_2.png, id=667, 956.82469pt x 660.21657pt>
+Package pdftex.def Info: imgs/thsae_1.png  used on input line 1188.
+(pdftex.def)             Requested size: 362.37567pt x 253.93764pt.
+<imgs/thsae_2.png, id=686, 956.82469pt x 660.21657pt>
 File: imgs/thsae_2.png Graphic file (type png)
 <use imgs/thsae_2.png>
-Package pdftex.def Info: imgs/thsae_2.png  used on input line 1089.
-(pdftex.def)             Requested size: 377.17943pt x 260.2538pt.
+Package pdftex.def Info: imgs/thsae_2.png  used on input line 1193.
+(pdftex.def)             Requested size: 362.37567pt x 250.03868pt.
  [37
 
  <./imgs/thsae_1.png (PNG copy)> <./imgs/thsae_2.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1097.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1097.
+[38
 
-(./Mechatronics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1097.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1097.
+]
+Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1203--1205
+
+ []
+
+[39]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1207.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1207.
+ (./Mechatronics.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1207.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1207.
 
 Package rerunfilecheck Info: File `Mechatronics.out' has not changed.
-(rerunfilecheck)             Checksum: 944EA28A947B3ED4623ED686FAEB5052;2920.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: 57D71A8F79402F624D3F65C8F6CF4B64;2967.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1097.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1207.
  ) 
 Here is how much of TeX's memory you used:
- 28792 strings out of 494880
- 698247 string characters out of 6179601
- 909146 words of memory out of 5000000
- 31354 multiletter control sequences out of 15000+600000
- 52873 words of font info for 37 fonts, out of 8000000 for 9000
+ 29700 strings out of 494880
+ 710760 string characters out of 6179601
+ 929044 words of memory out of 5000000
+ 32231 multiletter control sequences out of 15000+600000
+ 57091 words of font info for 38 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 69i,18n,100p,728b,2149s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,18n,100p,893b,2149s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/l
@@ -1453,12 +1569,12 @@ fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10
 type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-sy7.pfb>
-Output written on Mechatronics.pdf (37 pages, 4119661 bytes).
+xmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+sy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
+Output written on Mechatronics.pdf (39 pages, 4388875 bytes).
 PDF statistics:
- 776 PDF objects out of 1000 (max. 8388607)
- 583 compressed objects within 6 object streams
- 215 named destinations out of 1000 (max. 500000)
- 780 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 812 PDF objects out of 1000 (max. 8388607)
+ 612 compressed objects within 7 object streams
+ 228 named destinations out of 1000 (max. 500000)
+ 803 words of extra memory for PDF output out of 10000 (max. 10000000)
 
