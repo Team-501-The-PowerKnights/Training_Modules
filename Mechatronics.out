@@ -20,29 +20,72 @@
 \BOOKMARK [2][-]{subsection.2.4.3}{Rivets}{section.2.4}% 20
 \BOOKMARK [2][-]{subsection.2.4.4}{Shaft Retention}{section.2.4}% 21
 \BOOKMARK [2][-]{subsection.2.4.5}{Adhesives}{section.2.4}% 22
-\BOOKMARK [0][-]{chapter.3}{Complex Components}{}% 23
-\BOOKMARK [1][-]{section.3.1}{Axial Power Transmission}{chapter.3}% 24
-\BOOKMARK [2][-]{subsection.3.1.1}{Shafts, Hubs, and Interfaces}{section.3.1}% 25
-\BOOKMARK [2][-]{subsection.3.1.2}{Bearings, Bushings}{section.3.1}% 26
-\BOOKMARK [1][-]{section.3.2}{Nonaxial Power Transmission}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.2.1}{Rope and Pulleys}{section.3.2}% 28
-\BOOKMARK [2][-]{subsection.3.2.2}{Gears}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.3}{Roller Chain and Sprockets}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.4}{Belts, Pulleys}{section.3.2}% 31
-\BOOKMARK [1][-]{section.3.3}{Engagement and Disengagement}{chapter.3}% 32
-\BOOKMARK [2][-]{subsection.3.3.1}{Ratchets and Brakes}{section.3.3}% 33
-\BOOKMARK [2][-]{subsection.3.3.2}{Clutches and PTOs}{section.3.3}% 34
-\BOOKMARK [1][-]{section.3.4}{Nonlinear/nonrotary motion}{chapter.3}% 35
-\BOOKMARK [0][-]{chapter.4}{Motors}{}% 36
-\BOOKMARK [1][-]{section.4.1}{Brushed and Brushless Motors}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.2}{Empirical Motor Behavior}{chapter.4}% 38
-\BOOKMARK [0][-]{chapter.5}{Pneumatics}{}% 39
-\BOOKMARK [0][-]{chapter.6}{Design Principles}{}% 40
-\BOOKMARK [0][-]{chapter.7}{Complex Systems}{}% 41
-\BOOKMARK [0][-]{chapter.8}{Choosing Gear Ratios}{}% 42
-\BOOKMARK [1][-]{section.8.1}{Developing a Generalized Mechanism Model}{chapter.8}% 43
-\BOOKMARK [2][-]{subsection.8.1.1}{The Simple Flywheel Case}{section.8.1}% 44
-\BOOKMARK [2][-]{subsection.8.1.2}{The Full-Blown Calculus Approach}{section.8.1}% 45
-\BOOKMARK [2][-]{subsection.8.1.3}{A Brute-Force Approach}{section.8.1}% 46
-\BOOKMARK [1][-]{section.8.2}{Using the Simulations: some analysis/optimization examples}{chapter.8}% 47
-\BOOKMARK [0][-]{chapter.9}{Going Forth}{}% 48
+\BOOKMARK [2][-]{subsection.2.4.6}{Panel Fasteners}{section.2.4}% 23
+\BOOKMARK [2][-]{subsection.2.4.7}{The Ziptie}{section.2.4}% 24
+\BOOKMARK [0][-]{chapter.3}{Complex Components}{}% 25
+\BOOKMARK [1][-]{section.3.1}{Axial Power Transmission}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.1.1}{Shafts, Hubs, and Interfaces}{section.3.1}% 27
+\BOOKMARK [2][-]{subsection.3.1.2}{Bearings, Bushings}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.3}{Drive Couplings}{section.3.1}% 29
+\BOOKMARK [1][-]{section.3.2}{Nonaxial Power Transmission}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.2.1}{Rope and Pulleys}{section.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.2.2}{Gears}{section.3.2}% 32
+\BOOKMARK [2][-]{subsection.3.2.3}{Roller Chain and Sprockets}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.4}{Belts, Pulleys}{section.3.2}% 34
+\BOOKMARK [1][-]{section.3.3}{Engagement and Disengagement}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.3.1}{Ratchets and Brakes}{section.3.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.2}{Clutches and PTOs}{section.3.3}% 37
+\BOOKMARK [0][-]{chapter.4}{Pneumatics}{}% 38
+\BOOKMARK [1][-]{section.4.1}{Pneumatic Systems}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.2}{Pneumatic Cylinders}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.3}{Basic Cylinder Analysis}{chapter.4}% 41
+\BOOKMARK [0][-]{chapter.5}{Motors}{}% 42
+\BOOKMARK [1][-]{section.5.1}{DC Motors: Brushed and Brushless}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.2}{Empirical DC Motor Behavior}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.3}{Comparing Motor Types}{chapter.5}% 45
+\BOOKMARK [0][-]{chapter.6}{Design Principles}{}% 46
+\BOOKMARK [1][-]{section.6.1}{Structural}{chapter.6}% 47
+\BOOKMARK [2][-]{subsection.6.1.1}{Load paths \(axial not bending\)}{section.6.1}% 48
+\BOOKMARK [2][-]{subsection.6.1.2}{Big sections for bending/torque}{section.6.1}% 49
+\BOOKMARK [2][-]{subsection.6.1.3}{Spread the base}{section.6.1}% 50
+\BOOKMARK [1][-]{section.6.2}{Error}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.2.1}{Abbe \(sine\) error}{section.6.2}% 52
+\BOOKMARK [2][-]{subsection.6.2.2}{Tolerance stacking \(minimize number of components\)}{section.6.2}% 53
+\BOOKMARK [1][-]{section.6.3}{Time-Related Failures}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.3.1}{Loosening \(see locking mechanisms\)}{section.6.3}% 55
+\BOOKMARK [2][-]{subsection.6.3.2}{Fatigue}{section.6.3}% 56
+\BOOKMARK [0][-]{chapter.7}{Applied Systems}{}% 57
+\BOOKMARK [1][-]{section.7.1}{Intakes}{chapter.7}% 58
+\BOOKMARK [2][-]{subsection.7.1.1}{Beater bars}{section.7.1}% 59
+\BOOKMARK [2][-]{subsection.7.1.2}{Side wheels}{section.7.1}% 60
+\BOOKMARK [2][-]{subsection.7.1.3}{Vectored Intake Wheels}{section.7.1}% 61
+\BOOKMARK [1][-]{section.7.2}{Indexers}{chapter.7}% 62
+\BOOKMARK [2][-]{subsection.7.2.1}{Conveyors}{section.7.2}% 63
+\BOOKMARK [2][-]{subsection.7.2.2}{Hoppers}{section.7.2}% 64
+\BOOKMARK [2][-]{subsection.7.2.3}{Rotary hoppers}{section.7.2}% 65
+\BOOKMARK [1][-]{section.7.3}{Lifts}{chapter.7}% 66
+\BOOKMARK [2][-]{subsection.7.3.1}{Elevators - Cascade and Continuous}{section.7.3}% 67
+\BOOKMARK [2][-]{subsection.7.3.2}{Obscure 4 bar}{section.7.3}% 68
+\BOOKMARK [2][-]{subsection.7.3.3}{Parallel 4 bar}{section.7.3}% 69
+\BOOKMARK [2][-]{subsection.7.3.4}{Virtual 4 bars}{section.7.3}% 70
+\BOOKMARK [2][-]{subsection.7.3.5}{6 8 etc. bars}{section.7.3}% 71
+\BOOKMARK [2][-]{subsection.7.3.6}{Double reverse 4 bar}{section.7.3}% 72
+\BOOKMARK [1][-]{section.7.4}{Latches}{chapter.7}% 73
+\BOOKMARK [2][-]{subsection.7.4.1}{Latches}{section.7.4}% 74
+\BOOKMARK [2][-]{subsection.7.4.2}{Overcenter mechanisms}{section.7.4}% 75
+\BOOKMARK [1][-]{section.7.5}{Shooters}{chapter.7}% 76
+\BOOKMARK [2][-]{subsection.7.5.1}{Flywheel-based launcher}{section.7.5}% 77
+\BOOKMARK [2][-]{subsection.7.5.2}{Catapults and Punches}{section.7.5}% 78
+\BOOKMARK [2][-]{subsection.7.5.3}{Winch and Release vs. Choo-Choo vs. Cam}{section.7.5}% 79
+\BOOKMARK [1][-]{section.7.6}{Drivetrains}{chapter.7}% 80
+\BOOKMARK [2][-]{subsection.7.6.1}{Tanks}{section.7.6}% 81
+\BOOKMARK [2][-]{subsection.7.6.2}{Omnis}{section.7.6}% 82
+\BOOKMARK [2][-]{subsection.7.6.3}{Transformers}{section.7.6}% 83
+\BOOKMARK [2][-]{subsection.7.6.4}{Swerve Modules}{section.7.6}% 84
+\BOOKMARK [0][-]{chapter.8}{Choosing Gear Ratios}{}% 85
+\BOOKMARK [1][-]{section.8.1}{Developing a Generalized Mechanism Model}{chapter.8}% 86
+\BOOKMARK [2][-]{subsection.8.1.1}{The Simple Flywheel Case}{section.8.1}% 87
+\BOOKMARK [2][-]{subsection.8.1.2}{The Full-Blown Calculus Approach}{section.8.1}% 88
+\BOOKMARK [2][-]{subsection.8.1.3}{A Brute-Force Approach}{section.8.1}% 89
+\BOOKMARK [1][-]{section.8.2}{Using the Simulations: Analysis/Optimization Examples}{chapter.8}% 90
+\BOOKMARK [0][-]{chapter.9}{Going Forth}{}% 91

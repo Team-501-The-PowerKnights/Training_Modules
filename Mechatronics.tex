@@ -174,8 +174,8 @@ Mechatronics is an amalgam of mechanical electronics - systems that contain both
  	\item \href{https://www.makeitfrom.com/}{\color{red}\underline{MakeItFrom}} has a similarly wide range of materials, and includes a comparison tool to help evaluate different options.
  \end{asparaitem}
  
- % TODO: General trends / table
- % TODO: Talk about tempering & hardening, maybe?
+ % IMPROVEMENT: General trends / table
+ % IMPROVEMENT: Talk about tempering & hardening, maybe?
  
  \section{Form Factors}
  
@@ -815,9 +815,40 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{asparaenum}
 	
 	
-	% TODO: \subsection{Panel Fasteners}
+	\subsection{Panel Fasteners}
 	
-	% TODO: An ode to the \subsection{Zipties}
+	Often panels need to attached to protect something, provide a clean cosmetic appearance, or smooth over a gap for aerodynamic purposes, while still providing easy service to the underlying components. There are a few solutions to this which are more robust and positive than Velcro (which may be perfectly acceptable in many cases). These solutions make sure that the fasteners are kept with the panel so there's no scrambling around to find the panel.
+	
+	\begin{figure}[H]
+		\begin{subfigure}[b]{.33\linewidth}
+			\includegraphics[width=0.6\textwidth]{imgs/dzus_tabs.jpeg}
+			\caption{Dzus tabs}
+		\end{subfigure}
+		\begin{subfigure}[b]{.33\linewidth}
+			\includegraphics[width=0.6\textwidth]{imgs/pushpull_panel_screw.png}
+			\caption{Push-pull panel pin}
+		\end{subfigure}
+		\begin{subfigure}[b]{.33\linewidth}
+			\includegraphics[width=0.6\textwidth]{imgs/panel_screw.png}
+			\caption{Captive panel screw}
+		\end{subfigure}
+	\end{figure}
+	
+	\begin{asparaenum}[a)]
+		\item \textit{Quarter turn fasteners}, like \textit{Dzus tabs} are an easily removable, robust solution. Some require a simple tool (flat-blade screwdriver) to remove. Often found in motorsport applications. They are permanently installed into both the frame and panel. They stick out a very small amount (the thickness of the tab).
+		\item \textit{Push-pull panel pins}, like \href{https://www.mcmaster.com/panel-fasteners/screws-and-bolts/push-pull-captive-panel-screws/}{\color{red}\underline{these on McMaster-Carr}} are a light-duty solution, but do not require any special machining to integrate (just drill holes of the right diameters). They also do not require any special tools to remove or attach, and stay captive with the panel they are attached to. However, they do stick out from the panel quite significantly.
+		\item \textit{Captive panel screws} are effetively screws that are kept captive to the panel. Like any screw, they require the appropriate tool to remove.
+	\end{asparaenum}
+	
+	\subsection{The Ziptie}
+	I had to save the best for last: the ziptie. Zipties have a slight reputation as a 'hackish' solution, but this is more a result of people overusing them or overestimating how much they can accomplish. That being said, they can do a lot, from their intended use of holding bundles of wires together, to forming flappy agitating bits on ball feeding mechanisms. Zipties come in different materials (from metal to plastic), although the most common is nylon.
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.9\textwidth]{imgs/ziptie.png}
+		\caption{The ziptie.}
+	\end{figure}
+	
+	These have a head attached to a long strip, which can be fed into the head to form a loop. The head is ratcheting, so when the tail is pulled through, it will not loosen (until it breaks). Multiples can be chained together if you don't have a long enough one. Some special zipties can be reused (they have a release lever).
 
 \chapter{Complex Components}
 
@@ -859,8 +890,6 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 		\item \textit{Splines} are complex geometric shapes with many load-bearing teeth. There are many different standards of splines. These are hard and expensive to produce, but provide the highest torque-transmitting capacity.
 		\item \textit{Hex} and, in general, \textit{polygon} shafts are a good compromise between cost and load-bearing capacity. Hex is extremely common, especially within the FRC ecosystem and agricultural equipment. Hex stock in many different materials can be readily procured to use as shafting material, and a hex broach can be used to produce the hub.
 	\end{asparaenum}
-
-	%TODO: ThunderHex name drop?
 	
 \subsection{Bearings, Bushings}
 
@@ -902,7 +931,6 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 	\end{asparaenum}
 	
 	\begin{figure}[H]
-		\centering
 		\begin{subfigure}[b]{.32\linewidth}
 			\includegraphics[width=0.7\textwidth]{imgs/vbearing.jpeg}
 			\caption{V bearing}
@@ -935,7 +963,53 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 		\item \textit{Ball bearings} can be arranged in clever ways on a shaft or tube in order to produce linear guidance.
 	\end{asparaenum}
 
-%TODO MAYBE: \subsection{Drive Couplings}
+\subsection{Drive Couplings}
+	\begin{figure}[H]	
+		\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/coupling_spider.png}
+			\caption{Spider coupling}
+		\end{subfigure}
+		\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/coupling_flexible.png}
+			\caption{Flexible coupling}
+		\end{subfigure}
+		\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/coupling_oldham.png}
+			\caption{Oldham coupling}
+		\end{subfigure}
+		\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/coupling_gear.png}
+			\caption{Gear coupling}
+		\end{subfigure}
+		
+		\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/coupling_ujoint.png}
+			\caption{Universal joint}
+		\end{subfigure}
+		\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.95\textwidth]{imgs/coupling_tripod.png}
+			\caption{Tripod and tulip}
+		\end{subfigure}
+		\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.85\textwidth]{imgs/coupling_rzeppa.jpeg}
+			\caption{Rzeppa joint}
+		\end{subfigure}
+		\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/coupling_guibo.jpeg}
+			\caption{Guibo, or flex disc}
+		\end{subfigure}
+	\end{figure}
+
+	\begin{asparaenum}[a)]
+		\item \textit{Spider couplings} consist of two hubs with teeth that interface with a rubber spider. The rubber spider enables some misalignment of shafts (but does provide some support), and also dampens out vibrations.
+		\item \textit{Flexible couplings} are single-body couplings with several slots machined into them in order to make them more flexible. This allows for misalignment of shafts depending on the exact design, while maintaining low backlash.
+		\item \textit{Oldham couplings} consist of two hubs with slots that interface with a sliding central portion. They facilitate high shaft misplacement, but do not help with angular or axial misalignment.
+		\item \textit{Gear couplings} consist of two spherical hubs with gear teeth cut into them, and a mating sleeve over the hubs. This allows the hubs to plunge inside of the sleeve in addition to being at odd angles, so allows for extreme misalignment, but is quite costly and does present some wear issues at extreme angles.
+		\item \textit{Universal joints} or \textit{u-joints} have a central cross-shaped coupling that connects the two u-shaped halves. This enables quite extreme angular misalignment- as much as 30 degrees! However, they are not constant-velocity. If one side spins at a constant rate, when there is some angle in the shaft, the other side will speed up and slow down. This can produce vibrations and other undesirable behavior in high-speed applications.
+		\item \textit{Tripods} are a type of \textit{constant-velocity (CV) joint}- the input and output always spin at the same velocity unlike a u-joint. These consist of three bearings fixed to a hub. The bearings contact a tulip and slide back and forth on it. This joint can handle decent angular misalignment (up to 15 degrees) and allows for axial movement, referred to as \textit{plunging}.
+		\item \textit{Rzeppa joints} are another CV joint. These joints cannot plunge, but do allow for severe angular misalignment (up to 45 degrees). Front-wheel drive cars often use shafts where the differential side has a tripod joint and the wheel side has a rzeppa joint. This way the shaft can plunge, and the wheel can be powered and steered.
+		\item \textit{Guibos} or \textit{flex discs} are a joint (can can be considered a CV joint) which use two hubs connected by some flexible (usually rubber) coupling. This helps to absorb vibrations, and handles shaft misalignment.
+	\end{asparaenum}
 
 \section{Nonaxial Power Transmission}
 
@@ -1005,7 +1079,14 @@ There is a \textit{lot} going on here. Let's break it down and focus on a few ke
 	\item A \textit{rack and pinion} can be used to transform rotary motion into linear motion, or vice versa.	
 \end{asparaenum}
 
-%TODO: IDLERS
+\begin{figure}[H]
+	\includegraphics[width=0.6\textwidth]{imgs/gearset_idler.jpeg}
+	\caption{A spur gear set with a idler gear (middle).}
+\end{figure}
+
+\textit{Idlers} can be introduced to a gearset to change the direction of rotation, or to bridge a large gap and transmit power from one place to another.
+
+
 
 \newpage
 
@@ -1117,7 +1198,7 @@ A \textit{belt} is a continuous loop of a flexible material. There are many diff
 
 Belts, like chain, must be properly tensioned. Most of the methods explained for chains also work for belts. Special considerations must be made for the back-bending capacity of the belt in question (every belt has a rated back-bending radius). Pulleys for timing belts usually require at least six (6) teeth of engagement, although this may increase or decrease based on your load case and manufacturer's recommendations. 
 
-My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} has a calculator to determine the length of belt needed to achieve a certain center-to-center distance (or vise versa). 
+My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} has a calculator to determine the length of belt needed to achieve a certain center-to-center distance (or vise versa) for flat belts, polycord, and timing belts.
 
 \newpage
 \section{Engagement and Disengagement}
@@ -1194,8 +1275,136 @@ Sometimes we want to couple and uncouple rotating components on the fly (sometim
 	\item While dogs engage idle components on a shaft axially, \textit{ball shifters} engage them radially. The driving axle in this case has holes drilled into it radially, in which balls can be placed. These balls bottom out against a shifter rod that slides back and forth inside the driving axle. The shifter rod has a bumped portion in it which can push the balls out and into idled components. This method of shifting can be smoother and more compact (especially for picking between more than two states), but is a little more difficult to pull off.
 \end{asparaenum}
 
-\newpage
-\section{Nonlinear/nonrotary motion}
+
+
+
+
+
+
+\chapter{Pneumatics}
+\section{Pneumatic Systems}
+
+Pneumatic systems are one way of turning electrical energy into mechanical energy. They are not particularly efficient, however, they can be easily integrated and scaled. The \href{http://www.team358.org/files/pneumatic/2017pneumatics-manual.pdf}{\color{red}\underline{Official FRC Pneumatics Manual}} is a good resource for actually setting up and walking through the specific components seen in an FRC pneumatics system.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{imgs/pneumatics_overview.jpeg}
+	\caption{Overview of a typical pneumatics system}
+\end{figure}
+
+\begin{asparaenum}[a)]
+	\item A \textit{compressor} takes ambient air and compresses it to a higher pressure. The compressor is turned on and off by some logic system and a \textit{pressure switch} that determines when the system is at maximum pressure.
+	\item The \textit{pressure relief valve} is a safety mechanism that releases excess pressure, preventing explosions as a result of excessive pressure.
+	\item High pressure air is stored in a \textit{tank}.
+	\item A \textit{pressure regulator} steps the high storage pressure to a lower, working pressure. This provides predictable operation as the storage pressure will fluctate with usage.
+	\item A \textit{solenoid valve} allows air to enter and exit various pneumatic devices, typically \textit{pneumatic cylinders}.
+\end{asparaenum}
+
+Flow of air can be restricted (for better or worse) by nearly any portion of the pneumatic system- the tubing, the pressure regulator, the valves, and even pneumatic fittings themselves.
+
+\begin{figure}[H]
+	\includegraphics[width=0.4\textwidth]{imgs/pneumatic_throttle.jpeg}
+	\caption{Throttling valve.}
+\end{figure}
+
+Intentional flow restriction can be provided by throttling valves. These usually only throttle in one direction, so can be installed on both inlets of a pneumatic piston to control its extension and retraction rates. Speaking of fittings and valves, there are a few different types of fittings you'll typically see: threaded, and push-to-connect (although there are many, many more out there).
+
+\begin{figure}[H]
+	\includegraphics[width=0.57\textwidth]{imgs/taper_vs_parallel_threads.jpeg}
+	\qquad
+	\includegraphics[width=0.33\textwidth]{imgs/push_to_connect_fitting.png}
+	\caption{Left: threaded joints. Right: a push-to-connect fitting.}
+\end{figure}
+
+\begin{asparaenum}[a)]
+	\item  \textit{Tapered threads} are threads that increase in diameter. This causes a wedging action as they are inserted. They should be used with pipe sealant or PTFE tape to help form the seal. NPT (National Pipe Thread) and BSPT (British Standard Pipe Tapered) are common standards.
+	\item \textit{Parallel threads} do not seal on their own, so need some sort of seal (usually a0 rubber \textit{o-ring}) to prevent leaks.
+	\item \textit{Tapered threads} can be installed into parallel threads, although it isn't as preferred. The thread standards still need to match (There exist straight threads NPS and BSPP).
+	\item \textit{Push-to-connect} or PTC fittings consist of a gripping ring or collet that grips firm tube as it is inserted into an o-ring. Once inserted, the ring has a ratcheting effect, preventing removal of the hose unless the ring is pressed in. These allow for easy and reliable connection of firm tubing to other components.	
+\end{asparaenum}
+
+\section{Pneumatic Cylinders}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.45\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/piston_doubleact.png}
+		\caption{Double-acting}
+	\end{subfigure}
+	\begin{subfigure}[b]{.45\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/piston_singleact.png}
+		\caption{Single-acting}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/piston_nosemount.jpeg}
+		\caption{Nose-mount}
+	\end{subfigure}
+	\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/piston_universal.png}
+		\caption{Universal-mount}
+	\end{subfigure}
+	\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/piston_tierod.jpeg}
+		\caption{Tie-rod}
+	\end{subfigure}
+	\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/piston_stage.jpeg}
+		\caption{Guided}
+	\end{subfigure}
+	
+	\caption{Varieties of cylinders.}
+\end{figure}
+
+\begin{asparaenum}[a)]
+	\item  \textit{Double-acting} cylinders have two inlet ports. Air can enter and exhaust from either side so that they can push and pull on objects.
+	\item \textit{Single-acting} cylinders have only one inlet port. Air can enter and exhaust from this port. When air is released, a spring cylinders the piston back to its relaxed state. These exist in both spring retract and spring extend varieties. These can reduce circuit complexity and weight when the action required only needs to exert force in one direction.
+	\item \textit{Nose-mount} cylinders are mounted only by their nose, where the rod extends/retracts from. Nose mounting a piston should be done carefully- it is easy to end up putting a bending moment on the rod and bend the rod. The rods of cylinders are generally not designed to withstand loads from the side.
+	\item \textit{Universal-mount} cylinders feature both a nose mount and a rear pivot point. This rear pivot point helps make sure the rod does not get sideloaded and bend.
+	\item \textit{Tie-rod} cylinders have many mounting features, typically tapped holes, making them often easy to integrate. This comes with the same caveat as nose-mount cylinders- care must be taken to not sideload these.
+	\item \textit{Stage} or \textit{guided} cylinders have additional guiding features or linear stages built in that allow them to withstand side loads. This also has the added benefit of preventing the end from twisting, making them useful in many applications, albeit quite expensive.
+\end{asparaenum}
+
+Pneumatic cylinders have four key dimensions.
+\begin{asparaenum}[a)]
+	\item \textit{Stroke} is how much the rod of the cylinder extends from its contracted state.
+	\item \textit{Overall length} is the overall length of the cylinder when it is contracted.
+	\item \textit{Bore} is the inner diameter of the cylinder.
+	\item \textit{Rod diameter} is the diameter of the cylinder rod.
+\end{asparaenum}
+
+These are important considerations that help you determine what sort of cylinder you need. While the lengths may be fairly well-understood, determining the bore is a little more difficult, and based around the force of the cylinder.
+
+\section{Basic Cylinder Analysis}
+
+To size a cylinder's bore, let's examine the physics a little bit. Pressure is simply force spread out over an area. That is to say,
+\begin{align}
+	P = \frac{F}{A} \rightarrow F = P \cdot A
+\end{align}
+
+For a cylinder being extended, the area is simply the cross-sectional area of the cylinder (the bore).
+\begin{align}
+	F_{extend} = P \frac{\pi}{4} d_{bore}^2
+\end{align}
+
+For a cylinder being retracted, the pressure doesn't act on the entire bore, but is obstructed by the rod running through the center. This means the area is the bore minus the area of the rod.
+\begin{align}
+	F_{retract} = P \frac{\pi}{4} [ d_{bore}^2 - d_{rod}^2 ]
+\end{align}
+
+My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} tool contains calculators to analyze pistons- including some analysis for fast-acting pistons (using much more complicated math than these equations).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{Motors}
 
@@ -1204,19 +1413,19 @@ Sometimes we want to couple and uncouple rotating components on the fly (sometim
  
  Motors are one of the fundamental aspects of mechatronic systems - they're where power is transformed from electrical into mechanical. There are many, many different types of motors, and some of these (like servomotors) are actually complex systems built on top of motors.
 
-\section{Brushed and Brushless Motors}
+\section{DC Motors: Brushed and Brushless}
 
 To begin with, let's talk about the most essential types of motors: Brushed DC motors.
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.6\textwidth]{img_Mechatronics_Motors_brushed.png}
 \caption{Brushed motor anatomy}
-% TODO: better image
+% IMPROVEMENT: better image
 \end{figure}
 
 "Brushed" DC motors have two electrical leads on them - power in, and power out. Current is directed first through carbon 'brushes'. These brushes rub against a "commutator", forming a rotary switch. This switch determines which coil(s) on the rotor fire, and which direction they fire in. When a coil turns on, it pushes/pulls against the permanent magnets, which creates a torque, thus turning the rotor. When the rotor turns, the commutator redirects power into a new set of coils. This process repeats, syncing the firing of the coils with the position of the rotor in order to produce torque. 
 
-% commutator image
+% IMPROVEMENT: commutator image
 
 This setup is very cheap, as it does not require any complex electronics. However, such motors are not particularly robust, as these brushes can be a source of friction and wear. Can we eliminate these problematic brushes?
 
@@ -1224,18 +1433,21 @@ Brushless DC motors, as per the name implies, do exactly that. Let's flip things
 \begin{figure}[H]\centering
 \includegraphics[width=0.6\textwidth]{img_Mechatronics_Motors_brushless.png}
 \caption{Brushless motor anatomy}
-% TODO: better image
+% IMPROVEMENT: better image
 \end{figure}
 
-% TODO: talk about inrunners vs outrunners
+An Electronic Speed Controller (ESC) creates three AC waveforms. These waveforms are fed into the motor. The motor can be either a 'delta' or 'wye' configuration. This alternating current creates alternating forces, which rotate the rotor.
 
-% TODO: Delta vs Wye
+\begin{figure}[H]
+	\includegraphics[width=0.45\textwidth]{imgs/delta_wye.png}
+	\caption{Delta and wye winding configurations}
+\end{figure}
 
-An Electronic Speed Controller (ESC) creates three AC waveforms. These waveforms are fed into the motor. The motor can be either a 'delta' or 'wye' configuration (it doesn't change the fundamental behavior). This alternating current creates alternating forces, which rotate the rotor.
+Whether a motor is wired as delta or wye does not impact the fundamental behavior, but does change its performance characteristics.
 
 The hard electrical connections are more robust, but does add some cost and complexity as the ESC is required in order for this motor to work. However, there is one major issue with this setup: what happens when the AC waveform is no longer in sync with the rotation of the rotor? Well, a loss of torque occurs. These motors are not very well-equipped to handle high torques, and so are better equipped for high-RPM, low-load applications, such as propellers on hobby aircraft.
 
-However, we could employ an encoder to read the rotor's position, and feed that information back into the ESC. If the ESC can be programmed to read this signal, it can keep the waveform in sync with the rotor's movement, creating higher torque.
+However, we could employ an encoder to read the rotor's position, and feed that information back into the ESC. If the ESC can be programmed to read this signal, it can keep the waveform in sync with the rotor's movement, creating higher torque. Another strategy to get around this problem involves reading the \textit{back-emf} that the motor windings produce in order to roughly back out information about the motor's position and velocity. This is not as robust a method, however.
 
 Brushless motors have a few other subtle advantages.
 
@@ -1243,14 +1455,12 @@ Since the waveform is electronically controlled, it can be finer tuned to achiev
 
 The coils of brushed motors, being fixed to the rotor, have very little surface area by which to dissipate heat- the heat has to disspiate out primarially through the shaft. Brushless motors' coils are fixed to the case, which has a much higher surface area, and so they can reject heat better, keeping the motor cool and efficient.
 
-% Summary table?
-
 \newpage
-\section{Empirical Motor Behavior}
+\section{Empirical DC Motor Behavior}
 
 Like many complex systems, analysis is good for design, but for application, gathering empirical test data is a much more practical approach. It turns out that the test data (almost) always follows a general shape, with different numbers. This shape is often called a 'motor curve'. Motor manufacturers typically provide some of these specs in some form. \href{http://motors.vex.com}{\color{red}\underline{motors.vex.com}} is a very good site as well for FRC, as they conduct third-party testing using the same procedure on each motor, so the results are an apples-to-apples comparison.
 
-% Example datasheet
+% IMPROVEMENT: Example datasheet
 
 The first portion of the motor model we'll look at is torque, varying with operating speed, while all parameters are held constant (generally, at the maximum rated voltage). The data typically looks like so:
 
@@ -1261,7 +1471,7 @@ The first portion of the motor model we'll look at is torque, varying with opera
   \draw[black] (0,-0.1)--(0,1.2) node[pos=0.5,above,rotate=90,teal]{Torque $T$, N-m};
 
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
-  %TODO: Label Tstall, wfree
+  %IMPROVEMENT: Label Tstall, wfree
 \end{tikzpicture}
 \caption{Torque varies linearly with speed.}
 \end{figure}
@@ -1295,7 +1505,7 @@ Note: $\omega$ must be in rad/s, not RPM.
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
   \draw[red, ultra thick] (0,0) parabola bend (0.5,1.0) (1.0,0.0) ;
   
-  % TODO: Peak power
+  % IMPROVEMENT: Peak power
 \end{tikzpicture}
 \caption{Power forms a parabolic curve with speed.}
 \end{figure}
@@ -1359,22 +1569,72 @@ In summary:
 	\item Maximum efficiency occurs somewhere between 75\% and 90\% of free speed.
 \end{asparaitem}
 
-\chapter{Pneumatics}
+
+\section{Comparing Motor Types}
+
+\begin{table}[H]
+\begin{tabular}{lll}
+                      & \textit{Brushed DC}   & \textit{Brushless DC}                \\
+\textbf{Efficiency}            & Low          & High                        \\
+\textbf{Mechanical Robustness} & Medium       & High                        \\
+\textbf{Electronic Complexity} & Low          & High                        \\
+\textbf{Position Control}      & Not inherent & \begin{tabular}[c]{@{}l@{}}May have\\ integrated encoder\end{tabular} \\
+\textbf{Cost}                  & Low          & Medium                     
+\end{tabular}
+\caption{Motor types at a glance}
+\end{table}
+
+
 \chapter{Design Principles}
-\chapter{Complex Systems}
+\section{Structural}
+\subsection{Load paths (axial not bending)}
+\subsection{Big sections for bending/torque}
+\subsection{Spread the base}
+\section{Error}
+\subsection{Abbe (sine) error}
+\subsection{Tolerance stacking (minimize number of components)}
+\section{Time-Related Failures}
+\subsection{Loosening (see locking mechanisms)}
+\subsection{Fatigue}
+
+
+\chapter{Applied Systems}
 
  {\slshape \scshape ``Complex is better than complicated." - The Zen of Python}
  \\
 
-% Intakes
-% Vibe feeders
-% Elevators
-% Arms
-% Claws
-% Flywheel-based launcher
-% Catapult and punch
-% Drivetrains
-% Swerve Modules
+\section{Intakes}
+\subsection{Beater bars}
+\subsection{Side wheels}
+\subsection{Vectored Intake Wheels}
+
+\section{Indexers}
+\subsection{Conveyors}
+\subsection{Hoppers}
+\subsection{Rotary hoppers}
+
+\section{Lifts}
+\subsection{Elevators - Cascade and Continuous}
+\subsection{Obscure 4 bar}
+\subsection{Parallel 4 bar}
+\subsection{Virtual 4 bars}
+\subsection{6 8 etc. bars}
+\subsection{Double reverse 4 bar}
+
+\section{Latches}
+\subsection{Latches}
+\subsection{Overcenter mechanisms}
+
+\section{Shooters}
+\subsection{Flywheel-based launcher}
+\subsection{Catapults and Punches}
+\subsection{Winch and Release vs. Choo-Choo vs. Cam}
+
+\section{Drivetrains}
+\subsection{Tanks}
+\subsection{Omnis}
+\subsection{Transformers}
+\subsection{Swerve Modules}
 
 
 
@@ -1506,14 +1766,17 @@ Let's examine a simple case of a motor accelerating a flywheel. This is also (es
 	This behavior is generally true, but not exactly true.
 	
 	\subsection{A Brute-Force Approach}
-	We don't need to solve that differential equation using calculus. Or math. We can use basic arithmetic and computers to simulate it! We can do this with a 'numeric differential equation solver', like Newton's Method:
+	We don't need to solve that differential equation using calculus. Or math. We can use basic arithmetic and computers to simulate it! We can do this with a 'numeric differential equation solver', like Euler's Method:
 	\begin{equation}
 		\frac{d}{dt} f(t) \approx \frac{\Delta f(t)}{\Delta t}
 	\end{equation}\begin{equation}
 		f(t_{i+1}) = f(t_{i}) + \frac{d}{dt}[f(t_{i})]\ {\Delta t}
 	\end{equation}
 	
-	%TODO: Graphical representation
+	\begin{figure}[H]
+		\includegraphics[width=0.35\textwidth]{imgs/euler_method.png}
+		\caption{Graphical representation of Euler's method.}
+	\end{figure}
 	
 	Another way of putting it... "the next value is the current value, plus the rate of change times the timestep of the simulation". 	We just need to get an expression for the $\frac{d}{dt}f(t)$ we are interested in, and write some code that will repeat this process with a small enough $\Delta t$. This process is sometimes called 'discretization' since we are taking a continuous field of time $t$ and separating it into little $\Delta t$ chunks.	
 		
@@ -1551,7 +1814,7 @@ We can solve to yield the equations we need to perform Newton's Method:
 	My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} tool contains a Simple Mechanism Calculator you can use to leverage these physics.
 
 	
-\section{Using the Simulations: some analysis/optimization examples}
+\section{Using the Simulations: Analysis/Optimization Examples}
 
 Let's consider an example drivetrain, with 4 NEOs, 8" diameter wheels, weighing about 143 pounds, meeting 30 N of resistive force. We want to go 10 meters. We have two gear ratio options to consider: a 10:1 gearbox, and a 7:1 gearbox. Which should we pick?
 
