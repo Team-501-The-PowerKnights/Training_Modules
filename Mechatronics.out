@@ -24,22 +24,25 @@
 \BOOKMARK [1][-]{section.3.1}{Axial Power Transmission}{chapter.3}% 24
 \BOOKMARK [2][-]{subsection.3.1.1}{Shafts, Hubs, and Interfaces}{section.3.1}% 25
 \BOOKMARK [2][-]{subsection.3.1.2}{Bearings, Bushings}{section.3.1}% 26
-\BOOKMARK [2][-]{subsection.3.1.3}{Drive Couplings}{section.3.1}% 27
-\BOOKMARK [1][-]{section.3.2}{Nonaxial Power Transmission}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.2.1}{Gears}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.2}{Chain, Sprockets}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.3}{Belts, Pulleys}{section.3.2}% 31
-\BOOKMARK [1][-]{section.3.3}{Brakes, Clutches, PTOs}{chapter.3}% 32
-\BOOKMARK [1][-]{section.3.4}{Nonlinear/nonrotary motion}{chapter.3}% 33
-\BOOKMARK [0][-]{chapter.4}{Motors}{}% 34
-\BOOKMARK [1][-]{section.4.1}{Brushed and Brushless Motors}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.2}{Empirical Motor Behavior}{chapter.4}% 36
-\BOOKMARK [0][-]{chapter.5}{Pneumatics}{}% 37
-\BOOKMARK [0][-]{chapter.6}{Complex Systems}{}% 38
-\BOOKMARK [0][-]{chapter.7}{Choosing Gear Ratios}{}% 39
-\BOOKMARK [1][-]{section.7.1}{Developing a Generalized Mechanism Model}{chapter.7}% 40
-\BOOKMARK [2][-]{subsection.7.1.1}{The Simple Flywheel Case}{section.7.1}% 41
-\BOOKMARK [2][-]{subsection.7.1.2}{The Full-Blown Calculus Approach}{section.7.1}% 42
-\BOOKMARK [2][-]{subsection.7.1.3}{A Brute-Force Approach}{section.7.1}% 43
-\BOOKMARK [1][-]{section.7.2}{Using the Simulations: some analysis/optimization examples}{chapter.7}% 44
-\BOOKMARK [0][-]{chapter.8}{Going Forth}{}% 45
+\BOOKMARK [1][-]{section.3.2}{Nonaxial Power Transmission}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.2.1}{Rope and Pulleys}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.2}{Gears}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.3}{Roller Chain and Sprockets}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.4}{Belts, Pulleys}{section.3.2}% 31
+\BOOKMARK [1][-]{section.3.3}{Engagement and Disengagement}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.1}{Ratchets and Brakes}{section.3.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.2}{Clutches and PTOs}{section.3.3}% 34
+\BOOKMARK [1][-]{section.3.4}{Nonlinear/nonrotary motion}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Motors}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Brushed and Brushless Motors}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{Empirical Motor Behavior}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{Pneumatics}{}% 39
+\BOOKMARK [0][-]{chapter.6}{Design Principles}{}% 40
+\BOOKMARK [0][-]{chapter.7}{Complex Systems}{}% 41
+\BOOKMARK [0][-]{chapter.8}{Choosing Gear Ratios}{}% 42
+\BOOKMARK [1][-]{section.8.1}{Developing a Generalized Mechanism Model}{chapter.8}% 43
+\BOOKMARK [2][-]{subsection.8.1.1}{The Simple Flywheel Case}{section.8.1}% 44
+\BOOKMARK [2][-]{subsection.8.1.2}{The Full-Blown Calculus Approach}{section.8.1}% 45
+\BOOKMARK [2][-]{subsection.8.1.3}{A Brute-Force Approach}{section.8.1}% 46
+\BOOKMARK [1][-]{section.8.2}{Using the Simulations: some analysis/optimization examples}{chapter.8}% 47
+\BOOKMARK [0][-]{chapter.9}{Going Forth}{}% 48

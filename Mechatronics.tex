@@ -82,6 +82,8 @@
 
 \newgeometry{top=0.75in,bottom=0.75in,right=0.75in,left=1.25in}
 
+\raggedbottom
+
 \tableofcontents
 
 \chapter{Introduction}
@@ -201,11 +203,28 @@ Mechatronics is an amalgam of mechanical electronics - systems that contain both
  \textit{Extruded} material has been squeezed through a die while molten, and then cooled. Think of a pasta machine. This die can be anywhere from a simple shape like a flat bar, to box tubing, to a very complicated profile with t-slots such as 80/20. Aluminum is the most common material to be extruded. Extrusions have good material properties, and can be held to tight tolerances.
  
   \begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{imgs/extrusions.jpeg}
-	
+	\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/extrusion_angle.jpeg}
+		\caption{Angles}
+	\end{subfigure} \begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/extrusion_boxtube.jpeg}
+		\caption{Box tube}
+	\end{subfigure} \begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/extrusion_roundtube.jpeg}
+		\caption{Pipe and tube}
+	\end{subfigure}	\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/extrusion_8020.jpeg}
+		\caption{T-slot framing}
+	\end{subfigure}	
 	\caption{Various Extrusions}
 \end{figure}
+
+ \begin{asparaenum}[a)]
+ 	\item \textit{Angles} are measured by the leg width and the thickness. Only one dimension for leg lengths may be given if the leg lengths are equal. There may or may not be a radius in the corner, and radiuses on the tips of the legs.
+ 	\item \textit{Box tube} is measured by the outer side lengths and the thickness. It may or may not have an inner or outer radius- if it isn't specified, it probably doesn't.
+ 	\item \textit{Pipe and tube} is measured either by diameter and thickness, or by nominal pipe size and schedule. `1 inch' tube might refer to 1" nominal pipe, which actually has an inner diameter of 1.049", or a piece of tube with a 1" outer diameter. Make sure you know which you're buying.
+ 	\item \textit{T-slot framing}, known often by the brand name \textit{80/20}, has several slots on the outside which t-slot nuts can be slid into. This makes creating configurable/adjustable frames easy, although the framing is quite heavy. 
+ \end{asparaenum}
  
  \subsection{Welded / DOM tubing}
  Steel is not easily extruded, so to make hollow shapes, must be tackled differently. Steel tubes are usually formed by taking sheet and rolling it into a tube, and then welding it together. This process leaves a weld seam which can produce odd material properties, produce dimensional issues (as when making telescoping tubes), or make manufacturing annoying (as the weld is difficult to drill through). 
@@ -502,14 +521,18 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	
 	\subsection{Threads}
 	
-	Threaded fasteners (bolts, nuts, and screws) are a ubiquitous solution. There's an age old question of what is a 'screw' versus a 'bolt' and the answer is merely in application- if it goes into a nut, it's a bolt. Otherwise, it's a screw. So, anything said about screws is true of bolts and vise-versa. Threaded fasteners are denoted by:
+	Threaded fasteners (bolts, nuts, and screws) are a ubiquitous solution. There's an age old question of what is a 'screw' versus a 'bolt' and the answer is merely in application- if it goes into a nut, it's a bolt. Otherwise, it's a screw. So, anything said about screws is true of bolts and vise-versa.
 	
-	% TODO: NICE GRAPHIC
+	\begin{figure}[H]
+		\includegraphics[width=0.7\textwidth]{imgs/thread_nomenclature.png}
+		\caption{Thread nomenclature and dimensions.}
+	\end{figure}
 	
+	Threaded fasteners are denoted by:
 	\begin{asparaitem}
 		\item The major diameter of the thread.
-		\item The thread pitch, or threads-per-inch. Metric bolts are specced by the pitch (a M5x0.8 has 0.8mm between each thread crest). English bolts are specced by the number of threads in an inch (a 1/4"-20 has 20 threads per inch). Even among the same diameter, bolts can have different pitches. For instance, a 1/4"-28 is fine thread, and a 1/4"-20 is coarse thread.
-		\item The thread length - the bolt might be threaded fully, or only partially.
+		\item The thread pitch, or threads-per-inch. Metric bolts are specced by the pitch (a M5x0.8 has 0.8mm between each thread crest). English bolts are specced by the number of thread crests in an inch (a 1/4"-20 has 20 threads per inch, or a pitch of 1/20 = 0.05 inches). Even among the same diameter, bolts can have different pitches. For instance, a 1/4"-28 is fine thread, and a 1/4"-20 is coarse thread.
+		\item The thread length - the bolt might be threaded fully, or only partially. The unthreaded portion is the shoulder and is usually the same diameter as the threads' major diameter.
 		\item The handedness of the thread - most threads are right handed (meaning turning them in a clockwise fashion will make them move away) unless specified as left-handed.
 		\item The grade or class - this refers to the strength of the material. English bolts are specified by "grade", and metric bolts by "class". Bolts (usually) have head markings that reflect the material. Grade and class are only for steel, though- other materials have more exotic standards.
 	\end{asparaitem}
@@ -736,27 +759,27 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\centering
 		\begin{subfigure}[b]{.24\linewidth}
 			\includegraphics[width=0.6\textwidth]{imgs/shaftcollar.png}
-			\caption{Shaft Collar}
+			\caption{Shaft collar}
 		\end{subfigure}
 		\begin{subfigure}[b]{.24\linewidth}
 			\includegraphics[width=0.7\textwidth]{imgs/pushonring.png}
-			\caption{Push-On Ring}
+			\caption{Push-on ring}
 		\end{subfigure}
 		\begin{subfigure}[b]{.24\linewidth}
 			\includegraphics[width=0.7\textwidth]{imgs/eclip.png}
-			\caption{E-Clip}
+			\caption{E-clip}
 		\end{subfigure}
 		\begin{subfigure}[b]{.24\linewidth}
 			\includegraphics[width=0.7\textwidth]{imgs/ext_snapring.png}
-			\caption{External Snap Ring}
+			\caption{External snap ring}
 		\end{subfigure}
 		\begin{subfigure}[b]{.24\linewidth}
 			\includegraphics[width=0.7\textwidth]{imgs/int_snapring.png}
-			\caption{Internal Snap Ring}
+			\caption{Internal snap ring}
 		\end{subfigure}
 		\begin{subfigure}[b]{.24\linewidth}
 			\includegraphics[width=0.7\textwidth]{imgs/spiralring.png}
-			\caption{Spiral Ring}
+			\caption{Spiral ring}
 		\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
 			\includegraphics[width=0.7\textwidth]{imgs/circlip.png}
 			\caption{Circlip}
@@ -803,30 +826,380 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 Getting power transmitted over a shaft in a straight line is not terribly difficult, but still must be done properly.
 
 \subsection{Shafts, Hubs, and Interfaces}
-%\begin{figure}[H]
-%	\includegraphics[width=0.7\textwidth]{imgs/shaft_hub_iface.png}
-%\end{figure}
-%Shafts can be coupled to hubs
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/keyedshaft.png}
+			\caption{Keyway (with set screw)}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/dshaft.png}
+			\caption{D-shaft (with set screw)}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/pinnedshaft.png}
+			\caption{Pinned}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/splineshaft.png}
+			\caption{Spline}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/hexshaft.png}
+			\caption{Hex (or polygon)}
+		\end{subfigure}
+		
+		\caption{Shaft-hub geometries.}
+	\end{figure}
+	
+	\begin{asparaenum}[a)]
+		\item \textit{Keyed} shafts (green) have grooves into which \textit{machine keys} (blue) can be halfway inserted. The hub (orange) has a groove matching the other half of the key. A set screw (yellow) may be included to clamp down on the key to make sure it doesn't move, and to help secure the key from fretting. These connections are quite common in industrial applications, but their load-carrying capacity is low compared to alternatives.
+		\item \textit{D-shafts} have a small flat milled into them. This allows either a hub with a D-shape to mount to it, or a hub that is internally round but has a set screw (yellow) that can tighten down onto the flat. The addition of the flat makes this a much more secure connection than simply tightening the set screw onto a plain round shaft.
+		\item \textit{Cross-pins} or bolts can be used to secure shafts. There many varations on this, but one easy to build, easy to maintain, and fairly reliable method is shown. The hub is tapped on one side, and has a hole with clearance for a bolt head on the other side. The shaft has a clearance hole for the bolt. This makes lining up the shafts easy, and the tightening action will help eliminate wobble.
+		\item \textit{Splines} are complex geometric shapes with many load-bearing teeth. There are many different standards of splines. These are hard and expensive to produce, but provide the highest torque-transmitting capacity.
+		\item \textit{Hex} and, in general, \textit{polygon} shafts are a good compromise between cost and load-bearing capacity. Hex is extremely common, especially within the FRC ecosystem and agricultural equipment. Hex stock in many different materials can be readily procured to use as shafting material, and a hex broach can be used to produce the hub.
+	\end{asparaenum}
+
+	%TODO: ThunderHex name drop?
 	
 \subsection{Bearings, Bushings}
 
-\subsection{Drive Couplings}
+	Bearings and bushings are components which help eliminate wear between moving surfaces.
+
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/ballbearing.png}
+			\caption{Ball bearing}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/needlebearing.png}
+			\caption{Needle	 roller bearing}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/tnrbearing.png}
+			\caption{Tapered needle roller bearing}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/thrustbearing.png}
+			\caption{Thrust bearing}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/plainbushing.png}
+			\caption{Plain bushing}
+		\end{subfigure}
+		
+		\caption{Bearings for rotary motion.}
+	\end{figure}
+	
+	\begin{asparaenum}[a)]
+		\item \textit{Ball bearings} have an inner \textit{race} and an outer race with balls inbetween. These balls are spread out by a cage. They come in many different varieties. They may be \textit{sealed}, with a rubber seal keeping contaminants out, \textit{shielded}, with a shield that keeps shrapnel out, or \textit{open}, without any protection whatsoever. These all come with tradeoffs, as seals and shields trap heat, and necessitate the use of grease rather than oil. This means that in an oily environment (like an engine), open bearings can be much more efficient.
+		Ball bearings are usually \textit{deep groove} (meaning the balls contact primarially radially) but they come in many other varieties that can take side-loads better. Ball bearings may or may not have flanges which help keep them in place.
+		\item \textit{Needle roller bearings} have an outer race, and inside that, a cage that contains multiple rollers. These bearings can ride directly on a shaft if the shaft is sufficiently hard, or a separate inner race can be used. Needle roller bearings are very low-profile and have very high load-bearing capacities as the rollers distribute load over a larger region. However, they do nothing to retain a shaft axially.
+		\item \textit{Tapered needle roller bearings} are heavy-capacity bearings, often used in automotive applications. These mate with a \textit{cup}, much like a needle roller bearing mates with an inner race.
+		\item \textit{Thrust bearings} are high-capacity bearings that take thrust (axial) loads rather than radial. This means they are often found in conjunction with needle roller bearings to make a bearing assembly that is high-capacity, compact, and light.
+		\item \textit{Plain bushings} are high-capacity, low-RPM single-piece parts. They are made from low-friction materials like oil-impregnated bronze, or plastic. These are good because they are cheap, extremely compact, and very tolerant of improper alignment, dimensional accuracy, and shock loads (since there are no small parts to produce indents).
+	\end{asparaenum}
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/vbearing.jpeg}
+			\caption{V bearing}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/8020slider.jpeg}
+			\caption{80/20 slider}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/linearbearing.jpeg}
+			\caption{Linear ball bearing}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/linearbushing.jpeg}
+			\caption{Linear bushing}
+		\end{subfigure}
+		\begin{subfigure}[b]{.32\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/elevatorbearingassy.jpeg}
+			\caption{Elevator bearing assembly}
+		\end{subfigure}
+		
+		\caption{Bearings for linear motion.}
+	\end{figure}
+	
+	\begin{asparaenum}[a)]
+		\item \textit{V-bearings} can be used in pairs to contstrain one part to a rail.
+		\item \textit{Linear sliders} can be used to constrain one part to a rail, cheaply and with a low profile.
+		\item \textit{Recirculating linear ball bearings} are high-precision components which are very efficient, which work in conjunction with precision ground rod. These are quite expensive, however, and sensitive to dust, dirt, and shrapnel.
+		\item \textit{Linear bushings} are high-precision components which serve the same purpose as linear bearings, but are less sensitive to cleanliness, and often cheaper, although they have higher friction.
+		\item \textit{Ball bearings} can be arranged in clever ways on a shaft or tube in order to produce linear guidance.
+	\end{asparaenum}
+
+%TODO MAYBE: \subsection{Drive Couplings}
 
 \section{Nonaxial Power Transmission}
+
+We often need to transmit power from one place to another not in a line. We also often need to change the torque and speed ratios of the power. We've devised a lot of different ways of doing this.
+
+\subsection{Rope and Pulleys}
+
 \subsection{Gears}
 
-\subsection{Chain, Sprockets}
+A \textit{gear} is effectively, a wheel with teeth. These teeth are specially shaped in order to \textit{mesh} and mate nicely with other gears, so you need to be careful that you're using gears that are compatible with each other, and spacing them far enough apart. Let's discuss the terms surrounding this.
 
+\begin{figure}[H]
+	\includegraphics[width=0.8\textwidth]{imgs/gear_nomenclature.png}
+	\caption{Nomenclature of different gear dimensions}
+\end{figure}
+
+There is a \textit{lot} going on here. Let's break it down and focus on a few key portions.
+
+\begin{asparaenum}[a)]
+	\item The \textit{pitch circle} is a rough representation of the gear as a wheel. It lies somewhere inbetween the overall diameter and the diameter of the root of the teeth. You can draw up a sketch containing gears' pitch circles tangent to each other, and then they will fit together.
+	\item A gear's \textit{diametral pitch} (DP) is the number of teeth in a gear divided by the pitch diameter (in inches). So, if a gear has 50 teeth and is a 20DP gear, it would have a pitch circle of diameter $50 \ teeth \ / \ 20 \ DP = 2.5 \ inches$. For two gears to be compatible and mesh, they must have the same diametral pitch, otherwise the teeth would be the wrong sizes.
+	\item A gear's \textit{module} is a gear's pitch diameter (in mm) divided by the number of teeth. This measures the same thing as diametral pitch, just in a different way. If a 5 module gear has 30 teeth, its pitch diameter would be $5 \ mm \times 30 \ teeth = 150 \ mm$.
+	\item A gear's \textit{pressure angle} (PA) refers to the angle of the teeth. This must be the same between two gears for them to be compatible. There is a lot of testing and science behind picking a good angle; higher angles are weaker and produce higher loads on the system, but do make oil flow better. Usually, though, this isn't a big concern- just make sure that you don't mix and match pressure angles.
+\end{asparaenum}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/gear_spur.png}
+		\caption{Spur}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/gear_helical.png}
+		\caption{Helical}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/gear_herringbore.png}
+		\caption{Herringbore}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/gear_bevel.png}
+		\caption{Bevel}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/gear_ring.png}
+		\caption{Ring}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/gear_planetary.png}
+		\caption{Planetary set}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/gear_worm.png}
+		\caption{Worm}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/gear_rack_pinion.png}
+		\caption{Rack \& pinion}
+	\end{subfigure}
+	\caption{Various different gear sets.}
+\end{figure}
+
+\begin{asparaenum}[a)]
+	\item \textit{Spur} gears have straight-cut teeth.
+	\item \textit{Helical} gears have angled-cut teeth. These are harder to produce, but they create smoother power transmission since multiple teeth are in contact, creating a seamless handoff. However, the helical nature produces an axial load in addition to the radial load that gears already produce. 
+	\item \textit{Herringbore} gears are effectively two helical gears back-to-back. This causes the axial loads that helical gears produce to cancel out. This type of gear, though, is obviously even more complicated to produce.
+	\item \textit{Bevel} gears allow power transmission along non-paralell axes. It is important to note that bevel gears are made as sets- you cannot use a 40T gear intended for use with a 20T, with a 60T, as the angles will not mesh up.
+	\item \textit{Ring} gears are simply inverse spur gears.
+	\item \textit{Planetary} gear sets are compact reductions that can be configured in many ways depending on which part of the set is fixed in place. Typically, the ring is held fixed, the central \textit{sun gear} is driven, and a \textit{carrier plate} holding the \textit{planet gears} is the output.
+	\item \textit{Worm} gears are extremely compact reductions, but are often not very efficient. The worm wheel (right) might have one, or several leads. A lower number of leads will reduce the gearset's ability to be backdriven, which can be a desirable characteristic.
+	\item A \textit{rack and pinion} can be used to transform rotary motion into linear motion, or vice versa.	
+\end{asparaenum}
+
+%TODO: IDLERS
+
+\newpage
+
+\subsection{Roller Chain and Sprockets}
+
+\textit{Roller chain} is a robust way of transmitting power from one place to another. 
+
+\begin{figure}[H]
+	\includegraphics[width=0.7\textwidth]{imgs/rollerchain_nomenclature.png}
+	\caption{Roller chain exploded view, and dimensions}
+\end{figure}
+
+Chain is dimensioned by the \textit{roller diameter}, \textit{roller width}, and \textit{chain pitch}, but may have a standard number that details all of these. Here are some common chain sizes:
+
+\begin{table}[H]
+\begin{tabular}{llll}
+Chain \# & Pitch (in) & Roller Width (in) & Roller Diameter (in) \\
+25       & 0.250      & .125              & .130                 \\
+35       & 0.375      & .188              & .200                 \\
+40       & 0.500      & .312              & .312                 \\
+41       & 0.500      & .250              & .306                
+\end{tabular}
+\caption{Common roller chain dimensions.}
+\end{table}
+
+\begin{figure}[H]
+	\includegraphics[width=0.3\textwidth]{imgs/sprocket_profile.png}
+	\caption{A sprocket's profile.}
+\end{figure}
+
+\textit{Sprockets} are shaped specially to mesh with chain- they are not gears. \textit{Hub} sprockets are designed to mount directly to a shaft, while \textit{plate} sprockets mount with a bolt pattern to another mechanism, or a hub.
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/chain_halflink.png}
+		\caption{Half link}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/chain_masterlink.png}
+		\caption{Master link}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/chain_axletens.png}
+		\caption{Axle position adjustment}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/chain_idler.jpeg}
+		\caption{Idler sprocket}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/chain_floater.jpeg}
+		\caption{Floater}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/chain_inlinetens.png}
+		\caption{Inline tensioner}
+	\end{subfigure}
+	
+	\caption{Various different adjustment methods for chain.}
+\end{figure}
+
+Chains need to be properly tensioned to make sure that they do not skip, to reduce the backlash of the system, and still run smoothly. If they are too tight, they can bind. If too lose they can skip teeth and throw the chain off the sprockets.
+
+\begin{asparaenum}[a)]
+	\item \textit{Half links} can be used for coarse adjustment. Normally roller chain is made of connecting links and outer pin links, so adjustments can only be done in lengths of $2 \ \times \ pitch$, but half links allow adjustments of exactly the pitch. However, these half-links are often significantly weaker than 
+	\item \textit{Master links} are quickly removable links of a chain that use a clip to retain the pins rather than being pressed into position. This clip has a nonzero chance of falling off.
+	\item \textit{Moving the distance of the axles} is an easy method of adjusting the tension. This can be accomplished in a multitude of ways. This may not be easy to accomplish, however.
+	\item \textit{Idler} rollers or tensioners may be added to increase the tension. They may be spring-loaded or automatic, or fixed. These (sometimes in multiples) can be used to increase chain wrap.
+	\item \textit{Floating sprockets} can be added to increase the tension. These can be further adjusted by moving the floater away from the center and towards the ends.
+	\item \textit{Inline tensioners} can be used when the chain does not make full revolutions. These are easy to integrate and are very low-profile.
+\end{asparaenum}
+
+Wrap is another important consideration for chain drives. If there is not enough teeth in engagement with the sprocket, the sprocket may wear out or break, or the chain may skip. 
+
+\newpage
 \subsection{Belts, Pulleys}
 
-\section{Brakes, Clutches, PTOs}
+\begin{figure}[H]
+	\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/belt_flat.png}
+		\caption{Flat belt}
+	\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.6\textwidth]{imgs/belt_round.png}
+		\caption{Polycord / round belt}
+	\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.9\textwidth]{imgs/belt_v.png}
+		\caption{V belt}
+	\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
+		\includegraphics[width=0.65\textwidth]{imgs/belt_timing.png}
+		\caption{Timing belt}
+	\end{subfigure}
+	\caption{Various drive belts.}
+\end{figure}
 
+A \textit{belt} is a continuous loop of a flexible material. There are many different types of belts.
+
+\begin{asparaenum}[a)]
+	\item \textit{Flat belts} are belts that are flat in cross-section with no special features. They transmit power solely by friction. A crowned pulley, proper tensioning, and alignment keeps the belt from walking side-to-side excessively.
+	\begin{figure}[H]
+		\includegraphics[width=0.6\textwidth]{imgs/belt_crown_pulley.jpeg}
+		\caption{Crowning on pulleys to keep flat belts on pulleys.}
+	\end{figure}
+	\item \textit{Polycord} or \textit{round belt} is a type of belting that is round in cross-section. They are somewhat forgiving in how much they can be tensioned (as long as ample stretch is provided; around 10\%). They work best with pulleys that have a 60 degree (included angle) V cut into them.
+	\begin{figure}[H]
+	\includegraphics[width=0.5\textwidth]{imgs/belt_crossed.png}
+	\caption{Crossed drive belt}
+\end{figure}
+	Flat belts and polycord can be crossed in order to transmit power while reversing direction, or even transmit power between non-parallel axles.
+	\item \textit{V-belts} have a V cross-section that digs in to pulleys. Multiple vs may be attached side-by-side for increased flexibility. They (usually) have reinforcing fibers that provide strength and stiffness much higher than pure rubber. Sometimes they have teeth in them, but these teeth are not for power transmission, they are simply to allow greater flexibility in the belt while still allowing for a tall, centering profile.
+	\item \textit{Timing belt} has teeth to ensure positive transmission of motion (so it can be used to time multiple components together). It has very high load-carrying potential without need for perfect tensioning. Like v-belts, they have reinforcing fibers that provide strength and stiffness much higher than pure rubber. There are many different series of timing belts (HTD, GT2, MXL, etc.) - they are not compatible with each other. In FRC the most common are HTD and GT2 (which are, actually, semi-compatible). The pitches must also be the same in addition to the series.
+\end{asparaenum}
+
+Belts, like chain, must be properly tensioned. Most of the methods explained for chains also work for belts. Special considerations must be made for the back-bending capacity of the belt in question (every belt has a rated back-bending radius). Pulleys for timing belts usually require at least six (6) teeth of engagement, although this may increase or decrease based on your load case and manufacturer's recommendations. 
+
+My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} has a calculator to determine the length of belt needed to achieve a certain center-to-center distance (or vise versa). 
+
+\newpage
+\section{Engagement and Disengagement}
+
+\subsection{Ratchets and Brakes}
+
+Often we want to make sure something stays in place once we set it to a certain spot (or make it stop in the first place). Ratchets and brakes let us do this.
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.4\linewidth}
+		\includegraphics[width=0.8\textwidth]{imgs/ratchet.jpeg}
+		\caption{Ratchet and pawl}
+	\end{subfigure}\begin{subfigure}[b]{.4\linewidth}
+		\includegraphics[width=0.6\textwidth]{imgs/oneway_clutch.png}
+		\caption{One-way clutch/bearing}
+	\end{subfigure}
+	\caption{Ratcheting mechanisms.}
+\end{figure}
+
+\begin{asparaenum}[a)]
+	\item \textit{Ratchets} have a ratchet wheel with angled teeth on it which push up on a spring-loaded arm, or \textit{pawl}. This arm falls down after each tooth, preventing backwards motion. This arm can be actuated by another mechanism in order to intermittently allow backwards motion.
+	\item \textit{One-way clutches} or \textit{one-way bearings} have rollers that in one direction, roll freely, but when rolled in the other direction, lock up against the outer ring. These are much smoother, efficient, and quieter mechanisms, and can be much smaller. However, they are quite expensive, have relatively lower load-bearing capacity, and cannot be externally disengaged.
+\end{asparaenum}
+
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/brake_disc.png}
+		\caption{Disc brake}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/brake_drum.jpeg}
+		\caption{Drum brake}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/brake_band.jpeg}
+		\caption{Band brake}
+	\end{subfigure}
+	\caption{Braking mechanisms.}
+\end{figure}
+
+\begin{asparaenum}[a)]
+	\item \textit{Disc brakes} have a \textit{disc} which is grabbed by the \textit{brake pads} of a \textit{caliper}. These are simple to find and reasonably simple to integrate into a system.
+	\item \textit{Drum brakes} have \textit{shoes} which are actuated outwards and grab onto the \textit{brake drum}. This action causes the shoes to dig-in, increasing the braking capacity. These are lower-cost en masse, but can be a little difficult to integrate.
+	\item \textit{Band brakes} have a \textit{band} which is pulled down tightly around the \textit{brake drum}. This is a fairly simple mechanism to make and actuate. 
+\end{asparaenum}
+
+
+\subsection{Clutches and PTOs}
+
+Sometimes we want to couple and uncouple rotating components on the fly (sometimes called a \textit{PTO}, or Power-Take-Off).
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/plate_clutch.jpeg}
+		\caption{Multi-plate clutch}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/centrif_clutch.jpeg}
+		\caption{Centrifugal clutch}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.85\textwidth]{imgs/shifting_dog.png}
+		\caption{Dog}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{.60\linewidth}
+		\includegraphics[width=0.95\textwidth]{imgs/ball_shifter.png}
+		\caption{Ball shifter}
+	\end{subfigure}
+	\caption{Clutching and shifting mechanisms}
+\end{figure}
+
+\begin{asparaenum}[a)]
+	\item \textit{Plate clutches} have several friction plates stacked on top of each other in an alternating fashion. Every other one is fixed to one shaft/housing, and the others are fixed to the other shaft/housing. By applying a pressure to compress all of the plates, friction couples the plates together. By using multiple plates, the same frictional force can be applied redundantly to all of the plates, creating mechanical advantage.
+	\item \textit{Centrifugal clutches} have swinging arms mounted to the input housing, which when spun up, swing out and latch onto an outer output housing. This is useful for cheap gas engine powered devices, where the throttle both controls the speed of the engine and its engagement to the rest of the system. At low RPM, the engine is allowed to idle without the load of the rest of the system.
+	\item \textit{Dogs} are teeth that protrude axially. Rings with dogs on them an an internal spline (hex or true spline) can slide on a mating shaft, and into other components (such as gears) on the shaft that also have dog teeth, but are fixed to the shaft with bearings so would otherwise be free-spinning. This allows gears on the shaft to be engaged and disengaged.
+	\item While dogs engage idle components on a shaft axially, \textit{ball shifters} engage them radially. The driving axle in this case has holes drilled into it radially, in which balls can be placed. These balls bottom out against a shifter rod that slides back and forth inside the driving axle. The shifter rod has a bumped portion in it which can push the balls out and into idled components. This method of shifting can be smoother and more compact (especially for picking between more than two states), but is a little more difficult to pull off.
+\end{asparaenum}
+
+\newpage
 \section{Nonlinear/nonrotary motion}
-
 
 \chapter{Motors}
 
- {\slshape \scshape ``Move That Gear Up!"}
+ {\slshape \scshape ``No one [motor] should have all that power" - Kanye West when asked about the Falcon 500 powered by Talon FX}
  \\
  
  Motors are one of the fundamental aspects of mechatronic systems - they're where power is transformed from electrical into mechanical. There are many, many different types of motors, and some of these (like servomotors) are actually complex systems built on top of motors.
@@ -872,6 +1245,7 @@ The coils of brushed motors, being fixed to the rotor, have very little surface 
 
 % Summary table?
 
+\newpage
 \section{Empirical Motor Behavior}
 
 Like many complex systems, analysis is good for design, but for application, gathering empirical test data is a much more practical approach. It turns out that the test data (almost) always follows a general shape, with different numbers. This shape is often called a 'motor curve'. Motor manufacturers typically provide some of these specs in some form. \href{http://motors.vex.com}{\color{red}\underline{motors.vex.com}} is a very good site as well for FRC, as they conduct third-party testing using the same procedure on each motor, so the results are an apples-to-apples comparison.
@@ -986,6 +1360,7 @@ In summary:
 \end{asparaitem}
 
 \chapter{Pneumatics}
+\chapter{Design Principles}
 \chapter{Complex Systems}
 
  {\slshape \scshape ``Complex is better than complicated." - The Zen of Python}
