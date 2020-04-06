@@ -1,0 +1,288 @@
+\documentclass{beamer}% This is the file main.tex
+\usepackage{graphicx}
+\usepackage{outlines}
+\usepackage{gensymb}
+\usepackage{tikz}
+
+
+\usetheme{Boadilla}
+\title{Introduction to Mechatronics Terms}
+\author{Thad Hughes}
+\date{\today}
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Outline}
+\framesubtitle{Where are we going today?}
+
+\begin{itemize}
+	\item Mass
+	\item Acceleration/Velocity
+	\item Force
+	\item Torque
+	\item Work/Power/Energy
+\end{itemize}
+
+\begin{block}{}
+	This may or may not be physics review for you. If it is, skim through, make sure you're comfy. If not, let this be a fun first foray!
+\end{block}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Mass}
+\framesubtitle{Sitting around like a bump on a log}
+
+\begin{outline}
+	\1 Mass ($m$) is "how much stuff is there?"
+	\1 Not weight, but we commonly correlate the two on earth
+		\2 (ignoring buoyancy) things of the same mass weigh the same in a constant gravitational field
+\end{outline}
+
+\begin{examples}
+\begin{outline}
+	\1 Kilograms (kg)
+	\1 Slugs (slug)
+	\1 Pounds-mass (lbm)
+\end{outline}
+\end{examples}
+
+\begin{alertblock}{Warning}
+	Pounds-Mass is not the same unit as Pounds-Force!
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Velocity and Speed}
+\framesubtitle{Gotta go Fast!}
+
+\begin{outline}
+	\1 Speed is how fast something is going- a scalar quantity
+		\2 Scalar quantity
+		\2 "Travelled 60 miles in one hour"
+	\1 Velocity ($v$) is how fast something is going in a direction
+		\2 Vector quantity
+		\2 "Travelling 30 MPH, Northeast"
+\end{outline}
+
+\begin{examples}
+\begin{outline}
+	\1 Miles per Hour (mph)
+	\1 Meters per Second (m/s)
+\end{outline}
+\end{examples}
+
+\begin{alertblock}{Warning}
+	Rotational speed / velocity are different quantities. We'll get there!
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Acceleration}
+\framesubtitle{A thrill better than speed!}
+
+Acceleration ($a$) is how fast your velocity is changing.
+
+If you accelerate from 30 ft/s to 10 ft/s in 4 s, that's
+\begin{equation}
+	a = \frac{\Delta v}{\Delta t} = \frac{10 \ \mbox{ft/s} - 30 \ \mbox{ft/s}}{4 s} = - 5 \frac{ft}{s^2} \nonumber
+\end{equation} 
+\begin{columns}
+\column{0.5\textwidth}
+Note: direction matters! You can have acceleration perpindicular to your movement. In the case of circular motion, this is known as centripetal acceleration. The tread of a spinning tire is always accelerating inwards.
+
+\column{0.5\textwidth}
+\includegraphics[width=1.0\textwidth]{img_Mechatronics_Terminology_centrip.png}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Force}
+\framesubtitle{May the rate of change of momentum for a closed system be with you.}
+
+A long while ago, this fellow Newton had an idea: what if objects interacted with each other via forces?
+Turns out, it's at least a really good model.
+
+\begin{columns}
+\column{0.48\textwidth}
+\begin{block}{Principle 1 - Proportionality}
+	The net force $F$ on an object causes acceleration inversely proportional to its mass.
+	\begin{equation}
+		\sum \vec{F} = m \vec{a}
+	\end{equation}
+\end{block}
+
+\column{0.48\textwidth}
+\begin{block}{Principle 2 - Reciprocity}
+	When a force is imposed upon object A by B, B sees a force of equal magnitude and opposite direction.
+	\begin{equation}
+		[\sum \vec{F}]_{universe} = 0
+	\end{equation}
+\end{block}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Rotational Terms}
+\framesubtitle{Let's put a twist on things!}
+
+We design a lot of things that spin, so we obviously need to describe them. There are three main units for rotation:
+\begin{equation}
+	1 \mbox{ Revolution (rev)} = 2 \pi \mbox{ Radian (rad)} = 360 \mbox{ Degree (\degree)} \nonumber
+\end{equation}
+
+
+We can convert the surface AKA tangential position $x$ of a wheel of radius $r$ quite simply, but note that the angular position $\theta$ must be in radians.
+
+\begin{equation} 
+	x = r \times \theta
+\end{equation}
+
+\begin{block}{Note}
+	All points in a rigid body actually have the same rotational velocity, but may have different linear velocities.
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Torques / Moments}
+\begin{columns}
+\column{0.35\textwidth}
+A torque, often called a "Moment" ($\tau$, $T$ or $M$) is quite simply put, a force acting on a lever arm.
+
+\begin{equation}
+	M = r \ F \ sin(\theta)
+\end{equation}
+
+or
+
+\begin{equation}
+	M = r_p \ F
+\end{equation}
+
+\column{0.55\textwidth}
+\begin{tikzpicture}[x={(0.9in,0.1in)},y={(-0.1,0.9in)}]
+
+%\draw[blue, ultra thick] (0,0)--(0,2)--(2,2)--(2,0)--cycle;
+\draw[ultra thick] (0,0) circle (0.1);
+\fill[black] (0,0.1)--(0,0)--(0.1,0) arc[start angle=0, end angle=90, radius=0.1]--cycle;
+\fill[black] (0,-0.1)--(0,0)--(-0.1,0) arc[start angle=180, end angle=270, radius=0.1]--cycle;
+
+\draw[ultra thick, green] 
+(0,0.4)--
+(1,0.25) arc[start angle=90, end angle=-90, radius=0.25]--
+(1,-0.25)--
+(0,-0.4) arc[start angle=270, end angle=90, radius=0.4]--cycle;
+
+\draw[thin, gray] (-0.5,0)--(2.0,0);
+
+\draw[ultra thick, blue, ->] (1,0) -- (1.75,0.75) node[right]{$F$};
+\draw[ultra thick, orange, <->] (0,0) -- (1,0) node[pos=0.5,below]{$r$};
+
+\draw[ultra thick, red, <->] (1.0,1.0) -- (1.5,0.5) node[pos=0.5,above]{$r_p$};
+\draw[thin, black] (-0.35, -0.35)--(1.3,1.3);
+
+\draw[thick, black, ->] (1.75,0) arc[start angle=0, end angle=45, radius=0.75] node[pos=0.5, right] {$\theta$};
+
+\draw[ultra thick, purple, ->] (0,0.3) arc[start angle=90, end angle=200, radius=0.3] node[pos=0.5, left] {$M\mbox{     }$};
+
+\end{tikzpicture}
+\end{columns}
+
+\begin{example}
+\begin{itemize}
+\item Newton-Meters ($N\mbox{-}m$)
+\item Foot-Pounds ($ft\mbox{-}lbf$)
+\item Ounce-Inches ($oz\mbox{-}in$)
+\end{itemize}
+\end{example}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Moments of Inertia}
+
+Moments produce angular accleration $\alpha$ inversely proportional to the 'moment of inertia' $I$ (sometimes abbreviated MOI)
+
+\begin{equation}
+	M_{CG} = I_{CG} \alpha
+\end{equation}
+
+The moment of inertia can be taken about anywhere, but taking it about the center of gravity (CG) makes things easier. The more mass, and the more it is spread out from the center, the higher the MOI.
+
+\begin{example}
+Moment of inertia of a flywheel
+\begin{equation}
+	I_{CG, solid disk} = \frac{m r^2}{2}
+\end{equation}
+\end{example}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Energy}
+	
+	There's this little idea called 'energy' ($E$) that we came up with, and it too, seems to hold up as a useful model. There are a lot of different types of energy:
+	\begin{outline}
+		\1 Kinetic energy
+		\1 Gravitational potential energy
+		\1 Strain potential energy
+		\1 Sound energy
+		\1 Thermal energy
+		\1 Chemical energy
+		\1 Many more...
+	\end{outline}
+	
+	Units may be Joules ($J$), British Thermal Units ($BTU$).
+	The dimensions are the same as $force \cdot length$.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Work}
+	
+	You can transfer energy from one thing to another by Work. Work is exerting a force $F$ over a distance $l$.
+	
+	\begin{equation}
+		\Delta E = W = F \cdot l
+	\end{equation}
+	
+	Work can also be transferred by rotational motion.
+	
+	\begin{equation}
+		\Delta E = W = M \cdot \theta
+	\end{equation}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Power}
+	\framesubtitle{More power, more better}
+	
+	The rate at which work is done is power ($P$). Untis can be Watts ($W$), Horsepower ($HP$) amongst others. For example,
+	
+	\begin{equation}
+		1 \ \mbox{Watt} = \frac{1 \ \mbox{Joule}}{1 \ \mbox{second}} \nonumber
+	\end{equation}
+	
+	Power can be calculating by looking at the force and velocity.
+	
+	\begin{equation}
+		\frac{d}{dt} E = P = F \cdot v
+	\end{equation}
+	
+	\begin{equation}
+		\frac{d}{dt} E = P = M \cdot \omega
+	\end{equation}
+\end{frame}
+
+\end{document}
