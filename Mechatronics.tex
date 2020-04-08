@@ -1,5 +1,5 @@
 \documentclass[10pt,letterpaper]{book}
-
+\usepackage[dvipsnames]{xcolor}
 \usepackage{outlines}
 \usepackage{amsmath}
 \usepackage{tikz}
@@ -53,7 +53,7 @@
 \newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
 % To improve spacing on titlepages
 \newcommand{\nbtitlestretch}{\spaceskip0.6em}
-\pagestyle{empty}
+\pagestyle{plain}
 \begin{center}
   \bfseries
   \nbvspace[1]
@@ -90,13 +90,13 @@
  
  {\slshape \scshape ``You have to be in a state of play to design. If you're not in a state of play, you can't build anything." - Paula Scher}
 
-Mechatronics is an amalgam of mechanical electronics - systems that contain both mechanical and electrical components. It's a field that spans nearly every industry, so any one source (even this one) will not be complete with all the information you need. But this may be a good jumping off point. I'm writing this generally towards those in a competitive robotics environment, so will use many examples from there, but you soon find that those same technologies that shoot foam balls into goals can be used anywhere from assembly lines to emergency medical equipment.
+Mechatronics is an amalgam of mechanical electronics: systems that contain both mechanical and electrical components. It's a field that spans nearly every industry, so any one source (even this one) will not be complete with all the information you need. But this may be a good jumping off point. I'm writing this generally towards those in a competitive robotics environment, so will use many examples from there, but you soon find that those same technologies that shoot foam balls into goals can be used anywhere from assembly lines to emergency medical equipment.
 
-This document is not intended to be all-encompassing. It is no bible. In reality, it's just an outline; a map if you will. We live in an era where information is readily available on net demand. This document really doesn't contain anything new. Its goal is to show you a plethora of things that exist in a breadth-first fashion before you dive down a particular rabbit hole. There are a few places where I'll dive deeper because I feel it's relevant to show you some of the nuances you should be aware of. By and large, my goal isn't to drill home every single thing- because I'll fail at that. Someone will come up with something new, or improve something discussed here, and this information will become outdated. I'll try to keep it up to date... but I will definitely fail!
+This document is not intended to be all-encompassing. In reality, it's just an outline; a map. We live in an era where information is readily available on net demand. This document really doesn't contain anything new. Its goal is to show you a plethora of things that exist in a breadth-first fashion before you dive down a particular rabbit hole. There are a few places where I'll dive deeper because I feel it's relevant to show you some of the nuances you should be aware of. By and large, my goal isn't to drill home every single thing because I'll fail at that and fail you in the process. Someone will come up with something new, or improve something discussed here, and this information will become outdated. I'll try to keep it up to date... but I will definitely fail!
 
 The human mind is a weird thing. It's better at prompted recall than unprompted recall. You may not always be thinking about the many different types of bolts, but if you've seen that before, and you come across a problem that needs that information, you'll find you might be able to figure it out- or at least know where to start looking.
 
-I hope to keep this terse. We're going to go fast and I'm going to leave some things to your imagination or research to figure out exactly how they work. Mechatronics is what I love, so I don't want to spoil it by chewing your steak for you. With that... let's begin.
+I hope to keep this terse. We're going to go fast and I'm going to leave some things to your imagination or research to figure out exactly how they work. I love mechatronics and hope you do too, so I don't want to spoil it by chewing your steak for you. With that... let's begin.
 
 \chapter{Construction}
  
@@ -120,37 +120,74 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  
  You'll notice that stiffness, strength, hardness, and toughness are all different characteristics. They are distinctly different properties in engineering.
  
+ \subsection{Stress-Strain Properties}
+ 
  To show this, we'll first consider a \textit{stress-strain curve}. This curve is created by pulling on a specimen of material like shown, interpreting the force and deflection data into \textit{stress} $\sigma$ (force per cross-sectional area) and \textit{strain} $\epsilon$ (percent deflection).
  
- \begin{figure}[H] \centering
- 	\begin{tikzpicture}[x=1.0in, y=1.0in]
- 		\draw[ ] (-0.1,0) -- (0.1,0) -- (0.1, 1) -- (-0.1, 1) -- cycle;
- 		\draw[->] (0,-0.1)--(0,-0.5) node[pos=0.5, right]{$F$};
- 		\draw[->] (0,1.1)--(0,1.5) node[pos=0.5, right]{$F$};
+ \begin{figure}[H]
+ \begin{subfigure}[]{.4\linewidth}
+ 	\begin{tikzpicture}[x=1.5in, y=1.0in]
+ 	\filldraw[fill=Cerulean] (0,0) ellipse (0.1 and 0.05);
+ 	\fill[Cerulean] (-0.1,0)--(-0.1,1)--(0.1,1)--(0.1,0)--cycle;
+ 	 	\filldraw[fill=SkyBlue] (0,1) ellipse (0.1 and 0.05);
+ 	
+ 		\draw[ ] (-0.1,0) -- (-0.1, 1);
+ 		\draw[ ] (0.1,0) -- (0.1, 1);
+ 		\draw[->] (0,-0.1)--(0,-0.3) node[pos=0.5, right]{$F$};
+ 		\draw[->] (0,1.1)--(0,1.3) node[pos=0.5, right]{$F$};
+ 		
+ 		\draw[->] (-0.25,0.5)--(-0.12,0.5) node[pos=0, left]{$A$};
+ 		\draw[->] (0.19,0.5)--(0.12,0.5);
+ 		
+ 		\draw[<->] (0.5,0)--(0.5,1) node[pos=0.5, right]{$L$};
+ 		\draw[] (0.12,0)--(0.55,0); \draw[] (0.12,1)--(0.55,1);
  	\end{tikzpicture}
- 	\qquad
- 	\begin{tikzpicture}[x=1.0in, y=1.0in]
- 		\draw[->] (0,0)--(3,0) node[pos=0.5, below]{$\epsilon$};
- 		\draw[->] (0,0)--(0,2) node[pos=0.5, left]{$\sigma$};
- 		\draw[blue, thick] (0,0)--(1,1);
-  		\draw[gray] (1,1)--(1.8,1.8);
- 		\draw[red, thick]  (1,1) .. controls (1.5,1.5) and (2.0,1.5) .. (2.5,1.25);
- 		\draw[purple, ->] (2,1.4)--(0.6,0);
+ \end{subfigure}\begin{subfigure}[]{.4\linewidth}
+	\vspace*{\fill}
+	\Large
+  	\begin{align}
+ 		\sigma &= \frac{F}{A} \\
+ 		 \nonumber \\
+ 		\epsilon &= \frac{\Delta L}{L}
+ 	\end{align}
+ 	\vspace*{\fill}
+ 	\end{subfigure}
+ \caption{Stress-strain test, and the relationship between the variables.}
+\end{figure}
+ 
+ \begin{figure}[H]
+ 	\begin{tikzpicture}[x=1.7in, y=1.4in]
+		\fill[lightgray]  (0,0) -- (1,1) .. controls (1.5,1.5) and (2.0,1.5) .. (2.5,1.25) -- (2.5,0) -- cycle;	
+ 	
+ 		\draw[->] (0,0)--(3,0) node[pos=0.95, above]{\large Strain $\epsilon$};
+ 		\draw[->] (0,0)--(0,2) node[pos=0.95, right]{\large Stress $\sigma$};
+ 		\draw[ForestGreen, ultra thick] (0,0)--(1,1);
+ 		\draw[gray, dashed] (0,1)--(1,1) node[pos=0.4, above, black]{(b) $S_{y}$};
+ 		\draw[gray, dashed] (0,1.42)--(1.8,1.42) node[pos=0.4, above, black]{(c) $S_{UTS}$};
+ 		\draw[gray] (0.3,0.3)--(0.5,0.3)--(0.5,0.5) node[pos=0.4, right, black]{(a) $E$};
+  		%\draw[gray] (1,1)--(1.8,1.8);
+ 		\draw[Red, ultra thick]  (1,1) .. controls (1.5,1.5) and (2.0,1.5) .. (2.5,1.25);
+ 		\draw[RoyalBlue, ultra thick, ->] (2,1.4)--(0.6,0);
+ 		\draw[gray, dashed] (2.5,1.25)--(2.5,0) node[pos=1, below, black]{(d)};
+ 		
+ 		\node[black] at (2,0.6){(e)};
  	\end{tikzpicture}
+ 	\caption{Exemplary stress-strain behavior.}
  \end{figure}
  
- The portion of the curve that is linear (highlighted in blue) is referred to as the 'elastic' portion. When the material is operating in this region, it will always snap back (think of a spring). If, however, we dip into the red portion of the curve (called the 'plastic' portion), when we release the material, it will have permanently deformed (following the purple arrow).
+ The portion of the curve that is linear (highlighted in green) is referred to as the \textit{elastic} portion. When the material is operating in this region, it will always snap back, like a rubber band. If, however, we dip into the \textit{plastic} portion of the curve (highlighted in red), when we release the material, it will have permanently deformed (following the blue arrow as it is relaxed).
  
  The key aspects of the curve can be boiled down into a few properties.
  
  \begin{asparaenum}[a)]
  	\item \textit{Young's Modulus}, or the \textit{Elastic Modulus} ($E$) is the slope of the elastic portion of the curve. A higher $E$ denotes a stiffer material.
- 	\item \textit{Yield strength} ($\sigma_{y}$) is the highest stress seen in the elastic portion of the curve.
- 	\item \textit{Ultimate tensile strength} ($\sigma_{UTS}$) is the highest stress the material can see.
- 	\item \textit{Percent elongation at break} is the highest strain seen by the material before it breaks. A higher elongation means the material is more 'ductile', while a smaller one means the material is more 'brittle'.
- 	\item \textit{Modulus of toughness} is a measure of how much energy the material can absorb. It can be visualized as the area under the curve (think about a shock absorber- it deforms a lot while resisting the load, so can absorb a lot of energy). Materials that are brittle have low toughness.
+ 	\item \textit{Yield strength} ($S_{y}$) is the highest stress seen in the elastic portion of the curve.
+ 	\item \textit{Ultimate tensile strength} ($S_{UTS}$) is the highest stress the material can see.
+ 	\item \textit{Percent elongation at break} is the highest strain seen by the material before it breaks. A higher elongation means the material is more \textit{ductile}, while a smaller one means the material is more \textit{brittle}.
+ 	\item \textit{Modulus of toughness} is a measure of how much \textit{energy} the material can absorb. It can be visualized as the area under the curve (think about a shock absorber- it deforms a lot while resisting the load, so can absorb a lot of energy). Materials that are brittle have low toughness.
  \end{asparaenum}
  
+\subsection{Hardness}
 
  \textit{Hardness} is a property of a material's surface- how much it will permanently indent or scratch. It is not measured by this graph (although it does have some correlations), and is a relative, rather than absolute measurement. There are many different scales. You may have heard of the Mohs scale, introduced to determine the hardness of different minerals based on which can scratch each other. However, most engineering measures will work by indenting an object and measuring how much of an indentation was left behind, which allows for a higher degree of quantization. There are many different scales that are better suited to different materials.
  
@@ -161,18 +198,26 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  	\caption{Shore Hardness scales, with some examples}
  \end{figure}
  
- \textit{Shore} AKA \textit{Durometer} scales are suited to measuring elastomers (i.e. rubber). Again it is important to note there are different scales. 90A is much softer than 90D durometer, although they look like they are the same on the above chart, material rated as 95A may be quite different than 45D.
+ \textit{Shore} or \textit{durometer} scales are suited to measuring elastomers (i.e. rubber). Again it is important to note there are different scales. 90A is much softer than 90D durometer. Material rated as 95A may be quite different than 45D, although they look like they are the same on the above chart.
  
  Elastomers are much harder to measure in other ways, and are often given ratings only by their durometer. While this is technically only a measure of hardness, it correlates reasonably well to other material properties like overall stiffness (harder being stiffer) and grip (softer being more interactive, or frictional).
  
- The thermal properties of a material are important. There are three main ones to keep in mind if you are dealing with heat:
+ \subsection{Thermal Properties}
+ 
+ The thermal properties of a material may also be important to your application. There are three main ones to keep in mind if you are dealing with heat:
  \begin{asparaitem}
  	\item \textit{Thermal conductivity} is how well the material transfers heat. If you're designing a heat sink, you want a high thermal conductivity.
  	\item The \textit{melting point} or \textit{glass transition temperature} are temperatures at which the material undergoes fundamental phase changes. You obviously need to make sure your part doesn't outright melt, but you should also have a bit of margin, as the phenomenon called \textit{creep} can cause parts that are at elevated temperatures to deform over time, even though below melting point.
  	\item The \textit{cefficient of thermal expansion} measures how much material expands as it heats up. If you're working with tight-tolerance equipment (or extreme temperatures), you may need to keep an eye on this.
  \end{asparaitem}
   
+\subsection{Other Properties} 
+ 
  Frictional characteristics and chemical interactions are very complex, and if you care about these, will require some research beyond mere datasheets.
+ 
+ Density is another property to be mindful of. Most properties given do not take this into account, and this is why many engineers may speak of a \textit{strength-to-weight ratio}. This is simply dividing the material property in question by the density of the material. This is a sensible comparison in many cases where weight is a concern. If we wanted to create a component to bear a certain load, we could use a material that was very strong but heavy, or use more of a lighter, but weaker material.
+ 
+ \subsection{Material Comparisons}
  
  To actually get data to make material comparisons,
  \begin{asparaitem}
@@ -180,9 +225,42 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  	\item \href{https://www.makeitfrom.com/}{\color{red}\underline{MakeItFrom}} has a similarly wide range of materials, and includes a comparison tool to help evaluate different options.
  \end{asparaitem}
  
- % IMPROVEMENT: General trends / table
- % IMPROVEMENT: Talk about tempering & hardening, maybe?
+ Here's some commonly used materials, at a glance on a few of the properties we discussed.
  
+ \begin{table}[H]
+\begin{tabular}{rrrrrrr}
+\multicolumn{1}{c}{\textbf{Material}}                                                   & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Density\\ {[}g/cm\textasciicircum{}3{]}\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Elastic\\ Mod. {[}GPa{]}\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Yield\\ {[}MPa{]}\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}UTS\\ {[}MPa{]}\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}\% Elong.\\ at Break\end{tabular}}} & \multicolumn{1}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Max Mech.\\ Temp {[}C{]}\end{tabular}}} \\ \hline
+\textit{Aluminum 6061-T6}                                                               & 2.7                                                                                                          & 69                                                                                            & 270                                                                                    & 310                                                                                  & 10                                                                                        & 170                                                                                           \\
+\textit{Aluminum 7075-T6}                                                               & 3.0                                                                                                          & 70                                                                                            & 480                                                                                    & 560                                                                                  & 8                                                                                       & 200                                                                                           \\
+\textit{Steel, 4130-N}                                                                  & 7.8                                                                                                          & 190                                                                                           & 440                                                                                    & 670                                                                                  & 26                                                                                        & 420                                                                                           \\
+\textit{Steel, 4340-N}                                                                  & 7.8                                                                                                          & 190                                                                                           & 860                                                                                    & 1280                                                                                 & 12                                                                                        & 420                                                                                           \\
+\textit{Steel, 1020, Hot Rolled}                                                        & 7.9                                                                                                          & 190                                                                                           & 240                                                                                    & 420                                                                                  & 28                                                                                        & 420                                                                                           \\
+\textit{\begin{tabular}[c]{@{}r@{}}Stainless Steel,\\ 304, Annealed\end{tabular}}       & 7.8                                                                                                          & 200                                                                                           & 230                                                                                    & 580                                                                                  & 43                                                                                        & 710                                                                                           \\
+\textit{\begin{tabular}[c]{@{}r@{}}Titanium Grade 23\\ (Transformed-Beta)\end{tabular}} & 4.4                                                                                                          & 110                                                                                           & 870                                                                                    & 930                                                                                  & 6.7                                                                                       & 340                                                                                           \\ \hline
+\textit{Polycarbonate (PC)}                                                             & 1.2                                                                                                          & 2.3                                                                                           & 62                                                                                     & 66                                                                                   & 110                                                                                       & 120                                                                                           \\
+\textit{Acetal (Copolymer)}                                                               & 1.4                                                                                                          & 2.8                                                                                           & *                                                                                      & 61                                                                                   & 65                                                                                        & 100                                                                                           \\
+\textit{ABS}                                                                            & 1.1                                                                                                          & 2.0                                                                                           & *                                                                                      & 41                                                                                   & 20                                                                                        & 80                                                                                            \\
+\textit{PETG}                                                                           & 1.3                                                                                                          & 2.2                                                                                           & *                                                                                      & 53                                                                                   & **                                                                                        & 70                                                                                            \\
+\textit{Nylon 11}                                                                       & 1.0                                                                                                          & 1.3                                                                                           & *                                                                                      & 51                                                                                   & 130                                                                                       & 180                                                                                           \\
+\textit{\begin{tabular}[c]{@{}r@{}}Polypropylene (PP)\\ (Homopolymer)\end{tabular}}      & 0.9                                                                                                          & 1.4                                                                                           & *                                                                                      & 36                                                                                   & 80                                                                                        & 120                                                                                           \\
+\textit{PLA}                                                                            & 1.3                                                                                                          & 3.5                                                                                           & *                                                                                      & 50                                                                                   & 6                                                                                         & 50                                                                                            \\
+\textit{Acrylic}                                                                        & 1.2                                                                                                          & 3.2                                                                                           & *                                                                                      & 71                                                                                   & 4                                                                                           & 100                                                                                          
+\end{tabular}
+* Plastics have odd stress-strain curves, so often don't rate the yield point. \\
+** Extremely ductile; no data available
+\caption{Common materials and their properties. Values obtained from MakeItFrom.com.}
+\end{table}
+
+A few things that are interesting to chew on:
+\begin{asparaenum}[a)]
+	\item Aluminum can be as strong as steel, not even considering the difference in density. The grade of steel and aluminum you're using is very important when comparing the two.
+	\item Titanium is, indeed, a truly incredible material. It is not quite as light as aluminum, but it is as strong as many high grades of steel!
+	\item Among most metals, the \textit{stiffness-to-weight ratio} is about the same. If you want something to be stiffer without adding weight, (only) changing the type of metal won't help you out much.
+	\item Plastics are much weaker, but they can be quite useful due to their low density- simply use more.
+	\item Not all plastic is created equal.
+	\item Polycarbonate and Nylon are particularly fantastic materials for their mechanical properties, especially in impact resistance. Their elongation at break is \textbf{more than 100\%} and that is not a typo!
+\end{asparaenum}
+
  \section{Form Factors}
  
  Just because the material you want exists, doesn't mean it's widely available in the shape you want. There are a lot of different shapes that a material may be available in, and there are tradeoffs with each different form factor.
@@ -205,7 +283,7 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
 \end{figure} 
  \textit{Billet} material has been poured in a more tightly controlled environment. The resulting material is free of voids and has superior mechanical properties. You can obtain billet plate, bars, or round stock of nearly any material. This material can be held to reasonable tolerances (and by its simple-shaped nature, can be brought into exact dimension by machining quite easily).
  
- \subsection{Extrusions}
+ \subsection{Extrusions} \label{section:extrusions}
  \textit{Extruded} material has been squeezed through a die while molten, and then cooled. Think of a pasta machine. This die can be anywhere from a simple shape like a flat bar, to box tubing, to a very complicated profile with t-slots such as 80/20. Aluminum is the most common material to be extruded. Extrusions have good material properties, and can be held to tight tolerances.
  
   \begin{figure}[H]
@@ -467,6 +545,25 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  		\item In \textit{brazing}, heat is generated (either by a TIG torch, or a flame torch) and directed at the work, but not enough to melt the work. Brazing material, which will melt at this surface temperature, is fed onto the work, melting and flowing across it. As it solidifies, it adheres to the base metal.
  		
  	\end{asparaenum}
+ 	
+ 	\subsection{3D Printing}
+ 	
+ 	\textit{3D printing} or \textit{additive manufacturing} is a varied class of technologies that add material selectively and in a discretely controlled fashion. This allows the production of extremely complex geometries with little to no tooling costs, but is a pioneering field and there are many limitations.
+ 	
+ 	\begin{figure}[H]
+		\includegraphics[width=0.9\textwidth]{imgs/3dp_fdm_sla_sls.jpeg}
+		\caption{Major 3D printing technologies.}
+	\end{figure}
+ 	
+ 	\begin{asparaenum}[a)]
+ 		\item \textit{Fused deposition modeling (FDM)} uses a continuous piece of plastic filament which is heated in the \textit{hot end} before being squeezed through an \textit{extruder} to lay down thin layers of material which melt into previous layers. This method is quite reliable and cheap, but does result in models with visible layers, and generally results in models where the strength can vary with the orientation of the layers.
+ 		Because it works by melting existing material, it is limited to materials that can be melted and cooled into final form such as thermoplastics. Common materials are PLA, ABS, and to an increasing extent, PETG, Polycarbonate, and Nylon. FDM is furthermore is limited in that it cannot print steep overhangs without wasteful or surface-quality changing \textit{support material}. Porosity and sealing can also be a concern. On the upside, though, it can create hollow parts, enabling high strength-to-weight ratios as material can be placed only where it is needed.
+ 		\textit{Continuous-strand reinforcement} is a new addition to this technology. As the name implies, this is the inclusion of a fibrous high-strength material such as fiberglass or carbon fiber into the filament, so that when it is extruded, the part has many strands of this reinforcing material. Markforged makes printers capable of this.
+ 		\item \textit{Stereolithography (SLA)} uses a laser to quickly cure liquid \textit{resin} into hard material. The print bed moves away from the laser as additional layers are added. This method is inherently limited to materials that can be made from resins, ruling out many materials. It is a quite time-consuming process but can result in parts with good sealing properties and excellent surface finish. Hollow parts cannot be created as the resin would simply be trapped inside cavities. Formlabs is a prominent manufacturer of such printers.
+ 		\item \textit{Selective laser sintering (SLS)} uses a laser to selectively melt and \textit{sinter} powdered material together. After one layer is sintered, another thin layer of powder is put over top, and the process repeats. This process can achieve excellent mechanical properties which are not dependent on layer orientation, as well as stellar dimensional accuracy. However, it results in parts with a very coarse surface texture. Hollow parts cannot be created as the powder would simply be trapped inside cavities. The continuous addition of powder (of which the unsintered material can be reused) allows for the production of parts with infinitely sharp overhangs since the previous layer acts as support material.
+ 	\end{asparaenum}
+ 	
+ 	Metal 3D printing technologies are also in the works, most being a modification of the SLS method with metal powders.
  		
 	\section{Fasteners}
 	So you've made some parts, now it's time to put them together. How are you going to do it? CAD constraints won't help you now! You need real fasteners!
@@ -591,24 +688,61 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	There are a lot of different head types that can be put on these bolts as well. 
 	
 	\begin{figure}[H]
-		\centering
+	
 		\begin{subfigure}[b]{.15\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/head_ext_hex.png}
+			\begin{tikzpicture}[x=0.35in, y=0.35in]
+				\begin{scope}[yshift=0]
+        \fill[black] (0:1.14) \foreach \x in {60,120,...,359} {
+                -- (\x:1.14)
+            }-- cycle (90:1.14);
+            \end{scope}
+			\end{tikzpicture}
 			\caption{External hex}
 		\end{subfigure}\begin{subfigure}[b]{.15\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/head_hex.png}
+			\begin{tikzpicture}[x=0.35in, y=0.35in]
+				\begin{scope}[yshift=0]
+				\fill[black] (0,0) circle (1);
+        \fill[lightgray] (0:0.6) \foreach \x in {60,120,...,359} {
+                -- (\x:0.6)
+            }-- cycle (90:0.6);
+            \end{scope}
+			\end{tikzpicture}
 			\caption{Socket hex}
 		\end{subfigure}\begin{subfigure}[b]{.15\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/head_slot.png}
+			\begin{tikzpicture}[x=0.35in, y=0.35in]
+				\begin{scope}[yshift=0]
+				\fill[black] (0,0) circle (1);
+       			\fill[lightgray] (-0.9,-0.1)--(0.9,-0.1)--(0.9,0.1)--(-0.9,0.1)--cycle;
+            \end{scope}
+			\end{tikzpicture}
 			\caption{Flathead}
 		\end{subfigure}\begin{subfigure}[b]{.15\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/head_phil.png}
+			\begin{tikzpicture}[x=0.35in, y=0.35in]
+				\begin{scope}[yshift=0]
+				\fill[black] (0,0) circle (1);
+	        	\fill[lightgray] (-.8,-.1) arc (90:0:0.7) -- (0.1,-0.8) arc (180:90:0.7) -- (0.8,0.1) arc (270:180:0.7) -- (-0.1,0.8) arc (360:270:0.7) -- cycle;
+	        	
+	        	\fill[gray] (-.35,-.05) arc (90:0:0.3) -- (0.05,-0.35) arc (180:90:0.3) -- (0.35,0.05) arc (270:180:0.3) -- (-0.05,0.35) arc (360:270:0.3) -- cycle;
+            \end{scope}
+			\end{tikzpicture}
 			\caption{Phillips}
 		\end{subfigure}\begin{subfigure}[b]{.15\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/head_torx.png}
+			\begin{tikzpicture}[x=0.35in, y=0.35in]
+				\begin{scope}[yshift=0]
+				\fill[black] (0,0) circle (1);
+	        	\fill[lightgray] (0.75,0) \foreach \x in {0,60,...,359} {
+                	-- ({0.75*cos(\x}, {0.75*sin(\x)}) arc ({270+\x}:{180+\x}:{0.75*tan(30)})
+            	} -- cycle;
+            \end{scope}
+			\end{tikzpicture}
 			\caption{Torx}
 		\end{subfigure}\begin{subfigure}[b]{.15\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/head_robertson.png}
+			\begin{tikzpicture}[x=0.35in, y=0.35in]
+				\begin{scope}[yshift=0]
+				\fill[black] (0,0) circle (1);
+       			\fill[lightgray] (-0.4,-0.4)--(0.4,-0.4)--(0.4,0.4)--(-0.4,0.4)--cycle;
+            \end{scope}
+			\end{tikzpicture}
 			\caption{Robertson}
 		\end{subfigure}
 		\caption{Common drive types on engineering fasteners.}
@@ -826,15 +960,15 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	Often panels need to attached to protect something, provide a clean cosmetic appearance, or smooth over a gap for aerodynamic purposes, while still providing easy service to the underlying components. There are a few solutions to this which are more robust and positive than Velcro (which may be perfectly acceptable in many cases). These solutions make sure that the fasteners are kept with the panel so there's no scrambling around to find the panel.
 	
 	\begin{figure}[H]
-		\begin{subfigure}[b]{.33\linewidth}
-			\includegraphics[width=0.6\textwidth]{imgs/dzus_tabs.jpeg}
+		\begin{subfigure}[b]{.35\linewidth}
+			\includegraphics[width=0.9\textwidth]{imgs/dzus_tabs.jpeg}
 			\caption{Dzus tabs}
 		\end{subfigure}
-		\begin{subfigure}[b]{.33\linewidth}
+		\begin{subfigure}[b]{.3\linewidth}
 			\includegraphics[width=0.6\textwidth]{imgs/pushpull_panel_screw.png}
 			\caption{Push-pull panel pin}
 		\end{subfigure}
-		\begin{subfigure}[b]{.33\linewidth}
+		\begin{subfigure}[b]{.3\linewidth}
 			\includegraphics[width=0.6\textwidth]{imgs/panel_screw.png}
 			\caption{Captive panel screw}
 		\end{subfigure}
@@ -856,13 +990,117 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	
 	These have a head attached to a long strip, which can be fed into the head to form a loop. The head is ratcheting, so when the tail is pulled through, it will not loosen (until it breaks). Multiples can be chained together if you don't have a long enough one. Some special zipties can be reused (they have a release lever).
 
+	\section{Fabrication Paradigms / Traditions}
+	To draw an analogy to cuisine... up to this point we've talked about different ingredients- the different herbs, meats, vegetables, fruits, grains that you might use in a kitchen to make a dish with. You can combine them in a lot of different ways, but there's some combinations that make more sense than others, and some that have become traditional because of this. That isn't to say that you can't mix and match and add as you see fit (or even start your own tradition), but there's combinations of technologies you'll see more common than others. 
+	
+	\subsection{The 80/20 Tradition}
+	One common tradition is that of using t-slot framing as introduced in section \ref{section:extrusions}. There are many different components that can be used with t-slot framing. This tradition is quite deep and even has sub-traditions (personally when I'm building 80/20, I despise anchor fasteners).
+	
+	\begin{figure}[H]
+	\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.9\textwidth]{imgs/tradition_8020_tnut.jpeg}
+		\caption{T nut}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.9\textwidth]{imgs/tradition_8020_ext_plate.jpeg}
+		\caption{Joiner plate}
+	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
+		\includegraphics[width=0.9\textwidth]{imgs/tradition_8020_ext_bracket.jpeg}
+		\caption{External bracket}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{.55\linewidth}
+		\includegraphics[width=0.9\textwidth]{imgs/tradition_8020_anchor.jpeg}
+		\caption{Anchor fastener}
+	\end{subfigure}\begin{subfigure}[b]{.4\linewidth}
+		\includegraphics[width=0.9\textwidth]{imgs/tradition_8020_corner.png}
+		\caption{Corner block}
+	\end{subfigure}
+	\caption{Key components in the 80/20 tradition.}
+	\end{figure}
+	
+	\begin{asparaenum}[a)]
+		\item \textit{T nuts} are the basic ingredient of the 80/20 tradition. They come in many flavors: some can be dropped in to a t-slot, some can be rolled in, some can only be slid in through the end. But they all serve the same purpose: they're a nut that stays captive in the T-slot.
+		\item \textit{Joiner plates} are one way of securing tubes to other tubes. They're straightforward, and come in many sizes.
+		\item \textit{External brackets} are another way of securing tubes to other tubes. These come in many sizes and thicknesses, sometimes with a reinforcing strip (as shown).
+		\item \textit{Anchor fasteners} (sometimes nicknamed \textit{lollipop connectors}) are one type of end connector. There are many types of end connectors but these seem to be the most common. The framing gets milled out to accept the round portion of the connector. The connector then fits into one frame, and a bolt going through that connector gets tightened into a t nut inside another frame. The heads of the bolts can be quite frustrating to access and tighten down perfectly, and these also require that the ends of the tubes get milled perfectly square.
+		\item \textit{Corner blocks} allow corners to get joined together in a very clean fashion. The ends of the extrusions must be tapped to accept a bolt. I've seen (and made, myself) printed versions of these that allow extrusions to come together at odd angles.
+	\end{asparaenum}
+	
+	Overall, 80/20 is a very flexible paradigm, but is quite heavy and expensive, and can be prone to loosening under vibration.
+	
+	\subsection{The Sheetmetal Tradition}
+	Airplanes have pioneered this method of cut and folded sheetmetal, riveted together to make complex structures. It's a little bit like industrial origami. 
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{imgs/tradition_sheetmetal_148.png}
+		\caption{A FRC chassis made from riveted sheetmetal.}
+	\end{figure}
+	
+	Sheetmetal can be extremely light, as it has the capability to put material where you need it most and have large, gusseted structures. Sheet metal is one of the cheapest forms of metal, pound-for-pound, although the cutting required to make these frames usually produces a considerable amount of waste stock. 
+	
+	Sheetmetal is a very scalable process in mass quantity, which is why many things are made from it, even if they aren't riveted as well.
+	
+	Rivets work best in shear and with plenty of redundancy. Bolts can also be used, but they will tend to egg out the holes, so the sheetmetal itself becomes the limiting factor, making the use of a higher quantity of rivets a stronger choice.
+	
+	% TODO: BENDING AND RIBBING
+	
+	\subsection{The Fingerjointed Plate Tradition}
+	What do you do if you have a way of cutting plates, but no bender? Well, cut thicker ones, and use finger joints to stick it all together! Woodworkers have long used finger joints to make nice craftwork using glue and nail. But if you want to quickly build something and maybe tear it apart, gluing or nailing aren't a good proposition.
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.7\textwidth]{imgs/tradition_fingerjoint.png}
+		\caption{A fingerjointed and bolted assembly.}
+	\end{figure}
+	
+	Such joints are popular among the hobbyist community, and often feature captive nuts and bolting shown above to help keep things together. The fingers transmit shear load, while the bolts help keep things together. The joint above would still flex quite a bit almost like a hinge, so putting another plate perpindicular to both (making a box or gusset) would help the structural integrity more.
+	
+	\subsection{The Bracket and Tube Tradition}
+	Sheetmetal is cool, but doesn't have to be used that much. It isn't a very effective way at spanning long distances, and requires lead time since you have to get the profile cutting supplier/equipment to do it.
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{imgs/tradition_gussetbox.jpeg}
+		\caption{Tubes held together with sheetmetal gussets.}
+	\end{figure}
+	
+	Brackets can come in many shapes and sizes and purposes. They can join together tubes by sandiwching them (see the hypotenuse), join tubes by being installed to the side (see the joint of the legs), or mount extra components like bearings and motors. Brackets are cheap (often made of sheetmetal and produced en masse) and so is box tube. You can even purchase or make extrusion with regularly drilled holes, so that you don't need to bother fabricating holes into the tubes come time to build a structure.
+	
+	As with sheetmetal, both bolts and rivets can be used- but the use of redundant rivets rather than bolts can end up being lighter and stronger, although less servicable.
+	
+	\subsection{The Spaceframe Tradition}
+	Tubes are strong. Tubes are light. But you know what's even lighter than a gusset? A weld. Weld the tubes together directly! Use round tubes so that there aren't any nasty stress concentrators!  This is known as a \textit{spaceframe} or \textit{tubeframe}.
+	
+	% Is chunky a tradition? I can't think of any examples... it's kinda just a thing that happens
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{imgs/tradition_tubeframe.jpeg}
+		\caption{A spaceframe for a Formula SAE racecar.}
+	\end{figure}
+	
+	Spaceframes are time-consuming to produce (as tubes must be cut to length and have the ends shaped so they fit together, a process known as \textit{coping} or \textit{notching}). Additionally, a jig or figure is required to hold all of the tubes in place before they are welded. On the upside, they allow for near-ultimate flexibility in where material is placed and routed.
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.8\textwidth]{imgs/tradition_tubeframe_jigging.jpeg}
+		\caption{A jig for a spaceframe.}
+	\end{figure}
+	
 \chapter{Complex Components}
 
 \section{Axial Power Transmission}
 
 Getting power transmitted over a shaft in a straight line is not terribly difficult, but still must be done properly.
 
+\subsection{Nomenclature}
+
+\begin{figure}[H]
+\includegraphics[width=0.7\textwidth]{imgs/radial_axial.png}
+\caption{Axial vs. radial directions.}
+\end{figure}
+%TODO: Tangential, angular
+
 \subsection{Shafts, Hubs, and Interfaces}
+	
+	\textit{Shafts} or \textit{axles} are rotating components which mate into \textit{hubs}. \textit{Hubs} may be used then to mount to other useful components like wheels or arms, or may be integral to said useful components.
+
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{.32\linewidth}
@@ -928,10 +1166,19 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Ball bearings} have an inner \textit{race} and an outer race with balls inbetween. These balls are spread out by a cage. They come in many different varieties. They may be \textit{sealed}, with a rubber seal keeping contaminants out, \textit{shielded}, with a shield that keeps shrapnel out, or \textit{open}, without any protection whatsoever. These all come with tradeoffs, as seals and shields trap heat, and necessitate the use of grease rather than oil. This means that in an oily environment (like an engine), open bearings can be much more efficient.
-		Ball bearings are usually \textit{deep groove} (meaning the balls contact primarially radially) but they come in many other varieties that can take side-loads better. Ball bearings may or may not have flanges which help keep them in place.
+		\item \textit{Ball bearings} have an inner \textit{race} and an outer race with balls inbetween. These balls are spread out by a cage. They come in many different varieties.
+		\begin{asparaitem}[\ \ \ ]
+			\item \textit{Sealed} bearings have a rubber seal keeping contaminants out.
+			\item \textit{Shielded} bearings have a shield that keeps shrapnel out.
+			\item \textit{Open} bearings have no protection whatsoever. Seals and shields trap heat, and necessitate the use of grease rather than oil. This means that in an oily environment (like an engine), open bearings can be much more efficient.
+			
+			\item \textit{Deep groove} ball bearings are the most common (meaning the balls contact primarially radially).
+			\item \textit{Angular contact} and \textit{X-contact} bearings are better at handling thrust and combined loadings.
+			
+			\item \textit{Flanged} bearings (as shown) have a flange which prevents the bearing from falling through the hole into which they are installed. Not all bearings are flanged.
+		\end{asparaitem}
 		\item \textit{Needle roller bearings} have an outer race, and inside that, a cage that contains multiple rollers. These bearings can ride directly on a shaft if the shaft is sufficiently hard, or a separate inner race can be used. Needle roller bearings are very low-profile and have very high load-bearing capacities as the rollers distribute load over a larger region. However, they do nothing to retain a shaft axially.
-		\item \textit{Tapered needle roller bearings} are heavy-capacity bearings, often used in automotive applications. These mate with a \textit{cup}, much like a needle roller bearing mates with an inner race.
+		\item \textit{Tapered needle roller bearings} are heavy-capacity bearings good for combined loading, often used in automotive applications. These mate with a \textit{cup}, much like a needle roller bearing mates with an inner race. These must be used in pairs in opposing directions, and axial preload is necessary for proper operation.
 		\item \textit{Thrust bearings} are high-capacity bearings that take thrust (axial) loads rather than radial. This means they are often found in conjunction with needle roller bearings to make a bearing assembly that is high-capacity, compact, and light.
 		\item \textit{Plain bushings} are high-capacity, low-RPM single-piece parts. They are made from low-friction materials like oil-impregnated bronze, or plastic. These are good because they are cheap, extremely compact, and very tolerant of improper alignment, dimensional accuracy, and shock loads (since there are no small parts to produce indents).
 	\end{asparaenum}
@@ -962,7 +1209,7 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{V-bearings} can be used in pairs to contstrain one part to a rail.
+		\item \textit{V-bearings} can be used in multiples to contstrain one part to a rail with appropriate mating geometry.
 		\item \textit{Linear sliders} can be used to constrain one part to a rail, cheaply and with a low profile.
 		\item \textit{Recirculating linear ball bearings} are high-precision components which are very efficient, which work in conjunction with precision ground rod. These are quite expensive, however, and sensitive to dust, dirt, and shrapnel.
 		\item \textit{Linear bushings} are high-precision components which serve the same purpose as linear bearings, but are less sensitive to cleanliness, and often cheaper, although they have higher friction.
@@ -1011,17 +1258,19 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 		\item \textit{Flexible couplings} are single-body couplings with several slots machined into them in order to make them more flexible. This allows for misalignment of shafts depending on the exact design, while maintaining low backlash.
 		\item \textit{Oldham couplings} consist of two hubs with slots that interface with a sliding central portion. They facilitate high shaft misplacement, but do not help with angular or axial misalignment.
 		\item \textit{Gear couplings} consist of two spherical hubs with gear teeth cut into them, and a mating sleeve over the hubs. This allows the hubs to plunge inside of the sleeve in addition to being at odd angles, so allows for extreme misalignment, but is quite costly and does present some wear issues at extreme angles.
-		\item \textit{Universal joints} or \textit{u-joints} have a central cross-shaped coupling that connects the two u-shaped halves. This enables quite extreme angular misalignment- as much as 30 degrees! However, they are not constant-velocity. If one side spins at a constant rate, when there is some angle in the shaft, the other side will speed up and slow down. This can produce vibrations and other undesirable behavior in high-speed applications.
-		\item \textit{Tripods} are a type of \textit{constant-velocity (CV) joint}- the input and output always spin at the same velocity unlike a u-joint. These consist of three bearings fixed to a hub. The bearings contact a tulip and slide back and forth on it. This joint can handle decent angular misalignment (up to 15 degrees) and allows for axial movement, referred to as \textit{plunging}.
-		\item \textit{Rzeppa joints} are another CV joint. These joints cannot plunge, but do allow for severe angular misalignment (up to 45 degrees). Front-wheel drive cars often use shafts where the differential side has a tripod joint and the wheel side has a rzeppa joint. This way the shaft can plunge, and the wheel can be powered and steered.
+		\item \textit{Universal joints} or \textit{u-joints} have a central cross-shaped coupling that connects the two u-shaped halves. This enables quite extreme angular misalignment (usually about 30 degrees) However, they are not constant-velocity. If one side spins at a constant rate, when there is some angle in the shaft, the other side will speed up and slow down. This can produce vibrations and other undesirable behavior in high-speed applications.
+		\item \textit{Tripods} are a type of \textit{constant-velocity (CV) joint}- the input and output always spin at the same velocity unlike a u-joint. These consist of three bearings fixed to a hub. The bearings contact a tulip and slide back and forth on it. This joint can handle decent angular misalignment (usually about 15 degrees) and allows for axial movement, referred to as \textit{plunging}.
+		\item \textit{Rzeppa joints} are another CV joint. These joints cannot plunge, but do allow for severe angular misalignment (usually about 45 degrees). Front-wheel drive cars often use shafts where the differential side has a tripod joint and the wheel side has a rzeppa joint. This way the shaft can plunge, and the wheel can be powered and steered.
 		\item \textit{Guibos} or \textit{flex discs} are a joint (can can be considered a CV joint) which use two hubs connected by some flexible (usually rubber) coupling. This helps to absorb vibrations, and handles shaft misalignment.
 	\end{asparaenum}
 
 \section{Nonaxial Power Transmission}
 
-We often need to transmit power from one place to another not in a line. We also often need to change the torque and speed ratios of the power. We've devised a lot of different ways of doing this.
+We often need to transmit power from one place to another not in a line. We also often need to change the torque and speed ratios of the power. There are many ways of doing this.
 
 \subsection{Rope and Pulleys}
+
+% TODO: ROPES
 
 \subsection{Gears}
 
@@ -1030,11 +1279,13 @@ A \textit{gear} is effectively, a wheel with teeth. These teeth are specially sh
 \begin{figure}[H]
 	\includegraphics[width=0.8\textwidth]{imgs/gear_nomenclature.png}
 	\caption{Nomenclature of different gear dimensions}
+	% TODO: BETTER PICTURE
 \end{figure}
 
 There is a \textit{lot} going on here. Let's break it down and focus on a few key portions.
 
 \begin{asparaenum}[a)]
+	\item Gear teeth have an \textit{involute} profile. This is a specific geometric shape that is not quite an arc, but makes sure power transmission is smooth and without excessive backlash.
 	\item The \textit{pitch circle} is a rough representation of the gear as a wheel. It lies somewhere inbetween the overall diameter and the diameter of the root of the teeth. You can draw up a sketch containing gears' pitch circles tangent to each other, and then they will fit together.
 	\item A gear's \textit{diametral pitch} (DP) is the number of teeth in a gear divided by the pitch diameter (in inches). So, if a gear has 50 teeth and is a 20DP gear, it would have a pitch circle of diameter $50 \ teeth \ / \ 20 \ DP = 2.5 \ inches$. For two gears to be compatible and mesh, they must have the same diametral pitch, otherwise the teeth would be the wrong sizes.
 	\item A gear's \textit{module} is a gear's pitch diameter (in mm) divided by the number of teeth. This measures the same thing as diametral pitch, just in a different way. If a 5 module gear has 30 teeth, its pitch diameter would be $5 \ mm \times 30 \ teeth = 150 \ mm$.
@@ -1075,13 +1326,13 @@ There is a \textit{lot} going on here. Let's break it down and focus on a few ke
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item \textit{Spur} gears have straight-cut teeth.
+	\item \textit{Spur} gears have straight-cut teeth. This means they are two-dimensional and relatively simple to produce.
 	\item \textit{Helical} gears have angled-cut teeth. These are harder to produce, but they create smoother power transmission since multiple teeth are in contact, creating a seamless handoff. However, the helical nature produces an axial load in addition to the radial load that gears already produce. 
 	\item \textit{Herringbore} gears are effectively two helical gears back-to-back. This causes the axial loads that helical gears produce to cancel out. This type of gear, though, is obviously even more complicated to produce.
 	\item \textit{Bevel} gears allow power transmission along non-paralell axes. It is important to note that bevel gears are made as sets- you cannot use a 40T gear intended for use with a 20T, with a 60T, as the angles will not mesh up.
 	\item \textit{Ring} gears are simply inverse spur gears.
-	\item \textit{Planetary} gear sets are compact reductions that can be configured in many ways depending on which part of the set is fixed in place. Typically, the ring is held fixed, the central \textit{sun gear} is driven, and a \textit{carrier plate} holding the \textit{planet gears} is the output.
-	\item \textit{Worm} gears are extremely compact reductions, but are often not very efficient. The worm wheel (right) might have one, or several leads. A lower number of leads will reduce the gearset's ability to be backdriven, which can be a desirable characteristic.
+	\item \textit{Planetary} gear sets are compact reductions that can be configured in many ways depending on which part of the set is fixed in place. Typically, the ring is held fixed, the central \textit{sun gear} is driven, and a \textit{carrier plate} (now shown) holding the \textit{planet gears} is the output.
+	\item \textit{Worm} gears are extremely compact reductions, but are often not very efficient. The worm wheel (right) might have one, or several \textit{leads}, or teeth. A lower number of leads will reduce the gearset's ability to be backdriven, which can be a desirable characteristic.
 	\item A \textit{rack and pinion} can be used to transform rotary motion into linear motion, or vice versa.	
 \end{asparaenum}
 
@@ -1090,7 +1341,7 @@ There is a \textit{lot} going on here. Let's break it down and focus on a few ke
 	\caption{A spur gear set with a idler gear (middle).}
 \end{figure}
 
-\textit{Idlers} can be introduced to a gearset to change the direction of rotation, or to bridge a large gap and transmit power from one place to another.
+\textit{Idlers} can be introduced to a gearset to change the direction of rotation, or to bridge a large gap and transmit power from one place to another. The idler does not impact the overall gear ratio, only the direction of motion.
 
 
 
@@ -1105,9 +1356,9 @@ There is a \textit{lot} going on here. Let's break it down and focus on a few ke
 	\caption{Roller chain exploded view, and dimensions}
 \end{figure}
 
-Chain is dimensioned by the \textit{roller diameter}, \textit{roller width}, and \textit{chain pitch}, but may have a standard number that details all of these. Here are some common chain sizes:
+Chain is dimensioned by the \textit{roller diameter}, \textit{roller width}, and \textit{chain pitch}, but may have a standard number that details all of these. Table \ref{table:chaindims} lists some common sizes.
 
-\begin{table}[H]
+\begin{table}[H] \label{table:chaindims}
 \begin{tabular}{llll}
 Chain \# & Pitch (in) & Roller Width (in) & Roller Diameter (in) \\
 25       & 0.250      & .125              & .130                 \\
@@ -1162,6 +1413,13 @@ Chains need to be properly tensioned to make sure that they do not skip, to redu
 	\item \textit{Inline tensioners} can be used when the chain does not make full revolutions. These are easy to integrate and are very low-profile.
 \end{asparaenum}
 
+\begin{figure}[H]
+\includegraphics[width=0.9\textwidth]{imgs/chain_alignment.jpeg}
+\caption{Sprocket alignment.}
+\end{figure}
+
+Sprockets must be aligned properly both in parallelism and colinearity, otherwise you risk throwing the chain.
+
 Wrap is another important consideration for chain drives. If there is not enough teeth in engagement with the sprocket, the sprocket may wear out or break, or the chain may skip. 
 
 \newpage
@@ -1187,24 +1445,25 @@ Wrap is another important consideration for chain drives. If there is not enough
 A \textit{belt} is a continuous loop of a flexible material. There are many different types of belts.
 
 \begin{asparaenum}[a)]
-	\item \textit{Flat belts} are belts that are flat in cross-section with no special features. They transmit power solely by friction. A crowned pulley, proper tensioning, and alignment keeps the belt from walking side-to-side excessively.
+	\item \textit{Flat belts} are belts that are flat in cross-section with no special features. They transmit power solely by friction. A crowned pulley, proper tensioning (about 1-3\% stretch for polyurethane belts), and alignment keeps the belt from walking side-to-side excessively.
 	\begin{figure}[H]
 		\includegraphics[width=0.6\textwidth]{imgs/belt_crown_pulley.jpeg}
 		\caption{Crowning on pulleys to keep flat belts on pulleys.}
 	\end{figure}
-	\item \textit{Polycord} or \textit{round belt} is a type of belting that is round in cross-section. They are somewhat forgiving in how much they can be tensioned (as long as ample stretch is provided; around 10\%). They work best with pulleys that have a 60 degree (included angle) V cut into them.
-	\begin{figure}[H]
-	\includegraphics[width=0.5\textwidth]{imgs/belt_crossed.png}
-	\caption{Crossed drive belt}
-\end{figure}
-	Flat belts and polycord can be crossed in order to transmit power while reversing direction, or even transmit power between non-parallel axles.
-	\item \textit{V-belts} have a V cross-section that digs in to pulleys. Multiple vs may be attached side-by-side for increased flexibility. They (usually) have reinforcing fibers that provide strength and stiffness much higher than pure rubber. Sometimes they have teeth in them, but these teeth are not for power transmission, they are simply to allow greater flexibility in the belt while still allowing for a tall, centering profile.
+	\item \textit{Polycord} or \textit{round belt} is a type of belting that is round in cross-section. They are somewhat forgiving in how much they can be tensioned (as long as ample stretch is provided; around 10\% for polyurethane cords). They work best with pulleys that have a 60 degree (included angle) V cut into them.
+	\item \textit{V-belts} have a V cross-section that digs in to pulleys. Multiple vees may be attached side-by-side for increased flexibility. They (usually) have reinforcing fibers that provide strength and stiffness much higher than pure rubber. Sometimes they have teeth in them, but these teeth are not for power transmission, they are simply to allow greater flexibility in the belt while still allowing for a tall, centering profile.
 	\item \textit{Timing belt} has teeth to ensure positive transmission of motion (so it can be used to time multiple components together). It has very high load-carrying potential without need for perfect tensioning. Like v-belts, they have reinforcing fibers that provide strength and stiffness much higher than pure rubber. There are many different series of timing belts (HTD, GT2, MXL, etc.) - they are not compatible with each other. In FRC the most common are HTD and GT2 (which are, actually, semi-compatible). The pitches must also be the same in addition to the series.
 \end{asparaenum}
 
-Belts, like chain, must be properly tensioned. Most of the methods explained for chains also work for belts. Special considerations must be made for the back-bending capacity of the belt in question (every belt has a rated back-bending radius). Pulleys for timing belts usually require at least six (6) teeth of engagement, although this may increase or decrease based on your load case and manufacturer's recommendations. 
+Belts, like chain, must be properly tensioned and aligned. Most of the methods explained for chains also work for belts. Special considerations must be made for the back-bending capacity of the belt in question (every belt has a rated back-bending radius). Pulleys for timing belts usually require at least six (6) teeth of engagement, although this may increase or decrease based on your load case and manufacturer's recommendations. 
 
 My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} has a calculator to determine the length of belt needed to achieve a certain center-to-center distance (or vise versa) for flat belts, polycord, and timing belts.
+
+\begin{figure}[H]
+	\includegraphics[width=0.5\textwidth]{imgs/belt_crossed.png}
+	\caption{Crossed drive belt}
+\end{figure}
+	Belts can be crossed in order to transmit power while reversing direction, or even transmit power between non-parallel axles. This generally works best with polycord, but can be accomplished with any belt.
 
 \newpage
 \section{Engagement and Disengagement}
@@ -1241,12 +1500,13 @@ Often we want to make sure something stays in place once we set it to a certain 
 		\includegraphics[width=0.95\textwidth]{imgs/brake_band.jpeg}
 		\caption{Band brake}
 	\end{subfigure}
+	% IMPROVEMENT: CONSISTENT IMAGES
 	\caption{Braking mechanisms.}
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item \textit{Disc brakes} have a \textit{disc} which is grabbed by the \textit{brake pads} of a \textit{caliper}. These are simple to find and reasonably simple to integrate into a system.
-	\item \textit{Drum brakes} have \textit{shoes} which are actuated outwards and grab onto the \textit{brake drum}. This action causes the shoes to dig-in, increasing the braking capacity. These are lower-cost en masse, but can be a little difficult to integrate.
+	\item \textit{Disc brakes} have a \textit{disc} which is grabbed by the \textit{brake pads} of a \textit{caliper}. These are simple to find and reasonably simple to integrate into a system. They are also good at rejecting heat and providing consistent performance, which is why they are the standard in motorsport applications.
+	\item \textit{Drum brakes} have \textit{shoes} which are actuated outwards and grab onto the \textit{brake drum}. This action causes the shoes to dig-in, increasing the braking capacity. These are lower-cost en masse (and integrate nicely into wheels), but can be finnicky to set up.
 	\item \textit{Band brakes} have a \textit{band} which is pulled down tightly around the \textit{brake drum}. This is a fairly simple mechanism to make and actuate. 
 \end{asparaenum}
 
@@ -1271,6 +1531,7 @@ Sometimes we want to couple and uncouple rotating components on the fly (sometim
 		\includegraphics[width=0.95\textwidth]{imgs/ball_shifter.png}
 		\caption{Ball shifter}
 	\end{subfigure}
+	% IMPROVEMENT: BETTER, CONSISTENT IMAGES
 	\caption{Clutching and shifting mechanisms}
 \end{figure}
 
@@ -1288,9 +1549,13 @@ Sometimes we want to couple and uncouple rotating components on the fly (sometim
 
 
 \chapter{Pneumatics}
-\section{Pneumatic Systems}
+
+{\slshape \scshape ``All things share the same breath - the beast, the tree, the man [, the machine]... the air shares its spirit with all the life it supports." - Chief Seattle}
+ \\
 
 Pneumatic systems are one way of turning electrical energy into mechanical energy. They are not particularly efficient, however, they can be easily integrated and scaled. The \href{http://www.team358.org/files/pneumatic/2017pneumatics-manual.pdf}{\color{red}\underline{Official FRC Pneumatics Manual}} is a good resource for actually setting up and walking through the specific components seen in an FRC pneumatics system.
+
+\section{Pneumatic Anatomy}
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{imgs/pneumatics_overview.jpeg}
@@ -1442,7 +1707,7 @@ Brushless DC motors, as per the name implies, do exactly that. Let's flip things
 % IMPROVEMENT: better image
 \end{figure}
 
-An Electronic Speed Controller (ESC) creates three AC waveforms. These waveforms are fed into the motor. The motor can be either a 'delta' or 'wye' configuration. This alternating current creates alternating forces, which rotate the rotor.
+An \textit{Electronic Speed Controller (ESC)} creates three AC waveforms. These waveforms are fed into the motor. The motor can be either a \textit{delta} or \textit{wye} configuration. This alternating current creates alternating forces, which rotate the rotor.
 
 \begin{figure}[H]
 	\includegraphics[width=0.45\textwidth]{imgs/delta_wye.png}
@@ -1475,6 +1740,9 @@ The first portion of the motor model we'll look at is torque, varying with opera
   %\fill[lightgray] (1.0,0)--(0,1.0)--(0,0)--cycle;
   \draw[black] (-0.1,0)--(1.2,0) node[pos=0.5,below]{Speed $\omega$, RPM};
   \draw[black] (0,-0.1)--(0,1.2) node[pos=0.5,above,rotate=90,teal]{Torque $T$, N-m};
+  
+  \draw[gray] (-0.03,1)--(0.03,1) node[pos=1, above, black]{ \ \ \ \ $T_{stall}$};
+  \draw[gray] (1,-0.03)--(1,0.03) node[pos=1, above, black]{$\omega_{free}$};
 
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
   %IMPROVEMENT: Label Tstall, wfree
@@ -1504,9 +1772,13 @@ Note: $\omega$ must be in rad/s, not RPM.
 \begin{figure}[H] \centering \label{fig:motor_torque_curve}
 \begin{tikzpicture}[x=4.0in,y=1.2in]
   %\fill[lightgray] (1.0,0)--(0,1.0)--(0,0)--cycle;
-  \draw[black] (-0.1,0)--(1.1,0) node[pos=0.5,below]{Speed $\omega$, RPM};
+  \draw[black] (-0.1,0)--(1.1,0) node[pos=0.2,below]{Speed $\omega$, RPM};
   \draw[black] (0,-0.1)--(0,1.1) node[pos=0.5,above,rotate=90,teal]{Torque $T$, N-m};
   \draw[black] (1,-0.1)--(1,1.1) node[pos=0.5,below,rotate=90,red]{Power $P$, Watts};
+  
+  \draw[gray, dashed] (0.5, 0) -- (0.5, 1) node[pos=0.0,below, black]{50\% $\omega_{free}$};
+  
+  \draw[gray, dashed] (1.0, 1.0) -- (0.5, 1) node[pos=0.7,above, black]{$P_{max}$};
 
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
   \draw[red, ultra thick] (0,0) parabola bend (0.5,1.0) (1.0,0.0) ;
@@ -1531,6 +1803,8 @@ Current ($I$) is how much electricity is drawn. It varies proportionally to torq
   \draw[black] (-0.1,0)--(1.1,0) node[pos=0.5,below]{Speed $\omega$, RPM};
   \draw[black] (0,-0.1)--(0,1.1) node[pos=0.3,above,rotate=90,teal]{$T$, N-m} node[pos=0.7,above,rotate=90,orange]{Current $I$, A};
   \draw[black] (1,-0.1)--(1,1.1) node[pos=0.5,below,rotate=90,red]{Power $P$, Watts};
+  
+  \draw[gray, dashed] (0, 0.8) -- (0.4, 0.8) node[pos=1,right, black]{$I_{stall}$};
 
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
   \draw[orange, ultra thick] (1.0,0)--(0,0.8);
@@ -1553,16 +1827,20 @@ Indeed an ugly equation, let's just plot it with some semi-realistic values.
 \begin{figure}[H] \centering
 \begin{tikzpicture}[x=4.0in,y=2.0in]
   %\fill[lightgray] (1.0,0)--(0,1.0)--(0,0)--cycle;
-  \draw[black] (-0.1,0)--(1.1,0) node[pos=0.5,below]{Speed $\omega$, RPM};
+  \draw[black] (-0.1,0)--(1.1,0) node[pos=0.3,below]{Speed $\omega$, RPM};
   \draw[black] (0,-0.1)--(0,1.1) node[pos=0.3,above,rotate=90,teal]{$T$, N-m}
   node[pos=0.7,above,rotate=90,orange]{$I$, A};
-  \draw[black] (1,-0.1)--(1,1.1) node[pos=0.3,below,rotate=90,red]{$P$, Watts}
-  node[pos=0.7,below,rotate=90,blue]{Efficiency $\eta$, \%};
+  \draw[black] (1,-0.1)--(1,1.1) node[pos=0.23,below,rotate=90,red]{$P$, Watts}
+  node[pos=0.61,below,rotate=90,blue]{Efficiency $\eta$, \%};
 
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
   \draw[orange, ultra thick] (1.0,0)--(0,0.8);
   \draw[red, ultra thick] (0,0) parabola bend (0.5,1.0) (1.0,0.0) ;
   \draw[blue, ultra thick] (0,0)--(0.8,0.99) parabola bend (0.82,1.0) (1.0,0.0) ;
+  
+  \draw[gray, dashed] (0.82,0) -- (0.82, 1) node[pos=0,below, black]{70-85\% $\omega_{free}$};
+  
+  \draw[gray, dashed] (1,1) -- (0.82, 1) node[pos=0,right, black]{70-85\% $\eta_{peak}$};
 \end{tikzpicture}
 \caption{Complete motor curve.}
 \end{figure}
@@ -1840,7 +2118,9 @@ Before you look at the plots, go to the simulator and plug in those values, see 
 	
 	It looks like the ratio of 7 will get to our destination faster!
 	
-	However, maybe this isn't our only concern. Drivetrains are complex mechanisms with many objectives (as we'll discuss later). The G = 10 case has lower current consumption (almost half!) in this maneuver. It has more initial pushing power. It also gets to positions less than 3 meters away faster. There are a lot of tradeoffs!
+	However, maybe this isn't our only concern. Drivetrains are complex mechanisms with many objectives (as we'll discuss later). This simulator uses a similar approach as discussed above to compute energy consumption, and it turns out that the G = 10 case has lower current consumption (almost half!) in this maneuver. It has more initial pushing power. It also gets to positions less than 3 meters away faster. There are a lot of tradeoffs!
+	
+	The calculator won't give you the right answer right off the bat, but it does free you from thinking about the numbers and math too much so you can focus on making system-level decisions, which is something that a computer can't quite so easily do.
 	
 \chapter{Going Forth}
 
