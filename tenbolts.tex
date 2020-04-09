@@ -1,0 +1,77 @@
+\documentclass[letterpaper]{article}
+\usepackage{outlines}
+
+%\usepackage{fontspec}
+%\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setlength{\parindent}{0in}
+
+\begin{document}
+\fontfamily{lmtt}\selectfont
+{\large
+TEN BOLTS \\
+THE DESIGN ENGINEER'S PRE-BUILD CHECKLIST \\
+THADDEUS HUGHES \\
+REV C, GENERAL USE. UPDATED: 6/5/2019 \\
+INSPIRED BY `TEN BULLETS' }
+
+\begin{outline}
+\1 Utility
+	\2 The component accomplishes high-level goals either directly or indirectly. Addition/revision of the component can be thoroughly justified.
+	\2 All use cases of the component have been carefully considered. Additional features of a component are not simply thrown on.
+	\2 A component is cool because it does this, and not for any other reason.
+\1 Elegance
+	\2 Efforts were made to streamline and simplify the design.
+	\2 The design and execution is aesthetically pleasing on its own and flows with the rest of the system.
+	\2 The beauty of the component is derived from its utility.
+\1 Weight
+	\2 Efforts to reduce component mass have been undertook to balance survivability and performance.
+\1 Strength and Rigidity
+	\2 Load paths have been thought out thoroughly and designed, not just accepted at face value.
+	\2 If applicable to performance, stiffness of the component has been analyzed.
+	\2 If applicable to meshing or alignment, deformation of the component has been analyzed.
+	\2 Analysis has been conducted that matches physical reality as closely as possible (choosing correct boundary conditions and loads) or uses empirically derived formulations.
+	\2 Fatigue has been analyzed if the component undergoes cyclical loading.
+	\2 Buckling has been analyzed if there are long portions in compression.
+	\2 Yield has been considered for catastrophic load cases.
+\1 Survivability
+	\2 Entry of rocks and conductive objects has been taken into consideration.
+	\2 Entry of dirt and dust has been taken into consideration.
+	\2 Entry of water and oil, both low and high temperature, has been taken into consideration.
+	\2 Inertial loads have been taken into consideration.
+	\2 If all bolted joints become like ball-and-socket joints, a structure is properly constrained.
+	\2 The effects of component wear (eg. egging and abrasion) have been considered.
+	\2 Effects of vibration have been considered and locking fasteners appropriately selected.
+	\2 Overheating has been considered.
+\1 Economy
+	\2 All commercial over the shelf (COTS) have been considered.
+	\2 Modifying COTS options or using bespoke options has been considered.
+	\2 Part count is minimized. Every single fastener, adhesive, or weld is justified.
+	\2 Parts are sized to readily available components rather than bespoke ones. Bespoke components are 	avoided.
+\1 Manufacturability
+	\2 In manually machined parts, complicated contours are removed, and radii are sized for available tooling.
+	\2 The limitations of fabrication processes are considered.    
+	\2 A ‘mental machining’ process has been gone through.
+	\2 The part can be held rigidly and securely in every set-up, with minimal machine calibration.
+	\2 The part can be indicated reliably in every set-up.
+	\2 Tooling can reach everywhere it needs to, while being held rigidly and securely.
+	\2 Effects of warping during welding are considered and mitigated.
+	\2 The effects of fabrication on material properties (strain hardening, heat treatment) are taken into account.
+	\2 Reasonable materials and post treatment are considered and justified.
+\1 Integration
+	\2 All of the following are considered and communicated:
+		\3 Tolerance stackup
+		\3 Loads the component receives and creates.
+		\3 Vibrations the component receives and creates, along with generated noise and modes.
+		\3 Thermal conditions around the component, and created by the component.
+		\3 Required tolerances between components to line up and function properly.
+		\3 Airflow around the component and the resulting wake.
+		\3 Driver/user comfort and feedback
+\1 Serviceability
+	\2 Maintenance required for the component is easy to perform, practiced, and well-documented. 
+	\2 The time/cost of removing/reinstalling the component has been considered. Appropriate fasteners have been selected.
+	\2 Ample clearance and access has been allotted for inserting fasteners, wrenches, sockets, and hands. Conveniences like ‘wrench slots’ are integrated.
+\1 Rules Compliance
+	\2 All rules possibly pertaining to this component and the systems it interacts with have been searched for and complied with well in advance.
+	\2 Discrepancies in rules are sorted out with the Q and A promptly.
+\end{outline}
+\end{document}
