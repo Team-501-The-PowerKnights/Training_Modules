@@ -1906,18 +1906,185 @@ Note I say stiffer. There can be times where you want non-stiffness, like in a s
 	Axial is stronger and stiffer than bending.
 \end{theorem}
 
-I'll demonstrate this with two geometries.
-
 You've probably heard that triangles are a very strong shape. This is essentially a rudimentary understanding of this principle that axial is stronger than bending. If you're designing structures with long, slender tubes, a good rule of thumb is to make sure that structure is \textit{triangulated}.
+I'll demonstrate this with two structures with load $F$ acting down on them. Both are constructed from round bar as shown. 
+
+\begin{figure}[H]
+\begin{subfigure}[b]{.25\linewidth}
+\begin{tikzpicture}[x=0.5in, y=0.5in]
+\huge
+	\draw[black, ultra thick] (0,0) circle (0.5);
+	%\draw[black, ultra thick] (0,0) circle (0.35);
+	\draw[->] (0.8,0.8) -- (0.4,0.4) node[pos=0,right]{$d$};
+	%\draw[->] (0.6,-0.6) -- (0.4,-0.4) node[pos=0,right]{$t$};
+	%\draw[->] (0.1,-0.1) -- (0.2,-0.2);
+\end{tikzpicture}
+\caption{Round tube}
+\end{subfigure}
+\begin{subfigure}[b]{.35\linewidth}
+\begin{tikzpicture}[x=1in, y=1in]
+\huge
+	\draw[black, ultra thick] (0,0)--(1,0)  node[circle,fill,pos=1,scale = 0.3]{};
+	\draw[black, ultra thick] (1,0)--(0,-1) node[circle,fill,pos=1,scale = 0.3]{};
+	\draw[black, ultra thick] (0,-1)--(0,0) node[circle,fill,pos=1,scale = 0.3]{};
+	
+	\draw[->, BrickRed, ultra thick] (1,0.5)--(1,0.1) node[pos=0.5, right]{$F$};
+	
+	\draw[<->, black, thick] (0,-1.2)--(1,-1.2) node[pos=0.5, above]{$l$};
+	\draw[<->, black, thick] (0,-0.6) arc (90:45:0.4) node[pos=0.5, above]{$\theta$};
+	\draw[black, thick] (0,0)--(-0.1,-0.1);
+	\draw[black, thick] (0,-0.1)--(-0.1,-0.2);
+	\draw[black, thick] (0,-0.2)--(-0.1,-0.3);
+	\draw[black, thick] (0,-0.3)--(-0.1,-0.4);
+	\draw[black, thick] (0,-0.4)--(-0.1,-0.5);
+	\draw[black, thick] (0,-0.5)--(-0.1,-0.6);
+	\draw[black, thick] (0,-0.6)--(-0.1,-0.7);
+	\draw[black, thick] (0,-0.7)--(-0.1,-0.8);
+	\draw[black, thick] (0,-0.8)--(-0.1,-0.9);
+	\draw[black, thick] (0,-0.9)--(-0.1,-1.0);
+	\draw[black, thick] (0,-1.0)--(-0.1,-1.1);
+	
+\end{tikzpicture}
+\caption{Trussed structure}
+\end{subfigure}
+\begin{subfigure}[b]{.35\linewidth}
+\begin{tikzpicture}[x=1in, y=1in]
+\huge
+	\draw[black, ultra thick] (0,0)--(1,0)  node[circle,fill,pos=1,scale = 0.3]{};
+	\draw[black, ultra thick] (0,-.3)--(0,0) node[circle,fill,pos=1,scale = 0.3]{};
+	\draw[black, ultra thick] (0,0)--(0,0.3);
+	
+	\draw[->, BrickRed, ultra thick] (1,0.5)--(1,0.1) node[pos=0.5, right]{$F$};
+	
+	\draw[<->, black, thick] (0,-.5)--(1,-.5) node[pos=0.5, below]{$l$};
+	\draw[black, thick] (0,0.1) --(-0.1,0);
+	\draw[black, thick] (0,0.2) --(-0.1,0.1);
+	\draw[black, thick] (0,0.3) --(-0.1,0.2);
+	\draw[black, thick] (0,0)   --(-0.1,-0.1);
+	\draw[black, thick] (0,-0.1)--(-0.1,-0.2);
+	\draw[black, thick] (0,-0.2)--(-0.1,-0.3);
+	\draw[black, thick] (0,-0.3)--(-0.1,-0.4);
+\end{tikzpicture}
+\caption{Cantilevered structure}
+\end{subfigure}
+\caption{Trussed versus cantilevered structures.}
+\end{figure}
+
+The stress that the cantilevered beam sees varies along the cross-section as shown below.
+
+\begin{figure}[H]
+\begin{subfigure}[b]{.4\linewidth}
+\begin{tikzpicture}
+	\draw[ultra thick, JungleGreen] (-1.5,1)--(0,1)--(0,-1)--(-1.5,-1);
+	\foreach \x in {0.9,0.7,...,-0.9}{
+		\draw[->, thick, BrickRed] (0,\x) -- (\x, \x);
+		}
+	\draw[dashed, lightgray] (-1.6,0)--(1.6,0);
+	\draw[->, thick] (1.2,0)--(1.2,0.6) node[pos=0.5, right]{$y$};
+\end{tikzpicture}
+\end{subfigure}\begin{subfigure}[b]{.5\linewidth}
+\large
+\begin{align}
+	\sigma = \frac{M y}{I} = \frac{M}{S}
+\end{align}
+\end{subfigure}
+\caption{Stress (red arrows) in a cantilevered beam (teal).}
+\end{figure}
+
+The stress is the highest at the outer portions of the tube, and can be found by the bending moment $M$ induced on the tube, the radius of the tube $y$ and moment of inertia $I$, or the section modulus $S$. You can conduct your own research into these if you want, but an important takeaway from this is that increasing the diameter of the tube will have a huge impact on $I$, so we'd ideally want a very large $I$.
+
+For our example of a round bar,
+\begin{align}
+%	I = \frac{\pi}{64}(d^4 - (d-t)^4)
+%	S = \frac{\pi}{32 d}(d^4 - (d-t)^4)
+	I = \frac{\pi}{64}d^4
+	S = \frac{\pi}{32}d^3
+\end{align}
+
+and in our cantilevered structure, the bending moment at the base is simply $M = F \ l$. This means that we can find the maximum stress as:
+
+\begin{align}
+	\sigma_{cantilever} = \frac{F l}{\frac{\pi}{32}d^3}
+\end{align}
+
+Which isn't very meaningful until we compare that to the trussed structure.
+
+For the trussed structure, we will assume that all the joints are pinned, so the members of it act as links. This isn't a particularly realistic assumption, but it is in some ways a conservative one. We can then analyze the node where the force $F$ is applied.
+
+\begin{figure}[H]
+\begin{subfigure}[b]{.4\linewidth}
+\begin{tikzpicture}
+	\fill[black] (0,0) circle (0.1);
+	\draw[->, thick] (0, 1) -- (0, 0.2) node [pos=0.5, right]{$F$};
+	\draw[->, thick] (-0.2, 0) -- (-1, 0) node[pos=1, left]{$F_1$};
+	\draw[->, thick] (-0.7,-0.7) -- (-0.14,-0.14) node[pos=0,left]{$F_2$};
+\end{tikzpicture}
+\end{subfigure}\begin{subfigure}[b]{.5\linewidth}
+\begin{align}
+	\sum F_x &= 0 \ \ \rightarrow & F_2 cos(\theta) - F &= 0 \\
+	\sum F_y &= 0 \ \ \rightarrow & F_1 - F_2 sin(\theta) &= 0
+\end{align}
+\end{subfigure}
+\caption{Free-body diagram for node of force application.}
+\end{figure}
+
+We can then solve for the forces in the links:
+
+\begin{align}
+	F_1 &= F tan(\theta) \\
+	F_2 &= F \frac{1}{cos(\theta)}
+\end{align}
+
+For simple links like these, the stress is simply the force in the link, divided by the cross-sectional area.
+
+\begin{align}
+	\sigma_{truss, 1} &= \frac{F}{\frac{\pi}{4} d^2} \ tan (\theta) = \frac{F}{\frac{\pi}{4} d^2} \frac{sin(\theta)}{cos(\theta)} \\
+	\sigma_{truss, 2} &= \frac{F}{\frac{\pi}{4} d^2} \frac{1}{cos(\theta)} & 
+\end{align}
+
+This isn't immediately comparable to the cantilever, as it doesn't have $l$ in its expression, and the cantilever example doesn't have $\theta$. But we can consider the example of:
+
+\begin{table}[]
+\begin{tabular}{llll}
+$F$       & $d$      & $\theta$      & $l$     \\
+$100$ lbf & $0.5$ in & $30$ degrees & $10$ in
+\end{tabular}
+\end{table}
+
+\begin{align}
+	\sigma_{truss, 1} &= \frac{100 \ \mbox{lbf}}{\frac{\pi}{4} (0.5 \ \mbox{in})^2 } tan(30 \ \mbox{degrees}) &= 295 \ psi\\
+	\sigma_{truss, 2} &= \frac{100 \ \mbox{lbf}}{\frac{\pi}{4} (0.5 \ \mbox{in})^2 } \frac{1}{cos(30 \ \mbox{degrees})} &= 588 \ psi \\
+	\sigma_{cantilever} &= \frac{100 \ \mbox{lbf} \ 10 \mbox{in}}{\frac{\pi}{32} (0.5 \ \mbox{in})^3} &= 81500 \ psi
+\end{align}
+
+Those values are so extremely disparate! OK, we're using really thin rods though. If we used that additional weight we save by not having the truss support to beef up the cantilever rod though, we'd get better though, right? After all, that $d$ term is cubed in the cantilever equation!
+
+\begin{align}
+	\sigma_{cantilever} &= \frac{100 \ \mbox{lbf} \ 10 \ \mbox{in}}{\frac{\pi}{32} (1.0 \ \mbox{in})^3} &= 10185 \ psi
+\end{align}
+
+Sure, doubling the cantilever rod's diameter gets us an 8-fold decrease in stress, but we're still off by orders of magnitude from the axial case.
+
+Indeed, designing good load paths trumps adding material every time.
 
 \section{Big Sections}
 \begin{theorem} \label{theorem:big_sections}
 Wide but thin is stronger and stiffer.
 \end{theorem}
 
-If we return to equation (xx) we notice that the moment of inertia $I$ grows with the cube of the tube diameter. If we think about this and the geometry, that would mean that in a piece of tubing with the same cross-sectional area, we could get a greater $I$ by maximizing the diameter and minimizing the wall thickness. There is a problem with taking this to an extreme (consider the humble aluminum beverage can), but in general, the effect of increasing the diameter of a section dwarfs the effect of increasing the thickness by the same relative amount.
+Recalling the equation for bending stress,
+
+\begin{equation*}
+	\sigma = \frac{M y}{I} = \frac{M}{S}
+\end{equation*}
+
+and looking at \href{https://en.wikipedia.org/wiki/List_of_second_moments_of_area}{\color{red}\underline{a number of shapes and their equation for $I$}},
+
+ we notice that the moment of inertia $I$ grows roughly with the cube of the tube diameter. If we think about this and the geometry, that would mean that in a piece of tubing with the same cross-sectional area, we could get a greater $I$ by maximizing the diameter and minimizing the wall thickness. There is a problem with taking this to an extreme (consider the humble aluminum beverage can), but in general, the effect of increasing the diameter of a section dwarfs the effect of increasing the thickness by the same relative amount.
 
 The same is also true of shafts in torsion / carrying torque.
+
+Additionally, notice how multiple moments of inertia are listed for some shapes. Consider a piece of rectangular box tube. It can be bent in two orientations. One has a much larger effective diameter, so is the stronger and stiffer direction. Consider the orientation you lay tube when making structures.
 
 \subsection{Spread the Base}
 
@@ -1927,9 +2094,14 @@ The wider the base, the more stable.
 
 Similar to how increasing the diameter of a section increases strength, so does increasing the diameter of bolt patterns, sprockets, gears, and just about anything that transfers load.
 
-Increasing the diameter of bolt patterns has another benefit beyond strength, and that is backlash.
+Increasing the diameter has another benefit beyond strength, and that is backlash.
 
-% TODO: Backlash Graphic
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{imgs/hub_tolerance.png}
+	\caption{Loose-fitting pins (orange) in a hub (blue).}
+\end{figure}
+
+Consider the pins in a hub illustrated above. While a bit exaggerated, clearance between components is necessary to ease assembly, and to deal with manufacturing tolerances. These clearances and tolerances are generally fixed with respect to the diameter of the bolt circle, however. We could minimize the angular slop in this assembly by increasing the diameter.
 
 An interesting conclusion of theorems \ref{theorem:load_paths} and \ref{theorem:spread_base} is that using a linear actuator of some sort on a pivoting mechanism can be more precise and strong than one driven by a rotary actuator at its pivot point.
 
