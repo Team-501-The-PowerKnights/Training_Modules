@@ -97,7 +97,7 @@ Mechatronics is an amalgam of mechanical electronics: systems that contain both 
 
 This document is not intended to be all-encompassing. In reality, it's just an outline; a map. We live in an era where information is readily available on net demand. This document really doesn't contain anything new. Its goal is to show you a plethora of things that exist in a breadth-first fashion before you dive down a particular rabbit hole. There are a few places where I'll dive deeper because I feel it's relevant to show you some of the nuances you should be aware of. By and large, my goal isn't to drill home every single thing because I'll fail at that and fail you in the process. Someone will come up with something new, or improve something discussed here, and this information will become outdated. I'll try to keep it up to date... but I will definitely fail!
 
-The human mind is a weird thing. It's better at prompted recall than unprompted recall. You may not always be thinking about the many different types of bolts, but if you've seen that before, and you come across a problem that needs that information, you'll find you might be able to figure it out- or at least know where to start looking.
+The human mind is a weird thing. It's better at prompted recall than unprompted recall. You may not always be thinking about the many different types of bolts, but if you've seen that before, and you come across a problem that needs that information, you'll find you might be able to figure it out - or at least know where to start looking.
 
 I hope to keep this terse. We're going to go fast and I'm going to leave some things to your imagination or research to figure out exactly how they work. I love mechatronics and hope you do too, so I don't want to spoil it by chewing your steak for you. With that... let's begin.
 
@@ -109,7 +109,7 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  
  \section{Materials}
  
- Everything is made from materials. There are a lot of different materials out there, all with different properties. Some are natural, some are completely synthetic, but all can be measured, quantified, and compared. Important properties we'll focus on are:
+ Everything is made from materials. There are a lot of different materials out there, all with different properties. Some are natural and some are completely synthetic, but all can be measured, quantified, and compared. Important properties we'll focus on are:
  
  \begin{compactitem}
  	\item Density (weight)
@@ -192,7 +192,7 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  
 \subsection{Hardness}
 
- \textit{Hardness} is a property of a material's surface- how much it will permanently indent or scratch. It is not measured by this graph (although it does have some correlations), and is a relative, rather than absolute measurement. There are many different scales. You may have heard of the Mohs scale, introduced to determine the hardness of different minerals based on which can scratch each other. However, most engineering measures will work by indenting an object and measuring how much of an indentation was left behind, which allows for a higher degree of quantization. There are many different scales that are better suited to different materials.
+ \textit{Hardness} is a property of a material's surface - how much it will permanently indent or scratch. It is not measured by this graph (although it does have some correlations), and is a relative, rather than absolute measurement. There are many different scales. You may have heard of the Mohs scale, introduced to determine the hardness of different minerals based on which can scratch each other. However, most engineering measures will work by indenting an object and measuring how much of an indentation was left behind, which allows for a higher degree of quantification. There are many different scales that are better suited to different materials.
  
  Brinell and Rockwell scales are well suited to metals.
  
@@ -211,18 +211,18 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  \begin{asparaitem}
  	\item \textit{Thermal conductivity} is how well the material transfers heat. If you're designing a heat sink, you want a high thermal conductivity.
  	\item The \textit{melting point} or \textit{glass transition temperature} are temperatures at which the material undergoes fundamental phase changes. You obviously need to make sure your part doesn't outright melt, but you should also have a bit of margin, as the phenomenon called \textit{creep} can cause parts that are at elevated temperatures to deform over time, even though below melting point.
- 	\item The \textit{cefficient of thermal expansion} measures how much material expands as it heats up. If you're working with tight-tolerance equipment (or extreme temperatures), you may need to keep an eye on this.
+ 	\item The \textit{coefficient of thermal expansion} measures how much material expands as it heats up. If you're working with tight-tolerance equipment (or extreme temperatures), you may need to keep an eye on this.
  \end{asparaitem}
   
 \subsection{Other Properties} 
  
- Frictional characteristics and chemical interactions are very complex, and if you care about these, will require some research beyond mere datasheets.
+ Frictional characteristics and chemical interactions are very complex, and if you care about these, it will require some research beyond mere datasheets.
  
  Density is another property to be mindful of. Most properties given do not take this into account, and this is why many engineers may speak of a \textit{strength-to-weight ratio}. This is simply dividing the material property in question by the density of the material. This is a sensible comparison in many cases where weight is a concern. If we wanted to create a component to bear a certain load, we could use a material that was very strong but heavy, or use more of a lighter, but weaker material.
  
  \subsection{Material Comparisons}
  
- To actually get data to make material comparisons,
+ To actually get data to make material comparisons:
  \begin{asparaitem}
  	\item \href{http://www.matweb.com/search/DataSheet.aspx?MatGUID=3a2e111b27ef4e5d813bad6044b3f318&ckck=1}{\color{red}\underline{MatWeb}} has a wide range of material properties.
  	\item \href{https://www.makeitfrom.com/}{\color{red}\underline{MakeItFrom}} has a similarly wide range of materials, and includes a comparison tool to help evaluate different options.
@@ -254,21 +254,21 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
 \caption{Common materials and their properties. Values obtained from MakeItFrom.com.}
 \end{table}
 
-A few things that are interesting to chew on:
+A few interesting things to note:
 \begin{asparaenum}[a)]
 	\item Aluminum can be as strong as steel, not even considering the difference in density. The grade of steel and aluminum you're using is very important when comparing the two.
-	\item Titanium is, indeed, a truly incredible material. It is not quite as light as aluminum, but it is as strong as many high grades of steel!
-	\item Among most metals, the \textit{stiffness-to-weight ratio} is about the same. If you want something to be stiffer without adding weight, (only) changing the type of metal won't help you out much.
-	\item Plastics are much weaker, but they can be quite useful due to their low density- simply use more.
+	\item Titanium is a truly incredible material. It is not quite as light as aluminum, but it is as strong as many high grades of steel!
+	\item Among most metals, the \textit{stiffness-to-weight ratio} is about the same. If you want something to be stiffer without adding weight, only changing the type of metal won't help you out much.
+	\item Plastics are much weaker, but they can be quite useful due to their low density: simply use more.
 	\item Not all plastic is created equal.
-	\item Polycarbonate and Nylon are particularly fantastic materials for their mechanical properties, especially in impact resistance. Their elongation at break is \textbf{more than 100\%} and that is not a typo!
+	\item Polycarbonate and Nylon are particularly good materials for their mechanical properties, especially in impact resistance. Their elongation at break is \textbf{more than 100\%}!
 \end{asparaenum}
 
  \section{Form Factors}
  
- Just because the material you want exists, doesn't mean it's widely available in the shape you want. There are a lot of different shapes that a material may be available in, and there are tradeoffs with each different form factor.
+ Just because the material you want exists doesn't mean that it's widely available in the shape you want. There are a lot of different shapes that a material may be available in, and there are trade-offs with each different form factor.
  
- \subsection{Cast from Ingnot}
+ \subsection{Cast from Ingot}
  
 \begin{figure}[H]
 	\includegraphics[width=0.55\textwidth]{imgs/casting_proc.jpeg}
@@ -308,13 +308,13 @@ A few things that are interesting to chew on:
 
  \begin{asparaenum}[a)]
  	\item \textit{Angles} are measured by the leg width and the thickness. Only one dimension for leg lengths may be given if the leg lengths are equal. There may or may not be a radius in the corner, and radiuses on the tips of the legs.
- 	\item \textit{Box tube} is measured by the outer side lengths and the thickness. It may or may not have an inner or outer radius- if it isn't specified, it probably doesn't.
+ 	\item \textit{Box tube} is measured by the outer side lengths and the thickness. It may or may not have an inner or outer radius - if it isn't specified, it probably doesn't.
  	\item \textit{Pipe and tube} is measured either by diameter and thickness, or by nominal pipe size and schedule. `1 inch' tube might refer to 1" nominal pipe, which actually has an inner diameter of 1.049", or a piece of tube with a 1" outer diameter. Make sure you know which you're buying.
  	\item \textit{T-slot framing}, known often by the brand name \textit{80/20}, has several slots on the outside which t-slot nuts can be slid into. This makes creating configurable/adjustable frames easy, although the framing is quite heavy. 
  \end{asparaenum}
  
  \subsection{Welded / DOM tubing}
- Steel is not easily extruded, so to make hollow shapes, must be tackled differently. Steel tubes are usually formed by taking sheet and rolling it into a tube, and then welding it together. This process leaves a weld seam which can produce odd material properties, produce dimensional issues (as when making telescoping tubes), or make manufacturing annoying (as the weld is difficult to drill through). 
+ Steel is not easily extruded, so making hollow shapes must be tackled differently. Steel tubes are usually formed by taking sheet steel and rolling it into a tube, then welding it together. This process leaves a weld seam which can produce odd material properties, dimensional issues (as when making telescoping tubes), or make manufacturing annoying, as the weld is difficult to drill through). 
  
    \begin{figure}[H]
 	\centering
@@ -323,10 +323,10 @@ A few things that are interesting to chew on:
 	\caption{Weld Seam on Tubing}
 \end{figure}
  
- \textit{DOM (Drawn-Over-Mandrel)} or \textit{seamless} tubing further processes this tubing to remove the inner seam and produce a product as if it were extruded. It is typically used in demanding applications such as aerospace or motorsport, as well as in components which cannot have a weld seam (such as a reciever hitch, or telescoping tubes).
+ \textit{DOM (Drawn-Over-Mandrel)} or \textit{seamless} tubing further processes this tubing to remove the inner seam and produce a product as if it were extruded. It is typically used in demanding applications such as aerospace or motor sports, as well as in components which cannot have a weld seam (such as a receiver hitch, or telescoping tubes).
  
  \subsection{Sheet}
- Material that is sold as 'sheet' rather than 'plate' usually has little-to-no straightness tolerance (in especially thin gagues, it might even be sold as rolls).
+ Material that is sold as 'sheet' rather than 'plate' usually has little-to-no straightness tolerance (in especially thin gauges, it might even be sold as rolls).
  
  \section{Manufacturing Processes}
  
@@ -339,7 +339,7 @@ A few things that are interesting to chew on:
  \begin{asparaitem}
  	\item \textit{Casting} as mentioned before, is pouring molten metal into a mold. It can produce very complex shapes (like engine blocks), but the material may end up with lots of voids.
  	\item \textit{Forging} is heating up a metal so that it can be more easily formed, though not liquid. It is then pressed between large dies to form it into the desired shape- essentially, industrialized blacksmithing. Forging can produce fairly complex shapes (like crankshafts), while preserving (and even enhancing) material properties.
- 	\item \textit{Sintering} is compressing and heating powder in a mold. Also known as \textit{powder metallurgy}. This can produce somewhat simple parts with good material properties and no draft- many small gears are made this way.
+ 	\item \textit{Sintering} is compressing and heating powder in a mold. Also known as \textit{powder metallurgy}. This can produce somewhat simple parts with good material properties and no draft - many small gears are made this way.
  \end{asparaitem}
  
  \subsection{Machining}
@@ -364,11 +364,11 @@ A few things that are interesting to chew on:
 
  \begin{asparaenum}[a)]
  	\item A \textit{drill press} has a rotating spindle and chuck where drillbits can be inserted. Workpieces are clamped to a fixed table. The spindle can then be brought down and into the work to drill holes.
- 	\item A \textit{milling machine} has a rotating spindle where drillbits and mill bits (end mills) can be inserted. Workpieces are secured to a table that moves in X, Y, and Z with respect to the spindle. \textit{Routers} operate by the same principle, but generally refer to a tool which moves much more in the X and Y than the Z, and may not be as rigid (so is more suitable to cutting sheets of plywood or foam).
- 	\item A \textit{lathe} has a rotating spindle where the workpiece is held securely. Cutting tools are mounted to a carriage which moves along ways axially and radially, shaping the exterior of the work. Additionally, a tailstock can accept drill bits and other supporting devices.
+ 	\item A \textit{milling machine} has a rotating spindle where drill bits and mill bits - end mills - can be inserted. Workpieces are secured to a table that moves along X, Y, and Z axes with respect to the spindle. \textit{Routers} operate by the same principle, but generally refer to a tool which moves much more in the X and Y than the Z, and may not be as rigid; more suitable to cutting sheets of plywood or foam.
+ 	\item A \textit{lathe} has a rotating spindle in which the workpiece is held securely. Cutting tools are mounted to a carriage which moves axially and radially, shaping the exterior of the work. Additionally, a tailstock can accept drill bits and other supporting devices.
  \end{asparaenum}
  
-  There are lots of variations on these machines- combinations of these exist, and 4- and 5- axis mills (where the head or table tilt on the fly) also exist. They can also all be enhanced with the addition of \textit{CNC} (Computerized Numeric Control) in order to produce even more complicated shapes and/or increase productivity.
+  There are lots of variations on these machines: combinations of these exist, and 4- and 5- axis mills where the head or table tilt on the fly also exist. They can also all be enhanced with the addition of \textit{CNC} (Computerized Numeric Control) in order to produce even more complicated shapes and/or increase productivity.
   
  These different machines can accept a wide variety of cutting implements. Here are a few of the most common to consider.
  
@@ -376,10 +376,10 @@ A few things that are interesting to chew on:
 	\centering
 	\begin{subfigure}[b]{.19\linewidth}
 		\includegraphics[width=0.95\textwidth]{imgs/drillbit.png}
-		\caption{Drillbit}
+		\caption{Dril lbit}
 	\end{subfigure} \begin{subfigure}[b]{.19\linewidth}
 		\includegraphics[width=0.95\textwidth]{imgs/centerdrill.png}
-		\caption{Centerdrill}
+		\caption{Center drill}
 	\end{subfigure}	\begin{subfigure}[b]{.19\linewidth}
 		\includegraphics[width=0.95\textwidth]{imgs/endmill.png}
 		\caption{End mill}
@@ -395,14 +395,14 @@ A few things that are interesting to chew on:
 \end{figure}
 
  \begin{asparaenum}[a)]
- 	\item \textit{Drillbits} drill holes. The spiral flutes on the outside may be sharp, but they generally aren't sharp or hard enough to actually cut metal. They work with jacobs chucks, which are designed to only transmit vertical force and torque.
- 	\item \textit{Centerdrills} are used to start holes. They are short and stubby, so don't deflect much.
- 	\item \textit{End mills} cut on all surfaces- they are all ground to be sharp and cut. This means they can cut on the side, and produce side loads- so they should not be put in jacobs chucks in drill presses!
+ 	\item \textit{Drill bits} drill holes. The spiral flutes on the outside may be sharp, but they generally aren't sharp or hard enough to actually cut metal. They work with Jacobs chucks, which are designed to only transmit vertical force and torque.
+ 	\item \textit{Center drills} are used to start holes. They are short and stubby, so don't deflect much.
+ 	\item \textit{End mills} cut on all surfaces - they are all ground sharp. This means they can cut on the side, and produce side loads - so they should not be put in Jacobs chucks in drill presses!
  	\item \textit{Ball end mills} are an example of a more sophisticated end mill. There are many different shapes. This one enables smooth contours to be made.
  	\item \textit{Lathe tooling} comes in many different shapes and sizes. This one is a simple cutting tool that gets clamped to the toolpost and shapes the outside of the work.
  \end{asparaenum}
  
-If you can consider briefly how these machines work, you can perhaps spot a few problems with your designs as you go along. Can you spot (just by the images) some issues with these parts?
+If you can consider briefly how these machines work, you can perhaps spot a few problems with your designs as you go along. Can you spot some issues with these parts?
  
 \begin{figure}[H]
 	\centering
@@ -419,7 +419,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 
  \begin{asparaenum}[a)]
  	\item The sharp inside corner cannot be made, as it would require an infinitely small diameter tool.
- 	\item The deep radius would require a very long end mill, which would not be very stiff. This radius is 0.25", and it is 2" tall; this is a ratio of depth-to-diameter of 4:1, which is a suboptimal ratio. Ideally, this ratio would be no more than 3:1.
+ 	\item The deep radius would require a very long end mill, which would not be very stiff. This radius is 0.25", and it is 2" tall; this is a ratio of depth-to-diameter of 4:1, which is a sub-optimal ratio. Ideally, this ratio would be no more than 3:1.
  \end{asparaenum}
  
  \subsection{Broaching}
@@ -440,7 +440,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  
  \subsection{Path Cutting}
  
- \textit{Path cutting} is a term I made up that encompasses any sort of 2-dimensional X/Y cutting with a thin beam. It is almost always done on a CNC-capable machine.
+ \textit{Path cutting} is a term that encompasses any sort of 2-dimensional X/Y cutting with a thin beam. It is almost always done on a CNC-capable machine.
  
  \begin{figure}[H]
 		\begin{subfigure}[b]{.24\linewidth}
@@ -461,18 +461,18 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  \begin{asparaenum}[a)]
   	\item \textit{Plasma cutters} use an arc to melt metal and pressurized air to blow it away. The tolerances are usually good for large shapes, but not for precision work.
  	\item \textit{Laser cutters} melt material with a laser and either simply vaporize it or use pressurized air to blow it away. Hobby lasers can cut some plastics and plywood, while industrial systems can cut metal. The tolerances are usually acceptable with these machines ($\pm 0.020"$).
- 	\item \textit{Waterjet cutters} mix high-pressure water with garnet sand, and blast it at material, rapidly abrading it. The tolerances are usually good with this process ($\pm 0.010"$ or better).
- 	\item \textit{EDMs} (electro-discharge-machines) use an electrified wire to remove material. The wire is fed through (or plunged into) material. The electrification 'zaps' away material next to the wire. The tolerances with this process can be impeccable ($\pm 0.001"$ or better). 
+ 	\item \textit{Waterjet cutters} mix high-pressure water with garnet sand and blast it at material, rapidly abrading it. The tolerances are usually good with this process ($\pm 0.010"$ or better).
+ 	\item \textit{EDMs} (electric-discharge-machines) use an electrified wire to remove material. The wire is fed through or plunged into material. The electrification 'zaps' away material next to the wire. The tolerances with this process can be impeccable ($\pm 0.001"$ or better). 
 \end{asparaenum}
  	
  	These all allow us to overcome the depth-to-diamter ratio imposed by milling, and can sometimes be much quicker setup than traditional machining, though they all come with their own drawbacks.
  
  \begin{figure}[H] \centering
  	\includegraphics[width=0.5\textwidth]{imgs/lasercut_focus.jpeg}
- 	\caption{Focal properties of a lasercutter's beam.}
+ 	\caption{Focal properties of a laser cutter's beam.}
  \end{figure}
  
-  The first limitation is the width of the beam. Since a finite-ly sized beam muse be used, infinitely sharp interior corners cannot be made.
+  The first limitation is the width of the beam. Since a finitely sized beam muse be used, infinitely sharp interior corners cannot be made.
  
  \begin{figure}[H] \centering
  	\includegraphics[width=0.9\textwidth]{imgs/waterjet_draft.jpeg}
@@ -481,11 +481,11 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  
   The next consideration that must be made is draft. Laser-cutters typically have a point in the thickness where the beam is focused to. This means that the laser doesn't cut a line in its cross-section, but rather an X. Thus the resulting shape is two-dimensional. With a waterjet or plasma cutter, the draft grows exponentially. This may be acceptable, or require further post-machining to bring it into specification.
  
- Draft (and power) also limits how thick of material can feasibly be cut with these processes, although EDM can cut extremely thick materials compared to the other processes.
+ Draft (and power) also limits how thick of material can feasibly be cut with these processes, although it should be noted that EDM can cut extremely thick materials compared to the other processes.
  
  \subsection{Sheet Forming}
  
- Sheet forming is a versatile process of making parts from, well, sheet. Sheet may be cut either with a stamping operation, or with a path-cutting operation to form a blank. This blank can then be loaded in and undergo one of several processes.
+ Sheet forming is a versatile process of making parts from, well, sheet. Sheet may be cut with either a stamping or path-cutting operation to form a blank. This blank can then be loaded in and undergo one of several processes.
  
  	\begin{figure}[H]
 		\centering
@@ -506,19 +506,19 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure} 
  
  \begin{asparaenum}[a)]
- 	\item Simple \textit{bends} can be made on a linear portion of the flat pattern. This can be done with a finger bender, press brake, or (in a pinch) a vise with a hammer.
+ 	\item Simple \textit{bends} can be made on a linear portion of the flat pattern. This can be done with a finger bender, press brake, or, in a pinch, a vise with a hammer.
  	\item Flat portions of material can be \textit{rolled} into an arc, or even full circle.
  	\item \textit{Bead rolling} can be done on any portion of a part to provide additional stiffness.	
  	\item \textit{Hemming} provides a smooth, radiused outer corner and some additional stiffness. First, a bend is made, and then it is bent all the way to 180 degrees. This can be done with a finger bender or press brake, and additional clamping to finish the hem.
  	\end{asparaenum}
  	
- 	Most CAD packages have tools to design parts made with sheetmetal. You can draw up the bent part, and then the CAD package will determine how to 'unfold' and produce a flat pattern that can be cut out.
+ 	Most CAD packages have tools to design parts made with sheet metal. You can draw up the bent part, and then the CAD package will determine how to 'unfold' and produce a flat pattern that can be cut out.
  	
- 	These operations are typically done with metal, but nothing prevents you from doing it with plastic. Polycarbonate can be bent like sheetmetal. Polypropylene, polycarbonate, acrylic, and PETG amongst others can also be heated (i.e. with a heat gun) and then bent by hand.
+ 	These operations are typically done with metal, but nothing prevents them from being applied to plastic. Polycarbonate can be bent like sheet metal. Polypropylene, polycarbonate, acrylic, and PETG, among others, can be heated - heat gun or other method - and then bent by hand.
  	
  	\subsection{Welding and Brazing}
  	
- 	Welding and brazing are very important manufacturing methods. They enable large, complex structures to be made from smaller simple ones, without fasteners that might fail. However, it can be quite time consuming, requires time consuming labor, and creates non-servicable structures.
+ 	Welding and brazing are very important manufacturing methods. They enable large, complex structures to be made from smaller simple ones without fasteners that might fail. However, it requires time consuming labor and creates non-serviceable structures.
  	
  	\begin{figure}[H]
 		\centering
@@ -539,19 +539,19 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
  	
  	\begin{asparaenum}[a)]
- 		\item \textit{MIG} (Metal-Inert-Gas) welding uses an electric arc between filler wire and the workpiece, which melts both the wire and the workpiece. The arc is shielded by inert (or semi-active) gas to control chemical reactions. The wire is advanced at a constant rate into the workpiece. This is the easiest method to learn, but provides the least amount of control, and has the lowest capacity for superior results.
+ 		\item \textit{MIG} (Metal-Inert-Gas) welding uses an electric arc between filler wire and the workpiece, which melts both the wire and the workpiece. The arc is shielded by inert or semi-active gas to control chemical reactions. The wire is advanced at a constant rate into the workpiece. This is the easiest method to learn, but provides the least amount of control, and has the lowest capacity for superior results.
  		
  		\item \textit{TIG} (Tungsten-Inert-Gas) welding uses an electric arc between a fixed tungsten rod and the workpiece, melting the work but not the tungsten. The arc is shielded by inert gas to eliminate chemical reactions. Filler rod is advanced manually and separately into the molten work. This method is much harder to learn, but provides the most amount of control, with the highest capacity for superior results.
  		
- 		\item \textit{Stick} (or Arc) welding uses an electric arc between a rod containing flux and filler metal and the workpiece, melting both the rod and the workpiece.. The arc is shielded by the vaporizing flux. This method is hard to learn, but provides good control, and works best outdoors, so is quite common in the construction and pipeline industries.
+ 		\item \textit{Stick/Arc} welding uses an electric arc between a rod containing flux and filler metal and the workpiece, melting both the rod and the workpiece. The arc is shielded by the vaporizing flux. This method is hard to learn, but provides good control, and works best outdoors, so is quite common in the construction and pipeline industries.
  		
- 		\item In \textit{brazing}, heat is generated (either by a TIG torch, or a flame torch) and directed at the work, but not enough to melt the work. Brazing material, which will melt at this surface temperature, is fed onto the work, melting and flowing across it. As it solidifies, it adheres to the base metal.
+ 		\item In \textit{brazing}, heat is generated either by a TIG or flame torch and directed at the work without melting it. Brazing material, which will melt at this surface temperature, is fed onto the work, melting and flowing across it. As it solidifies, it adheres to the base metal.
  		
  	\end{asparaenum}
  	
  	\subsection{3D Printing}
  	
- 	\textit{3D printing} or \textit{additive manufacturing} is a varied class of technologies that add material selectively and in a discretely controlled fashion. This allows the production of extremely complex geometries with little to no tooling costs, but is a pioneering field and there are many limitations.
+ 	\textit{3D printing} or \textit{additive manufacturing} is a varied class of technologies that add material selectively and in a discretely controlled fashion. This allows the production of extremely complex geometries with little to no tooling costs, but is a pioneering field and has many limitations.
  	
  	\begin{figure}[H]
 		\includegraphics[width=0.9\textwidth]{imgs/3dp_fdm_sla_sls.jpeg}
@@ -560,21 +560,21 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  	
  	\begin{asparaenum}[a)]
  		\item \textit{Fused deposition modeling (FDM)} uses a continuous piece of plastic filament which is heated in the \textit{hot end} before being squeezed through an \textit{extruder} to lay down thin layers of material which melt into previous layers. This method is quite reliable and cheap, but does result in models with visible layers, and generally results in models where the strength can vary with the orientation of the layers.
- 		Because it works by melting existing material, it is limited to materials that can be melted and cooled into final form such as thermoplastics. Common materials are PLA, ABS, and to an increasing extent, PETG, Polycarbonate, and Nylon. FDM is furthermore is limited in that it cannot print steep overhangs without wasteful or surface-quality changing \textit{support material}. Porosity and sealing can also be a concern. On the upside, though, it can create hollow parts, enabling high strength-to-weight ratios as material can be placed only where it is needed.
+ 		Because it works by melting existing material, it is limited to materials that can be melted and cooled into final form such as thermoplastics. Common materials are PLA, ABS, and to an increasing extent, PETG, Polycarbonate, and Nylon. FDM is furthermore is limited in that it cannot print steep overhangs without wasteful or surface-quality changing \textit{support material}. Porosity and sealing can also be concerns. On the upside, it can create hollow parts, enabling high strength-to-weight ratios as material can be placed only where it is needed.
  		\textit{Continuous-strand reinforcement} is a new addition to this technology. As the name implies, this is the inclusion of a fibrous high-strength material such as fiberglass or carbon fiber into the filament, so that when it is extruded, the part has many strands of this reinforcing material. Markforged makes printers capable of this.
  		\item \textit{Stereolithography (SLA)} uses a laser to quickly cure liquid \textit{resin} into hard material. The print bed moves away from the laser as additional layers are added. This method is inherently limited to materials that can be made from resins, ruling out many materials. It is a quite time-consuming process but can result in parts with good sealing properties and excellent surface finish. Hollow parts cannot be created as the resin would simply be trapped inside cavities. Formlabs is a prominent manufacturer of such printers.
  		\item \textit{Selective laser sintering (SLS)} uses a laser to selectively melt and \textit{sinter} powdered material together. After one layer is sintered, another thin layer of powder is put over top, and the process repeats. This process can achieve excellent mechanical properties which are not dependent on layer orientation, as well as stellar dimensional accuracy. However, it results in parts with a very coarse surface texture. Hollow parts cannot be created as the powder would simply be trapped inside cavities. The continuous addition of powder (of which the unsintered material can be reused) allows for the production of parts with infinitely sharp overhangs since the previous layer acts as support material.
  	\end{asparaenum}
  	
- 	Metal 3D printing technologies are also in the works, most being a modification of the SLS method with metal powders.
+ 	Metal 3D printing technologies are also in the works, most being a modification of the traditional SLS method with metal powders.
  		
 	\section{Fasteners}
-	So you've made some parts, now it's time to put them together. How are you going to do it? CAD constraints won't help you now! You need real fasteners!
+	Fasteners are a broad family of mechanical solutions to fastening parts together.
 	
 	\subsection{Pins}
-	The simplest fastener is a pin. Pins prevent holes in plates from shearing past each other, by putting all of the load through the pin. There are a couple different flavors that let you do different things.
+	The simplest fastener is a pin. Pins prevent plate holes from shearing past each other by putting all of the load through the pin. There are a couple different kinds, each with different properties:
 	
-	Quick pins allow users to easily make adjustments or reconfigurations to equipment. They are easily insertable/removable, usually without any special tools.
+	Quick pins allow users to easily adjust or reconfigure equipment. They are easily insertable/removable, usually without any special tools.
 	
 	\begin{figure}[H]
 		\centering
@@ -592,13 +592,13 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Clevis pins} are loose tolerance pins which have a hole for a locking (R-shaped) pin or wire to go through.
+		\item \textit{Clevis pins} are loose tolerance pins which have a hole for an R-shaped locking pin or wire to go through.
 		\item \textit{Wire-Locking pins} serve the same purpose as clevis pins, but use a spring-loaded wire to keep the pin captive.
 		\item \textit{Ball-Detent pins} serve the same purpose as clevis pins, but use a spring-loaded ball detent to keep the pin captive. These can be pulled/pushed in without and additional steps.
 	\end{asparaenum}
 	
 	
-	Precision pins serve a nearly opposite purpose- they are permanent instalations, but provide extremely tight tolerances when used right. They allow for installation/detachment of components with high repeatability in locational positioning. It's not uncommon to see precision equipment register together with pins, and then be bolted together in addition to the pins. Pins also can provide higher load transferral since they do not have the stress concentrators that bolts do.
+	Precision pins serve a nearly opposite purpose- they are permanent installations, but provide extremely tight tolerances when used right. They allow for installation and detachment of components with high repeatability in locational positioning. It's not uncommon to see precision equipment register together with pins, and then be bolted together in addition to the pins. Pins also can provide higher load transferral because they do not have the stress concentrators that bolts do.
 	
 	\begin{figure}[H]
 		\centering
@@ -619,15 +619,15 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Dowel pins} are tight-tolerance. They are typically pressed into one part's hole, and with a loose fit on another mating part.
-		\item \textit{Spring pins} are formed from coiled metal, intended to be pressed in like a dowel pin, but have some give to them so can be used with looser-tolerance holes.
+		\item \textit{Dowel pins} are tight-tolerance. They are typically pressed into one part's hole with a loose fit on another mating part.
+		\item \textit{Spring pins} are formed from coiled metal and are intended to be pressed in like a dowel pin, but have some give to them so that they can be used with looser-tolerance holes.
 		\item \textit{Taper/scotch pins} are like dowel pins, but they are slightly tapered, so they wedge into multiple parts like a nail.
-		\item \textit{Shear pins} are specifically designed to fail at a specified load, which prevents damage to equipment down-the-line.
+		\item \textit{Shear pins} are specifically designed to fail at a specified load, preventing damage to equipment.
 	\end{asparaenum}
 	
 	\subsection{Threads} \label{section:threads}
 	
-	Threaded fasteners (bolts, nuts, and screws) are a ubiquitous solution. There's an age old question of what is a 'screw' versus a 'bolt' and the answer is merely in application- if it goes into a nut, it's a bolt. Otherwise, it's a screw. So, anything said about screws is true of bolts and vise-versa.
+	Threaded fasteners (bolts, nuts, and screws) are a ubiquitous solution. There's an age old question of the difference between a screw and a bolt and the answer is merely in application: if it goes into a nut, it's a bolt. Otherwise, it's a screw. So, anything said about screws is true of bolts and vice versa.
 	
 	\begin{figure}[H]
 		\includegraphics[width=0.7\textwidth]{imgs/thread_nomenclature.png}
@@ -637,10 +637,10 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	Threaded fasteners are denoted by:
 	\begin{asparaitem}
 		\item The major diameter of the thread.
-		\item The thread pitch, or threads-per-inch. Metric bolts are specced by the pitch (a M5x0.8 has 0.8mm between each thread crest). English bolts are specced by the number of thread crests in an inch (a 1/4"-20 has 20 threads per inch, or a pitch of 1/20 = 0.05 inches). Even among the same diameter, bolts can have different pitches. For instance, a 1/4"-28 is fine thread, and a 1/4"-20 is coarse thread.
+		\item The thread pitch, or threads-per-inch. Metric bolts are specified by the pitch (a M5x0.8 has 0.8mm between each thread crest). English bolts are specified by the number of thread crests in an inch (a 1/4"-20 has 20 threads per inch, or a pitch of 1/20 = 0.05 inches). Even among the same diameter, bolts can have different pitches. For instance, a 1/4"-28 is fine thread, and a 1/4"-20 is coarse thread.
 		\item The thread length - the bolt might be threaded fully, or only partially. The unthreaded portion is the shoulder and is usually the same diameter as the threads' major diameter.
 		\item The handedness of the thread - most threads are right handed (meaning turning them in a clockwise fashion will make them move away) unless specified as left-handed.
-		\item The grade or class - this refers to the strength of the material. English bolts are specified by "grade", and metric bolts by "class". Bolts (usually) have head markings that reflect the material. Grade and class are only for steel, though- other materials have more exotic standards.
+		\item The grade or class - this refers to the strength of the material. English bolts are specified by "grade", and metric bolts by "class". Bolts usually have head markings that reflect the material. Grade and class are only for steel, though - other materials have more exotic standards.
 	\end{asparaitem}
 	
 	There are many different types of bolts out there.
@@ -681,11 +681,11 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\item \textit{External drive} bolts are good when only side-access is possible, or a cheap solution is needed. The most common example is a hex-head bolt, though pentagon-, external-torx-, and square- heads exist.
 		\item \textit{Socket head} bolts are preferred. They can be installed in deep wells and have a compact head profile.
 		\item \textit{Flat head} screws need to be installed into holes that have been countersunk to the same angle as the head of the screw. They allow for a flush, smooth installation. However, they have a smaller hex than socket heads of the same thread diameter. This makes them more prone to stripping the head out.
-		\item \textit{Button head} screws provide a smooth surface without the need to countersink the surface. They still have a smaller-diameter hex than socket-heads, though, so are generally unpreferred.
-		\item \textit{Shoulder screws} are special-use screws. The shoulder (unthreaded) portion is precision ground and usually a larger diameter than the thread. This allos them to be used as pins or pivot points.
+		\item \textit{Button head} screws provide a smooth surface without the need to countersink the surface. They still have a smaller-diameter hex than socket-heads, though, so are generally not preferred.
+		\item \textit{Shoulder screws} are special-use screws. The shoulder (unthreaded) portion is precision ground and usually a larger diameter than the thread. This allows them to be used as pins or pivot points.
 		\item \textit{Self-tapping screws} have specially formed tips based on what material they are designed to tap into. They thread into material directly; a tap is not required to form threads, and in plastic and wood, are generally stronger.
 		\item \textit{Carriage bolts} have a rounded head without any means of being driven externally. Instead, the square portion sitting under the thread mates with the material it bolts together (either a plate with the corresponding female portion, or a soft material like wood conforms to the square). \textit{Plow bolts} are the same principle, but are flat-headed.
-		\item \textit{Set screws} (often called \textit{grub screws}) are used to lock down on another piece of material. Commonly seen to secure hubs to shafts. They have very small hexes relative to their thread diameter and are notorious for stripping out.
+		\item \textit{Set screws} (often called \textit{grub screws}) are used to lock down on another piece of material. They are commonly used to secure hubs to shafts. They have very small hexes relative to their thread diameter and are notorious for stripping out.
 	\end{asparaenum}
 	
 	There are a lot of different head types that can be put on these bolts as well. 
@@ -752,12 +752,12 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{External hex} is very robust, although prefferred only when side access is available as it has a large profile.
+		\item \textit{External hex} is very robust, although preferred only when side access is available as it has a large profile.
 		\item \textit{Socket hex} has become an industry preferred head, very easy to access from head-on or in a deep pocket.
-		\item \textit{Flathead} is an unpreferred drive type; it is very easy to have driver fall out while using, and the torque-transferring capacity is quite low.
-		\item \textit{Phillips} heads are very much unpreferred as they are very easy to cam out (in fact, they were designed to do so as a means of limiting the installation torque). When driving a phillips screw, apply inward pressure, and make sure the proper size driver is selected (it should fit nicely).
-		\item \textit{Torx} is a preferred drive method, but more expensive and the tools to use it are less common. Very difficult to strip out. When using button-head or flat-head screws, if a torx variant is available, it can be wise to opt for it as the torque-transferring capacity is higher.
-		\item \textit{Robertson} or square drive is somewhat preferred, but not common. Usually found only in wood screws.
+		\item \textit{Flathead} is not a preferred drive type; it is very easy to have driver fall out while using, and the torque-transferring capacity is quite low.
+		\item \textit{Phillips} heads are very much not preferred as they are very easy to cam out (in fact, they were designed to do so as a means of limiting the installation torque). When driving a Phillips screw, apply inward pressure, and make sure the proper size driver is selected (it should fit nicely).
+		\item \textit{Torx} is a preferred drive method, but more expensive and the tools to use it are less common. Very difficult to strip out. When using button-head or flat-head screws, if a Torx variant is available, it can be wise to opt for it as the torque-transferring capacity is higher.
+		\item \textit{Robertson} or square drive is somewhat preferred, but not common. It is usually found only in wood screws.
 	\end{asparaenum}
 	
 	
@@ -864,21 +864,21 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item Lock wire requires tedious installation and bolts with cross-drilled holes to feed the stainless steel wire through. That said, when it is installed properly, it is virtually failure-proof, and as such is the standard in many aerospace and motorsport applications. 
-		\item Threadlocker (sometimes referred to by the brand name Loctite) comes in various different strengths and can be used on metal-on-metal contact. It's basically long-cure, specially formulated superglue. However, it does attack many plastics, so be careful! It also requires time to cure to full strength, so is not an instant fix, but must be premeditated.
-		\item Nylock nuts have a nylon patch that deforms when the threads pass through it. The nut should be installed metal-side first, nylon-side last. These are limited use (<50 uses).
-		\item Kay/Jet nuts (metal locknuts) work on the same idea as nylock nuts, but in this case, the nut is deformed and interferes with the thread. It is quite difficult to thread into these nuts. These are extremely limited use (<5 uses) but will work in extreme temperatures, unlike nylocks.
-		\item Jam Nuts are simply a second nut jammed up against the first nut. This enables easy adjustment, but is not a very positive way of locking something in place.
-		\item Nordlock washers are special ratcheting washers which prevent loosening when properly torqued. There are many different types of locking washers.
-		\item Split lock washers are cheap washers which arguably do not actually prevent loosening.
-		\item Castle nuts are nuts with slots through which a pin can be fed, locking the nut to the bolt it is secured to. A very robust method.
+		\item \textit{Lock wire} requires tedious installation and bolts with cross-drilled holes to feed the stainless steel wire through. That said, when it is installed properly, it is virtually failure-proof, and as such is the standard in many aerospace and motorsport applications. 
+		\item \textit{Threadlocker} (sometimes referred to by the brand name Loctite) comes in various different strengths and can be used on metal-on-metal contact. It's basically long-cure, specially formulated superglue. However, it does attack many plastics, so be careful! It also requires time to cure to full strength and so is not an instant fix, but must be premeditated.
+		\item \textit{Nylock nuts} have a nylon patch that deforms when the threads pass through it. The nut should be installed metal-side first, nylon-side last. These are limited use (<50 uses).
+		\item \textit{Kay/Jet nuts} (metal locknuts) work on the same idea as nylock nuts, but in this case, the nut is deformed and interferes with the thread. It is quite difficult to thread into these nuts. These are extremely limited use (<5 uses) but will work in extreme temperatures, unlike nylock nuts.
+		\item \textit{Jam nuts} are simply a second nut jammed up against the first nut. This enables easy adjustment, but is not a very positive way of locking something in place.
+		\item \textit{Nordlock washers} are special ratcheting washers which prevent loosening when properly torqued. There are many different types of locking washers.
+		\item \textit{Split lock washers} are cheap washers which arguably do not actually prevent loosening.
+		\item \textit{Castle nuts} are nuts with slots through which a pin can be fed, locking the nut to the bolt it is secured to. A very robust method.
 	\end{asparaenum}
 	
 	\subsection{Rivets}
 	
-	Pop rivets are a light and cheap method of fastening. However, they require a special gun and are one-time use. They must be drilled out in order to remove them. They are weaker than bolts, so more must be used, but overall, they are a lighter option. Installation is also more picky than bolting. However, they can still be a time-saver over bolts (when disassembly is not a factor).
+	Pop rivets are a light and cheap method of fastening. However, they require a special gun and are one-time use. They must be drilled out in order to remove them. They are weaker than bolts, so more must be used, but overall, they are a lighter option. Installation is also more picky than bolting. However, they can still be a time-saver over bolts when disassembly is not a factor.
 	
-	Rivets are specified by diameter and 'grip length'; the amount of material sandwiched together they can grip. Rivets should be installed to close-fit holes, straight, and with the plates already pulled together.
+	Rivets are specified by diameter and 'grip length' - the amount of material sandwiched together that they can grip. Rivets should be installed straight to close-fit holes with the plates already pulled together.
 	
 	\begin{figure}[H] \centering
 		\includegraphics[width=0.9\textwidth]{imgs/rivet_install.jpeg}
@@ -932,8 +932,8 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Shaft collars} are heavy, high-profile, but easily removable and adjustable. They come in different bore shapes (hex, round, keyed). They come in two-piece and one-piece varieties.
-		\item \textit{Push-on rings} are pushed onto shafts (no groove needed) and (ideally) ratchet on, never coming off.
+		\item \textit{Shaft collars} are heavy and high-profile, but easily removable and adjustable. They come in different bore shapes (hex, round, keyed, etc) and in one or two-piece varieties.
+		\item \textit{Push-on rings} are pushed onto shafts (no groove needed) and ideally ratchet on, never coming off.
 		\item \textit{E-clips} can be pushed radially into a groove. They are aided by the use of a snap-ring tool to splay them apart, but it is not necessary. They can be installed without passing the clip over the end of a shaft.
 		\item \textit{External snap rings} are expanded by a snap-ring tool, and installed over the groove of a shaft.
 		\item \textit{Internal snap rings} are compressed by a snap-ring tool, and installed into the groove of a housing.
@@ -942,19 +942,17 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 
 	\end{asparaenum}
 	
-	When working with expanding rings, it is very important to not over-extend them on installation. It is very easy to over-extend and damage the rings (leading to successful installation, but potential for the ring to fall off later during use) if expanded much more than is necessary to feed them over the shaft.
+	When working with expanding rings, it is very important to not over-extend them on installation. It is very easy to over-extend and damage the rings -leading to successful installation, but potential for the ring to fall off later during use - if expanded much more than is necessary to feed them over the shaft.
 	
 	\subsection{Adhesives}
 	
-	Adhesives are useful from time to time.
-	
 	\begin{asparaenum}[a)]
-		\item Retaining compound (e.g. Loctite Green) is meant to bond bearings to their housings, and is very good at it.
-		\item Epoxies are two-part adhesives that are mixed immediately prior to application. They can cure quickly.
-		\item Cryanacrolate (superglue) adhesives are good for many plastics. Loctite has a good design/test guide for different plastic/glue combinations.
-		\item Tapes can be quite useful. Good duct tape and gaffers tape can be used for high-fidelity prototyping and quick fixes.
-		\item Pressure-sensitive tape (e.g. 3M VHB) can be incredibly strong. Follow manufacturer's directions for maximum strength.
-		\item Velcro and dual-lock can produce easy-but-secure removable components.
+		\item \textit{Retaining compound} such as Loctite Green is meant to bond bearings to their housings.
+		\item \textit{Epoxies} are two-part adhesives that are mixed immediately prior to application. They can cure quickly.
+		\item \textit{Cryanacrolate/superglue} adhesives are good for many plastics. Loctite has a good design/test guide for different plastic/glue combinations.
+		\item \textit{Tapes} can be quite useful. Good duct tape and gaffer's tape can be used for high-fidelity prototyping and quick fixes.
+		\item Pressure-sensitive tape such as 3M VHB can be incredibly strong. Follow the manufacturer's directions for maximum strength.
+		\item Velcro and dual-lock can produce easy but secure removable components.
 	\end{asparaenum}
 	
 	
@@ -978,26 +976,26 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Quarter turn fasteners}, like \textit{Dzus tabs} are an easily removable, robust solution. Some require a simple tool (flat-blade screwdriver) to remove. Often found in motorsport applications. They are permanently installed into both the frame and panel. They stick out a very small amount (the thickness of the tab).
-		\item \textit{Push-pull panel pins}, like \href{https://www.mcmaster.com/panel-fasteners/screws-and-bolts/push-pull-captive-panel-screws/}{\color{red}\underline{these on McMaster-Carr}} are a light-duty solution, but do not require any special machining to integrate (just drill holes of the right diameters). They also do not require any special tools to remove or attach, and stay captive with the panel they are attached to. However, they do stick out from the panel quite significantly.
-		\item \textit{Captive panel screws} are effetively screws that are kept captive to the panel. Like any screw, they require the appropriate tool to remove.
+		\item \textit{Quarter turn fasteners} such \textit{Dzus tabs} are an easily removable, robust solution. Some require a simple tool (flat-blade screwdriver) to remove. Often found in motor sport applications, they are permanently installed into both the frame and panel. They stick out a very small amount - the thickness of the tab.
+		\item \textit{Push-pull panel pins}, like \href{https://www.mcmaster.com/panel-fasteners/screws-and-bolts/push-pull-captive-panel-screws/}{\color{red}\underline{these on McMaster-Carr}} are a light-duty solution, but do not require any special machining to integrate, just drill holes of the right diameters. They also do not require any special tools to remove or attach, and stay captive with the panel they are attached to. However, they do stick out from the panel quite significantly.
+		\item \textit{Captive panel screws} are effectively screws that are kept captive to the panel. Like any screw, they require the appropriate tool to remove.
 	\end{asparaenum}
 	
-	\subsection{The Ziptie}
-	I had to save the best for last: the ziptie. Zipties have a slight reputation as a 'hackish' solution, but this is more a result of people overusing them or overestimating how much they can accomplish. That being said, they can do a lot, from their intended use of holding bundles of wires together, to forming flappy agitating bits on ball feeding mechanisms. Zipties come in different materials (from metal to plastic), although the most common is nylon.
+	\subsection{The Zip tie}
+	I had to save the best for last: the zip tie. Zip ties have a slight reputation as a 'hackish' solution, but this is more a result of people overusing them or overestimating how much they can accomplish. That being said, they can do a lot, from their intended use of holding bundles of wires together, to forming agitating flappers on ball feeding mechanisms. Zip ties come in different materials, although the most common is nylon.
 	
 	\begin{figure}[H]
 		\includegraphics[width=0.9\textwidth]{imgs/ziptie.png}
-		\caption{The ziptie.}
+		\caption{The zip tie.}
 	\end{figure}
 	
-	These have a head attached to a long strip, which can be fed into the head to form a loop. The head is ratcheting, so when the tail is pulled through, it will not loosen (until it breaks). Multiples can be chained together if you don't have a long enough one. Some special zipties can be reused (they have a release lever).
+	These have a head attached to a long strip, which can be fed into the head to form a loop. The head is ratcheting, so when the tail is pulled through, it will not loosen (until it breaks). Multiple zip ties can be chained together to form a longer one. Some special zip ties can be reused - they have a release lever.
 
 	\section{Fabrication Paradigms / Traditions}
-	To draw an analogy to cuisine... up to this point we've talked about different ingredients- the different herbs, meats, vegetables, fruits, grains that you might use in a kitchen to make a dish with. You can combine them in a lot of different ways, but there's some combinations that make more sense than others, and some that have become traditional because of this. That isn't to say that you can't mix and match and add as you see fit (or even start your own tradition), but there's combinations of technologies you'll see more common than others. 
+	To draw an analogy to cuisine... up to this point we've talked about different ingredients - the different herbs, meats, vegetables, fruits, grains that you might use in a kitchen to make a dish with. You can combine them in a lot of different ways, but there are some combinations that make more sense than others, and some that have become traditional because of this. That isn't to say that you can't mix and match and add as you see fit - or even start your own tradition - but there are combinations of technologies that are more common than others. 
 	
 	\subsection{The 80/20 Tradition}
-	One common tradition is that of using t-slot framing as introduced in section \ref{section:extrusions}. There are many different components that can be used with t-slot framing. This tradition is quite deep and even has sub-traditions (personally when I'm building 80/20, I despise anchor fasteners).
+	One common tradition is that of using t-slot framing as introduced in section \ref{section:extrusions}. There are many different components that can be used with t-slot framing. This tradition is quite deep and even has sub-traditions.
 	
 	\begin{figure}[H]
 	\begin{subfigure}[b]{.32\linewidth}
@@ -1022,28 +1020,28 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{T nuts} are the basic ingredient of the 80/20 tradition. They come in many flavors: some can be dropped in to a t-slot, some can be rolled in, some can only be slid in through the end. But they all serve the same purpose: they're a nut that stays captive in the T-slot.
+		\item \textit{T nuts} are the basic ingredient of the 80/20 tradition. They come in many flavors: some can be dropped in to a t-slot, some can be rolled in, some can only be slid in through the end. However, they all serve the same purpose: they're a nut that stays captive in the T-slot.
 		\item \textit{Joiner plates} are one way of securing tubes to other tubes. They're straightforward, and come in many sizes.
 		\item \textit{External brackets} are another way of securing tubes to other tubes. These come in many sizes and thicknesses, sometimes with a reinforcing strip (as shown).
 		\item \textit{Anchor fasteners} (sometimes nicknamed \textit{lollipop connectors}) are one type of end connector. There are many types of end connectors but these seem to be the most common. The framing gets milled out to accept the round portion of the connector. The connector then fits into one frame, and a bolt going through that connector gets tightened into a t nut inside another frame. The heads of the bolts can be quite frustrating to access and tighten down perfectly, and these also require that the ends of the tubes get milled perfectly square.
-		\item \textit{Corner blocks} allow corners to get joined together in a very clean fashion. The ends of the extrusions must be tapped to accept a bolt. I've seen (and made, myself) printed versions of these that allow extrusions to come together at odd angles.
+		\item \textit{Corner blocks} allow corners to get joined together in a very clean fashion. The ends of the extrusions must be tapped to accept a bolt. It is possible to make printed versions of these that allow extrusions to come together at odd angles.
 	\end{asparaenum}
 	
-	Overall, 80/20 is a very flexible paradigm, but is quite heavy and expensive, and can be prone to loosening under vibration.
+	Overall, 80/20 is a very flexible paradigm, but quite heavy and expensive, and can be prone to loosening under vibration.
 	
-	\subsection{The Sheetmetal Tradition}
-	Airplanes have pioneered this method of cut and folded sheetmetal, riveted together to make complex structures. It's a little bit like industrial origami. 
+	\subsection{The Sheet metal Tradition}
+	Airplanes have pioneered this method of cut and folded sheet metal, riveted together to make complex structures. It's a somewhat like industrial origami.
 	
 	\begin{figure}[H]
 		\includegraphics[width=0.8\textwidth]{imgs/tradition_sheetmetal_148.png}
-		\caption{A FRC chassis made from riveted sheetmetal.}
+		\caption{An FRC (FIRST Robotics Competition) chassis made from riveted sheet metal.}
 	\end{figure}
 	
-	Sheetmetal can be extremely light, as it has the capability to put material where you need it most and have large, gusseted structures. It is necessary that the sidewalls of sheet be bent up to add out-of-plane stiffness, but quite straightforward to do so. Sheet metal is one of the cheapest forms of metal, pound-for-pound, although the cutting required to make these frames usually produces a considerable amount of waste stock. 
+	Sheet metal can be extremely light, as it has the capability to put material where you need it most and have large, gusseted structures. It is necessary that the sidewalls of sheet be bent up to add out-of-plane stiffness, but quite straightforward to do so. Sheet metal is one of the cheapest forms of metal, pound-for-pound, although the cutting required to make these frames usually produces a considerable amount of waste stock. 
 	
-	Sheetmetal is a very scalable process in mass quantity, which is why many things are made from it, even if they aren't riveted as well.
+	Sheet metal is a very scalable process in mass quantity, which is why many things are made from it, even if they aren't riveted as well.
 	
-	Rivets work best in shear and with plenty of redundancy. Bolts can also be used, but they will tend to egg out the holes, so the sheetmetal itself becomes the limiting factor, making the use of a higher quantity of rivets a stronger choice.
+	Rivets work best in shear and with plenty of redundancy. Bolts can also be used, but they will tend to egg out the holes, so the sheet metal itself becomes the limiting factor, making the use of a higher quantity of rivets the stronger choice.
 	
 	\subsection{The Fingerjointed Plate Tradition}
 	What do you do if you have a way of cutting plates, but no bender? Well, cut thicker ones, and use finger joints to stick it all together! Woodworkers have long used finger joints to make nice craftwork using glue and nail. But if you want to quickly build something and maybe tear it apart, gluing or nailing aren't a good proposition.
@@ -1054,24 +1052,24 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\caption{Fingerjointed and bolted assemblies.}
 	\end{figure}
 	
-	Such joints are popular among the hobbyist community, and often feature captive nuts and bolting shown above to help keep things together. The fingers transmit shear load, while the bolts help keep things together. The joint above on the left would still flex quite a bit almost like a hinge, so putting another plate perpindicular to both (making a box or gusset) would help the structural integrity more.
+	Such joints are popular among the hobbyist community, and often feature captive nuts and bolting shown above to help keep things together. The fingers transmit shear load, while the bolts help keep things together. The joint above on the left would still flex quite a bit almost like a hinge, so putting another plate perpendicular to both - making a box or gusset - would help the structural integrity more.
 	
-	These joints can also be made with metal, or at odd angles (as on the right).
+	These joints can also be made with metal, or at odd angles.
 	
 	\subsection{The Bracket and Tube Tradition}
-	Sheetmetal is cool, but doesn't have to be used that much. It isn't a very effective way at spanning long distances, and requires lead time since you have to get the profile cutting supplier/equipment to do it.
+	Sheet metal is cool, but doesn't have to be used that much. It isn't a very effective way at spanning long distances, and requires lead time since you have to get the profile cutting supplier/equipment to do it.
 	
 	\begin{figure}[H]
-		\includegraphics[width=0.8\textwidth]{imgs/tradition_gussetbox.jpeg}
-		\caption{Tubes held together with sheetmetal gussets.}
+		\includegraphics[width=0.6\textwidth]{imgs/tradition_gussetbox.jpeg}
+		\caption{Tubes held together with sheet metal gussets.}
 	\end{figure}
 	
-	Brackets can come in many shapes and sizes and purposes. They can join together tubes by sandiwching them (see the hypotenuse), join tubes by being installed to the side (see the joint of the legs), or mount extra components like bearings and motors. Brackets are cheap (often made of sheetmetal and produced en masse) and so is box tube. You can even purchase or make extrusion with regularly drilled holes, so that you don't need to bother fabricating holes into the tubes come time to build a structure.
+	Brackets can come in many shapes and sizes and purposes. They can join together tubes by sandwiching them (see the hypotenuse), join tubes by being installed to the side (see the joint of the legs), or mount extra components like bearings and motors. Brackets are cheap, often made of sheet metal and produced in large quantities, as is box tube. You can even purchase or make extrusion with regularly drilled holes, so that you don't need to bother fabricating holes into the tubes come time to build a structure.
 	
-	As with sheetmetal, both bolts and rivets can be used- but the use of redundant rivets rather than bolts can end up being lighter and stronger, although less servicable.
+	As with sheet metal, both bolts and rivets can be used - but the use of redundant rivets rather than bolts can end up being lighter and stronger, although less serviceable.
 	
 	\subsection{The Spaceframe Tradition}
-	Tubes are strong. Tubes are light. But you know what's even lighter than a gusset? A weld. Weld the tubes together directly! Use round tubes so that there aren't any nasty stress concentrators!  This is known as a \textit{spaceframe} or \textit{tubeframe}.
+	Tubes are strong. Tubes are light. However, welds are even lighter than gussets. Welding tubes together directly and using round tube to prevent stress concentrators is known as a \textit{spaceframe} or \textit{tubeframe}.
 	
 	% Is chunky a tradition? I can't think of any examples... it's kinda just a thing that happens
 	
@@ -1080,7 +1078,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\caption{A spaceframe for a Formula SAE racecar.}
 	\end{figure}
 	
-	Spaceframes are time-consuming to produce (as tubes must be cut to length and have the ends shaped so they fit together, a process known as \textit{coping} or \textit{notching}). Additionally, a jig or figure is required to hold all of the tubes in place before they are welded. On the upside, they allow for near-ultimate flexibility in where material is placed and routed.
+	Spaceframes are time-consuming to produce, as tubes must be cut to length and have the ends shaped so they fit together, a process known as \textit{coping} or \textit{notching}. Additionally, a jig or figure is required to hold all of the tubes in place before they are welded. On the upside, they allow for near-ultimate flexibility in material placement and routing.
 	
 	\begin{figure}[H]
 		\includegraphics[width=0.8\textwidth]{imgs/tradition_tubeframe_jigging.jpeg}
@@ -1096,7 +1094,7 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 \subsection{Nomenclature}
 
 \begin{figure}[H]
-\includegraphics[width=0.7\textwidth]{imgs/radial_axial.png}
+\includegraphics[width=0.5\textwidth]{imgs/radial_axial.png}
 \caption{Axial vs. radial directions.}
 \end{figure}
 %TODO: Tangential, angular
@@ -1108,33 +1106,33 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{.32\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/keyedshaft.png}
-			\caption{Keyway (with set screw)}
+			\includegraphics[width=0.6\textwidth]{imgs/keyedshaft.png}
+			\caption{Keyway with set screw}
 		\end{subfigure}
 		\begin{subfigure}[b]{.32\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/dshaft.png}
-			\caption{D-shaft (with set screw)}
+			\includegraphics[width=0.6\textwidth]{imgs/dshaft.png}
+			\caption{D-shaft with set screw}
 		\end{subfigure}
 		\begin{subfigure}[b]{.32\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/pinnedshaft.png}
+			\includegraphics[width=0.6\textwidth]{imgs/pinnedshaft.png}
 			\caption{Pinned}
 		\end{subfigure}
 		\begin{subfigure}[b]{.32\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/splineshaft.png}
+			\includegraphics[width=0.6\textwidth]{imgs/splineshaft.png}
 			\caption{Spline}
 		\end{subfigure}
 		\begin{subfigure}[b]{.32\linewidth}
-			\includegraphics[width=0.7\textwidth]{imgs/hexshaft.png}
-			\caption{Hex (or polygon)}
+			\includegraphics[width=0.6\textwidth]{imgs/hexshaft.png}
+			\caption{Hex or other polygon}
 		\end{subfigure}
 		
 		\caption{Shaft-hub geometries.}
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Keyed} shafts (green) have grooves into which \textit{machine keys} (blue) can be halfway inserted. The hub (orange) has a groove matching the other half of the key. A set screw (yellow) may be included to clamp down on the key to make sure it doesn't move, and to help secure the key from fretting. These connections are quite common in industrial applications, but their load-carrying capacity is low compared to alternatives.
+		\item \textit{Keyed} shafts, shown in green, have grooves into which \textit{machine keys}, shown in blue, can be halfway inserted. The hub, shown in orange, has a groove matching the other half of the key. Set screws, shown in yellow, may be included to clamp down on the key to make sure it doesn't move, and to help secure the key from fretting. These connections are quite common in industrial applications, but their load-carrying capacity is low compared to alternatives.
 		\item \textit{D-shafts} have a small flat milled into them. This allows either a hub with a D-shape to mount to it, or a hub that is internally round but has a set screw (yellow) that can tighten down onto the flat. The addition of the flat makes this a much more secure connection than simply tightening the set screw onto a plain round shaft.
-		\item \textit{Cross-pins} or bolts can be used to secure shafts. There many varations on this, but one easy to build, easy to maintain, and fairly reliable method is shown. The hub is tapped on one side, and has a hole with clearance for a bolt head on the other side. The shaft has a clearance hole for the bolt. This makes lining up the shafts easy, and the tightening action will help eliminate wobble.
+		\item \textit{Cross-pins} or bolts can be used to secure shafts. There many variations on this, but one easy to build, easy to maintain, and fairly reliable method is shown. The hub is tapped on one side, and has a hole with clearance for a bolt head on the other side. The shaft has a clearance hole for the bolt. This makes lining up the shafts easy, and the tightening action will help eliminate wobble.
 		\item \textit{Splines} are complex geometric shapes with many load-bearing teeth. There are many different standards of splines. These are hard and expensive to produce, but provide the highest torque-transmitting capacity.
 		\item \textit{Hex} and, in general, \textit{polygon} shafts are a good compromise between cost and load-bearing capacity. Hex is extremely common, especially within the FRC ecosystem and agricultural equipment. Hex stock in many different materials can be readily procured to use as shafting material, and a hex broach can be used to produce the hub.
 	\end{asparaenum}
@@ -1170,16 +1168,16 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Ball bearings} have an inner \textit{race} and an outer race with balls inbetween. These balls are spread out by a cage. They come in many different varieties.
+		\item \textit{Ball bearings} have an inner \textit{race} and an outer race with balls in between. These balls are spread out by a cage. They come in many different varieties.
 		\begin{asparaitem}[\ \ \ ]
 			\item \textit{Sealed} bearings have a rubber seal keeping contaminants out.
 			\item \textit{Shielded} bearings have a shield that keeps shrapnel out.
 			\item \textit{Open} bearings have no protection whatsoever. Seals and shields trap heat, and necessitate the use of grease rather than oil. This means that in an oily environment (like an engine), open bearings can be much more efficient.
 			
-			\item \textit{Deep groove} ball bearings are the most common (meaning the balls contact primarially radially).
-			\item \textit{Angular contact} and \textit{X-contact} bearings are better at handling thrust and combined loadings.
+			\item \textit{Deep groove} ball bearings are the most common (meaning the balls contact primarily radially).
+			\item \textit{Angular contact} and \textit{X-contact} bearings are better at handling thrust and combined loads.
 			
-			\item \textit{Flanged} bearings (as shown) have a flange which prevents the bearing from falling through the hole into which they are installed. Not all bearings are flanged.
+			\item \textit{Flanged} bearings have a flange which prevents the bearing from falling through the hole into which they are installed. Not all bearings are flanged.
 		\end{asparaitem}
 		\item \textit{Needle roller bearings} have an outer race, and inside that, a cage that contains multiple rollers. These bearings can ride directly on a shaft if the shaft is sufficiently hard, or a separate inner race can be used. Needle roller bearings are very low-profile and have very high load-bearing capacities as the rollers distribute load over a larger region. However, they do nothing to retain a shaft axially.
 		\item \textit{Tapered needle roller bearings} are heavy-capacity bearings good for combined loading, often used in automotive applications. These mate with a \textit{cup}, much like a needle roller bearing mates with an inner race. These must be used in pairs in opposing directions, and axial preload is necessary for proper operation.
@@ -1213,7 +1211,7 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{V-bearings} can be used in multiples to contstrain one part to a rail with appropriate mating geometry.
+		\item \textit{V-bearings} can be used in multiples to constrain one part to a rail with appropriate mating geometry.
 		\item \textit{Linear sliders} can be used to constrain one part to a rail, cheaply and with a low profile.
 		\item \textit{Recirculating linear ball bearings} are high-precision components which are very efficient, which work in conjunction with precision ground rod. These are quite expensive, however, and sensitive to dust, dirt, and shrapnel.
 		\item \textit{Linear bushings} are high-precision components which serve the same purpose as linear bearings, but are less sensitive to cleanliness, and often cheaper, although they have higher friction.
@@ -1282,7 +1280,7 @@ Ropes, pulleys, and spools are the simplest way to transmit power from one place
 	\caption{Left: helical takeup pulley. Right: various block and tackle.}
 \end{figure}
 
-Helical takeup pulleys have grooves in them which help route rope so that when it is wound, it is wound at a constant radius. This can help prevent binding or slack in closed-loop systems (like continous rigging elevators). To help closed loop systems more, a spring inline with the rope can take up more slack than a stiff rope.
+Helical takeup pulleys have grooves in them which help route rope so that when it is wound, it is wound at a constant radius. This can help prevent binding or slack in closed-loop systems (like continuous rigging elevators). To help closed loop systems more, a spring inline with the rope can take up more slack than a stiff rope.
 
 A \textit{block and tackle} is a system of two or more pulleys with a rope routed between them in alternating fashion as shown. This generates mechanical advantage; the rope must be pulled more to achieve the same lifting force. This also decreases the input load required to raise the load by a factor of the number of ropes. 
 
@@ -1295,13 +1293,13 @@ A \textit{gear} is effectively, a wheel with teeth. These teeth are specially sh
 	\caption{Nomenclature of different gear dimensions}
 \end{figure}
 
-Gears are specified, among other things, by the number of teeth, their \textit{pressure angle}, and either the \textit{diametral pitch} or \textit{module}.
+Gears are specified, among other things, by the number of teeth, their \textit{pressure angle}, and either the \textit{diametrical pitch} or \textit{module}.
 
 \begin{asparaenum}[a)]
 	\item Gear teeth have an \textit{involute} profile. This is a specific geometric shape that is not quite an arc, but makes sure power transmission is smooth and without excessive backlash.
-	\item The \textit{pitch circle} is a rough representation of the gear as a wheel. It lies somewhere inbetween the overall diameter and the diameter of the root of the teeth. You can draw up a sketch containing gears' pitch circles tangent to each other, and then they will fit together.
-	\item A gear's \textit{diametral pitch} (DP) is the number of teeth in a gear divided by the pitch diameter (in inches). So, if a gear has 50 teeth and is a 20DP gear, it would have a pitch circle of diameter $50 \ teeth \ / \ 20 \ DP = 2.5 \ inches$. For two gears to be compatible and mesh, they must have the same diametral pitch, otherwise the teeth would be the wrong sizes.
-	\item A gear's \textit{module} is a gear's pitch diameter (in mm) divided by the number of teeth. This measures the same thing as diametral pitch, just in a different way. If a 5 module gear has 30 teeth, its pitch diameter would be $5 \ mm \times 30 \ teeth = 150 \ mm$.
+	\item The \textit{pitch circle} is a rough representation of the gear as a wheel. It lies somewhere in between the overall diameter and the diameter of the root of the teeth. You can draw up a sketch containing gears' pitch circles tangent to each other, and then they will fit together.
+	\item A gear's \textit{diametrical pitch} (DP) is the number of teeth in a gear divided by the pitch diameter (in inches). So, if a gear has 50 teeth and is a 20DP gear, it would have a pitch circle of diameter $50 \ teeth \ / \ 20 \ DP = 2.5 \ inches$. For two gears to be compatible and mesh, they must have the same diametrical pitch, otherwise the teeth would be the wrong sizes.
+	\item A gear's \textit{module} is a gear's pitch diameter (in mm) divided by the number of teeth. This measures the same thing as diametrical pitch, just in a different way. If a 5 module gear has 30 teeth, its pitch diameter would be $5 \ mm \times 30 \ teeth = 150 \ mm$.
 	\item A gear's \textit{pressure angle} (PA) measures how steep the teeth are, or the angle of the contact line. This must be the same between two gears for them to be compatible. There is a lot of testing and science behind picking a good angle; higher angles are weaker and produce higher loads on the system, but do make oil flow better. Usually, though, this isn't a big concern- just make sure that you don't mix and match pressure angles. 14.5 degrees is common for greased gears.
 \end{asparaenum}
 
@@ -1314,7 +1312,7 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 		\caption{Helical}
 	\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
 		\includegraphics[width=0.8\textwidth]{imgs/gear_herringbore.png}
-		\caption{Herringbore}
+		\caption{Herringbone}
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{.32\linewidth}
@@ -1340,12 +1338,12 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 
 \begin{asparaenum}[a)]
 	\item \textit{Spur} gears have straight-cut teeth. This means they are two-dimensional and relatively simple to produce.
-	\item \textit{Helical} gears have angled-cut teeth. These are harder to produce, but they create smoother power transmission since multiple teeth are in contact, creating a seamless handoff. However, the helical nature produces an axial load in addition to the radial load that gears already produce. 
+	\item \textit{Helical} gears have angled-cut teeth. These are harder to produce, but they create smoother power transmission since multiple teeth are in contact, creating a seamless hand off. However, the helical nature produces an axial load in addition to the radial load that gears already produce. 
 	\item \textit{Herringbore} gears are effectively two helical gears back-to-back. This causes the axial loads that helical gears produce to cancel out. This type of gear, though, is obviously even more complicated to produce.
-	\item \textit{Bevel} gears allow power transmission along non-paralell axes. It is important to note that bevel gears are made as sets- you cannot use a 40T gear intended for use with a 20T, with a 60T, as the angles will not mesh up.
+	\item \textit{Bevel} gears allow power transmission along non-parallel axes. It is important to note that bevel gears are made as sets- you cannot use a 40T gear intended for use with a 20T, with a 60T, as the angles will not mesh up.
 	\item \textit{Ring} gears are simply inverse spur gears.
 	\item \textit{Planetary} gear sets are compact reductions that can be configured in many ways depending on which part of the set is fixed in place. Typically, the ring is held fixed, the central \textit{sun gear} is driven, and a \textit{carrier plate} (now shown) holding the \textit{planet gears} is the output.
-	\item \textit{Worm} gears are extremely compact reductions, but are often not very efficient. The worm wheel (right) might have one, or several \textit{leads}, or teeth. A lower number of leads will reduce the gearset's ability to be backdriven, which can be a desirable characteristic.
+	\item \textit{Worm} gears are extremely compact reductions, but are often not very efficient. The worm wheel (right) might have one, or several \textit{leads}, or teeth. A lower number of leads will reduce the gear set's ability to be backdriven, which can be a desirable characteristic.
 	\item A \textit{rack and pinion} can be used to transform rotary motion into linear motion, or vice versa.	
 \end{asparaenum}
 
@@ -1354,7 +1352,7 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 	\caption{A spur gear set with a idler gear (middle).}
 \end{figure}
 
-\textit{Idlers} can be introduced to a gearset to change the direction of rotation, or to bridge a large gap and transmit power from one place to another. The idler does not impact the overall gear ratio, only the direction of motion.
+\textit{Idlers} can be introduced to a gear set to change the direction of rotation, or to bridge a large gap and transmit power from one place to another. The idler does not impact the overall gear ratio, only the direction of motion.
 
 
 
@@ -1470,7 +1468,7 @@ A \textit{belt} is a continuous loop of a flexible material. There are many diff
 
 Belts, like chain, must be properly tensioned and aligned. Most of the methods explained for chains also work for belts. Special considerations must be made for the back-bending capacity of the belt in question (every belt has a rated back-bending radius). Pulleys for timing belts usually require at least six (6) teeth of engagement, although this may increase or decrease based on your load case and manufacturer's recommendations. 
 
-My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} has a calculator to determine the length of belt needed to achieve a certain center-to-center distance (or vise versa) for flat belts, polycord, and timing belts.
+My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} has a calculator to determine the length of belt needed to achieve a certain center-to-center distance (or vice versa) for flat belts, polycord, and timing belts.
 
 \begin{figure}[H]
 	\includegraphics[width=0.5\textwidth]{imgs/belt_crossed.png}
@@ -1518,8 +1516,8 @@ Often we want to make sure something stays in place once we set it to a certain 
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item \textit{Disc brakes} have a \textit{disc} which is grabbed by the \textit{brake pads} of a \textit{caliper}. These are simple to find and reasonably simple to integrate into a system. They are also good at rejecting heat and providing consistent performance, which is why they are the standard in motorsport applications.
-	\item \textit{Drum brakes} have \textit{shoes} which are actuated outwards and grab onto the \textit{brake drum}. This action causes the shoes to dig-in, increasing the braking capacity. These are lower-cost en masse (and integrate nicely into wheels), but can be finnicky to set up.
+	\item \textit{Disc brakes} have a \textit{disc} which is grabbed by the \textit{brake pads} of a \textit{caliper}. These are simple to find and reasonably simple to integrate into a system. They are also good at rejecting heat and providing consistent performance, which is why they are the standard in motor sport applications.
+	\item \textit{Drum brakes} have \textit{shoes} which are actuated outwards and grab onto the \textit{brake drum}. This action causes the shoes to dig-in, increasing the braking capacity. These are lower-cost in large quantities and integrate nicely into wheels, but can be finicky to set up.
 	\item \textit{Band brakes} have a \textit{band} which is pulled down tightly around the \textit{brake drum}. This is a fairly simple mechanism to make and actuate. 
 \end{asparaenum}
 
@@ -1579,7 +1577,7 @@ Pneumatic systems are one way of turning electrical energy into mechanical energ
 	\item A \textit{compressor} takes ambient air and compresses it to a higher pressure. The compressor is turned on and off by some logic system and a \textit{pressure switch} that determines when the system is at maximum pressure.
 	\item The \textit{pressure relief valve} is a safety mechanism that releases excess pressure, preventing explosions as a result of excessive pressure.
 	\item High pressure air is stored in a \textit{tank}.
-	\item A \textit{pressure regulator} steps the high storage pressure to a lower, working pressure. This provides predictable operation as the storage pressure will fluctate with usage.
+	\item A \textit{pressure regulator} steps the high storage pressure to a lower, working pressure. This provides predictable operation as the storage pressure will fluctuate with usage.
 	\item A \textit{solenoid valve} allows air to enter and exit various pneumatic devices, typically \textit{pneumatic cylinders}.
 \end{asparaenum}
 
@@ -1642,7 +1640,7 @@ Intentional flow restriction can be provided by throttling valves. These usually
 	\item  \textit{Double-acting} cylinders have two inlet ports. Air can enter and exhaust from either side so that they can push and pull on objects.
 	\item \textit{Single-acting} cylinders have only one inlet port. Air can enter and exhaust from this port. When air is released, a spring cylinders the piston back to its relaxed state. These exist in both spring retract and spring extend varieties. These can reduce circuit complexity and weight when the action required only needs to exert force in one direction.
 	\item \textit{Nose-mount} cylinders are mounted only by their nose, where the rod extends/retracts from. Nose mounting a piston should be done carefully- it is easy to end up putting a bending moment on the rod and bend the rod. The rods of cylinders are generally not designed to withstand loads from the side.
-	\item \textit{Universal-mount} cylinders feature both a nose mount and a rear pivot point. This rear pivot point helps make sure the rod does not get sideloaded and bend.
+	\item \textit{Universal-mount} cylinders feature both a nose mount and a rear pivot point. This rear pivot point helps make sure the rod does not get side-loaded and bend.
 	\item \textit{Tie-rod} cylinders have many mounting features, typically tapped holes, making them often easy to integrate. This comes with the same caveat as nose-mount cylinders- care must be taken to not sideload these.
 	\item \textit{Stage} or \textit{guided} cylinders have additional guiding features or linear stages built in that allow them to withstand side loads. This also has the added benefit of preventing the end from twisting, making them useful in many applications, albeit quite expensive.
 \end{asparaenum}
@@ -1737,7 +1735,7 @@ Brushless motors have a few other subtle advantages.
 
 Since the waveform is electronically controlled, it can be finer tuned to achieve peak performance (mechanical power output or efficiency). The elimination of brushes also eliminates one source of friction, so their efficiency is generally higher.
 
-The coils of brushed motors, being fixed to the rotor, have very little surface area by which to dissipate heat- the heat has to disspiate out primarially through the shaft. Brushless motors' coils are fixed to the case, which has a much higher surface area, and so they can reject heat better, keeping the motor cool and efficient.
+The coils of brushed motors, being fixed to the rotor, have very little surface area by which to dissipate heat- the heat has to dissipate out primarily through the shaft. Brushless motors' coils are fixed to the case, which has a much higher surface area, and so they can reject heat better, keeping the motor cool and efficient.
 
 \newpage
 \section{Empirical DC Motor Behavior}
@@ -1888,7 +1886,7 @@ There are some general strategies designers have come up with that help while we
 
 \section{Load paths}
 
-When we consider structures and systems that we build, we need to think about the forces that go through them, not only at the point of application, but how they propogate through.
+When we consider structures and systems that we build, we need to think about the forces that go through them, not only at the point of application, but how they propagate through.
 
 \begin{theorem} \label{theorem:load_paths}
 	Loads can only be transferred, not evaporated.
@@ -1969,13 +1967,13 @@ Minimize the number of components.
 
 \section{Loosening}
 
-\textit{Positive retention} is ensuring that vibrations and loads will not effect the positioning of components. This means avoiding slots for adjustment (that do not have additional locking schemes like cams), and bolts that must be ``just properly tightened" in order to work properly.
+\par{\textit{Positive retention} is ensuring that vibrations and loads will not effect the positioning of components. This means avoiding slots for adjustment (that do not have additional locking schemes like cams), and bolts that must be ``just properly tightened" in order to work properly.
 
 We discussed a number of mechanisms for keeping bolts from loosening under vibration in section \ref{section:threads}. Most of these solutions don't cost much to implement. There's generally no reason not to do them. And so,
 
 \begin{theorem}
 Positive retention is awesome, let's do more of that.
-\end{theorem}
+\end{theorem}}
 
 \section{Poka-Yoke}
 
@@ -2069,7 +2067,7 @@ Whereas a gearbox that is not geared down enough:
 	\item May not even move at all in the first place, lacking the strength to overcome load placed on it.
 \end{asparaitem}
 
-But how do we know that we've geared appropriately? We could definitely test all the different ratios, gather all the operating data, and then draw a conclusion... or we could do some pre-emptive math. Don't worry- you don't even need to get your hands too dirty. All of the rough stuff has been done already- you just need to know how to use the design applications to get the answer you want.
+But how do we know that we've geared appropriately? We could definitely test all the different ratios, gather all the operating data, and then draw a conclusion... or we could do some preemptive math. Don't worry- you don't even need to get your hands too dirty. All of the rough stuff has been done already- you just need to know how to use the design applications to get the answer you want.
 
 But knowing roughly what's going on is important. There's an old joke in engineering,
 
@@ -2225,7 +2223,7 @@ Before you look at the plots, go to the simulator and plug in those values, see 
 	
 	It looks like the ratio of 7 will get to our destination faster!
 	
-	However, maybe this isn't our only concern. Drivetrains are complex mechanisms with many objectives (as we'll discuss later). This simulator uses a similar approach as discussed above to compute energy consumption, and it turns out that the G = 10 case has lower current consumption (almost half!) in this maneuver. It has more initial pushing power. It also gets to positions less than 3 meters away faster. There are a lot of tradeoffs!
+	However, maybe this isn't our only concern. Drivetrains are complex mechanisms with many objectives (as we'll discuss later). This simulator uses a similar approach as discussed above to compute energy consumption, and it turns out that the G = 10 case has lower current consumption (almost half!) in this maneuver. It has more initial pushing power. It also gets to positions less than 3 meters away faster. There are a lot of trade-offs!
 	
 	The calculator won't give you the right answer right off the bat, but it does free you from thinking about the numbers and math too much so you can focus on making system-level decisions, which is something that a computer can't quite so easily do.
 	
