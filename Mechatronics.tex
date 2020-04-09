@@ -42,6 +42,9 @@
 \g@addto@macro\@floatboxreset\centering
 \makeatother
 
+
+\newtheorem{theorem}{Theorem}
+
 \begin{document}
 
 
@@ -622,7 +625,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\item \textit{Shear pins} are specifically designed to fail at a specified load, which prevents damage to equipment down-the-line.
 	\end{asparaenum}
 	
-	\subsection{Threads}
+	\subsection{Threads} \label{section:threads}
 	
 	Threaded fasteners (bolts, nuts, and screws) are a ubiquitous solution. There's an age old question of what is a 'screw' versus a 'bolt' and the answer is merely in application- if it goes into a nut, it's a bolt. Otherwise, it's a screw. So, anything said about screws is true of bolts and vise-versa.
 	
@@ -1755,7 +1758,6 @@ The first portion of the motor model we'll look at is torque, varying with opera
   \draw[gray] (1,-0.03)--(1,0.03) node[pos=1, above, black]{$\omega_{free}$};
 
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
-  %IMPROVEMENT: Label Tstall, wfree
 \end{tikzpicture}
 \caption{Torque varies linearly with speed.}
 \end{figure}
@@ -1792,8 +1794,6 @@ Note: $\omega$ must be in rad/s, not RPM.
 
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
   \draw[red, ultra thick] (0,0) parabola bend (0.5,1.0) (1.0,0.0) ;
-  
-  % IMPROVEMENT: Peak power
 \end{tikzpicture}
 \caption{Power forms a parabolic curve with speed.}
 \end{figure}
@@ -1878,17 +1878,116 @@ In summary:
 
 
 \chapter{Design Principles}
-\section{Structural}
-\subsection{Load paths (axial not bending)}
-\subsection{Big sections for bending/torque}
-\subsection{Spread the base}
-\section{Error}
-\subsection{Abbe (sine) error}
-\subsection{Tolerance stacking (minimize number of components)}
-\section{Time-Related Failures}
-\subsection{Loosening (see locking mechanisms)}
-\subsection{Fatigue}
 
+ {\slshape \scshape ``Learn the rules like a pro, so you can break them like an artist." - Pablo Picasso}
+ \\
+ 
+Design is tough. Before we get in the weeds I want to acknowledge that it isn't for the faint of heart, and it isn't a straightforward linear process. Often when you finish solving one problem, you'll find you've introduced another in the process. Design is iterative. Design is also play. If everything we did just simply worked no better than anything else, we wouldn't need to design things and wouldn't get anything from us, so we should be thankful that it's hard.
+
+There are some general strategies designers have come up with that help while we play within the rules that physics gives us. Like any rule- there are times for them to be broken, but you need to know the rule before you can break it. Every design is a compromise.
+
+\section{Load paths}
+
+When we consider structures and systems that we build, we need to think about the forces that go through them, not only at the point of application, but how they propogate through.
+
+\begin{theorem} \label{theorem:load_paths}
+	Loads can only be transferred, not evaporated.
+\end{theorem}
+
+Proof: Consider the links in a chain. When you pull on a chain, the load isn't seen only by the first link. The load is transferred from your hand into the first, then into the second, the third, so on and so forth until eventually it is resolved into the ground, and transferred back to you via your feet. At no point does the load disappear. When you have a force in your system, all the parts in the loop must be built in order to handle the force.
+
+It also follows that because of this, direct load paths tend to be the best course of action. If you're worried about links in a chain failing, remove links and make the chain shorter. Don't use a baseball bat to pull sideways on the chain- pull the chain directly. The straighter and more direct your path, the stronger and stiffer the link will be.
+
+Note I say stiffer. There can be times where you want non-stiffness, like in a suspension! Look at any suspension system and you'll see specifically designed points where the load is very indirect and winding. Springs are a fantastic example of this.
+
+\section{Axial Versus Bending}
+
+\begin{theorem} \label{theorem:axial_bending}
+	Axial is stronger and stiffer than bending.
+\end{theorem}
+
+I'll demonstrate this with two geometries.
+
+You've probably heard that triangles are a very strong shape. This is essentially a rudimentary understanding of this principle that axial is stronger than bending. If you're designing structures with long, slender tubes, a good rule of thumb is to make sure that structure is \textit{triangulated}.
+
+\section{Big Sections}
+\begin{theorem} \label{theorem:big_sections}
+Wide but thin is stronger and stiffer.
+\end{theorem}
+
+If we return to equation (xx) we notice that the moment of inertia $I$ grows with the cube of the tube diameter. If we think about this and the geometry, that would mean that in a piece of tubing with the same cross-sectional area, we could get a greater $I$ by maximizing the diameter and minimizing the wall thickness. There is a problem with taking this to an extreme (consider the humble aluminum beverage can), but in general, the effect of increasing the diameter of a section dwarfs the effect of increasing the thickness by the same relative amount.
+
+The same is also true of shafts in torsion / carrying torque.
+
+\subsection{Spread the Base}
+
+\begin{theorem} \label{theorem:spread_base}
+The wider the base, the more stable.
+\end{theorem}
+
+Similar to how increasing the diameter of a section increases strength, so does increasing the diameter of bolt patterns, sprockets, gears, and just about anything that transfers load.
+
+Increasing the diameter of bolt patterns has another benefit beyond strength, and that is backlash.
+
+% TODO: Backlash Graphic
+
+An interesting conclusion of theorems \ref{theorem:load_paths} and \ref{theorem:spread_base} is that using a linear actuator of some sort on a pivoting mechanism can be more precise and strong than one driven by a rotary actuator at its pivot point.
+
+\section{Abbe Error}
+
+\textit{Abbe error}, or \textit{sine error} refers to the error that can come about when parts are not aligned angularly as they were expected to be.
+
+\begin{figure}[H]
+	\includegraphics[width=0.6\textwidth]{imgs/abbe_error.png}
+	\caption{Abbe error on a micrometer.}
+\end{figure}
+
+The error is equal to:
+
+\begin{align}
+	error = h \ sin(\theta) \approx h \ \theta \ \mbox{(for small $\theta$)}
+\end{align}
+
+Expressed verbally this means that
+
+\begin{theorem} \label{theorem:abbe}
+Angularity adds up, proportional to the distance.
+\end{theorem}
+
+If precision matters, minimize the angular error of your mechanism, or minimize the lever arm associated with the angular error.
+
+
+\section{Tolerance Stacking}
+
+Consider stacking multiple blocks that are all $10 \pm 1$ mm thick to achieve a height of $100$ mm. We would need 10 blocks, and so the error would compound among each block, up to $\pm 10$ mm! Clearly, one singular component would be better, even if it had a lower tolerance of even $\pm 5$ mm.
+
+Considering also that more components means more cost, and more potential weak links,
+
+\begin{theorem}
+Minimize the number of components.
+\end{theorem}
+
+\section{Loosening}
+
+\textit{Positive retention} is ensuring that vibrations and loads will not effect the positioning of components. This means avoiding slots for adjustment (that do not have additional locking schemes like cams), and bolts that must be ``just properly tightened" in order to work properly.
+
+We discussed a number of mechanisms for keeping bolts from loosening under vibration in section \ref{section:threads}. Most of these solutions don't cost much to implement. There's generally no reason not to do them. And so,
+
+\begin{theorem}
+Positive retention is awesome, let's do more of that.
+\end{theorem}
+
+\section{Poka-Yoke}
+
+\begin{figure}[H]
+	\includegraphics[width=0.7\textwidth]{imgs/poka_yoke.png}
+\end{figure}
+
+\textit{Poka-yoke} is Japanese for ``idiot-proofing". It refers to designing processes that cannot be messed up, or at least not without warning. Think of plugs that cannot be installed backwards, or a shaft that has a special keying on it to ensure proper clocking. Even the brightest of us can be idiots in the moment, so in short,
+
+\begin{theorem}
+If someone can screw it up, don't let them.
+\end{theorem}
 
 \chapter{Applied Systems}
 
@@ -2132,8 +2231,7 @@ Before you look at the plots, go to the simulator and plug in those values, see 
 	
 \chapter{Going Forth}
 
- {\slshape \scshape ``Learn the rules like a pro, so you can break them like an artist." - Pablo Picasso}
- \\
+
 
 
 \end{document}
