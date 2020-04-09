@@ -981,8 +981,8 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\item \textit{Captive panel screws} are effectively screws that are kept captive to the panel. Like any screw, they require the appropriate tool to remove.
 	\end{asparaenum}
 	
-	\subsection{The Zip tie}
-	I had to save the best for last: the zip tie. Zip ties have a slight reputation as a 'hackish' solution, but this is more a result of people overusing them or overestimating how much they can accomplish. That being said, they can do a lot, from their intended use of holding bundles of wires together, to forming agitating flappers on ball feeding mechanisms. Zip ties come in different materials, although the most common is nylon.
+	\subsection{The Zip Tie}
+	I had to save the best for last: the \textit{zip tie}, or \textit{cable tie}. Zip ties have a slight reputation as a hackish solution, but this is more a result of people overusing them or overestimating how much they can accomplish. That being said, they can do a lot, from their intended use of holding bundles of wires together, to forming agitating flappers on ball feeding mechanisms. Zip ties come in different materials, although the most common is nylon.
 	
 	\begin{figure}[H]
 		\includegraphics[width=0.9\textwidth]{imgs/ziptie.png}
@@ -1477,7 +1477,7 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 	Belts can be crossed in order to transmit power while reversing direction, or even transmit power between non-parallel axles. This generally works best with polycord, but can be accomplished with any belt.
 
 \newpage
-\section{Engagement and Disengagement}
+\section{Engagement and Disengagement} \label{section:disengagement}
 
 \subsection{Ratchets and Brakes}
 
@@ -2163,33 +2163,88 @@ If someone can screw it up, don't let them.
 
  {\slshape \scshape ``Complex is better than complicated." - The Zen of Python}
  \\
+ 
+ There is often no need to reinvent the wheel. Many problems already have a solution, or at least some sort of prior art. Familiarity with this can help you quickly identify a design for a problem in a pinch, or at least have a jumping off point. Even these systems are building blocks that need put together. You will probably need to mix and match many of these together to make a machine.
 
 \section{Intakes}
-\subsection{Beater bars}
+\textit{Intakes} grab uncontrolled components in a continuous, indiscriminate fashion. This makes them preferable to say, using a claw to grab items. A properly designed intake is often described as ``touch it, own it."
+
+\subsection{Beater bars} %sidebar: why the heck don't we call these beater bars? idk.
+A \textit{beater bar} or \textit{horizontal intake axle} has a rotating, grippy element that is horizontal and makes contact with an object, pulling it in. These usually work best with parts that can roll as they enter.
 \subsection{Side wheels}
+\textit{Side wheels} are rotating, grippy elements on a vertical shaft which make contact with an object, pulling it in. These are often spring-loaded to help deal with misalignment as they require somewhat precise positioning (at least more than a beater bar). Because of this, they are typically used where a beater bar is not as viable (like to intake an object that cannot roll).
 \subsection{Vectored Intake Wheels}
+\textit{Vectored intake wheels} are wheels with rollers at a 45 degree angle. These can be used with any beater bear or side wheel setup. They provide a centering action when properly implemented, as the rollers will cause a force vector 45 degrees to the axis of rotation, rather than perpindicular.
+\subsection{Scoops}
+A \textit{scoop} is pretty simple. It wedges under an object, picking it off the ground and into where you need it. They can be useful if the object to be picked up has a tapered bottom that is conducive to this and has much higher friction on the surface it is being picked up from versus the surface of the scoop.
+\subsection{Vacuums}
+\textit{Vacuum pumps} can be used to acquire objects that can form a sufficiently good seal. They are a little difficult to set up properly, and are also notably inefficient and loud, but can be used properly and effectively.
 
 \section{Indexers}
+An \textit{indexer} is any mechanism that takes one or more already-controlled objects and moves them to somewhere else where it can be used.
+\subsection{Gravity Hoppers}
+\textit{Gravity-fed, metered hoppers} are the simplest form of indexing. A hopper holds objects, and a wheel or gate controls their exit. Hoppers can jam easily depending on the object, and for high-speed applications, may not feed fast enough on their own.
 \subsection{Conveyors}
-\subsection{Hoppers}
-\subsection{Rotary hoppers}
+\textit{Conveyors} are the most common type of indexer. Objects are fed single file from one place to another using continuous belts. Variants of this exist, such as dual-conveyors (where objects are passed between two conveyors, so they do not need to rotate, but are still well-constrained).
+\subsection{Rotary Hoppers}
+\textit{Rotary hoppers} are like gravity hoppers, but use some sort of rotating piece at the bottom to both agitate objects in the hopper and forcefully feed them to the next place. These allow for high capacity and control.
+\subsection{Agitated Hoppers}
+\textit{Agitated hoppers} are slightly angled hoppers which also feature moving sidewalls or rollers that help agitate objects and may even influence them to move faster than gravity would normally allow for. These can be simple to design and integrate while allowing for greater reliability than a gravity hopper. 
 
 \section{Lifts}
-\subsection{Elevators - Cascade and Continuous}
-\subsection{Obscure 4 bar}
-\subsection{Parallel 4 bar}
-\subsection{Virtual 4 bars}
-\subsection{6 8 etc. bars}
-\subsection{Double reverse 4 bar}
 
-\section{Latches}
-\subsection{Latches}
-\subsection{Overcenter mechanisms}
+A \textit{lift} is any mechanism that moves things up and down (though they all can be used to move objects in any direction). 
+
+They often employ \textit{counterbalances} or \textit{countersprings} to help lift the weight.
+\subsection{Elevators, Cascade and Continuous}
+An \textit{elevator} is a mechanism that moves back and forth in a straight line. \textit{Cascade} and \textit{Continous} elevators are able to reach further than their initial size without additional degrees of freedom by using special rigging of string to pull multiple stages that are nested in each other.
+
+Cascade elevators have multiple strings to consider. They also have mechanical disadvantage by a factor of the number of stages in the lift. Continuous elevators do not have this mechanical disadvantage and only have one string to worry about. This single string can also be used to pull the elevator down in addition to upwards, making them less reliant on gravity.
+\subsection{Scissor Lifts}
+\textit{Scissor lifts} are linkages that can achieve incredible extension from a compact initial size. However, they can be quite problematic in practice, as the parts count to create the several stages can be quite high, and because there are so many parts, so is the backlash. They also have incredibly poor mechanical advantage, meaning the force required to drive them is very significant.
+\subsection{General 4 Bars}
+\textit{4-bar linkages} are very versatile mechanisms that can achieve various behaviors.
+\subsection{Parallel 4 Bar}
+\textit{Parallel 4 bar linkages} are often what people refer to when they say ``4-bar mechanism". The links on these form a parallelogram. These are simple to make but do not lift straight up and down- they will move outwards in an arc as they rise. This may be a desirable trait.
+\subsection{Virtual 4 Bar}
+\textit{Virtual 4 bars} achieve similar motion to parallel 4 bars, but overcome the major issue regarding the \textit{singularity} that occurs when the links come to a straight line. At this singularity, the mechanism is no longer fully defined and may invert, causing undesired behavior. Virtual 4 bars, on the other hand, can rotate continuously. They are built by using a single linkage, two sprockets, and chain binding the sprockets together. The sprockets are fixed on either end.
+
+\subsection{2N Bar}
+4 bars take up a lot of dead space. They can be made to extend further by staging multiple of them together. These may be called \textit{6 bars}, \textit{8 bars}, and so forth- there is no theoretical upper limit, but increasing the number of stages will pose the same issues as a scissor lift will (you may note, that the underlying linkages are nearly identical, they are just used differently).
+\subsection{Double Reverse 4 Bar}
+\textit{Double reverse 4 bars} sound complicated, and they are to some degree. These are two 4 bar mechanisms stacked on top of each other, reversed, and linked together (either with gears or a link). This allows them to fold up flat but reach tall heights, and move in a straight line (as any inward motion by the lower 4-bar is counteracted by the outward motion of the upper 4-bar).
+
+%\section{Latches}
+%\textit{Latches} grab onto things and don't let go.
+%\subsection{Latches}
+%\subsection{Overcenter mechanisms}
 
 \section{Shooters}
-\subsection{Flywheel-based launcher}
+\textit{Shooters} take objects and propel them great distances.
+\subsection{Flywheel-Based Shooter}
+\textit{Flywheel based launchers} store energy in \textit{flywheels} spinning at high velocity. Objects can then be introduced to the flywheels, and the energy is transferred via friction to the objects. This makes flywheel based launchers good for high-throughput applications.
+
+\textit{Hooded} shooters use a singular set of wheels and a fixed \textit{hood} to contact the ball. This produces a high amount of backspin, which may be desirable due to the \textit{Magnus effect} which generates lift (or drop) on spinning objects.
+
+\textit{Opposed wheel} shooters use mutiple sets of wheels to contact the ball. This allows for control over backspin, and may be easier to package.
+
+Flywheel based shooters sometimes have multiple stages of flywheels in order to accelerate the ball over a longer period of time. Belts can also be used to achieve the same principle.
 \subsection{Catapults and Punches}
-\subsection{Winch and Release vs. Choo-Choo vs. Cam}
+\textit{Catapults} and \textit{punches} store energy in by pulling back springs or compressing air. Catapults work as a lever arm while punches work linearly, but both use this stored energy to accelerate a sled or cradle containing the object to be launched.
+
+\begin{asparaenum}[a)]
+\item A \textit{choo-choo} uses a rotating plate with a pin, a link, and another link or string. As the plate is rotated, the pin makes contact with the link. Eventually the second link/string gets pulled back and goes over-center from this pin, so that the pin no longer supports the link. At this point the spring pulls the mechanism forwards as it fires.
+
+\item In a \textit{winch and release} a winch pulls back the sled/cradle. When firing is desired, a release mechanism (like those discussed in section \ref{section:disengagement}) allows the sled/cradle to fly forth.
+
+\item \textit{Snail cams} can be used to pull back the sled/cradle, and as the cam continues moving, it eventually returns to its starting point, causing the sled/cradle to fly forth.
+
+\item \textit{Pneumatic cylinders} are very simple ways of creating sudden bursts of energy.
+\end{asparaenum}
+
+
+\subsection{Flicker launchers}
+\subsection{Throwers}
 
 \section{Drivetrains}
 \subsection{Tanks}
@@ -2199,7 +2254,8 @@ If someone can screw it up, don't let them.
 
 
 
-\chapter{Choosing Gear Ratios}
+\chapter{Choosing Motors and Gear Ratios}
+%TODO: A section on "what do you want to gear in order to do?"
 
  {\slshape \scshape ``Power is worthless, if improperly wielded"}
  \\
