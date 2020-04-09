@@ -1036,23 +1036,24 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\caption{A FRC chassis made from riveted sheetmetal.}
 	\end{figure}
 	
-	Sheetmetal can be extremely light, as it has the capability to put material where you need it most and have large, gusseted structures. Sheet metal is one of the cheapest forms of metal, pound-for-pound, although the cutting required to make these frames usually produces a considerable amount of waste stock. 
+	Sheetmetal can be extremely light, as it has the capability to put material where you need it most and have large, gusseted structures. It is necessary that the sidewalls of sheet be bent up to add out-of-plane stiffness, but quite straightforward to do so. Sheet metal is one of the cheapest forms of metal, pound-for-pound, although the cutting required to make these frames usually produces a considerable amount of waste stock. 
 	
 	Sheetmetal is a very scalable process in mass quantity, which is why many things are made from it, even if they aren't riveted as well.
 	
 	Rivets work best in shear and with plenty of redundancy. Bolts can also be used, but they will tend to egg out the holes, so the sheetmetal itself becomes the limiting factor, making the use of a higher quantity of rivets a stronger choice.
 	
-	% TODO: BENDING AND RIBBING
-	
 	\subsection{The Fingerjointed Plate Tradition}
 	What do you do if you have a way of cutting plates, but no bender? Well, cut thicker ones, and use finger joints to stick it all together! Woodworkers have long used finger joints to make nice craftwork using glue and nail. But if you want to quickly build something and maybe tear it apart, gluing or nailing aren't a good proposition.
 	
 	\begin{figure}[H]
-		\includegraphics[width=0.7\textwidth]{imgs/tradition_fingerjoint.png}
-		\caption{A fingerjointed and bolted assembly.}
+		\includegraphics[width=0.55\textwidth]{imgs/tradition_fingerjoint.png}
+		\includegraphics[width=0.4\textwidth]{imgs/fingerjoint_battlebot.png}
+		\caption{Fingerjointed and bolted assemblies.}
 	\end{figure}
 	
-	Such joints are popular among the hobbyist community, and often feature captive nuts and bolting shown above to help keep things together. The fingers transmit shear load, while the bolts help keep things together. The joint above would still flex quite a bit almost like a hinge, so putting another plate perpindicular to both (making a box or gusset) would help the structural integrity more.
+	Such joints are popular among the hobbyist community, and often feature captive nuts and bolting shown above to help keep things together. The fingers transmit shear load, while the bolts help keep things together. The joint above on the left would still flex quite a bit almost like a hinge, so putting another plate perpindicular to both (making a box or gusset) would help the structural integrity more.
+	
+	These joints can also be made with metal, or at odd angles (as on the right).
 	
 	\subsection{The Bracket and Tube Tradition}
 	Sheetmetal is cool, but doesn't have to be used that much. It isn't a very effective way at spanning long distances, and requires lead time since you have to get the profile cutting supplier/equipment to do it.
@@ -1289,7 +1290,6 @@ A \textit{gear} is effectively, a wheel with teeth. These teeth are specially sh
 \begin{figure}[H]
 	\includegraphics[width=0.8\textwidth]{imgs/gear_nomenclature.png}
 	\caption{Nomenclature of different gear dimensions}
-	% TODO: BETTER PICTURE
 \end{figure}
 
 Gears are specified, among other things, by the number of teeth, their \textit{pressure angle}, and either the \textit{diametral pitch} or \textit{module}.
@@ -1819,8 +1819,6 @@ Current ($I$) is how much electricity is drawn. It varies proportionally to torq
   \draw[teal, ultra thick] (1.0,0)--(0,1.0);
   \draw[orange, ultra thick] (1.0,0)--(0,0.8);
   \draw[red, ultra thick] (0,0) parabola bend (0.5,1.0) (1.0,0.0) ;
-  
-  % TODO: Label stall current
 \end{tikzpicture}
 \caption{Current varies with torque.}
 \end{figure}
