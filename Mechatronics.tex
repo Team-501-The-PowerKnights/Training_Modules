@@ -1270,7 +1270,17 @@ We often need to transmit power from one place to another not in a line. We also
 
 \subsection{Rope and Pulleys}
 
-% TODO: ROPES
+Ropes, pulleys, and spools are the simplest way to transmit power from one place to another. They aren't particularly technical, but there are a few nuances which can be used to help design systems using them.
+
+\begin{figure}[H]	
+	\includegraphics[width=0.4\textwidth]{imgs/takeup_pulley.png}
+	\includegraphics[width=0.5\textwidth]{imgs/block_tackle.png}
+	\caption{Left: helical takeup pulley. Right: various block and tackle.}
+\end{figure}
+
+Helical takeup pulleys have grooves in them which help route rope so that when it is wound, it is wound at a constant radius. This can help prevent binding or slack in closed-loop systems (like continous rigging elevators). To help closed loop systems more, a spring inline with the rope can take up more slack than a stiff rope.
+
+A \textit{block and tackle} is a system of two or more pulleys with a rope routed between them in alternating fashion as shown. This generates mechanical advantage; the rope must be pulled more to achieve the same lifting force. This also decreases the input load required to raise the load by a factor of the number of ropes. 
 
 \subsection{Gears}
 
@@ -1282,14 +1292,14 @@ A \textit{gear} is effectively, a wheel with teeth. These teeth are specially sh
 	% TODO: BETTER PICTURE
 \end{figure}
 
-There is a \textit{lot} going on here. Let's break it down and focus on a few key portions.
+Gears are specified, among other things, by the number of teeth, their \textit{pressure angle}, and either the \textit{diametral pitch} or \textit{module}.
 
 \begin{asparaenum}[a)]
 	\item Gear teeth have an \textit{involute} profile. This is a specific geometric shape that is not quite an arc, but makes sure power transmission is smooth and without excessive backlash.
 	\item The \textit{pitch circle} is a rough representation of the gear as a wheel. It lies somewhere inbetween the overall diameter and the diameter of the root of the teeth. You can draw up a sketch containing gears' pitch circles tangent to each other, and then they will fit together.
 	\item A gear's \textit{diametral pitch} (DP) is the number of teeth in a gear divided by the pitch diameter (in inches). So, if a gear has 50 teeth and is a 20DP gear, it would have a pitch circle of diameter $50 \ teeth \ / \ 20 \ DP = 2.5 \ inches$. For two gears to be compatible and mesh, they must have the same diametral pitch, otherwise the teeth would be the wrong sizes.
 	\item A gear's \textit{module} is a gear's pitch diameter (in mm) divided by the number of teeth. This measures the same thing as diametral pitch, just in a different way. If a 5 module gear has 30 teeth, its pitch diameter would be $5 \ mm \times 30 \ teeth = 150 \ mm$.
-	\item A gear's \textit{pressure angle} (PA) refers to the angle of the teeth. This must be the same between two gears for them to be compatible. There is a lot of testing and science behind picking a good angle; higher angles are weaker and produce higher loads on the system, but do make oil flow better. Usually, though, this isn't a big concern- just make sure that you don't mix and match pressure angles.
+	\item A gear's \textit{pressure angle} (PA) measures how steep the teeth are, or the angle of the contact line. This must be the same between two gears for them to be compatible. There is a lot of testing and science behind picking a good angle; higher angles are weaker and produce higher loads on the system, but do make oil flow better. Usually, though, this isn't a big concern- just make sure that you don't mix and match pressure angles. 14.5 degrees is common for greased gears.
 \end{asparaenum}
 
 \begin{figure}[H]
