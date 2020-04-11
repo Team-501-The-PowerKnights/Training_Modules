@@ -132,8 +132,8 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  You'll notice that stiffness, strength, hardness, and toughness are all different characteristics. They are distinctly different properties in engineering.
  
  \subsection{Stress-Strain Properties}
- 
- To show this, we'll first consider a \textit{stress-strain curve}\index{stress-strain curve}. This curve is created by pulling on a specimen of material like shown, interpreting the force and deflection data into \textit{stress}\index{stress} $\sigma$ (force per cross-sectional area) and \textit{strain}\index{strain} $\epsilon$ (percent deflection).
+ \index{stress-strain behavior}
+ To show this, we'll first consider a \textit{stress-strain curve}. This curve is created by pulling on a specimen of material like shown, interpreting the force and deflection data into \textit{stress} $\sigma$ (force per cross-sectional area) and \textit{strain} $\epsilon$ (percent deflection).
  
  \begin{figure}[H]
  \begin{subfigure}[]{.4\linewidth}
@@ -185,23 +185,24 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  	\end{tikzpicture}
  	\caption{Exemplary stress-strain behavior.}
  \end{figure}
- 
- The portion of the curve that is linear (highlighted in green) is referred to as the \textit{elastic}\index{elastic} portion. When the material is operating in this region, it will always snap back, like a rubber band. If, however, we dip into the \textit{plastic}\index{plastic} portion of the curve (highlighted in red), when we release the material, it will have permanently deformed (following the blue arrow as it is relaxed).
+ \index{stress-strain behavior!elasticity and plasticity}
+ The portion of the curve that is linear (highlighted in green) is referred to as the \textit{elastic} portion. When the material is operating in this region, it will always snap back, like a rubber band. If, however, we dip into the \textit{plastic} portion of the curve (highlighted in red), when we release the material, it will have permanently deformed (following the blue arrow as it is relaxed).
  
  The key aspects of the curve can be boiled down into a few properties.
  
  \begin{asparaenum}[a)]
- 	\item \textit{Young's Modulus}\index{Young's Modulus}, or the \textit{Elastic Modulus}\index{Elastic Modulus} ($E$) is the slope of the elastic portion of the curve. A higher $E$ denotes a stiffer material.
- 	\item \textit{Yield strength}\index{Yield strength} ($S_{y}$) is the highest stress seen in the elastic portion of the curve.
- 	\item \textit{Ultimate tensile strength}\index{Ultimate tensile strength} ($S_{UTS}$) is the highest stress the material can see.
- 	\item \textit{Percent elongation at break}\index{Percent elongation at break} is the highest strain seen by the material before it breaks. A higher elongation means the material is more \textit{ductile}\index{ductile}, while a smaller one means the material is more \textit{brittle}\index{brittle}.
- 	\item \textit{Modulus of toughness}\index{Modulus of toughness} is a measure of how much \textit{energy}\index{energy} the material can absorb. It can be visualized as the area under the curve (think about a shock absorber- it deforms a lot while resisting the load, so can absorb a lot of energy). Materials that are brittle have low toughness.
+ 	\item \textit{Young's Modulus}, or the \textit{Elastic Modulus} ($E$) is the slope of the elastic portion of the curve. A higher $E$ denotes a stiffer material. \index{stress-strain behavior!stiffness; Young's Modulus}
+ 	\item \textit{Yield strength} ($S_{y}$) is the highest stress seen in the elastic portion of the curve.
+ 	\item \textit{Ultimate tensile strength} ($S_{UTS}$) is the highest stress the material can see. \index{stress-strain behavior!strength}
+ 	\item \textit{Percent elongation at break} is the highest strain seen by the material before it breaks. A higher elongation means the material is more \textit{ductile}, while a smaller one means the material is more \textit{brittle}. \index{stress-strain behavior!ductility}
+ 	\item \textit{Modulus of toughness} is a measure of how much \textit{energy} the material can absorb. It can be visualized as the area under the curve (think about a shock absorber- it deforms a lot while resisting the load, so can absorb a lot of energy). Materials that are brittle have low toughness. \index{stress-strain behavior!toughness}
  \end{asparaenum}
  
 \subsection{Hardness}
-
- \textit{Hardness}\index{Hardness} is a property of a material's surface - how much it will permanently indent or scratch. It is not measured by this graph (although it does have some correlations), and is a relative, rather than absolute measurement. There are many different scales. You may have heard of the Mohs scale, introduced to determine the hardness of different minerals based on which can scratch each other. However, most engineering measures will work by indenting an object and measuring how much of an indentation was left behind, which allows for a higher degree of quantification. There are many different scales that are better suited to different materials.
+\index{hardness}
+ \textit{Hardness} is a property of a material's surface - how much it will permanently indent or scratch. It is not measured by this graph (although it does have some correlations), and is a relative, rather than absolute measurement. There are many different scales. You may have heard of the Mohs scale, introduced to determine the hardness of different minerals based on which can scratch each other. However, most engineering measures will work by indenting an object and measuring how much of an indentation was left behind, which allows for a higher degree of quantification. There are many different scales that are better suited to different materials.
  
+ \index{hardness!Brinell and Rockwell scales}
  Brinell and Rockwell scales are well suited to metals.
  
  \begin{figure}[H]
@@ -209,24 +210,25 @@ I hope to keep this terse. We're going to go fast and I'm going to leave some th
  	\caption{Shore Hardness scales, with some examples}
  \end{figure}
  
- \textit{Shore}\index{Shore} or \textit{durometer}\index{durometer} scales are suited to measuring elastomers (i.e. rubber). Again it is important to note there are different scales. 90A is much softer than 90D durometer. Material rated as 95A may be quite different than 45D, although they look like they are the same on the above chart.
+ \index{hardness!shore and durometer scales}
+ \textit{Shore} or \textit{durometer} scales are suited to measuring elastomers (i.e. rubber). Again it is important to note there are different scales. 90A is much softer than 90D durometer. Material rated as 95A may be quite different than 45D, although they look like they are the same on the above chart.
  
  Elastomers are much harder to measure in other ways, and are often given ratings only by their durometer. While this is technically only a measure of hardness, it correlates reasonably well to other material properties like overall stiffness (harder being stiffer) and grip (softer being more interactive, or frictional).
  
  \subsection{Thermal Properties}
- 
+ \index{thermal characteristics}
  The thermal properties of a material may also be important to your application. There are three main ones to keep in mind if you are dealing with heat:
  \begin{asparaitem}
- 	\item \textit{Thermal conductivity}\index{Thermal conductivity} is how well the material transfers heat. If you're designing a heat sink, you want a high thermal conductivity.
- 	\item The \textit{melting point}\index{melting point} or \textit{glass transition temperature}\index{glass transition temperature} are temperatures at which the material undergoes fundamental phase changes. You obviously need to make sure your part doesn't outright melt, but you should also have a bit of margin, as the phenomenon called \textit{creep}\index{creep} can cause parts that are at elevated temperatures to deform over time, even though below melting point.
- 	\item The \textit{coefficient of thermal expansion}\index{coefficient of thermal expansion} measures how much material expands as it heats up. If you're working with tight-tolerance equipment (or extreme temperatures), you may need to keep an eye on this.
+ 	\item \textit{Thermal conductivity} is how well the material transfers heat. If you're designing a heat sink, you want a high thermal conductivity.
+ 	\item The \textit{melting point} or \textit{glass transition temperature} are temperatures at which the material undergoes fundamental phase changes. You obviously need to make sure your part doesn't outright melt, but you should also have a bit of margin, as the phenomenon called \textit{creep} can cause parts that are at elevated temperatures to deform over time, even though below melting point.
+ 	\item The \textit{coefficient of thermal expansion} measures how much material expands as it heats up. If you're working with tight-tolerance equipment (or extreme temperatures), you may need to keep an eye on this.
  \end{asparaitem}
   
 \subsection{Other Properties} 
  
  Frictional characteristics and chemical interactions are very complex, and if you care about these, it will require some research beyond mere datasheets.
  
- Density is another property to be mindful of. Most properties given do not take this into account, and this is why many engineers may speak of a \textit{strength-to-weight ratio}\index{strength-to-weight ratio}. This is simply dividing the material property in question by the density of the material. This is a sensible comparison in many cases where weight is a concern. If we wanted to create a component to bear a certain load, we could use a material that was very strong but heavy, or use more of a lighter, but weaker material.
+ Density is another property to be mindful of. Most properties given do not take this into account, and this is why many engineers may speak of a \textit{strength-to-weight ratio}. This is simply dividing the material property in question by the density of the material. This is a sensible comparison in many cases where weight is a concern. If we wanted to create a component to bear a certain load, we could use a material that was very strong but heavy, or use more of a lighter, but weaker material.
  
  \subsection{Material Comparisons}
  
@@ -277,14 +279,13 @@ A few interesting things to note:
  Just because the material you want exists doesn't mean that it's widely available in the shape you want. There are a lot of different shapes that a material may be available in, and there are trade-offs with each different form factor.
  
  \subsection{Cast from Ingot}
- 
 \begin{figure}[H]
 	\includegraphics[width=0.55\textwidth]{imgs/casting_proc.jpeg}
 	\qquad
 	\includegraphics[width=0.3\textwidth]{imgs/casting_part.jpeg}
 	\caption{Left: the casting process. Right: A cast differential housing.}
 \end{figure} 
- \textit{Casting}\index{Casting} is the process of pouring molten material into a mold to produce a complex shape. This shape isn't perfect, as the mold is usually made of sand (in order to withstand the molten metal) and the pouring process can introduce voids and imperfections, so the material properties are usually not as good. Cast parts have notably inferior material properties from billet or forged counterparts.
+ \textit{Casting}\index{casting} is the process of pouring molten material into a mold to produce a complex shape. This shape isn't perfect, as the mold is usually made of sand (in order to withstand the molten metal) and the pouring process can introduce voids and imperfections, so the material properties are usually not as good. Cast parts have notably inferior material properties from billet or forged counterparts.
  
  \subsection{Billet and Plate}
  
@@ -292,10 +293,10 @@ A few interesting things to note:
 	\includegraphics[width=0.6\textwidth]{imgs/billet.jpeg}
 	\caption{Pieces of round billet.}
 \end{figure} 
- \textit{Billet}\index{Billet} material has been poured in a more tightly controlled environment. The resulting material is free of voids and has superior mechanical properties. You can obtain billet plate, bars, or round stock of nearly any material. This material can be held to reasonable tolerances (and by its simple-shaped nature, can be brought into exact dimension by machining quite easily).
+ \textit{Billet}\index{billet} material has been poured in a more tightly controlled environment. The resulting material is free of voids and has superior mechanical properties. You can obtain billet plate, bars, or round stock of nearly any material. This material can be held to reasonable tolerances (and by its simple-shaped nature, can be brought into exact dimension by machining quite easily).
  
  \subsection{Extrusions} \label{section:extrusions}
- \textit{Extruded}\index{Extruded} material has been squeezed through a die while molten, and then cooled. Think of a pasta machine. This die can be anywhere from a simple shape like a flat bar, to box tubing, to a very complicated profile with t-slots such as 80/20. Aluminum is the most common material to be extruded. Extrusions have good material properties, and can be held to tight tolerances.
+ \textit{Extruded}\index{extrusions} material has been squeezed through a die while molten, and then cooled. Think of a pasta machine. This die can be anywhere from a simple shape like a flat bar, to box tubing, to a very complicated profile with t-slots such as 80/20. Aluminum is the most common material to be extruded. Extrusions have good material properties, and can be held to tight tolerances.
  
   \begin{figure}[H]
 	\begin{subfigure}[b]{.24\linewidth}
@@ -315,10 +316,10 @@ A few interesting things to note:
 \end{figure}
 
  \begin{asparaenum}[a)]
- 	\item \textit{Angles}\index{Angles} are measured by the leg width and the thickness. Only one dimension for leg lengths may be given if the leg lengths are equal. There may or may not be a radius in the corner, and radiuses on the tips of the legs.
- 	\item \textit{Box tube}\index{Box tube} is measured by the outer side lengths and the thickness. It may or may not have an inner or outer radius - if it isn't specified, it probably doesn't.
- 	\item \textit{Pipe and tube}\index{Pipe and tube} is measured either by diameter and thickness, or by nominal pipe size and schedule. `1 inch' tube might refer to 1" nominal pipe, which actually has an inner diameter of 1.049", or a piece of tube with a 1" outer diameter. Make sure you know which you're buying.
- 	\item \textit{T-slot framing}\index{T-slot framing}, known often by the brand name \textit{80/20}\index{80/20}, has several slots on the outside which t-slot nuts can be slid into. This makes creating configurable/adjustable frames easy, although the framing is quite heavy. 
+ 	\item \textit{Angles} are measured by the leg width and the thickness. Only one dimension for leg lengths may be given if the leg lengths are equal. There may or may not be a radius in the corner, and radiuses on the tips of the legs.
+ 	\item \textit{Box tube} is measured by the outer side lengths and the thickness. It may or may not have an inner or outer radius - if it isn't specified, it probably doesn't.
+ 	\item \textit{Pipe and tube} is measured either by diameter and thickness, or by nominal pipe size and schedule. `1 inch' tube might refer to 1" nominal pipe, which actually has an inner diameter of 1.049", or a piece of tube with a 1" outer diameter. Make sure you know which you're buying.
+ 	\item \textit{T-slot framing}\index{extrusions!t-slot framing}, known often by the brand name \textit{80/20}, has several slots on the outside which t-slot nuts can be slid into. This makes creating configurable/adjustable frames easy, although the framing is quite heavy. 
  \end{asparaenum}
  
  \subsection{Welded / DOM tubing}
@@ -331,7 +332,7 @@ A few interesting things to note:
 	\caption{Weld Seam on Tubing}
 \end{figure}
  
- \textit{DOM (Drawn-Over-Mandrel)}\index{DOM (Drawn-Over-Mandrel)} or \textit{seamless}\index{seamless} tubing further processes this tubing to remove the inner seam and produce a product as if it were extruded. It is typically used in demanding applications such as aerospace or motorsports, as well as in components which cannot have a weld seam (such as a receiver hitch, or telescoping tubes).
+ \textit{DOM (Drawn-Over-Mandrel)} or \textit{seamless} tubing further processes this tubing to remove the inner seam and produce a product as if it were extruded. It is typically used in demanding applications such as aerospace or motorsports, as well as in components which cannot have a weld seam (such as a receiver hitch, or telescoping tubes).
  
  \subsection{Sheet}
  Material that is sold as sheet rather than plate usually has little-to-no straightness tolerance (in especially thin gauges, it might even be sold as rolls).
@@ -345,13 +346,13 @@ A few interesting things to note:
  Casting, sintering, and forging are manufacturing methods which generally require a lot of tooling in order to accomplish, so are generally not suitable for quick-turnaround prototypes such as we need. Some notes, though:
  
  \begin{asparaitem}
- 	\item \textit{Casting}\index{Casting} as mentioned before, is pouring molten metal into a mold. It can produce very complex shapes (like engine blocks), but the material may end up with lots of voids.
- 	\item \textit{Forging}\index{Forging} is heating up a metal so that it can be more easily formed, though not liquid. It is then pressed between large dies to form it into the desired shape- essentially, industrialized blacksmithing. Forging can produce fairly complex shapes (like crankshafts), while preserving (and even enhancing) material properties.
- 	\item \textit{Sintering}\index{Sintering} is compressing and heating powder in a mold. Also known as \textit{powder metallurgy}\index{powder metallurgy}. This can produce somewhat simple parts with good material properties and no draft - many small gears are made this way.
+ 	\item \textit{Casting}\index{casting} as mentioned before, is pouring molten metal into a mold. It can produce very complex shapes (like engine blocks), but the material may end up with lots of voids.
+ 	\item \textit{Forging}\index{forging} is heating up a metal so that it can be more easily formed, though not liquid. It is then pressed between large dies to form it into the desired shape- essentially, industrialized blacksmithing. Forging can produce fairly complex shapes (like crankshafts), while preserving (and even enhancing) material properties.
+ 	\item \textit{Sintering}\index{sintering} is compressing and heating powder in a mold. Also known as \textit{powder metallurgy}. This can produce somewhat simple parts with good material properties and no draft - many small gears are made this way.
  \end{asparaitem}
  
  \subsection{Machining}
- 
+ \index{machining!milling, drilling, and turning}
  Machining is a broad category of processes that cut material away with a sharp tool. There are many tools that can be used to accomplish this, but there are three that are the most essential and common:
  
  \begin{figure}[H]
@@ -372,7 +373,7 @@ A few interesting things to note:
 
  \begin{asparaenum}[a)]
  	\item A \textit{drill press}\index{drill press} has a rotating spindle and chuck where drillbits can be inserted. Workpieces are clamped to a fixed table. The spindle can then be brought down and into the work to drill holes.
- 	\item A \textit{milling machine}\index{milling machine} has a rotating spindle where drill bits and mill bits - end mills - can be inserted. Workpieces are secured to a table that moves along X, Y, and Z axes with respect to the spindle. \textit{Routers}\index{Routers} operate by the same principle, but generally refer to a tool which moves much more in the X and Y than the Z, and may not be as rigid; more suitable to cutting sheets of plywood or foam.
+ 	\item A \textit{milling machine}\index{milling machine} has a rotating spindle where drill bits and mill bits - end mills - can be inserted. Workpieces are secured to a table that moves along X, Y, and Z axes with respect to the spindle. \textit{Routers} operate by the same principle, but generally refer to a tool which moves much more in the X and Y than the Z, and may not be as rigid; more suitable to cutting sheets of plywood or foam.
  	\item A \textit{lathe}\index{lathe} has a rotating spindle in which the workpiece is held securely. Cutting tools are mounted to a carriage which moves axially and radially, shaping the exterior of the work. Additionally, a tailstock can accept drill bits and other supporting devices.
  \end{asparaenum}
  
@@ -402,12 +403,13 @@ A few interesting things to note:
 	\caption{Machine Tooling}
 \end{figure}
 
+\index{machining!tooling}
  \begin{asparaenum}[a)]
- 	\item \textit{Drill bits}\index{Drill bits} drill holes. The spiral flutes on the outside may be sharp, but they generally aren't sharp or hard enough to actually cut metal. They work with Jacobs chucks, which are designed to only transmit vertical force and torque.
- 	\item \textit{Center drills}\index{Center drills} are used to start holes. They are short and stubby, so don't deflect much.
- 	\item \textit{End mills}\index{End mills} cut on all surfaces - they are all ground sharp. This means they can cut on the side, and produce side loads - so they should not be put in Jacobs chucks in drill presses!
- 	\item \textit{Ball end mills}\index{Ball end mills} are an example of a more sophisticated end mill. There are many different shapes. This one enables smooth contours to be made.
- 	\item \textit{Lathe tooling}\index{Lathe tooling} comes in many different shapes and sizes. This one is a simple cutting tool that gets clamped to the toolpost and shapes the outside of the work.
+ 	\item \textit{Drill bits} drill holes. The spiral flutes on the outside may be sharp, but they generally aren't sharp or hard enough to actually cut metal. They work with Jacobs chucks, which are designed to only transmit vertical force and torque.
+ 	\item \textit{Center drills} are used to start holes. They are short and stubby, so don't deflect much.
+ 	\item \textit{End mills} cut on all surfaces - they are all ground sharp. This means they can cut on the side, and produce side loads - so they should not be put in Jacobs chucks in drill presses!
+ 	\item \textit{Ball end mills} are an example of a more sophisticated end mill. There are many different shapes. This one enables smooth contours to be made.
+ 	\item \textit{Lathe tooling} comes in many different shapes and sizes. This one is a simple cutting tool that gets clamped to the toolpost and shapes the outside of the work.
  \end{asparaenum}
  
 If you can consider briefly how these machines work, you can perhaps spot a few problems with your designs as you go along. Can you spot some issues with these parts?
@@ -448,7 +450,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  
  \subsection{Path Cutting}
  
- \textit{Path cutting}\index{Path cutting} is a term that encompasses any sort of 2-dimensional X/Y cutting with a thin beam. It is almost always done on a CNC-capable machine.
+ \textit{Path cutting}\index{path cutting} is encompasses any sort of 2-dimensional X/Y cutting with a thin beam. It is almost always done on a CNC-capable machine.
  
  \begin{figure}[H]
 		\begin{subfigure}[b]{.24\linewidth}
@@ -467,10 +469,10 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
  
  \begin{asparaenum}[a)]
-  	\item \textit{Plasma cutters}\index{Plasma cutters} use an arc to melt metal and pressurized air to blow it away. The tolerances are usually good for large shapes, but not for precision work.
- 	\item \textit{Laser cutters}\index{Laser cutters} melt material with a laser and either simply vaporize it or use pressurized air to blow it away. Hobby lasers can cut some plastics and plywood, while industrial systems can cut metal. The tolerances are usually acceptable with these machines ($\pm 0.020"$).
- 	\item \textit{Waterjet cutters}\index{Waterjet cutters} mix high-pressure water with garnet sand and blast it at material, rapidly abrading it. The tolerances are usually good with this process ($\pm 0.010"$ or better).
- 	\item \textit{EDMs}\index{EDMs} (electric-discharge-machines) use an electrified wire to remove material. The wire is fed through or plunged into material. The electrification zaps away material next to the wire. The tolerances with this process can be impeccable ($\pm 0.001"$ or better). 
+  	\item \textit{Plasma cutters}\index{path cutting!plasma cutting} use an arc to melt metal and pressurized air to blow it away. The tolerances are usually good for large shapes, but not for precision work.
+ 	\item \textit{Laser cutters}\index{path cutting!laser cutting} melt material with a laser and either simply vaporize it or use pressurized air to blow it away. Hobby lasers can cut some plastics and plywood, while industrial systems can cut metal. The tolerances are usually acceptable with these machines ($\pm 0.020"$).
+ 	\item \textit{Waterjet cutters}\index{path cutting!waterjet cutting} mix high-pressure water with garnet sand and blast it at material, rapidly abrading it. The tolerances are usually good with this process ($\pm 0.010"$ or better).
+ 	\item \textit{EDMs}\index{path cutting!EDM} (electric-discharge-machines) use an electrified wire to remove material. The wire is fed through or plunged into material. The electrification zaps away material next to the wire. The tolerances with this process can be impeccable ($\pm 0.001"$ or better). 
 \end{asparaenum}
  	
  	These all allow us to overcome the depth-to-diamter ratio imposed by milling, and can sometimes be much quicker setup than traditional machining, though they all come with their own drawbacks.
@@ -492,7 +494,8 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  Draft (and power) also limits how thick of material can feasibly be cut with these processes, although it should be noted that EDM can cut extremely thick materials compared to the other processes.
  
  \subsection{Sheet Forming}
- 
+ \index{sheet metal!forming}
+ \index{sheet metal!bending}
  Sheet forming is a versatile process of making parts from, well, sheet. Sheet may be cut with either a stamping or path-cutting operation to form a blank. This blank can then be loaded in and undergo one of several processes.
  
  	\begin{figure}[H]
@@ -514,10 +517,10 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure} 
  
  \begin{asparaenum}[a)]
- 	\item Simple \textit{bends}\index{bends} can be made on a linear portion of the flat pattern. This can be done with a finger bender, press brake, or, in a pinch, a vise with a hammer.
- 	\item Flat portions of material can be \textit{rolled}\index{rolled} into an arc, or even full circle.
- 	\item \textit{Bead rolling}\index{Bead rolling} can be done on any portion of a part to provide additional stiffness.	
- 	\item \textit{Hemming}\index{Hemming} provides a smooth, radiused outer corner and some additional stiffness. First, a bend is made, and then it is bent all the way to 180 degrees. This can be done with a finger bender or press brake, and additional clamping to finish the hem.
+ 	\item Simple \textit{bends} can be made on a linear portion of the flat pattern. This can be done with a finger bender, press brake, or, in a pinch, a vise with a hammer.
+ 	\item Flat portions of material can be \textit{rolled} into an arc, or even full circle.
+ 	\item \textit{Bead rolling} can be done on any portion of a part to provide additional stiffness.	
+ 	\item \textit{Hemming} provides a smooth, radiused outer corner and some additional stiffness. First, a bend is made, and then it is bent all the way to 180 degrees. This can be done with a finger bender or press brake, and additional clamping to finish the hem.
  	\end{asparaenum}
  	
  	Most CAD packages have tools to design parts made with sheet metal. You can draw up the bent part, and then the CAD package will determine how to unfold and produce a flat pattern that can be cut out.
@@ -525,7 +528,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  	These operations are typically done with metal, but nothing prevents them from being applied to plastic. Polycarbonate can be bent like sheet metal. Polypropylene, polycarbonate, acrylic, and PETG, among others, can be heated - heat gun or other method - and then bent by hand.
  	
  	\subsection{Welding and Brazing}
- 	
+ 	\index{welding!MIG, TIG, stick and arc}
  	Welding and brazing are very important manufacturing methods. They enable large, complex structures to be made from smaller simple ones without fasteners that might fail. However, it requires time consuming labor and creates non-serviceable structures.
  	
  	\begin{figure}[H]
@@ -547,19 +550,20 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
  	
  	\begin{asparaenum}[a)]
- 		\item \textit{MIG}\index{MIG} (Metal-Inert-Gas) welding uses an electric arc between filler wire and the workpiece, which melts both the wire and the workpiece. The arc is shielded by inert or semi-active gas to control chemical reactions. The wire is advanced at a constant rate into the workpiece. This is the easiest method to learn, but provides the least amount of control, and has the lowest capacity for superior results.
+ 		\item \textit{MIG} (Metal-Inert-Gas) welding uses an electric arc between filler wire and the workpiece, which melts both the wire and the workpiece. The arc is shielded by inert or semi-active gas to control chemical reactions. The wire is advanced at a constant rate into the workpiece. This is the easiest method to learn, but provides the least amount of control, and has the lowest capacity for superior results.
  		
- 		\item \textit{TIG}\index{TIG} (Tungsten-Inert-Gas) welding uses an electric arc between a fixed tungsten rod and the workpiece, melting the work but not the tungsten. The arc is shielded by inert gas to eliminate chemical reactions. Filler rod is advanced manually and separately into the molten work. This method is much harder to learn, but provides the most amount of control, with the highest capacity for superior results.
+ 		\item \textit{TIG} (Tungsten-Inert-Gas) welding uses an electric arc between a fixed tungsten rod and the workpiece, melting the work but not the tungsten. The arc is shielded by inert gas to eliminate chemical reactions. Filler rod is advanced manually and separately into the molten work. This method is much harder to learn, but provides the most amount of control, with the highest capacity for superior results.
  		
- 		\item \textit{Stick/Arc}\index{Stick/Arc} welding uses an electric arc between a rod containing flux and filler metal and the workpiece, melting both the rod and the workpiece. The arc is shielded by the vaporizing flux. This method is hard to learn, but provides good control, and works best outdoors, so is quite common in the construction and pipeline industries.
+ 		\item \textit{Stick/Arc} welding uses an electric arc between a rod containing flux and filler metal and the workpiece, melting both the rod and the workpiece. The arc is shielded by the vaporizing flux. This method is hard to learn, but provides good control, and works best outdoors, so is quite common in the construction and pipeline industries.
  		
  		\item In \textit{brazing}\index{brazing}, heat is generated either by a TIG or flame torch and directed at the work without melting it. Brazing material, which will melt at this surface temperature, is fed onto the work, melting and flowing across it. As it solidifies, it adheres to the base metal.
  		
  	\end{asparaenum}
  	
  	\subsection{3D Printing}
- 	
- 	\textit{3D printing}\index{3D printing} or \textit{additive manufacturing}\index{additive manufacturing} is a varied class of technologies that add material selectively and in a discretely controlled fashion. This allows the production of extremely complex geometries with little to no tooling costs, but is a pioneering field and has many limitations.
+ 	\index{3D printing}
+ 	\index{3D printing!additive manufacturing}
+ 	\textit{3D printing} or \textit{additive manufacturing} is a varied class of technologies that add material selectively and in a discretely controlled fashion. This allows the production of extremely complex geometries with little to no tooling costs, but is a pioneering field and has many limitations.
  	
  	\begin{figure}[H]
 		\includegraphics[width=0.9\textwidth]{imgs/3dp_fdm_sla_sls.jpeg}
@@ -567,11 +571,11 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
  	
  	\begin{asparaenum}[a)]
- 		\item \textit{Fused deposition modeling (FDM)}\index{Fused deposition modeling (FDM)} uses a continuous piece of plastic filament which is heated in the \textit{hot end}\index{hot end} before being squeezed through an \textit{extruder}\index{extruder} to lay down thin layers of material which melt into previous layers. This method is quite reliable and cheap, but does result in models with visible layers, and generally results in models where the strength can vary with the orientation of the layers.
- 		Because it works by melting existing material, it is limited to materials that can be melted and cooled into final form such as thermoplastics. Common materials are PLA, ABS, and to an increasing extent, PETG, Polycarbonate, and Nylon. FDM is furthermore is limited in that it cannot print steep overhangs without wasteful or surface-quality changing \textit{support material}\index{support material}. Porosity and sealing can also be concerns. On the upside, it can create hollow parts, enabling high strength-to-weight ratios as material can be placed only where it is needed.
- 		\textit{Continuous-strand reinforcement}\index{Continuous-strand reinforcement} is a new addition to this technology. As the name implies, this is the inclusion of a fibrous high-strength material such as fiberglass or carbon fiber into the filament, so that when it is extruded, the part has many strands of this reinforcing material. Markforged makes printers capable of this.
- 		\item \textit{Stereolithography (SLA)}\index{Stereolithography (SLA)} uses a laser to quickly cure liquid \textit{resin}\index{resin} into hard material. The print bed moves away from the laser as additional layers are added. This method is inherently limited to materials that can be made from resins, ruling out many materials. It is a quite time-consuming process but can result in parts with good sealing properties and excellent surface finish. Hollow parts cannot be created as the resin would simply be trapped inside cavities. Formlabs is a prominent manufacturer of such printers.
- 		\item \textit{Selective laser sintering (SLS)}\index{Selective laser sintering (SLS)} uses a laser to selectively melt and \textit{sinter}\index{sinter} powdered material together. After one layer is sintered, another thin layer of powder is put over top, and the process repeats. This process can achieve excellent mechanical properties which are not dependent on layer orientation, as well as stellar dimensional accuracy. However, it results in parts with a very coarse surface texture. Hollow parts cannot be created as the powder would simply be trapped inside cavities. The continuous addition of powder (of which the unsintered material can be reused) allows for the production of parts with infinitely sharp overhangs since the previous layer acts as support material.
+ 		\item \textit{Fused deposition modeling (FDM)}\index{3D printing!FDM} uses a continuous piece of plastic filament which is heated in the \textit{hot end} before being squeezed through an \textit{extruder} to lay down thin layers of material which melt into previous layers. This method is quite reliable and cheap, but does result in models with visible layers, and generally results in models where the strength can vary with the orientation of the layers.
+ 		Because it works by melting existing material, it is limited to materials that can be melted and cooled into final form such as thermoplastics. Common materials are PLA, ABS, and to an increasing extent, PETG, Polycarbonate, and Nylon. FDM is furthermore is limited in that it cannot print steep overhangs without wasteful or surface-quality changing \textit{support material}\index{3D printing!support}. Porosity and sealing can also be concerns. On the upside, it can create hollow parts, enabling high strength-to-weight ratios as material can be placed only where it is needed.
+ 		\textit{Continuous-strand reinforcement}\index{3D printing!continuous-strand reinforcement} is a new addition to this technology. As the name implies, this is the inclusion of a fibrous high-strength material such as fiberglass or carbon fiber into the filament, so that when it is extruded, the part has many strands of this reinforcing material. Markforged makes printers capable of this.
+ 		\item \textit{Stereolithography (SLA)}\index{3D printing!SLA} uses a laser to quickly cure liquid \textit{resin} into solid material. The print bed moves away from the laser as additional layers are added. This method is inherently limited to materials that can be made from resins, ruling out many materials. It is a quite time-consuming process but can result in parts with good sealing properties and excellent surface finish. Hollow parts cannot be created as the resin would simply be trapped inside cavities. Formlabs is a prominent manufacturer of such printers.
+ 		\item \textit{Selective laser sintering (SLS)}\index{3D printing!SLS} uses a laser to selectively melt and \textit{sinter} powdered material together. After one layer is sintered, another thin layer of powder is put over top, and the process repeats. This process can achieve excellent mechanical properties which are not dependent on layer orientation, as well as stellar dimensional accuracy. However, it results in parts with a very coarse surface texture. Hollow parts cannot be created as the powder would simply be trapped inside cavities. The continuous addition of powder (of which the unsintered material can be reused) allows for the production of parts with infinitely sharp overhangs since the previous layer acts as support material.
  	\end{asparaenum}
  	
  	Metal 3D printing technologies are also in the works, most being a modification of the traditional SLS method with metal powders.
@@ -580,6 +584,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	Fasteners are a broad family of mechanical solutions to fastening parts together.
 	
 	\subsection{Pins}
+	\index{pins}	
 	The simplest fastener is a pin. Pins prevent plate holes from shearing past each other by putting all of the load through the pin. There are a couple different kinds, each with different properties:
 	
 	Quick pins allow users to easily adjust or reconfigure equipment. They are easily insertable/removable, usually without any special tools.
@@ -599,10 +604,10 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\caption{Various quick-removal pins.}
 	\end{figure}
 	
-	\begin{asparaenum}[a)]
-		\item \textit{Clevis pins}\index{Clevis pins} are loose tolerance pins which have a hole for an R-shaped locking pin or wire to go through.
-		\item \textit{Wire-Locking pins}\index{Wire-Locking pins} serve the same purpose as clevis pins, but use a spring-loaded wire to keep the pin captive.
-		\item \textit{Ball-Detent pins}\index{Ball-Detent pins} serve the same purpose as clevis pins, but use a spring-loaded ball detent to keep the pin captive. These can be pulled/pushed in without and additional steps.
+	\begin{asparaenum}[a)]\index{pins!quick}
+		\item \textit{Clevis pins}\index{pins!clevis} are loose tolerance pins which have a hole for an R-shaped locking pin or wire to go through.
+		\item \textit{Wire-Locking pins}\index{pins!wire-locking} serve the same purpose as clevis pins, but use a spring-loaded wire to keep the pin captive.
+		\item \textit{Ball-Detent pins}\index{pins!ball-detent} serve the same purpose as clevis pins, but use a spring-loaded ball detent to keep the pin captive. These can be pulled/pushed in without and additional steps.
 	\end{asparaenum}
 	
 	
@@ -627,14 +632,14 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Dowel pins}\index{Dowel pins} are tight-tolerance. They are typically pressed into one part's hole with a loose fit on another mating part.
-		\item \textit{Spring pins}\index{Spring pins} are formed from coiled metal and are intended to be pressed in like a dowel pin, but have some give to them so that they can be used with looser-tolerance holes.
-		\item \textit{Taper/scotch pins}\index{Taper/scotch pins} are like dowel pins, but they are slightly tapered, so they wedge into multiple parts like a nail.
-		\item \textit{Shear pins}\index{Shear pins} are specifically designed to fail at a specified load, preventing damage to equipment.
+		\item \textit{Dowel pins}\index{pins!dowel} are tight-tolerance. They are typically pressed into one part's hole with a loose fit on another mating part.
+		\item \textit{Spring pins}\index{pins!spring} are formed from coiled metal and are intended to be pressed in like a dowel pin, but have some give to them so that they can be used with looser-tolerance holes.
+		\item \textit{Taper/scotch pins}\index{pins!taper} are like dowel pins, but they are slightly tapered, so they wedge into multiple parts like a nail.
+		\item \textit{Shear pins}\index{pins!shear} are specifically designed to fail at a specified load, preventing damage to equipment.
 	\end{asparaenum}
 	
 	\subsection{Threads} \label{section:threads}
-	
+	\index{thread}
 	Threaded fasteners (bolts, nuts, and screws) are a ubiquitous solution. There's an age old question of the difference between a screw and a bolt and the answer is merely in application: if it goes into a nut, it's a bolt. Otherwise, it's a screw. So, anything said about screws is true of bolts and vice versa.
 	
 	\begin{figure}[H]
@@ -645,14 +650,14 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	Threaded fasteners are denoted by:
 	\begin{asparaitem}
 		\item The major diameter of the thread.
-		\item The thread pitch, or threads-per-inch. Metric bolts are specified by the pitch (a M5x0.8 has 0.8mm between each thread crest). English bolts are specified by the number of thread crests in an inch (a 1/4"-20 has 20 threads per inch, or a pitch of 1/20 = 0.05 inches). Even among the same diameter, bolts can have different pitches. For instance, a 1/4"-28 is fine thread, and a 1/4"-20 is coarse thread.
+		\item The thread \textit{pitch}\index{thread!pitch}, or threads-per-inch. Metric bolts are specified by the pitch (a M5x0.8 has 0.8mm between each thread crest). English bolts are specified by the number of thread crests in an inch (a 1/4"-20 has 20 threads per inch, or a pitch of 1/20 = 0.05 inches). Even among the same diameter, bolts can have different pitches. For instance, a 1/4"-28 is fine thread, and a 1/4"-20 is coarse thread.
 		\item The thread length - the bolt might be threaded fully, or only partially. The unthreaded portion is the shoulder and is usually the same diameter as the threads' major diameter.
 		\item The handedness of the thread - most threads are right handed (meaning turning them in a clockwise fashion will make them move away) unless specified as left-handed.
-		\item The grade or class - this refers to the strength of the material. English bolts are specified by \textit{grade}\index{grade}, and metric bolts by \textit{class}\index{class}. Bolts usually have head markings that reflect the material. Grade and class are only for steel, though - other materials have more exotic standards.
+		\item The grade or class - this refers to the strength of the material. English bolts are specified by \textit{grade}\index{thread!grade}, and metric bolts by \textit{class}\index{thread!class}. Bolts usually have head markings that reflect the material. Grade and class are only for steel, though - other materials have more exotic standards.
 	\end{asparaitem}
 	
 	There are many different types of bolts out there.
-	
+	\index{screws and bolts}
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{.24\linewidth}
@@ -685,15 +690,16 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\caption{Various screws / bolts.}
 	\end{figure}
 	
+	\index{screws and bolts!types}
 	\begin{asparaenum}[a)]
-		\item \textit{External drive}\index{External drive} bolts are good when only side-access is possible, or a cheap solution is needed. The most common example is a hex-head bolt, though pentagon-, external-torx-, and square- heads exist.
-		\item \textit{Socket head}\index{Socket head} bolts are preferred. They can be installed in deep wells and have a compact head profile.
-		\item \textit{Flat head}\index{Flat head} screws need to be installed into holes that have been countersunk to the same angle as the head of the screw. They allow for a flush, smooth installation. However, they have a smaller hex than socket heads of the same thread diameter. This makes them more prone to stripping the head out.
-		\item \textit{Button head}\index{Button head} screws provide a smooth surface without the need to countersink the surface. They still have a smaller-diameter hex than socket-heads, though, so are generally not preferred.
-		\item \textit{Shoulder screws}\index{Shoulder screws} are special-use screws. The shoulder (unthreaded) portion is precision ground and usually a larger diameter than the thread. This allows them to be used as pins or pivot points.
-		\item \textit{Self-tapping screws}\index{Self-tapping screws} have specially formed tips based on what material they are designed to tap into. They thread into material directly; a tap is not required to form threads, and in plastic and wood, are generally stronger.
-		\item \textit{Carriage bolts}\index{Carriage bolts} have a rounded head without any means of being driven externally. Instead, the square portion sitting under the thread mates with the material it bolts together (either a plate with the corresponding female portion, or a soft material like wood conforms to the square). \textit{Plow bolts}\index{Plow bolts} are the same principle, but are flat-headed.
-		\item \textit{Set screws}\index{Set screws} (often called \textit{grub screws}\index{grub screws}) are used to lock down on another piece of material. They are commonly used to secure hubs to shafts. They have very small hexes relative to their thread diameter and are notorious for stripping out.
+		\item \textit{External drive} bolts are good when only side-access is possible, or a cheap solution is needed. The most common example is a hex-head bolt, though pentagon-, external-torx-, and square- heads exist.
+		\item \textit{Socket head} bolts are preferred. They can be installed in deep wells and have a compact head profile.
+		\item \textit{Flat head} screws need to be installed into holes that have been countersunk to the same angle as the head of the screw. They allow for a flush, smooth installation. However, they have a smaller hex than socket heads of the same thread diameter. This makes them more prone to stripping the head out.
+		\item \textit{Button head} screws provide a smooth surface without the need to countersink the surface. They still have a smaller-diameter hex than socket-heads, though, so are generally not preferred.
+		\item \textit{Shoulder screws} are special-use screws. The shoulder (unthreaded) portion is precision ground and usually a larger diameter than the thread. This allows them to be used as pins or pivot points.
+		\item \textit{Self-tapping screws} have specially formed tips based on what material they are designed to tap into. They thread into material directly; a tap is not required to form threads, and in plastic and wood, are generally stronger.
+		\item \textit{Carriage bolts} have a rounded head without any means of being driven externally. Instead, the square portion sitting under the thread mates with the material it bolts together (either a plate with the corresponding female portion, or a soft material like wood conforms to the square). \textit{Plow bolts} are the same principle, but are flat-headed.
+		\item \textit{Set screws} (often called \textit{grub screws}) are used to lock down on another piece of material. They are commonly used to secure hubs to shafts. They have very small hexes relative to their thread diameter and are notorious for stripping out.
 	\end{asparaenum}
 	
 	There are a lot of different head types that can be put on these bolts as well. 
@@ -759,16 +765,17 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\caption{Common drive types on engineering fasteners.}
 	\end{figure}
 	
+	\index{screws and bolts!heads}
 	\begin{asparaenum}[a)]
-		\item \textit{External hex}\index{External hex} is very robust, although preferred only when side access is available as it has a large profile.
-		\item \textit{Socket hex}\index{Socket hex} has become an industry preferred head, very easy to access from head-on or in a deep pocket.
-		\item \textit{Flathead}\index{Flathead} is not a preferred drive type; it is very easy to have driver fall out while using, and the torque-transferring capacity is quite low.
-		\item \textit{Phillips}\index{Phillips} heads are very much not preferred as they are very easy to cam out (in fact, they were designed to do so as a means of limiting the installation torque). When driving a Phillips screw, apply inward pressure, and make sure the proper size driver is selected (it should fit nicely).
-		\item \textit{Torx}\index{Torx} is a preferred drive method, but more expensive and the tools to use it are less common. Very difficult to strip out. When using button-head or flat-head screws, if a Torx variant is available, it can be wise to opt for it as the torque-transferring capacity is higher.
-		\item \textit{Robertson}\index{Robertson} or square drive is somewhat preferred, but not common. It is usually found only in wood screws.
+		\item \textit{External hex}is very robust, although preferred only when side access is available as it has a large profile.
+		\item \textit{Socket hex} has become an industry preferred head, very easy to access from head-on or in a deep pocket.
+		\item \textit{Flathead} is not a preferred drive type; it is very easy to have driver fall out while using, and the torque-transferring capacity is quite low.
+		\item \textit{Phillips} heads are very much not preferred as they are very easy to cam out (in fact, they were designed to do so as a means of limiting the installation torque). When driving a Phillips screw, apply inward pressure, and make sure the proper size driver is selected (it should fit nicely).
+		\item \textit{Torx} is a preferred drive method, but more expensive and the tools to use it are less common. Very difficult to strip out. When using button-head or flat-head screws, if a Torx variant is available, it can be wise to opt for it as the torque-transferring capacity is higher.
+		\item \textit{Robertson} or square drive is somewhat preferred, but not common. It is usually found only in wood screws.
 	\end{asparaenum}
 	
-	
+	\index{screws and bolts!preload}
 	\begin{figure}[H]
 		\includegraphics[width=0.5\textwidth]{imgs/bolt_preload.png}
 		\caption{Aspects of a bolted joint.}
@@ -780,7 +787,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	The preload depends both on how much torque is applied to the fastener, and the pitch of the thread. A finer-pitched screw will impart greater preload. Finer-pitched screws also have the benefit of an increased core (minor) diameter, so greater strength in shear.
 	
 	Spreading the load across the greater area increases rigidity and decreases backlash, egg-out, and strength. However, too much torque can dig the head of the bolt/screw into the underlying material, especially if it is soft (like plastic, or even aluminum). As such, care not to overtorque, or a washer may be needed.
-	
+	\index{washers}
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{.24\linewidth}
@@ -795,6 +802,8 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\end{subfigure}
 		\caption{Plain washers of differring sizes}
 	\end{figure}
+	
+	\index{threads!threaded inserts}
 	
 	Bolts thread into nuts, which can be replaced if they strip out. But if the material a screw threads into strips, then that whole piece will need to be replaced or repaired- which can be even more costly. There are some considerations that can be made to ensure success when using integral threads. The first is to make sure to use coarse (not fine) threads in soft materials like aluminum or plastic. Another option is to use thread inserts.
 	
@@ -828,17 +837,18 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Helicoils}\index{Helicoils} can be installed after a thread strips out, or before it does preventatively. They are a coiled piece of metal formed like threads.
-		\item \textit{Tang-lock inserts}\index{Tang-lock inserts} work much like helicoils, but are solid-bodied rather than coiled, and have locking tangs that can be hammered down on installation to make sure the insert doesn't back out.
-		\item \textit{Rivnuts}\index{Rivnuts} (rivet nuts) can be installed into holes in thin metal to provide ample threads for fastening. They work much like rivets (more on those later), but need a special tool.
-		\item \textit{PEM nuts}\index{PEM nuts} serve the same purpose as rivnuts, but are simply pressed into the sheet they are to be installed in.
-		\item \textit{Heat-set inserts}\index{Heat-set inserts} are for plastic. They are instaled by heating them up with a soldering iron and pressing them into thermoplastic. An excellent addition to 3D prints.
-		\item \textit{Tee nuts}\index{Tee nuts} are meant to be pressed into wood, much like a PEM nut. The large flange prevents tear-out and helps distribute load in soft wood.
-		\item \textit{Wood tapping inserts}\index{Wood tapping inserts} are much like tang-lock inserts, but with larger wings suitable for wood.
+		\item \textit{Helicoils} can be installed after a thread strips out, or before it does preventatively. They are a coiled piece of metal formed like threads.
+		\item \textit{Tang-lock inserts} work much like helicoils, but are solid-bodied rather than coiled, and have locking tangs that can be hammered down on installation to make sure the insert doesn't back out.
+		\item \textit{Rivnuts} (rivet nuts) can be installed into holes in thin metal to provide ample threads for fastening. They work much like rivets (more on those later), but need a special tool.
+		\item \textit{PEM nuts} serve the same purpose as rivnuts, but are simply pressed into the sheet they are to be installed in.
+		\item \textit{Heat-set inserts} are for plastic. They are instaled by heating them up with a soldering iron and pressing them into thermoplastic. An excellent addition to 3D prints.
+		\item \textit{Tee nuts} are meant to be pressed into wood, much like a PEM nut. The large flange prevents tear-out and helps distribute load in soft wood.
+		\item \textit{Wood tapping inserts} are much like tang-lock inserts, but with larger wings suitable for wood.
 	\end{asparaenum}
 	
 	Threaded joints have one big weakness, and that is their subsceptibility to vibration. There are many solutions to try and combat this.
-	
+	\index{threads!locking}
+	\index{positive retention}
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{.24\linewidth}
@@ -872,21 +882,21 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Lock wire}\index{Lock wire} requires tedious installation and bolts with cross-drilled holes to feed the stainless steel wire through. That said, when it is installed properly, it is virtually failure-proof, and as such is the standard in many aerospace and motorsport applications. 
-		\item \textit{Threadlocker}\index{Threadlocker} (sometimes referred to by the brand name Loctite) comes in various different strengths and can be used on metal-on-metal contact. It's basically long-cure, specially formulated superglue. However, it does attack many plastics, so be careful! It also requires time to cure to full strength and so is not an instant fix, but must be premeditated.
-		\item \textit{Nylock nuts}\index{Nylock nuts} have a nylon patch that deforms when the threads pass through it. The nut should be installed metal-side first, nylon-side last. These are limited use (<50 uses).
-		\item \textit{Kay/Jet nuts}\index{Kay/Jet nuts} (metal locknuts) work on the same idea as nylock nuts, but in this case, the nut is deformed and interferes with the thread. It is quite difficult to thread into these nuts. These are extremely limited use (<5 uses) but will work in extreme temperatures, unlike nylock nuts.
-		\item \textit{Jam nuts}\index{Jam nuts} are simply a second nut jammed up against the first nut. This enables easy adjustment, but is not a very positive way of locking something in place.
-		\item \textit{Nordlock washers}\index{Nordlock washers} are special ratcheting washers which prevent loosening when properly torqued. There are many different types of locking washers.
-		\item \textit{Split lock washers}\index{Split lock washers} are cheap washers which arguably do not actually prevent loosening.
-		\item \textit{Castle nuts}\index{Castle nuts} are nuts with slots through which a pin can be fed, locking the nut to the bolt it is secured to. A very robust method.
+		\item \textit{Lock wire} requires tedious installation and bolts with cross-drilled holes to feed the stainless steel wire through. That said, when it is installed properly, it is virtually failure-proof, and as such is the standard in many aerospace and motorsport applications. 
+		\item \textit{Threadlocker} (sometimes referred to by the brand name Loctite) comes in various different strengths and can be used on metal-on-metal contact. It's basically long-cure, specially formulated superglue. However, it does attack many plastics, so be careful! It also requires time to cure to full strength and so is not an instant fix, but must be premeditated.
+		\item \textit{Nylock nuts} have a nylon patch that deforms when the threads pass through it. The nut should be installed metal-side first, nylon-side last. These are limited use (<50 uses).
+		\item \textit{Kay/Jet nuts} (metal locknuts) work on the same idea as nylock nuts, but in this case, the nut is deformed and interferes with the thread. It is quite difficult to thread into these nuts. These are extremely limited use (<5 uses) but will work in extreme temperatures, unlike nylock nuts.
+		\item \textit{Jam nuts} are simply a second nut jammed up against the first nut. This enables easy adjustment, but is not a very positive way of locking something in place.
+		\item \textit{Nordlock washers} are special ratcheting washers which prevent loosening when properly torqued. There are many different types of locking washers.
+		\item \textit{Split lock washers} are cheap washers which arguably do not actually prevent loosening.
+		\item \textit{Castle nuts} are nuts with slots through which a pin can be fed, locking the nut to the bolt it is secured to. A very robust method.
 	\end{asparaenum}
 	
 	\subsection{Rivets}
-	
+	\index{rivets}	
 	Pop rivets are a light and cheap method of fastening. However, they require a special gun and are one-time use. They must be drilled out in order to remove them. They are weaker than bolts, so more must be used, but overall, they are a lighter option. Installation is also more picky than bolting. However, they can still be a time-saver over bolts when disassembly is not a factor.
 	
-	Rivets are specified by diameter and \textit{grip length}\index{grip length} - the amount of material sandwiched together that they can grip. Rivets should be installed straight to close-fit holes with the plates already pulled together.
+	Rivets are specified by diameter and \textit{grip length} - the amount of material sandwiched together that they can grip. Rivets should be installed straight to close-fit holes with the plates already pulled together.
 	
 	\begin{figure}[H] \centering
 		\includegraphics[width=0.9\textwidth]{imgs/rivet_install.jpeg}
@@ -896,7 +906,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	Hot rivets are a very different animal than pop rivets. These require very specialized equipment, and work by heating up a rivet to molten temperature, inserting it through the hole to be secured, and hammering it so it expands and mushrooms out on both sides. As the rivet cools, it shrinks further, creating an incredibly robust and secure connection.	
 	
 	\subsection{Shaft Retention}
-	
+	\index{snap rings, e-clips, circlips}
 	Retaining rings are used to constrain objects along a shaft.
 	
 	\begin{figure}[H]
@@ -940,32 +950,34 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Shaft collars}\index{Shaft collars} are heavy and high-profile, but easily removable and adjustable. They come in different bore shapes (hex, round, keyed, etc) and in one or two-piece varieties.
-		\item \textit{Push-on rings}\index{Push-on rings} are pushed onto shafts (no groove needed) and ideally ratchet on, never coming off.
-		\item \textit{E-clips}\index{E-clips} can be pushed radially into a groove. They are aided by the use of a snap-ring tool to splay them apart, but it is not necessary. They can be installed without passing the clip over the end of a shaft.
-		\item \textit{External snap rings}\index{External snap rings} are expanded by a snap-ring tool, and installed over the groove of a shaft.
-		\item \textit{Internal snap rings}\index{Internal snap rings} are compressed by a snap-ring tool, and installed into the groove of a housing.
-		\item \textit{Spiral rings}\index{Spiral rings} are wound into grooves. They're annoying and rare.
-		\item \textit{Circlips}\index{Circlips} are very stiff, low-profile retaining clips intended for permanent installation.
+		\item \textit{Shaft collars} are heavy and high-profile, but easily removable and adjustable. They come in different bore shapes (hex, round, keyed, etc) and in one or two-piece varieties.
+		\item \textit{Push-on rings} are pushed onto shafts (no groove needed) and ideally ratchet on, never coming off.
+		\item \textit{E-clips} can be pushed radially into a groove. They are aided by the use of a snap-ring tool to splay them apart, but it is not necessary. They can be installed without passing the clip over the end of a shaft.
+		\item \textit{External snap rings} are expanded by a snap-ring tool, and installed over the groove of a shaft.
+		\item \textit{Internal snap rings} are compressed by a snap-ring tool, and installed into the groove of a housing.
+		\item \textit{Spiral rings} are wound into grooves. They're annoying and rare.
+		\item \textit{Circlips} are very stiff, low-profile retaining clips intended for permanent installation.
 
 	\end{asparaenum}
 	
 	When working with expanding rings, it is very important to not over-extend them on installation. It is very easy to over-extend and damage the rings -leading to successful installation, but potential for the ring to fall off later during use - if expanded much more than is necessary to feed them over the shaft.
 	
 	\subsection{Adhesives}
+	\index{adhesives!epoxies, superglue, tape}
+	\index{hook-and-loop}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Retaining compound}\index{Retaining compound} such as Loctite Green is meant to bond bearings to their housings.
-		\item \textit{Epoxies}\index{Epoxies} are two-part adhesives that are mixed immediately prior to application. They can cure quickly.
-		\item \textit{Cryanacrolate/superglue}\index{Cryanacrolate/superglue} adhesives are good for many plastics. Loctite has a good design/test guide for different plastic/glue combinations.
-		\item \textit{Tapes}\index{Tapes} can be quite useful. Good duct tape and gaffer's tape can be used for high-fidelity prototyping and quick fixes.
-		\item Pressure-sensitive tape such as 3M VHB can be incredibly strong. Follow the manufacturer's directions for maximum strength.
-		\item Velcro and dual-lock can produce easy but secure removable components.
+		\item \textit{Retaining compound} such as Loctite Green is meant to bond bearings to their housings.
+		\item \textit{Epoxies} are two-part adhesives that are mixed immediately prior to application. They can cure quickly.
+		\item \textit{Cyanoacrylate/superglue} adhesives are good for many plastics. Loctite has a good design/test guide for different plastic/glue combinations.
+		\item \textit{Tapes} can be quite useful. Good duct tape and gaffer's tape can be used for high-fidelity prototyping and quick fixes.
+		\item \textit{Pressure-sensitive tape} such as 3M VHB can be incredibly strong. Follow the manufacturer's directions for maximum strength.
+		\item \textit{Hook-and-loop tape} and dual-lock can produce easy but secure removable components.
 	\end{asparaenum}
 	
 	
 	\subsection{Panel Fasteners}
-	
+	\index{panel fasteners}
 	Often panels need to attached to protect something, provide a clean cosmetic appearance, or smooth over a gap for aerodynamic purposes, while still providing easy service to the underlying components. There are a few solutions to this which are more robust and positive than Velcro (which may be perfectly acceptable in many cases). These solutions make sure that the fasteners are kept with the panel so there's no scrambling around to find the panel.
 	
 	\begin{figure}[H]
@@ -984,13 +996,14 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{Quarter turn fasteners}\index{Quarter turn fasteners} such \textit{Dzus tabs}\index{Dzus tabs} are an easily removable, robust solution. Some require a simple tool (flat-blade screwdriver) to remove. Often found in motorsport applications, they are permanently installed into both the frame and panel. They stick out a very small amount - the thickness of the tab.
-		\item \textit{Push-pull panel pins}\index{Push-pull panel pins}, like \href{https://www.mcmaster.com/panel-fasteners/screws-and-bolts/push-pull-captive-panel-screws/}{\color{red}\underline{these on McMaster-Carr}} are a light-duty solution, but do not require any special machining to integrate, just drill holes of the right diameters. They also do not require any special tools to remove or attach, and stay captive with the panel they are attached to. However, they do stick out from the panel quite significantly.
-		\item \textit{Captive panel screws}\index{Captive panel screws} are effectively screws that are kept captive to the panel. Like any screw, they require the appropriate tool to remove.
+		\item \textit{Quarter turn fasteners} such \textit{Dzus tabs} are an easily removable, robust solution. Some require a simple tool (flat-blade screwdriver) to remove. Often found in motorsport applications, they are permanently installed into both the frame and panel. They stick out a very small amount - the thickness of the tab.
+		\item \textit{Push-pull panel pins}, like \href{https://www.mcmaster.com/panel-fasteners/screws-and-bolts/push-pull-captive-panel-screws/}{\color{red}\underline{these on McMaster-Carr}} are a light-duty solution, but do not require any special machining to integrate, just drill holes of the right diameters. They also do not require any special tools to remove or attach, and stay captive with the panel they are attached to. However, they do stick out from the panel quite significantly.
+		\item \textit{Captive panel screws} are effectively screws that are kept captive to the panel. Like any screw, they require the appropriate tool to remove.
 	\end{asparaenum}
 	
 	\subsection{The Zip Tie}
-	I had to save the best for last: the \textit{zip tie}\index{zip tie}, or \textit{cable tie}\index{cable tie}. Zip ties have a slight reputation as a hackish solution, but this is more a result of people overusing them or overestimating how much they can accomplish. That being said, they can do a lot, from their intended use of holding bundles of wires together, to forming agitating flappers on ball feeding mechanisms. Zip ties come in different materials, although the most common is nylon.
+	\index{zip tie}
+	I had to save the best for last: the \textit{zip tie}, or \textit{cable tie}. Zip ties have a slight reputation as a hackish solution, but this is more a result of people overusing them or overestimating how much they can accomplish. That being said, they can do a lot, from their intended use of holding bundles of wires together, to forming agitating flappers on ball feeding mechanisms. Zip ties come in different materials, although the most common is nylon.
 	
 	\begin{figure}[H]
 		\includegraphics[width=0.9\textwidth]{imgs/ziptie.png}
@@ -1003,6 +1016,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	To draw an analogy to cuisine... up to this point we've talked about different ingredients - the different herbs, meats, vegetables, fruits, grains that you might use in a kitchen to make a dish with. You can combine them in a lot of different ways, but there are some combinations that make more sense than others, and some that have become traditional because of this. That isn't to say that you can't mix and match and add as you see fit - or even start your own tradition - but there are combinations of technologies that are more common than others. 
 	
 	\subsection{The 80/20 Tradition}
+	\index{extrusions:t-slot framing}
 	One common tradition is that of using t-slot framing as introduced in section \ref{section:extrusions}. There are many different components that can be used with t-slot framing. This tradition is quite deep and even has sub-traditions.
 	
 	\begin{figure}[H]
@@ -1028,16 +1042,18 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	\end{figure}
 	
 	\begin{asparaenum}[a)]
-		\item \textit{T nuts}\index{T nuts} are the basic ingredient of the 80/20 tradition. They come in many flavors: some can be dropped in to a t-slot, some can be rolled in, some can only be slid in through the end. However, they all serve the same purpose: they're a nut that stays captive in the T-slot.
-		\item \textit{Joiner plates}\index{Joiner plates} are one way of securing tubes to other tubes. They're straightforward, and come in many sizes.
-		\item \textit{External brackets}\index{External brackets} are another way of securing tubes to other tubes. These come in many sizes and thicknesses, sometimes with a reinforcing strip (as shown).
-		\item \textit{Anchor fasteners}\index{Anchor fasteners} (sometimes nicknamed \textit{lollipop connectors}\index{lollipop connectors}) are one type of end connector. There are many types of end connectors but these seem to be the most common. The framing gets milled out to accept the round portion of the connector. The connector then fits into one frame, and a bolt going through that connector gets tightened into a t nut inside another frame. The heads of the bolts can be quite frustrating to access and tighten down perfectly, and these also require that the ends of the tubes get milled perfectly square.
-		\item \textit{Corner blocks}\index{Corner blocks} allow corners to get joined together in a very clean fashion. The ends of the extrusions must be tapped to accept a bolt. It is possible to make printed versions of these that allow extrusions to come together at odd angles.
+		\item \textit{T nuts} are the basic ingredient of the 80/20 tradition. They come in many flavors: some can be dropped in to a t-slot, some can be rolled in, some can only be slid in through the end. However, they all serve the same purpose: they're a nut that stays captive in the T-slot.
+		\item \textit{Joiner plates} are one way of securing tubes to other tubes. They're straightforward, and come in many sizes.
+		\item \textit{External brackets} are another way of securing tubes to other tubes. These come in many sizes and thicknesses, sometimes with a reinforcing strip (as shown).
+		\item \textit{Anchor fasteners} (sometimes nicknamed \textit{lollipop connectors}) are one type of end connector. There are many types of end connectors but these seem to be the most common. The framing gets milled out to accept the round portion of the connector. The connector then fits into one frame, and a bolt going through that connector gets tightened into a t nut inside another frame. The heads of the bolts can be quite frustrating to access and tighten down perfectly, and these also require that the ends of the tubes get milled perfectly square.
+		\item \textit{Corner blocks} allow corners to get joined together in a very clean fashion. The ends of the extrusions must be tapped to accept a bolt. It is possible to make printed versions of these that allow extrusions to come together at odd angles.
 	\end{asparaenum}
 	
 	Overall, 80/20 is a very flexible paradigm, but quite heavy and expensive, and can be prone to loosening under vibration.
 	
 	\subsection{The Sheet metal Tradition}
+	\index{sheet metal}
+	\index{rivets}	
 	Airplanes have pioneered this method of cut and folded sheet metal, riveted together to make complex structures. It's a somewhat like industrial origami.
 	
 	\begin{figure}[H]
@@ -1067,6 +1083,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	These joints can also be made with metal, or at odd angles.
 	
 	\subsection{The Bracket and Tube Tradition}
+	\index{extrusions}	
 	Sheet metal is cool, but doesn't have to be used that much. It isn't a very effective way at spanning long distances, and requires lead time since you have to get the profile cutting supplier/equipment to do it.
 	
 	\begin{figure}[H]
@@ -1076,9 +1093,12 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	
 	Brackets can come in many shapes and sizes and purposes. They can join together tubes by sandwiching them (see the hypotenuse), join tubes by being installed to the side (see the joint of the legs), or mount extra components like bearings and motors. Brackets are cheap, often made of sheet metal and produced in large quantities, as is box tube. You can even purchase or make extrusion with regularly drilled holes, so that you don't need to bother fabricating holes into the tubes come time to build a structure.
 	
-	As with sheet metal, both bolts and rivets can be used - but the use of redundant rivets rather than bolts can end up being lighter and stronger, although less serviceable.
+	As with sheet metal, both bolts and rivets can be used - but the use of redundant rivets rather than bolts can end up being lighter and stronger, although less serviceable. \index{rivets}
 	
 	\subsection{The Spaceframe Tradition}
+	\index{extrusions}
+	\index{welding}
+	\index{tubes}	
 	Tubes are strong. Tubes are light. However, welds are even lighter than gussets. Welding tubes together directly and using round tube to prevent stress concentrators is known as a \textit{spaceframe}\index{spaceframe} or \textit{tubeframe}\index{tubeframe}.
 	
 	% Is chunky a tradition? I can't think of any examples... it's kinda just a thing that happens
@@ -1111,7 +1131,7 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 
 \subsection{Shafts, Hubs, and Interfaces}
 	
-	\textit{Shafts}\index{Shafts} or \textit{axles}\index{axles} are rotating components which mate into \textit{hubs}\index{hubs}. \textit{Hubs}\index{Hubs} may be used then to mount to other useful components like wheels or arms, or may be integral to said useful components.
+	\textit{Shafts}\index{shafts} or \textit{axles}\index{axles} are rotating components which mate into \textit{hubs}. \textit{Hubs}\index{hubs} may be used then to mount to other useful components like wheels or arms, or may be integral to said useful components.
 
 	\begin{figure}[H]
 		\centering
@@ -1138,17 +1158,18 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 		
 		\caption{Shaft-hub geometries.}
 	\end{figure}
-	
+	\index{shafts!types}
+	\index{hubs!types}
 	\begin{asparaenum}[a)]
-		\item \textit{Keyed}\index{Keyed} shafts, shown in green, have grooves into which \textit{machine keys}\index{machine keys}, shown in blue, can be halfway inserted. The hub, shown in orange, has a groove matching the other half of the key. Set screws, shown in yellow, may be included to clamp down on the key to make sure it doesn't move, and to help secure the key from fretting. These connections are quite common in industrial applications, but their load-carrying capacity is low compared to alternatives.
-		\item \textit{D-shafts}\index{D-shafts} have a small flat milled into them. This allows either a hub with a D-shape to mount to it, or a hub that is internally round but has a set screw (yellow) that can tighten down onto the flat. The addition of the flat makes this a much more secure connection than simply tightening the set screw onto a plain round shaft.
-		\item \textit{Cross-pins}\index{Cross-pins} or bolts can be used to secure shafts. There many variations on this, but one easy to build, easy to maintain, and fairly reliable method is shown. The hub is tapped on one side, and has a hole with clearance for a bolt head on the other side. The shaft has a clearance hole for the bolt. This makes lining up the shafts easy, and the tightening action will help eliminate wobble.
-		\item \textit{Splines}\index{Splines} are complex geometric shapes with many load-bearing teeth. There are many different standards of splines. These are hard and expensive to produce, but provide the highest torque-transmitting capacity.
-		\item \textit{Hex}\index{Hex} and, in general, \textit{polygon}\index{polygon} shafts are a good compromise between cost and load-bearing capacity. Hex is extremely common, especially within the FRC ecosystem and agricultural equipment. Hex stock in many different materials can be readily procured to use as shafting material, and a hex broach can be used to produce the hub.
+		\item \textit{Keyed}\index{shafts!keyed} shafts, shown in green, have grooves into which \textit{machine keys}\index{machine keys}, shown in blue, can be halfway inserted. The hub, shown in orange, has a groove matching the other half of the key. Set screws, shown in yellow, may be included to clamp down on the key to make sure it doesn't move, and to help secure the key from fretting. These connections are quite common in industrial applications, but their load-carrying capacity is low compared to alternatives.
+		\item \textit{D-shafts} have a small flat milled into them. This allows either a hub with a D-shape to mount to it, or a hub that is internally round but has a set screw (yellow) that can tighten down onto the flat. The addition of the flat makes this a much more secure connection than simply tightening the set screw onto a plain round shaft.
+		\item \textit{Cross-pins} or bolts can be used to secure shafts. There many variations on this, but one easy to build, easy to maintain, and fairly reliable method is shown. The hub is tapped on one side, and has a hole with clearance for a bolt head on the other side. The shaft has a clearance hole for the bolt. This makes lining up the shafts easy, and the tightening action will help eliminate wobble.
+		\item \textit{Splines} are complex geometric shapes with many load-bearing teeth. There are many different standards of splines. These are hard and expensive to produce, but provide the highest torque-transmitting capacity.
+		\item \textit{Hex}\index{shafts!hex} and, in general, \textit{polygon}\index{polygon} shafts are a good compromise between cost and load-bearing capacity. Hex is extremely common, especially within the FRC ecosystem and agricultural equipment. Hex stock in many different materials can be readily procured to use as shafting material, and a hex broach can be used to produce the hub.
 	\end{asparaenum}
 	
 \subsection{Bearings, Bushings}
-
+	\index{bearings} \index{bushings}
 	Bearings and bushings are components which help eliminate wear between moving surfaces.
 
 	\begin{figure}[H]
@@ -1177,22 +1198,23 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 		\caption{Bearings for rotary motion.}
 	\end{figure}
 	
+	\index{bearings!types}
 	\begin{asparaenum}[a)]
-		\item \textit{Ball bearings}\index{Ball bearings} have an inner \textit{race}\index{race} and an outer race with balls in between. These balls are spread out by a cage. They come in many different varieties.
+		\item \textit{Ball bearings} have an inner \textit{race}\index{race} and an outer race with balls in between. These balls are spread out by a cage. They come in many different varieties.
 		\begin{asparaitem}[\ \ \ ]
-			\item \textit{Sealed}\index{Sealed} bearings have a rubber seal keeping contaminants out.
-			\item \textit{Shielded}\index{Shielded} bearings have a shield that keeps shrapnel out.
-			\item \textit{Open}\index{Open} bearings have no protection whatsoever. Seals and shields trap heat, and necessitate the use of grease rather than oil. This means that in an oily environment (like an engine), open bearings can be much more efficient.
+			\item \textit{Sealed} bearings have a rubber seal keeping contaminants out.
+			\item \textit{Shielded} bearings have a shield that keeps shrapnel out.
+			\item \textit{Open} bearings have no protection whatsoever. Seals and shields trap heat, and necessitate the use of grease rather than oil. This means that in an oily environment (like an engine), open bearings can be much more efficient.
 			
-			\item \textit{Deep groove}\index{Deep groove} ball bearings are the most common (meaning the balls contact primarily radially).
-			\item \textit{Angular contact}\index{Angular contact} and \textit{X-contact}\index{X-contact} bearings are better at handling thrust and combined loads.
+			\item \textit{Deep groove} ball bearings are the most common (meaning the balls contact primarily radially).
+			\item \textit{Angular contact} and \textit{X-contact} bearings are better at handling thrust and combined loads.
 			
-			\item \textit{Flanged}\index{Flanged} bearings have a flange which prevents the bearing from falling through the hole into which they are installed. Not all bearings are flanged.
+			\item \textit{Flanged} bearings have a flange which prevents the bearing from falling through the hole into which they are installed. Not all bearings are flanged.
 		\end{asparaitem}
-		\item \textit{Needle roller bearings}\index{Needle roller bearings} have an outer race, and inside that, a cage that contains multiple rollers. These bearings can ride directly on a shaft if the shaft is sufficiently hard, or a separate inner race can be used. Needle roller bearings are very low-profile and have very high load-bearing capacities as the rollers distribute load over a larger region. However, they do nothing to retain a shaft axially.
-		\item \textit{Tapered needle roller bearings}\index{Tapered needle roller bearings} are heavy-capacity bearings good for combined loading, often used in automotive applications. These mate with a \textit{cup}\index{cup}, much like a needle roller bearing mates with an inner race. These must be used in pairs in opposing directions, and axial preload is necessary for proper operation.
-		\item \textit{Thrust bearings}\index{Thrust bearings} are high-capacity bearings that take thrust (axial) loads rather than radial. This means they are often found in conjunction with needle roller bearings to make a bearing assembly that is high-capacity, compact, and light.
-		\item \textit{Plain bushings}\index{Plain bushings} are high-capacity, low-RPM single-piece parts. They are made from low-friction materials like oil-impregnated bronze, or plastic. These are good because they are cheap, extremely compact, and very tolerant of improper alignment, dimensional accuracy, and shock loads (since there are no small parts to produce indents).
+		\item \textit{Needle roller bearings} have an outer race, and inside that, a cage that contains multiple rollers. These bearings can ride directly on a shaft if the shaft is sufficiently hard, or a separate inner race can be used. Needle roller bearings are very low-profile and have very high load-bearing capacities as the rollers distribute load over a larger region. However, they do nothing to retain a shaft axially.
+		\item \textit{Tapered needle roller bearings} are heavy-capacity bearings good for combined loading, often used in automotive applications. These mate with a \textit{cup}, much like a needle roller bearing mates with an inner race. These must be used in pairs in opposing directions, and axial preload is necessary for proper operation.
+		\item \textit{Thrust bearings} are high-capacity bearings that take thrust (axial) loads rather than radial. This means they are often found in conjunction with needle roller bearings to make a bearing assembly that is high-capacity, compact, and light.
+		\item \textit{Plain bushings} are high-capacity, low-RPM single-piece parts. They are made from low-friction materials like oil-impregnated bronze, or plastic. These are good because they are cheap, extremely compact, and very tolerant of improper alignment, dimensional accuracy, and shock loads (since there are no small parts to produce indents).
 	\end{asparaenum}
 	
 	\begin{figure}[H]
@@ -1220,12 +1242,13 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 		\caption{Bearings for linear motion.}
 	\end{figure}
 	
+	\index{bushings} \index{bearings!linear}
 	\begin{asparaenum}[a)]
-		\item \textit{V-bearings}\index{V-bearings} can be used in multiples to constrain one part to a rail with appropriate mating geometry.
-		\item \textit{Linear sliders}\index{Linear sliders} can be used to constrain one part to a rail, cheaply and with a low profile.
-		\item \textit{Recirculating linear ball bearings}\index{Recirculating linear ball bearings} are high-precision components which are very efficient, which work in conjunction with precision ground rod. These are quite expensive, however, and sensitive to dust, dirt, and shrapnel.
-		\item \textit{Linear bushings}\index{Linear bushings} are high-precision components which serve the same purpose as linear bearings, but are less sensitive to cleanliness, and often cheaper, although they have higher friction.
-		\item \textit{Ball bearings}\index{Ball bearings} can be arranged in clever ways on a shaft or tube in order to produce linear guidance.
+		\item \textit{V-bearings} can be used in multiples to constrain one part to a rail with appropriate mating geometry.
+		\item \textit{Linear sliders} can be used to constrain one part to a rail, cheaply and with a low profile.
+		\item \textit{Recirculating linear ball bearings} are high-precision components which are very efficient, which work in conjunction with precision ground rod. These are quite expensive, however, and sensitive to dust, dirt, and shrapnel.
+		\item \textit{Linear bushings} are high-precision components which serve the same purpose as linear bearings, but are less sensitive to cleanliness, and often cheaper, although they have higher friction.
+		\item \textit{Ball bearings} can be arranged in clever ways on a shaft or tube in order to produce linear guidance.
 	\end{asparaenum}
 
 \subsection{Drive Couplings}
@@ -1265,15 +1288,16 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 		\end{subfigure}
 	\end{figure}
 
+	\index{shaft couplings}
 	\begin{asparaenum}[a)]
-		\item \textit{Spider couplings}\index{Spider couplings} consist of two hubs with teeth that interface with a rubber spider. The rubber spider enables some misalignment of shafts (but does provide some support), and also dampens out vibrations.
-		\item \textit{Flexible couplings}\index{Flexible couplings} are single-body couplings with several slots machined into them in order to make them more flexible. This allows for misalignment of shafts depending on the exact design, while maintaining low backlash.
-		\item \textit{Oldham couplings}\index{Oldham couplings} consist of two hubs with slots that interface with a sliding central portion. They facilitate high shaft misplacement, but do not help with angular or axial misalignment.
-		\item \textit{Gear couplings}\index{Gear couplings} consist of two spherical hubs with gear teeth cut into them, and a mating sleeve over the hubs. This allows the hubs to plunge inside of the sleeve in addition to being at odd angles, so allows for extreme misalignment, but is quite costly and does present some wear issues at extreme angles.
-		\item \textit{Universal joints}\index{Universal joints} or \textit{u-joints}\index{u-joints} have a central cross-shaped coupling that connects the two u-shaped halves. This enables quite extreme angular misalignment (usually about 30 degrees) However, they are not constant-velocity. If one side spins at a constant rate, when there is some angle in the shaft, the other side will speed up and slow down. This can produce vibrations and other undesirable behavior in high-speed applications.
-		\item \textit{Tripods}\index{Tripods} are a type of \textit{constant-velocity (CV) joint}\index{constant-velocity (CV) joint}- the input and output always spin at the same velocity unlike a u-joint. These consist of three bearings fixed to a hub. The bearings contact a tulip and slide back and forth on it. This joint can handle decent angular misalignment (usually about 15 degrees) and allows for axial movement, referred to as \textit{plunging}\index{plunging}.
-		\item \textit{Rzeppa joints}\index{Rzeppa joints} are another CV joint. These joints cannot plunge, but do allow for severe angular misalignment (usually about 45 degrees). Front-wheel drive cars often use shafts where the differential side has a tripod joint and the wheel side has a rzeppa joint. This way the shaft can plunge, and the wheel can be powered and steered.
-		\item \textit{Guibos}\index{Guibos} or \textit{flex discs}\index{flex discs} are a joint (can can be considered a CV joint) which use two hubs connected by some flexible (usually rubber) coupling. This helps to absorb vibrations, and handles shaft misalignment.
+		\item \textit{Spider couplings} consist of two hubs with teeth that interface with a rubber spider. The rubber spider enables some misalignment of shafts (but does provide some support), and also dampens out vibrations.
+		\item \textit{Flexible couplings} are single-body couplings with several slots machined into them in order to make them more flexible. This allows for misalignment of shafts depending on the exact design, while maintaining low backlash.
+		\item \textit{Oldham couplings} consist of two hubs with slots that interface with a sliding central portion. They facilitate high shaft misplacement, but do not help with angular or axial misalignment.
+		\item \textit{Gear couplings} consist of two spherical hubs with gear teeth cut into them, and a mating sleeve over the hubs. This allows the hubs to plunge inside of the sleeve in addition to being at odd angles, so allows for extreme misalignment, but is quite costly and does present some wear issues at extreme angles.
+		\item \textit{Universal joints} or \textit{u-joints} have a central cross-shaped coupling that connects the two u-shaped halves. This enables quite extreme angular misalignment (usually about 30 degrees) However, they are not constant-velocity. If one side spins at a constant rate, when there is some angle in the shaft, the other side will speed up and slow down. This can produce vibrations and other undesirable behavior in high-speed applications.
+		\item \textit{Tripods} are a type of \textit{constant-velocity (CV) joint}\index{shaft couplings!constant-velocity}- the input and output always spin at the same velocity unlike a u-joint. These consist of three bearings fixed to a hub. The bearings contact a tulip and slide back and forth on it. This joint can handle decent angular misalignment (usually about 15 degrees) and allows for axial movement, referred to as \textit{plunging}.
+		\item \textit{Rzeppa joints} are another CV joint. These joints cannot plunge, but do allow for severe angular misalignment (usually about 45 degrees). Front-wheel drive cars often use shafts where the differential side has a tripod joint and the wheel side has a rzeppa joint. This way the shaft can plunge, and the wheel can be powered and steered.
+		\item \textit{Guibos} or \textit{flex discs} are a joint (can can be considered a CV joint) which use two hubs connected by some flexible (usually rubber) coupling. This helps to absorb vibrations, and handles shaft misalignment.
 	\end{asparaenum}
 
 \section{Nonaxial Power Transmission}
@@ -1281,7 +1305,8 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 We often need to transmit power from one place to another not in a line. We also often need to change the torque and speed ratios of the power. There are many ways of doing this.
 
 \subsection{Rope and Pulleys}
-
+\index{rope}
+\index{pulleys}
 Ropes, pulleys, and spools are the simplest way to transmit power from one place to another. They aren't particularly technical, but there are a few nuances which can be used to help design systems using them.
 
 \begin{figure}[H]	
@@ -1292,27 +1317,28 @@ Ropes, pulleys, and spools are the simplest way to transmit power from one place
 
 Helical takeup pulleys have grooves in them which help route rope so that when it is wound, it is wound at a constant radius. This can help prevent binding or slack in closed-loop systems (like continuous rigging elevators). To help closed loop systems more, a spring inline with the rope can take up more slack than a stiff rope.
 
-A \textit{block and tackle}\index{block and tackle} is a system of two or more pulleys with a rope routed between them in alternating fashion as shown. This generates mechanical advantage; the rope must be pulled more to achieve the same lifting force. This also decreases the input load required to raise the load by a factor of the number of ropes. 
+A \textit{block and tackle}\index{pulleys!block and tackle} is a system of two or more pulleys with a rope routed between them in alternating fashion as shown. This generates mechanical advantage; the rope must be pulled more to achieve the same lifting force. This also decreases the input load required to raise the load by a factor of the number of ropes. 
 
 \subsection{Gears}
 
-A \textit{gear}\index{gear} is effectively, a wheel with teeth. These teeth are specially shaped in order to \textit{mesh}\index{mesh} and mate nicely with other gears, so you need to be careful that you're using gears that are compatible with each other, and spacing them far enough apart. Let's discuss the terms surrounding this.
+A \textit{gear}\index{gear} is effectively, a wheel with teeth. These teeth are specially shaped in order to \textit{mesh} and mate nicely with other gears, so you need to be careful that you're using gears that are compatible with each other, and spacing them far enough apart. Let's discuss the terms surrounding this.
 
 \begin{figure}[H]
 	\includegraphics[width=0.8\textwidth]{imgs/gear_nomenclature.png}
 	\caption{Nomenclature of different gear dimensions}
 \end{figure}
-
-Gears are specified, among other things, by the number of teeth, their \textit{pressure angle}\index{pressure angle}, and either the \textit{diametrical pitch}\index{diametrical pitch} or \textit{module}\index{module}.
+\index{gear!nomenclature}
+Gears are specified, among other things, by the number of teeth, their \textit{pressure angle}\index{gear!pressure angle}, and either the \textit{diametrical pitch}\index{gear!diametral pitch} or \textit{module}\index{gear!module}.
 
 \begin{asparaenum}[a)]
-	\item Gear teeth have an \textit{involute}\index{involute} profile. This is a specific geometric shape that is not quite an arc, but makes sure power transmission is smooth and without excessive backlash.
-	\item The \textit{pitch circle}\index{pitch circle} is a rough representation of the gear as a wheel. It lies somewhere in between the overall diameter and the diameter of the root of the teeth. You can draw up a sketch containing gears' pitch circles tangent to each other, and then they will fit together.
-	\item A gear's \textit{diametral pitch}\index{diametral pitch} (DP) is the number of teeth in a gear divided by the pitch diameter (in inches). So, if a gear has 50 teeth and is a 20DP gear, it would have a pitch circle of diameter $50 \ teeth \ / \ 20 \ DP = 2.5 \ inches$. For two gears to be compatible and mesh, they must have the same diametral pitch, otherwise the teeth would be the wrong sizes.
-	\item A gear's \textit{module}\index{module} is a gear's pitch diameter (in mm) divided by the number of teeth. This measures the same thing as diametral pitch, just in a different way. If a 5 module gear has 30 teeth, its pitch diameter would be $5 \ mm \times 30 \ teeth = 150 \ mm$.
-	\item A gear's \textit{pressure angle}\index{pressure angle} (PA) measures how steep the teeth are, or the angle of the contact line. This must be the same between two gears for them to be compatible. There is a lot of testing and science behind picking a good angle; higher angles are weaker and produce higher loads on the system, but do make oil flow better. Usually, though, this isn't a big concern- just make sure that you don't mix and match pressure angles. 14.5 degrees is common for greased gears.
+	\item Gear teeth have an \textit{involute} profile. This is a specific geometric shape that is not quite an arc, but makes sure power transmission is smooth and without excessive backlash.
+	\item The \textit{pitch circle} is a rough representation of the gear as a wheel. It lies somewhere in between the overall diameter and the diameter of the root of the teeth. You can draw up a sketch containing gears' pitch circles tangent to each other, and then they will fit together.
+	\item A gear's \textit{diametral pitch} (DP) is the number of teeth in a gear divided by the pitch diameter (in inches). So, if a gear has 50 teeth and is a 20DP gear, it would have a pitch circle of diameter $50 \ teeth \ / \ 20 \ DP = 2.5 \ inches$. For two gears to be compatible and mesh, they must have the same diametral pitch, otherwise the teeth would be the wrong sizes.
+	\item A gear's \textit{module} is a gear's pitch diameter (in mm) divided by the number of teeth. This measures the same thing as diametral pitch, just in a different way. If a 5 module gear has 30 teeth, its pitch diameter would be $5 \ mm \times 30 \ teeth = 150 \ mm$.
+	\item A gear's \textit{pressure angle}(PA) measures how steep the teeth are, or the angle of the contact line. This must be the same between two gears for them to be compatible. There is a lot of testing and science behind picking a good angle; higher angles are weaker and produce higher loads on the system, but do make oil flow better. Usually, though, this isn't a big concern- just make sure that you don't mix and match pressure angles. 14.5 degrees is common for greased gears.
 \end{asparaenum}
 
+\index{gear!types}
 \begin{figure}[H]
 	\begin{subfigure}[b]{.32\linewidth}
 		\includegraphics[width=0.8\textwidth]{imgs/gear_spur.png}
@@ -1347,14 +1373,14 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item \textit{Spur}\index{Spur} gears have straight-cut teeth. This means they are two-dimensional and relatively simple to produce.
-	\item \textit{Helical}\index{Helical} gears have angled-cut teeth. These are harder to produce, but they create smoother power transmission since multiple teeth are in contact, creating a seamless hand off. However, the helical nature produces an axial load in addition to the radial load that gears already produce. 
-	\item \textit{Herringbore}\index{Herringbore} gears are effectively two helical gears back-to-back. This causes the axial loads that helical gears produce to cancel out. This type of gear, though, is obviously even more complicated to produce.
-	\item \textit{Bevel}\index{Bevel} gears allow power transmission along non-parallel axes. It is important to note that bevel gears are made as sets- you cannot use a 40T gear intended for use with a 20T, with a 60T, as the angles will not mesh up.
-	\item \textit{Ring}\index{Ring} gears are simply inverse spur gears.
-	\item \textit{Planetary}\index{Planetary} gear sets are compact reductions that can be configured in many ways depending on which part of the set is fixed in place. Typically, the ring is held fixed, the central \textit{sun gear}\index{sun gear} is driven, and a \textit{carrier plate}\index{carrier plate} (now shown) holding the \textit{planet gears}\index{planet gears} is the output.
-	\item \textit{Worm}\index{Worm} gears are extremely compact reductions, but are often not very efficient. The worm wheel (right) might have one, or several \textit{leads}\index{leads}, or teeth. A lower number of leads will reduce the gear set's ability to be backdriven, which can be a desirable characteristic.
-	\item A \textit{rack and pinion}\index{rack and pinion} can be used to transform rotary motion into linear motion, or vice versa.	
+	\item \textit{Spur} gears have straight-cut teeth. This means they are two-dimensional and relatively simple to produce.
+	\item \textit{Helical} gears have angled-cut teeth. These are harder to produce, but they create smoother power transmission since multiple teeth are in contact, creating a seamless hand off. However, the helical nature produces an axial load in addition to the radial load that gears already produce. 
+	\item \textit{Herringbore} gears are effectively two helical gears back-to-back. This causes the axial loads that helical gears produce to cancel out. This type of gear, though, is obviously even more complicated to produce.
+	\item \textit{Bevel}\index{gear!bevel, miter} gears allow power transmission along non-parallel axes. It is important to note that bevel gears are made as sets- you cannot use a 40T gear intended for use with a 20T, with a 60T, as the angles will not mesh up.
+	\item \textit{Ring} gears are simply inverse spur gears.
+	\item \textit{Planetary}\index{gear!planetary} gear sets are compact reductions that can be configured in many ways depending on which part of the set is fixed in place. Typically, the ring is held fixed, the central \textit{sun gear} is driven, and a \textit{carrier plate} (now shown) holding the \textit{planet gears} is the output.
+	\item \textit{Worm} gears are extremely compact reductions, but are often not very efficient. The worm wheel (right) might have one or several \textit{leads}, or teeth. A lower number of leads will reduce the gear set's ability to be backdriven, which can be a desirable characteristic.
+	\item A \textit{rack and pinion}\index{gear!rack and pinion} can be used to transform rotary motion into linear motion, or vice versa.	
 \end{asparaenum}
 
 \begin{figure}[H]
@@ -1362,22 +1388,20 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 	\caption{A spur gear set with a idler gear (middle).}
 \end{figure}
 
-\textit{Idlers}\index{Idlers} can be introduced to a gear set to change the direction of rotation, or to bridge a large gap and transmit power from one place to another. The idler does not impact the overall gear ratio, only the direction of motion.
-
-
+\textit{Idlers} can be introduced to a gear set to change the direction of rotation, or to bridge a large gap and transmit power from one place to another. The idler does not impact the overall gear ratio, only the direction of motion.
 
 \newpage
 
 \subsection{Roller Chain and Sprockets}
 
-\textit{Roller chain}\index{Roller chain} is a robust way of transmitting power from one place to another. 
+\textit{Roller chain}\index{chain} is a robust way of transmitting power from one place to another. 
 
 \begin{figure}[H]
 	\includegraphics[width=0.7\textwidth]{imgs/rollerchain_nomenclature.png}
 	\caption{Roller chain exploded view, and dimensions}
 \end{figure}
 
-Chain is dimensioned by the \textit{roller diameter}\index{roller diameter}, \textit{roller width}\index{roller width}, and \textit{chain pitch}\index{chain pitch}, but may have a standard number that details all of these. Table \ref{table:chaindims} lists some common sizes.
+Chain is dimensioned by the \textit{roller diameter}, \textit{roller width}, and \textit{chain pitch}, but may have a standard number that details all of these. Table \ref{table:chaindims} lists some common sizes.
 
 \begin{table}[H] 
 \begin{tabular}{llll} \label{table:chaindims}
@@ -1389,13 +1413,14 @@ Chain \# & Pitch (in) & Roller Width (in) & Roller Diameter (in) \\
 \end{tabular}
 \caption{Common roller chain dimensions.}
 \end{table}
+\index{chain!dimensioning}
 
 \begin{figure}[H]
 	\includegraphics[width=0.3\textwidth]{imgs/sprocket_profile.png}
 	\caption{A sprocket's profile.}
 \end{figure}
 
-\textit{Sprockets}\index{Sprockets} are shaped specially to mesh with chain- they are not gears. \textit{Hub}\index{Hub} sprockets are designed to mount directly to a shaft, while \textit{plate}\index{plate} sprockets mount with a bolt pattern to another mechanism, or a hub.
+\textit{Sprockets}\index{chain!sprockets} are shaped specially to mesh with chain- they are not gears. \textit{Hub} sprockets are designed to mount directly to a shaft, while \textit{plate} sprockets mount with a bolt pattern to another mechanism, or a hub.
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.32\linewidth}
@@ -1425,19 +1450,21 @@ Chain \# & Pitch (in) & Roller Width (in) & Roller Diameter (in) \\
 
 Chains need to be properly tensioned to make sure that they do not skip, to reduce the backlash of the system, and still run smoothly. If they are too tight, they can bind. If too lose they can skip teeth and throw the chain off the sprockets.
 
+\index{chain!adjustment, tensioning}
 \begin{asparaenum}[a)]
-	\item \textit{Half links}\index{Half links} can be used for coarse adjustment. Normally roller chain is made of connecting links and outer pin links, so adjustments can only be done in lengths of $2 \ \times \ pitch$, but half links allow adjustments of exactly the pitch. However, these half-links are often significantly weaker than 
-	\item \textit{Master links}\index{Master links} are quickly removable links of a chain that use a clip to retain the pins rather than being pressed into position. This clip has a nonzero chance of falling off.
-	\item \textit{Moving the distance of the axles}\index{Moving the distance of the axles} is an easy method of adjusting the tension. This can be accomplished in a multitude of ways. This may not be easy to accomplish, however.
-	\item \textit{Idler}\index{Idler} rollers or tensioners may be added to increase the tension. They may be spring-loaded or automatic, or fixed. These (sometimes in multiples) can be used to increase chain wrap.
-	\item \textit{Floating sprockets}\index{Floating sprockets} can be added to increase the tension. These can be further adjusted by moving the floater away from the center and towards the ends.
-	\item \textit{Inline tensioners}\index{Inline tensioners} can be used when the chain does not make full revolutions. These are easy to integrate and are very low-profile.
+	\item \textit{Half links} can be used for coarse adjustment. Normally roller chain is made of connecting links and outer pin links, so adjustments can only be done in lengths of $2 \ \times \ pitch$, but half links allow adjustments of exactly the pitch. However, these half-links are often significantly weaker than 
+	\item \textit{Master links} are quickly removable links of a chain that use a clip to retain the pins rather than being pressed into position. This clip has a nonzero chance of falling off.
+	\item \textit{Moving the distance of the axles} is an easy method of adjusting the tension. This can be accomplished in a multitude of ways. This may not be easy to accomplish, however.
+	\item \textit{Idler} rollers or tensioners may be added to increase the tension. They may be spring-loaded or automatic, or fixed. These (sometimes in multiples) can be used to increase chain wrap.
+	\item \textit{Floating sprockets} can be added to increase the tension. These can be further adjusted by moving the floater away from the center and towards the ends.
+	\item \textit{Inline tensioners} can be used when the chain does not make full revolutions. These are easy to integrate and are very low-profile.
 \end{asparaenum}
 
 \begin{figure}[H]
 \includegraphics[width=0.9\textwidth]{imgs/chain_alignment.jpeg}
 \caption{Sprocket alignment.}
 \end{figure}
+\index{chain!alignment}
 
 Sprockets must be aligned properly both in parallelism and colinearity, otherwise you risk throwing the chain.
 
@@ -1463,17 +1490,17 @@ Wrap is another important consideration for chain drives. If there is not enough
 	\caption{Various drive belts.}
 \end{figure}
 
-A \textit{belt}\index{belt} is a continuous loop of a flexible material. There are many different types of belts.
+A \textit{belt}\index{belts} is a continuous loop of a flexible material. There are many different types of belts.
 
 \begin{asparaenum}[a)]
-	\item \textit{Flat belts}\index{Flat belts} are belts that are flat in cross-section with no special features. They transmit power solely by friction. A crowned pulley, proper tensioning (about 1-3\% stretch for polyurethane belts), and alignment keeps the belt from walking side-to-side excessively.
+	\item \textit{Flat belts}\index{belts!flat} are belts that are flat in cross-section with no special features. They transmit power solely by friction. A crowned pulley, proper tensioning (about 1-3\% stretch for polyurethane belts), and alignment keeps the belt from walking side-to-side excessively.
 	\begin{figure}[H]
 		\includegraphics[width=0.6\textwidth]{imgs/belt_crown_pulley.jpeg}
 		\caption{Crowning on pulleys to keep flat belts on pulleys.}
 	\end{figure}
-	\item \textit{Polycord}\index{Polycord} or \textit{round belt}\index{round belt} is a type of belting that is round in cross-section. They are somewhat forgiving in how much they can be tensioned (as long as ample stretch is provided; around 10\% for polyurethane cords). They work best with pulleys that have a 60 degree (included angle) V cut into them.
-	\item \textit{V-belts}\index{V-belts} have a V cross-section that digs in to pulleys. Multiple vees may be attached side-by-side for increased flexibility. They (usually) have reinforcing fibers that provide strength and stiffness much higher than pure rubber. Sometimes they have teeth in them, but these teeth are not for power transmission, they are simply to allow greater flexibility in the belt while still allowing for a tall, centering profile.
-	\item \textit{Timing belt}\index{Timing belt} has teeth to ensure positive transmission of motion (so it can be used to time multiple components together). It has very high load-carrying potential without need for perfect tensioning. Like v-belts, they have reinforcing fibers that provide strength and stiffness much higher than pure rubber. There are many different series of timing belts (HTD, GT2, MXL, etc.) - they are not compatible with each other. In FRC the most common are HTD and GT2 (which are, actually, semi-compatible). The pitches must also be the same in addition to the series.
+	\item \textit{Polycord} or \textit{round belt}\index{belts!round} is a type of belting that is round in cross-section. They are somewhat forgiving in how much they can be tensioned (as long as ample stretch is provided; around 10\% for polyurethane cords). They work best with pulleys that have a 60 degree (included angle) V cut into them.
+	\item \textit{V-belts}\index{belts!V-belts} have a V cross-section that digs in to pulleys. Multiple vees may be attached side-by-side for increased flexibility. They (usually) have reinforcing fibers that provide strength and stiffness much higher than pure rubber. Sometimes they have teeth in them, but these teeth are not for power transmission, they are simply to allow greater flexibility in the belt while still allowing for a tall, centering profile.
+	\item \textit{Timing belt}\index{belts!timing} has teeth to ensure positive transmission of motion (so it can be used to time multiple components together). It has very high load-carrying potential without need for perfect tensioning. Like v-belts, they have reinforcing fibers that provide strength and stiffness much higher than pure rubber. There are many different series of timing belts (HTD, GT2, MXL, etc.) - they are not compatible with each other. In FRC the most common are HTD and GT2 (which are, actually, semi-compatible). The pitches must also be the same in addition to the series.
 \end{asparaenum}
 
 Belts, like chain, must be properly tensioned and aligned. Most of the methods explained for chains also work for belts. Special considerations must be made for the back-bending capacity of the belt in question (every belt has a rated back-bending radius). Pulleys for timing belts usually require at least six (6) teeth of engagement, although this may increase or decrease based on your load case and manufacturer's recommendations. 
@@ -1562,7 +1589,7 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 	where $\rho$ is the density of the material and $r$ is the distance from the axis of rotation. This may be confusing and not mean but much to you, but the takeaway is this: a larger (bigger $r$), denser (bigger $\rho$) flywheel has a higher moment of inertia, so can store more energy. By placing the mass of a flywheel far away from the center and hollowing out the center, the moment of inertia can be increased while minimizing mass.	
 	
 	
-\section{Wheels} \label{section:wheels}
+\section{Wheels} \label{section:wheels} \index{wheel}
 	There are many different types of wheels so they're worth of their own section.
 	
 	\subsection{Hard wheels}
@@ -1580,10 +1607,10 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 		\end{subfigure}
 	\end{figure}
 		
-	\begin{asparaenum}[a)]
-		\item \textit{Molded tread wheels}\index{Molded tread wheels} have a hard plastic center that is molded into or bonded to a grippy exterior which may be textured. These are cheap and usually quite solid options, but do wear over time.
-		\item \textit{Colson}\index{Colson} wheels are a brand name of wheel that has a soft but solid rubber exterior. They are known for their very consistent wear and abrasion resistance, even if their grip is not the maximum it could be.
-		\item \textit{Removable tread}\index{Removable tread} wheels or \textit{plaction}\index{plaction} (plastic+traction) wheels have a solid plastic or metal center with removable tread fastened to the outside with rivets, bolts, or staples. This allows for the use of extremely grippy but quickly-wearing tread.
+	\begin{asparaenum}[a)] \index{wheel!traction}
+		\item \textit{Molded tread wheels} have a hard plastic center that is molded into or bonded to a grippy exterior which may be textured. These are cheap and usually quite solid options, but do wear over time.
+		\item \textit{Colson} wheels are a brand name of wheel that has a soft but solid rubber exterior. They are known for their very consistent wear and abrasion resistance, even if their grip is not the maximum it could be.
+		\item \textit{Removable tread} wheels or \textit{plaction} (plastic+traction) wheels have a solid plastic or metal center with removable tread fastened to the outside with rivets, bolts, or staples. This allows for the use of extremely grippy but quickly-wearing tread.
 	\end{asparaenum}
 	
 	\subsection{Soft Wheels}	
@@ -1607,12 +1634,12 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 		\end{subfigure}
 	\end{figure}
 	
-	\begin{asparaenum}[a)]
-		\item \textit{Pneumatic radial tires}\index{Pneumatic radial tires} or \textit{tubless tires}\index{tubless tires} are simply tires mounted to a hub. The tire makes a seal on the hub allowing it to be pressurized with air. Pneumatic tires (tubed and tubeless alike) usually have the appropriate amount of squish to be used as shock absorbtion, and also will flatten out and dig into rough surfaces like carpet, making them quite grippy.
-		\item \textit{Tubed tires}\index{Tubed tires} are tires mounted to a hub with a \textit{tube}\index{tube} inside of them. This tube is pressurized and presses against the tire and hub. This helps prevent punctures to some degree and allows for replacement or repair of the tube rather than tire, which is significantly easier. There are techical drawbacks to these, especially at high speeds (which is why most road vehicles use tubeless tires).	
-		\item \textit{Tweels}\index{Tweels} or \textit{airless tires}\index{airless tires} have spokes in them that serve the same purpose of the air in tires: allowing the wheel to squish some to gain a greater contact patch and absorb impacts.
-		\item \textit{Fairlane wheels}\index{Fairlane wheels} or \textit{drive rollers}\index{drive rollers} are solid rubber rollers bonded to a slim center hub. They have a degree of squish or give and often have quite high grip and abrasion resistance.
-		\item \textit{Compliant wheels}\index{Compliant wheels} or \textit{flex rollers}\index{flex rollers} look like tweels, but are much, much softer; usually made out of very soft urethane, enabling extreme amounts of compression. This allows them to conform to objects, especially irregular geometries.
+	\begin{asparaenum}[a)] \index{tires}
+		\item \textit{Pneumatic radial tires}or \textit{tubless tires} are simply tires mounted to a hub. The tire makes a seal on the hub allowing it to be pressurized with air. Pneumatic tires (tubed and tubeless alike) usually have the appropriate amount of squish to be used as shock absorbtion, and also will flatten out and dig into rough surfaces like carpet, making them quite grippy.
+		\item \textit{Tubed tires} are tires mounted to a hub with a \textit{tube} inside of them. This tube is pressurized and presses against the tire and hub. This helps prevent punctures to some degree and allows for replacement or repair of the tube rather than tire, which is significantly easier. There are techical drawbacks to these, especially at high speeds (which is why most road vehicles use tubeless tires).	
+		\item \textit{Tweels} or \textit{airless tires} have spokes in them that serve the same purpose of the air in tires: allowing the wheel to squish some to gain a greater contact patch and absorb impacts.
+		\item \textit{Fairlane wheels} or \textit{drive rollers} are solid rubber rollers bonded to a slim center hub. They have a degree of squish or give and often have quite high grip and abrasion resistance.
+		\item \textit{Compliant wheels}\index{wheels!compliant} or \textit{flex rollers} look like tweels, but are much, much softer; usually made out of very soft urethane, enabling extreme amounts of compression. This allows them to conform to objects, especially irregular geometries.
 	\end{asparaenum}
 	
 	\subsection{Omni wheels}
@@ -1627,9 +1654,9 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 		\end{subfigure}
 	\end{figure}
 	
-	\begin{asparaenum}[a)]
-		\item \textit{Omni wheels}\index{Omni wheels} have rollers on them that are perpindicular to the axis of rotation. This allows them to transmit power back like a normal wheel, but they have no resistance to being pushed sideways. This can be desirable in drivetrains (see section \ref{section:drivetrains}). They are also good as casters, as they do not have a swivel stem that needs to reorient before moving in a new direction.
-		\item \textit{Mecanum wheels}\index{Mecanum wheels} have rollers on them that are oriented 45 degrees to the axis of rotation. This allows them to transmit power at a 45 degree angle, while being able to be pushed at -45 degrees. This makes them useful in drivetrains and intake systems (see sections \ref{section:drivetrains} and \ref{section:intakes}).
+	\begin{asparaenum}[a)]\index{wheel!omni}\index{wheel!mecanum}
+		\item \textit{Omni wheels} have rollers on them that are perpindicular to the axis of rotation. This allows them to transmit power back like a normal wheel, but they have no resistance to being pushed sideways. This can be desirable in drivetrains (see section \ref{section:drivetrains}). They are also good as casters, as they do not have a swivel stem that needs to reorient before moving in a new direction.
+		\item \textit{Mecanum wheels} have rollers on them that are oriented 45 degrees to the axis of rotation. This allows them to transmit power at a 45 degree angle, while being able to be pushed at -45 degrees. This makes them useful in drivetrains and intake systems (see sections \ref{section:drivetrains} and \ref{section:intakes}).
 	\end{asparaenum}
 
 \newpage
@@ -1651,8 +1678,8 @@ Often we want to make sure something stays in place once we set it to a certain 
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item \textit{Ratchets}\index{Ratchets} have a ratchet wheel with angled teeth on it which push up on a spring-loaded arm, or \textit{pawl}\index{pawl}. This arm falls down after each tooth, preventing backwards motion. This arm can be actuated by another mechanism in order to intermittently allow backwards motion.
-	\item \textit{One-way clutches}\index{One-way clutches} or \textit{one-way bearings}\index{one-way bearings} have rollers that in one direction, roll freely, but when rolled in the other direction, lock up against the outer ring. These are much smoother, efficient, and quieter mechanisms, and can be much smaller. However, they are quite expensive, have relatively lower load-bearing capacity, and cannot be externally disengaged.
+	\item \textit{Ratchets}\index{ratchets} have a ratchet wheel with angled teeth on it which push up on a spring-loaded arm, or \textit{pawl}\index{pawl}. This arm falls down after each tooth, preventing backwards motion. This arm can be actuated by another mechanism in order to intermittently allow backwards motion.
+	\item \textit{One-way clutches}\index{one-way clutches/bearings} or \textit{one-way bearings} have rollers that in one direction, roll freely, but when rolled in the other direction, lock up against the outer ring. These are much smoother, efficient, and quieter mechanisms, and can be much smaller. However, they are quite expensive, have relatively lower load-bearing capacity, and cannot be externally disengaged.
 \end{asparaenum}
 
 
@@ -1671,10 +1698,11 @@ Often we want to make sure something stays in place once we set it to a certain 
 	\caption{Braking mechanisms.}
 \end{figure}
 
+\index{brakes!disc, drum and band}
 \begin{asparaenum}[a)]
-	\item \textit{Disc brakes}\index{Disc brakes} have a \textit{disc}\index{disc} which is grabbed by the \textit{brake pads}\index{brake pads} of a \textit{caliper}\index{caliper}. These are simple to find and reasonably simple to integrate into a system. They are also good at rejecting heat and providing consistent performance, which is why they are the standard in motorsport applications.
-	\item \textit{Drum brakes}\index{Drum brakes} have \textit{shoes}\index{shoes} which are actuated outwards and grab onto the \textit{brake drum}\index{brake drum}. This action causes the shoes to dig-in, increasing the braking capacity. These are lower-cost in large quantities and integrate nicely into wheels, but can be finicky to set up.
-	\item \textit{Band brakes}\index{Band brakes} have a \textit{band}\index{band} which is pulled down tightly around the \textit{brake drum}\index{brake drum}. This is a fairly simple mechanism to make and actuate. 
+	\item \textit{Disc brakes} have a \textit{disc} which is grabbed by the \textit{brake pads} of a \textit{caliper}. These are simple to find and reasonably simple to integrate into a system. They are also good at rejecting heat and providing consistent performance, which is why they are the standard in motorsport applications.
+	\item \textit{Drum brakes} have \textit{shoes} which are actuated outwards and grab onto the \textit{brake drum}. This action causes the shoes to dig-in, increasing the braking capacity. These are lower-cost in large quantities and integrate nicely into wheels, but can be finicky to set up.
+	\item \textit{Band brakes} have a \textit{band} which is pulled down tightly around the \textit{brake drum}. This is a fairly simple mechanism to make and actuate. 
 \end{asparaenum}
 
 
@@ -1703,9 +1731,9 @@ Sometimes we want to couple and uncouple rotating components on the fly (sometim
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item \textit{Plate clutches}\index{Plate clutches} have several friction plates stacked on top of each other in an alternating fashion. Every other one is fixed to one shaft/housing, and the others are fixed to the other shaft/housing. By applying a pressure to compress all of the plates, friction couples the plates together. By using multiple plates, the same frictional force can be applied redundantly to all of the plates, creating mechanical advantage.
-	\item \textit{Centrifugal clutches}\index{Centrifugal clutches} have swinging arms mounted to the input housing, which when spun up, swing out and latch onto an outer output housing. This is useful for cheap gas engine powered devices, where the throttle both controls the speed of the engine and its engagement to the rest of the system. At low RPM, the engine is allowed to idle without the load of the rest of the system.
-	\item \textit{Dogs}\index{Dogs} are teeth that protrude axially. Rings with dogs on them an an internal spline (hex or true spline) can slide on a mating shaft, and into other components (such as gears) on the shaft that also have dog teeth, but are fixed to the shaft with bearings so would otherwise be free-spinning. This allows gears on the shaft to be engaged and disengaged.
+	\item \textit{Plate clutches}\index{clutches} have several friction plates stacked on top of each other in an alternating fashion. Every other one is fixed to one shaft/housing, and the others are fixed to the other shaft/housing. By applying a pressure to compress all of the plates, friction couples the plates together. By using multiple plates, the same frictional force can be applied redundantly to all of the plates, creating mechanical advantage.
+	\item \textit{Centrifugal clutches} have swinging arms mounted to the input housing, which when spun up, swing out and latch onto an outer output housing. This is useful for cheap gas engine powered devices, where the throttle both controls the speed of the engine and its engagement to the rest of the system. At low RPM, the engine is allowed to idle without the load of the rest of the system.
+	\item \textit{Dogs}\index{dogs} are teeth that protrude axially. Rings with dogs on them an an internal spline (hex or true spline) can slide on a mating shaft, and into other components (such as gears) on the shaft that also have dog teeth, but are fixed to the shaft with bearings so would otherwise be free-spinning. This allows gears on the shaft to be engaged and disengaged.
 	\item While dogs engage idle components on a shaft axially, \textit{ball shifters}\index{ball shifters} engage them radially. The driving axle in this case has holes drilled into it radially, in which balls can be placed. These balls bottom out against a shifter rod that slides back and forth inside the driving axle. The shifter rod has a bumped portion in it which can push the balls out and into idled components. This method of shifting can be smoother and more compact (especially for picking between more than two states), but is a little more difficult to pull off.
 \end{asparaenum}
 
@@ -1730,11 +1758,11 @@ Pneumatic systems are one way of turning electrical energy into mechanical energ
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item A \textit{compressor}\index{compressor} takes ambient air and compresses it to a higher pressure. The compressor is turned on and off by some logic system and a \textit{pressure switch}\index{pressure switch} that determines when the system is at maximum pressure.
-	\item The \textit{pressure relief valve}\index{pressure relief valve} is a safety mechanism that releases excess pressure, preventing explosions as a result of excessive pressure.
-	\item High pressure air is stored in a \textit{tank}\index{tank}.
-	\item A \textit{pressure regulator}\index{pressure regulator} steps the high storage pressure to a lower, working pressure. This provides predictable operation as the storage pressure will fluctuate with usage.
-	\item A \textit{solenoid valve}\index{solenoid valve} allows air to enter and exit various pneumatic devices, typically \textit{pneumatic cylinders}\index{pneumatic cylinders}.
+	\item A \textit{compressor}\index{compressor} takes ambient air and compresses it to a higher pressure. The compressor is turned on and off by some logic system and a \textit{pressure switch} that determines when the system is at maximum pressure.
+	\item The \textit{pressure relief valve} is a safety mechanism that releases excess pressure, preventing explosions as a result of excessive pressure.
+	\item High pressure air is stored in a \textit{tank}\index{pneumatic!tank}.
+	\item A \textit{pressure regulator} steps the high storage pressure to a lower, working pressure. This provides predictable operation as the storage pressure will fluctuate with usage.
+	\item A \textit{solenoid valve} allows air to enter and exit various pneumatic devices, typically \textit{pneumatic cylinders}\index{pneumatic cylinders}.
 \end{asparaenum}
 
 Flow of air can be restricted (for better or worse) by nearly any portion of the pneumatic system- the tubing, the pressure regulator, the valves, and even pneumatic fittings themselves.
@@ -1754,10 +1782,10 @@ Intentional flow restriction can be provided by throttling valves. These usually
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item  \textit{Tapered threads}\index{Tapered threads} are threads that increase in diameter. This causes a wedging action as they are inserted. They should be used with pipe sealant or PTFE tape to help form the seal. NPT (National Pipe Thread) and BSPT (British Standard Pipe Tapered) are common standards.
-	\item \textit{Parallel threads}\index{Parallel threads} do not seal on their own, so need some sort of seal (usually a0 rubber \textit{o-ring}\index{o-ring}) to prevent leaks.
-	\item \textit{Tapered threads}\index{Tapered threads} can be installed into parallel threads, although it isn't as preferred. The thread standards still need to match (There exist straight threads NPS and BSPP).
-	\item \textit{Push-to-connect}\index{Push-to-connect} or PTC fittings consist of a gripping ring or collet that grips firm tube as it is inserted into an o-ring. Once inserted, the ring has a ratcheting effect, preventing removal of the hose unless the ring is pressed in. These allow for easy and reliable connection of firm tubing to other components.	
+	\item  \textit{Tapered threads}\index{thread!tapered} are threads that increase in diameter. This causes a wedging action as they are inserted. They should be used with pipe sealant or PTFE tape to help form the seal. NPT (National Pipe Thread) and BSPT (British Standard Pipe Tapered) are common standards.
+	\item \textit{Parallel threads}\index{thread!parallel pipe} do not seal on their own, so need some sort of seal (usually a0 rubber \textit{o-ring}) to prevent leaks.
+	\item \textit{Tapered threads} can be installed into parallel threads, although it isn't as preferred. The thread standards still need to match (There exist straight threads NPS and BSPP).
+	\item \textit{Push-to-connect}\index{push-to-connect fitting} or PTC fittings consist of a gripping ring or collet that grips firm tube as it is inserted into an o-ring. Once inserted, the ring has a ratcheting effect, preventing removal of the hose unless the ring is pressed in. These allow for easy and reliable connection of firm tubing to other components.	
 \end{asparaenum}
 
 % TODO: Compressors
@@ -1793,22 +1821,22 @@ Intentional flow restriction can be provided by throttling valves. These usually
 	
 	\caption{Varieties of cylinders.}
 \end{figure}
-
+\index{pneumatic cylinder!types}
 \begin{asparaenum}[a)]
-	\item  \textit{Double-acting}\index{Double-acting} cylinders have two inlet ports. Air can enter and exhaust from either side so that they can push and pull on objects.
-	\item \textit{Single-acting}\index{Single-acting} cylinders have only one inlet port. Air can enter and exhaust from this port. When air is released, a spring cylinders the piston back to its relaxed state. These exist in both spring retract and spring extend varieties. These can reduce circuit complexity and weight when the action required only needs to exert force in one direction.
-	\item \textit{Nose-mount}\index{Nose-mount} cylinders are mounted only by their nose, where the rod extends/retracts from. Nose mounting a piston should be done carefully- it is easy to end up putting a bending moment on the rod and bend the rod. The rods of cylinders are generally not designed to withstand loads from the side.
-	\item \textit{Universal-mount}\index{Universal-mount} cylinders feature both a nose mount and a rear pivot point. This rear pivot point helps make sure the rod does not get side-loaded and bend.
-	\item \textit{Tie-rod}\index{Tie-rod} cylinders have many mounting features, typically tapped holes, making them often easy to integrate. This comes with the same caveat as nose-mount cylinders- care must be taken to not sideload these.
-	\item \textit{Stage}\index{Stage} or \textit{guided}\index{guided} cylinders have additional guiding features or linear stages built in that allow them to withstand side loads. This also has the added benefit of preventing the end from twisting, making them useful in many applications, albeit quite expensive.
+	\item  \textit{Double-acting} cylinders have two inlet ports. Air can enter and exhaust from either side so that they can push and pull on objects.
+	\item \textit{Single-acting} cylinders have only one inlet port. Air can enter and exhaust from this port. When air is released, a spring cylinders the piston back to its relaxed state. These exist in both spring retract and spring extend varieties. These can reduce circuit complexity and weight when the action required only needs to exert force in one direction.
+	\item \textit{Nose-mount} cylinders are mounted only by their nose, where the rod extends/retracts from. Nose mounting a piston should be done carefully- it is easy to end up putting a bending moment on the rod and bend the rod. The rods of cylinders are generally not designed to withstand loads from the side.
+	\item \textit{Universal-mount} cylinders feature both a nose mount and a rear pivot point. This rear pivot point helps make sure the rod does not get side-loaded and bend.
+	\item \textit{Tie-rod} cylinders have many mounting features, typically tapped holes, making them often easy to integrate. This comes with the same caveat as nose-mount cylinders- care must be taken to not sideload these.
+	\item \textit{Stage} or \textit{guided} cylinders have additional guiding features or linear stages built in that allow them to withstand side loads. This also has the added benefit of preventing the end from twisting, making them useful in many applications, albeit quite expensive.
 \end{asparaenum}
 
 Pneumatic cylinders have four key dimensions.
 \begin{asparaenum}[a)]
-	\item \textit{Stroke}\index{Stroke} is how much the rod of the cylinder extends from its contracted state.
-	\item \textit{Overall length}\index{Overall length} is the overall length of the cylinder when it is contracted.
-	\item \textit{Bore}\index{Bore} is the inner diameter of the cylinder.
-	\item \textit{Rod diameter}\index{Rod diameter} is the diameter of the cylinder rod.
+	\item \textit{Stroke} is how much the rod of the cylinder extends from its contracted state.
+	\item \textit{Overall length} is the overall length of the cylinder when it is contracted.
+	\item \textit{Bore} is the inner diameter of the cylinder.
+	\item \textit{Rod diameter} is the diameter of the cylinder rod.
 \end{asparaenum}
 
 These are important considerations that help you determine what sort of cylinder you need. While the lengths may be fairly well-understood, determining the bore is a little more difficult, and based around the force of the cylinder.
@@ -1842,7 +1870,7 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
  Motors are one of the fundamental aspects of mechatronic systems - they're where power is transformed from electrical into mechanical. There are many, many different types of motors, and some of these (like servomotors) are actually complex systems built on top of motors.
 
 \section{DC Motors: Brushed and Brushless}
-
+\index{motor}
 To begin with, let's talk about the most essential types of motors: Brushed DC motors.
 
 \begin{figure}[H]\centering
@@ -1850,6 +1878,7 @@ To begin with, let's talk about the most essential types of motors: Brushed DC m
 \caption{Brushed motor anatomy}
 % IMPROVEMENT: better image
 \end{figure}
+\index{motor!brushes}
 
 "Brushed" DC motors have two electrical leads on them - power in, and power out. Current is directed first through carbon 'brushes'. These brushes rub against a "commutator", forming a rotary switch. This switch determines which coil(s) on the rotor fire, and which direction they fire in. When a coil turns on, it pushes/pulls against the permanent magnets, which creates a torque, thus turning the rotor. When the rotor turns, the commutator redirects power into a new set of coils. This process repeats, syncing the firing of the coils with the position of the rotor in order to produce torque. 
 
@@ -1864,7 +1893,7 @@ Brushless DC motors, as per the name implies, do exactly that. Let's flip things
 % IMPROVEMENT: better image
 \end{figure}
 
-An \textit{Electronic Speed Controller (ESC)}\index{Electronic Speed Controller (ESC)} creates three AC waveforms. These waveforms are fed into the motor. The motor can be either a \textit{delta}\index{delta} or \textit{wye}\index{wye} configuration. This alternating current creates alternating forces, which rotate the rotor.
+An \textit{Electronic Speed Controller (ESC)}\index{Electronic Speed Controller (ESC)} creates three AC waveforms. These waveforms are fed into the motor. The motor can be either a \textit{delta} or \textit{wye} configuration. This alternating current creates alternating forces, which rotate the rotor.
 
 \begin{figure}[H]
 	\includegraphics[width=0.45\textwidth]{imgs/delta_wye.png}
@@ -1875,7 +1904,7 @@ Whether a motor is wired as delta or wye does not impact the fundamental behavio
 
 The hard electrical connections are more robust, but does add some cost and complexity as the ESC is required in order for this motor to work. However, there is one major issue with this setup: what happens when the AC waveform is no longer in sync with the rotation of the rotor? Well, a loss of torque occurs. These motors are not very well-equipped to handle high torques, and so are better equipped for high-RPM, low-load applications, such as propellers on hobby aircraft.
 
-However, we could employ an encoder to read the rotor's position, and feed that information back into the ESC. If the ESC can be programmed to read this signal, it can keep the waveform in sync with the rotor's movement, creating higher torque. Another strategy to get around this problem involves reading the \textit{back-emf}\index{back-emf} that the motor windings produce in order to roughly back out information about the motor's position and velocity. This is not as robust a method, however.
+However, we could employ an encoder to read the rotor's position, and feed that information back into the ESC. If the ESC can be programmed to read this signal, it can keep the waveform in sync with the rotor's movement, creating higher torque. Another strategy to get around this problem involves reading the \textit{back-emf} that the motor windings produce in order to roughly back out information about the motor's position and velocity. This is not as robust a method, however.
 
 Brushless motors have a few other subtle advantages.
 
@@ -2050,7 +2079,7 @@ Note I say stiffer. There can be times where you want non-stiffness, like in a s
 	Axial is stronger and stiffer than bending.
 \end{theorem}
 
-You've probably heard that triangles are a very strong shape. This is essentially a rudimentary understanding of this principle that axial is stronger than bending. If you're designing structures with long, slender tubes, a good rule of thumb is to make sure that structure is \textit{triangulated}\index{triangulated}.
+You've probably heard that triangles are a very strong shape. This is essentially a rudimentary understanding of this principle that axial is stronger than bending. If you're designing structures with long, slender tubes, a good rule of thumb is to make sure that structure is \textit{triangulated}\index{triangulation}.
 I'll demonstrate this with two structures with load $F$ acting down on them. Both are constructed from round bar as shown. 
 
 \begin{figure}[H]
@@ -2251,7 +2280,7 @@ An interesting conclusion of theorems \ref{theorem:load_paths} and \ref{theorem:
 
 \section{Abbe Error}
 
-\textit{Abbe error}\index{Abbe error}, or \textit{sine error}\index{sine error} refers to the error that can come about when parts are not aligned angularly as they were expected to be.
+\textit{Abbe error}\index{Abbe/sine error}, or \textit{sine error} refers to the error that can come about when parts are not aligned angularly as they were expected to be.
 
 \begin{figure}[H]
 	\includegraphics[width=0.6\textwidth]{imgs/abbe_error.png}
@@ -2285,7 +2314,7 @@ Minimize the number of components.
 
 \section{Loosening}
 
-\textit{Positive retention}\index{Positive retention} is ensuring that vibrations and loads will not effect the positioning of components. This means avoiding slots for adjustment (that do not have additional locking schemes like cams), and bolts that must be ``just properly tightened" in order to work properly.
+\textit{Positive retention}\index{positive retention} is ensuring that vibrations and loads will not effect the positioning of components. This means avoiding slots for adjustment (that do not have additional locking schemes like cams), and bolts that must be ``just properly tightened" in order to work properly.
 
 We discussed a number of mechanisms for keeping bolts from loosening under vibration in section \ref{section:threads}. Most of these solutions don't cost much to implement. There's generally no reason not to do them. And so,
 
@@ -2299,7 +2328,7 @@ Positive retention is awesome, let's do more of that.
 	\includegraphics[width=0.7\textwidth]{imgs/poka_yoke.png}
 \end{figure}
 
-\textit{Poka-yoke}\index{Poka-yoke} is Japanese for ``idiot-proofing". It refers to designing processes that cannot be messed up, or at least not without warning. Think of plugs that cannot be installed backwards, or a shaft that has a special keying on it to ensure proper clocking. Even the brightest of us can be idiots in the moment, so in short,
+\textit{Poka-yoke}\index{poka-yoke} is Japanese for ``idiot-proofing". It refers to designing processes that cannot be messed up, or at least not without warning. Think of plugs that cannot be installed backwards, or a shaft that has a special keying on it to ensure proper clocking. Even the brightest of us can be idiots in the moment, so in short,
 
 \begin{theorem}
 If someone can screw it up, don't let them.
@@ -2314,7 +2343,7 @@ If someone can screw it up, don't let them.
 
 \section{Intakes} \label{section:intakes}
 
-\textit{Intakes}\index{Intakes} grab uncontrolled components in a continuous, indiscriminate fashion. This makes them preferable to say, using a claw to grab items. A properly designed intake is often described as ``touch it, own it."
+\textit{Intakes}\index{intake} grab uncontrolled components in a continuous, indiscriminate fashion. This makes them preferable to say, using a claw to grab items. A properly designed intake is often described as ``touch it, own it."
 
 \subsection{Beater bars} 
 
@@ -2325,13 +2354,13 @@ If someone can screw it up, don't let them.
 	\caption{Beater bars.}
 \end{figure}
 
-A \textit{beater bar}\index{beater bar} or \textit{horizontal intake axle}\index{horizontal intake axle} has a rotating, grippy element that is horizontal and makes contact with an object, pulling it in. These usually work best with parts that can roll as they enter.
+A \textit{beater bar}\index{intake!beater bar} or \textit{horizontal intake axle} has a rotating, grippy element that is horizontal and makes contact with an object, pulling it in. These usually work best with parts that can roll as they enter.
 
 \href{https://www.youtube.com/watch?v=LaoZ8L7H65s}{\color{red}\underline{Video Example}}
 \subsection{Side wheels}
-\textit{Side wheels}\index{Side wheels} are rotating, grippy elements on a vertical shaft which make contact with an object, pulling it in. These are often spring-loaded to help deal with misalignment as they require somewhat precise positioning (at least more than a beater bar). Because of this, they are typically used where a beater bar is not as viable (like to intake an object that cannot roll).
+\textit{Side wheels} are rotating, grippy elements on a vertical shaft which make contact with an object, pulling it in. These are often spring-loaded to help deal with misalignment as they require somewhat precise positioning (at least more than a beater bar). Because of this, they are typically used where a beater bar is not as viable (like to intake an object that cannot roll).
 \subsection{Centering intakes}
-\textit{Centering intakes}\index{Centering intakes} bring objects in to a particular point.
+\textit{Centering intakes}\index{intake!centering} bring objects in to a particular point.
 
 \begin{figure}[H]
 \begin{subfigure}[b]{.45\linewidth}
@@ -2344,7 +2373,7 @@ A \textit{beater bar}\index{beater bar} or \textit{horizontal intake axle}\index
 
 
 \begin{asparaitem}[a)]
-\item A simple way of accomplishing this is by creating a beater bar with \textit{Mecanum wheels}\index{Mecanum wheels} or \textit{vectored intake wheels}\index{vectored intake wheels}, which have rollers at a 45 degree angle. They provide a centering action when properly implemented, as the rollers will cause a force vector 45 degrees to the axis of rotation, rather than perpindicular. \href{https://www.youtube.com/watch?v=WwxNSiHXREo}{\color{red}\underline{Video Example}}
+\item A simple way of accomplishing this is by creating a beater bar with \textit{Mecanum wheels} or \textit{vectored intake wheels}, which have rollers at a 45 degree angle. They provide a centering action when properly implemented, as the rollers will cause a force vector 45 degrees to the axis of rotation, rather than perpindicular. \href{https://www.youtube.com/watch?v=WwxNSiHXREo}{\color{red}\underline{Video Example}}
 \item Multiple belts feeding into each other can also produce the centering effect. \href{https://youtu.be/p0_YOm5fjC8?t=107}{\color{red}\underline{Video Example (1:48)}}
 \end{asparaitem}
 
@@ -2354,29 +2383,30 @@ A \textit{beater bar}\index{beater bar} or \textit{horizontal intake axle}\index
 	\includegraphics[height=1.5in]{imgs/scoop_roller.png}
 	\caption{Left: scoop picking up frisbees. Right: scoop with additional beater bar (in red).}
 \end{figure}
-A \textit{scoop}\index{scoop} simply wedges under an object, picking it off the ground. Scoops can be useful if the object to be picked up has a tapered bottom that is conducive to this and has much higher friction on the surface it is being picked up from versus the surface of the scoop. \href{https://youtu.be/uKy-IKDq_6o?t=38}{\color{red}\underline{Video Example (0:38)}} Scoops can also be combined with beater bars to provide positive latching of the object to be grabbed.
+A \textit{scoop}\index{intake!scoop} simply wedges under an object, picking it off the ground. Scoops can be useful if the object to be picked up has a tapered bottom that is conducive to this and has much higher friction on the surface it is being picked up from versus the surface of the scoop. \href{https://youtu.be/uKy-IKDq_6o?t=38}{\color{red}\underline{Video Example (0:38)}} Scoops can also be combined with beater bars to provide positive latching of the object to be grabbed.
 \subsection{Vacuums}
 \begin{figure}[H]
 	\includegraphics[height=2.3in]{imgs/gripper_vacuum.png}
 	\caption{Vacuum gripper on a robot arm lifting a cardboard box.}
 \end{figure}
-\textit{Vacuum pumps}\index{Vacuum pumps} can be used to acquire objects that can form a sufficiently good seal. They are a little difficult to set up properly, and are also notably inefficient and loud, but can be used properly and effectively. \href{https://www.youtube.com/watch?v=T2goz1ghXXk}{\color{red}\underline{Video Example}}
+\textit{Vacuum pumps}\index{vacuum} can be used to acquire objects that can form a sufficiently good seal. They are a little difficult to set up properly, and are also notably inefficient and loud, but can be used properly and effectively. \href{https://www.youtube.com/watch?v=T2goz1ghXXk}{\color{red}\underline{Video Example}}
 
 \section{Indexers}
 An \textit{indexer}\index{indexer} is any mechanism that takes one or more already-controlled objects and moves them to somewhere else where it can be used.
 \subsection{Gravity Hoppers}
+\index{hopper}
 \begin{figure}[H]
 	\includegraphics[height=2.3in]{imgs/hopper_gravity_1.jpeg}
 	\includegraphics[height=2.3in]{imgs/hopper_gravity_2.png}
 	\caption{Gravity hoppers for foam balls.}
 \end{figure}
-\textit{Gravity-fed, metered hoppers}\index{Gravity-fed, metered hoppers} are the simplest form of indexing. A hopper holds objects, and a wheel or gate controls their exit. Hoppers can jam easily depending on the object, and for high-speed applications, may not feed fast enough on their own.
+\textit{Gravity-fed, metered hoppers} are the simplest form of indexing. A hopper holds objects, and a wheel or gate controls their exit. Hoppers can jam easily depending on the object, and for high-speed applications, may not feed fast enough on their own.
 \subsection{Conveyors}
 \begin{figure}[H]
 	\includegraphics[width=0.8\textwidth]{imgs/conveyor_single.jpeg}
 	\caption{A single conveyor belt feeding frisbees from the top.}
 \end{figure}
-\textit{Conveyors}\index{Conveyors} are the most common type of indexer. Objects are fed single file from one place to another using continuous belts. Variants of this exist, such as dual-conveyors (where objects are passed between two conveyors, so they do not need to roll or slide, but are still well-constrained).
+\textit{Conveyors}\index{conveyor} are the most common type of indexer. Objects are fed single file from one place to another using continuous belts. Variants of this exist, such as dual-conveyors (where objects are passed between two conveyors, so they do not need to roll or slide, but are still well-constrained).
 \href{https://www.youtube.com/watch?v=by2A56mHdRM}{\color{red}\underline{Video Example}}
 \subsection{Rotary Hoppers}
 \begin{figure}[H]
@@ -2384,7 +2414,7 @@ An \textit{indexer}\index{indexer} is any mechanism that takes one or more alrea
 	\caption{Rotary hopper or spindexer}
 \end{figure}
 
-\textit{Rotary hoppers}\index{Rotary hoppers} or \textit{spindexers}\index{spindexers} are like gravity hoppers, but use some sort of rotating piece at the bottom to both agitate objects in the hopper and forcefully feed them to the next place. These allow for high capacity and control. The base can either have positive interaction with the objects, or frictional interaction (i.e. flat). 
+\textit{Rotary hoppers}\index{hopper!rotary} or \textit{spindexers}\index{indexer!rotary} are like gravity hoppers, but use some sort of rotating piece at the bottom to both agitate objects in the hopper and forcefully feed them to the next place. These allow for high capacity and control. The base can either have positive interaction with the objects, or frictional interaction (i.e. flat). 
 
 
 \href{https://youtu.be/ewTCvLp5EUo?t=12}{\color{red}\underline{Video Example (0:12)}}
@@ -2396,7 +2426,7 @@ An \textit{indexer}\index{indexer} is any mechanism that takes one or more alrea
 	\caption{Agitated hoppers.}
 \end{figure}
 
-\textit{Agitated hoppers}\index{Agitated hoppers} are slightly angled hoppers which also feature moving sidewalls or rollers that help agitate objects and may even influence them to move faster than gravity would normally allow for. These can be simple to design and integrate while allowing for greater throughput and less jamming than a gravity hopper. 
+\textit{Agitated hoppers}\index{hopper!agitated} are slightly angled hoppers which also feature moving sidewalls or rollers that help agitate objects and may even influence them to move faster than gravity would normally allow for. These can be simple to design and integrate while allowing for greater throughput and less jamming than a gravity hopper. 
 
 \href{https://www.youtube.com/watch?v=9vIrTnXu7ho}{\color{red}\underline{Video Example}}
 \section{Lifts}
@@ -2404,7 +2434,7 @@ An \textit{indexer}\index{indexer} is any mechanism that takes one or more alrea
 A \textit{lift}\index{lift} is any mechanism that moves things up and down (though they all can be used to move objects in any direction). 
 
 \subsection{Elevators, Cascade and Continuous}
-
+\index{elevator}
 \begin{figure}[H]
 	\includegraphics[height=2.1in]{imgs/elevator_cascade.jpeg}
 	\includegraphics[height=2.1in]{imgs/elevator_continuous.jpeg}
@@ -2412,7 +2442,7 @@ A \textit{lift}\index{lift} is any mechanism that moves things up and down (thou
 	\caption{Elevators- cascade (left) and continuous (middle). Example construction detail on right.}
 \end{figure}
 
-An \textit{elevator}\index{elevator} is a mechanism that moves back and forth in a straight line. The multiple \textit{stages}\index{stages} are held together with bearings or slides to reduce friction. \textit{Cascade}\index{Cascade} and \textit{Continous}\index{Continous} elevators are able to reach further than their initial size without additional degrees of freedom by using special rigging of string to pull multiple stages that are nested in each other.
+An \textit{elevator} is a mechanism that moves back and forth in a straight line. The multiple \textit{stages} are held together with bearings or slides to reduce friction. \textit{Cascade}\index{elevator!cascade vs. continuous} and \textit{Continous} elevators are able to reach further than their initial size without additional degrees of freedom by using special rigging of string to pull multiple stages that are nested in each other.
 
 Cascade elevators have multiple strings to consider. They also have mechanical disadvantage by a factor of the number of stages in the lift. Continuous elevators do not have this mechanical disadvantage and only have one string to worry about.
 
@@ -2423,7 +2453,7 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 	\caption{Scissor lifts}
 \end{figure}
 
-\textit{Scissor lifts}\index{Scissor lifts} are linkages that can achieve incredible extension from a compact initial size. However, they can be quite problematic in practice, as the parts count to create the several stages can be quite high, and because there are so many parts, so is the backlash. They also have incredibly poor mechanical advantage, meaning the force required to drive them is very significant.
+\textit{Scissor lifts}\index{lift!scissor} are linkages that can achieve incredible extension from a compact initial size. However, they can be quite problematic in practice, as the parts count to create the several stages can be quite high, and because there are so many parts, so is the backlash. They also have incredibly poor mechanical advantage, meaning the force required to drive them is very significant.
 
 \href{https://youtu.be/J_VfCjKBGNw?t=18}{\color{red}\underline{Video Example (0:18)}}
 \subsection{Parallel 4 Bar}
@@ -2432,7 +2462,7 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 	\caption{Parallel 4 bar mechanism}
 \end{figure}
 
-\textit{Parallel 4 bar linkages}\index{Parallel 4 bar linkages} have four links forming a parallelogram, where two opposing sides are the input and output. These are simple to make but do not lift straight up and down- they will move outwards in an arc as they rise. This may be a desirable trait. \href{https://www.youtube.com/watch?v=hnxqZlG-508}{\color{red}\underline{Video Example 1}} \href{https://youtu.be/LaV0zbKz-Qg?t=36}{\color{red}\underline{Video Example 2 (0:36)}}
+\textit{Parallel 4 bar linkages}\index{4-bar linkage} have four links forming a parallelogram, where two opposing sides are the input and output. These are simple to make but do not lift straight up and down- they will move outwards in an arc as they rise. This may be a desirable trait. \href{https://www.youtube.com/watch?v=hnxqZlG-508}{\color{red}\underline{Video Example 1}} \href{https://youtu.be/LaV0zbKz-Qg?t=36}{\color{red}\underline{Video Example 2 (0:36)}}
 \subsection{Virtual 4 Bar}
 
 \begin{figure}[H]
@@ -2440,7 +2470,7 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 	\caption{Virtual 4 bar mechanism}
 \end{figure}
 
-\textit{Virtual 4 bars}\index{Virtual 4 bars} achieve similar motion to parallel 4 bars, but overcome the major issue regarding the \textit{singularity}\index{singularity} that occurs when the links come to a straight line. At this singularity, the mechanism is no longer fully defined and may invert, causing undesired behavior. Virtual 4 bars, on the other hand, can rotate continuously. They are built by using a single linkage, two sprockets, and chain binding the sprockets together. The sprockets are fixed on either end.
+\textit{Virtual 4 bars}\index{4-bar linkage!virtual} achieve similar motion to parallel 4 bars, but overcome the major issue regarding the \textit{singularity}\index{singularity} that occurs when the links come to a straight line. At this singularity, the mechanism is no longer fully defined and may invert, causing undesired behavior. Virtual 4 bars, on the other hand, can rotate continuously. They are built by using a single linkage, two sprockets, and chain binding the sprockets together. The sprockets are fixed on either end.
 
 \href{https://www.youtube.com/watch?v=nH6P4BcwtiE}{\color{red}\underline{Video Example}}
 
@@ -2451,7 +2481,7 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 	\caption{6 bar linkage.}
 \end{figure}
 
-4 bars take up a lot of dead space. They can be made to extend further by staging multiple of them together. These may be called \textit{6 bars}\index{6 bars}, \textit{8 bars}\index{8 bars}, and so forth- there is no theoretical upper limit, but increasing the number of stages will pose the same issues as a scissor lift will (you may note, that the underlying linkages are nearly identical, they are just used differently).
+4 bars take up a lot of dead space. They can be made to extend further by staging multiple of them together. These may be called \textit{6 bars}\index{6 bar linkage}, \textit{8 bars}\index{8 bar linkage}, and so forth- there is no theoretical upper limit, but increasing the number of stages will pose the same issues as a scissor lift will (you may note, that the underlying linkages are nearly identical, they are just used differently).
 
 \href{https://www.youtube.com/watch?v=twwNv4easgk}{\color{red}\underline{Video Example}}
 
@@ -2462,7 +2492,7 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 	\caption{Double-reverse 4 bar.}
 \end{figure}
 
-\textit{Double reverse 4 bars}\index{Double reverse 4 bars} sound complicated, and they are to some degree. These are two 4 bar mechanisms stacked on top of each other, reversed, and linked together (either with gears or a link). This allows them to fold up flat but reach tall heights, and move in a straight line (as any inward motion by the lower 4-bar is counteracted by the outward motion of the upper 4-bar).
+\textit{Double reverse 4 bars}\index{4-bar linkage!double-reverse} sound complicated, and they are to some degree. These are two 4 bar mechanisms stacked on top of each other, reversed, and linked together (either with gears or a link). This allows them to fold up flat but reach tall heights, and move in a straight line (as any inward motion by the lower 4-bar is counteracted by the outward motion of the upper 4-bar).
 
 \href{https://www.youtube.com/watch?v=iFq8dKUZOww}{\color{red}\underline{Video Example}}
 
@@ -2481,9 +2511,9 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 Any lift may be improved by the use of a \textit{counterbalance}. The purpose of a counterbalance is to provide load that counteracts the normally seen load or weight. This way force exerted on the lift is used not to fight gravity, but to accelerate the mass of the system. Because weight is usually a concern (and adding mass would increase the inertial loads of the system), a \textit{counterspring} may be used to offset the load without much added mass. Constant-force springs are particularly equipped for this task as they can extend a great distance and provide constant force rather than counterweight that varies with position.
 
 \section{Shooters}
-\textit{Shooters}\index{Shooters} take objects and propel them great distances.
+\textit{Shooters}\index{shooter} take objects and propel them great distances.
 \subsection{Flywheel-Based Shooter}
-\textit{Flywheel based launchers}\index{Flywheel based launchers} store energy in \textit{flywheels}\index{flywheels} spinning at high velocity. Objects can then be introduced to the flywheels, and the energy is transferred via friction to the objects. This makes flywheel based launchers good for high-throughput applications.
+\textit{Flywheel based launchers} store energy in \textit{flywheels}\index{flywheel} spinning at high velocity. Objects can then be introduced to the flywheels, and the energy is transferred via friction to the objects. This makes flywheel based launchers good for high-throughput applications.
 
 \begin{figure}[H]
 	\includegraphics[height=2.2in]{imgs/shooter_hooded.png}
@@ -2491,13 +2521,13 @@ Any lift may be improved by the use of a \textit{counterbalance}. The purpose of
 	\caption{Wheeled shooters. Left: hooded. Right: dual-wheel.}
 \end{figure}
 
-\textit{Hooded}\index{Hooded} shooters use a singular set of wheels and a fixed \textit{hood}\index{hood} to contact the ball. This produces a high amount of backspin, which may be desirable due to the \textit{Magnus effect}\index{Magnus effect} which generates lift (or drop) on spinning objects.
+\textit{Hooded} shooters use a singular set of wheels and a fixed \textit{hood} to contact the ball. This produces a high amount of backspin, which may be desirable due to the \textit{Magnus effect} which generates lift (or drop) on spinning objects.
 
-\textit{Opposed wheel}\index{Opposed wheel} shooters use mutiple sets of wheels to contact the ball. This allows for control over backspin, and may be easier to package. \href{https://youtu.be/pgMU_AxzxAE?t=67}{\color{red}\underline{Example Video (In Slow-Mo!) (1:07)}}
+\textit{Opposed wheel} shooters use mutiple sets of wheels to contact the ball. This allows for control over backspin, and may be easier to package. \href{https://youtu.be/pgMU_AxzxAE?t=67}{\color{red}\underline{Example Video (In Slow-Mo!) (1:07)}}
 
 Flywheel based shooters sometimes have multiple stages of flywheels in order to accelerate the ball over a longer period of time. Belts can also be used to achieve the same principle.
 \subsection{Catapults and Punches}
-\textit{Catapults}\index{Catapults} and \textit{punches}\index{punches} store energy in by pulling back springs or compressing air. Catapults work as a lever arm while punches work linearly, but both use this stored energy to accelerate a sled or cradle containing the object to be launched.
+\textit{Catapults}\index{shooter!catapult} and \textit{punches}\index{shooter!punch} store energy in by pulling back springs or compressing air. Catapults work as a lever arm while punches work linearly, but both use this stored energy to accelerate a sled or cradle containing the object to be launched.
 
 \begin{figure}[H]
 \begin{subfigure}[b]{.32\linewidth}
@@ -2513,11 +2543,11 @@ Flywheel based shooters sometimes have multiple stages of flywheels in order to 
 \item A \textit{choo-choo}\index{choo-choo} uses a rotating plate with a pin, a link, and another link or string. As the plate is rotated, the pin makes contact with the link. Eventually the second link/string gets pulled back and goes over-center from this pin, so that the pin no longer supports the link. At this point the spring pulls the mechanism forwards as it fires. \href{https://www.youtube.com/watch?v=Kh-PVMSF7VU}{\color{red}\underline{Video Example}}
 %SIDEBAR: THIS IS REALLY COOL https://www.youtube.com/watch?v=aIDwkuRAjqs
 
-\item \textit{Snail cams}\index{Snail cams} can be used to pull back the sled/cradle, and as the cam continues moving, it eventually returns to its starting point, causing the sled/cradle to fly forth.
+\item \textit{Snail cams}\index{snail cam} can be used to pull back the sled/cradle, and as the cam continues moving, it eventually returns to its starting point, causing the sled/cradle to fly forth.
 
 \item In a \textit{winch and release}\index{winch and release} a winch pulls back the sled/cradle. When firing is desired, a release mechanism (like those discussed in section \ref{section:disengagement}) allows the sled/cradle to fly forth. \href{https://www.youtube.com/watch?v=YFmG_b4B-BE}{\color{red}\underline{Video Example}}
 
-\item \textit{Pneumatic cylinders}\index{Pneumatic cylinders} are very simple ways of creating sudden bursts of energy. \href{https://youtu.be/1QOYdA5IPJQ?t=81}{\color{red}\underline{Video Example (1:21)}}
+\item \textit{Pneumatic cylinders}\index{pneumatic cylinder} are very simple ways of creating sudden bursts of energy. \href{https://youtu.be/1QOYdA5IPJQ?t=81}{\color{red}\underline{Video Example (1:21)}}
 \end{asparaenum}
 
 %TODO: Do these
@@ -2716,7 +2746,7 @@ A jump-drive version of a mecanum drive is sometimes called an \textit{octocanum
 
 \subsection{Fully-Steered Wheel Drives}
 
-\textit{Swerve}\index{Swerve} and \textit{crab}\index{crab} drives use traditional traction wheels, but steer them a full 360 degrees. This allows for simultaneous forwards-backwards, left-right, and rotational motion, but without sacrificing traction or object traversal capability like omnidrives. This comes, however, at the cost of higher mechanical and programattic complexity.
+\textit{Swerve}\index{swerve} and \textit{crab}\index{crab} drives use traditional traction wheels, but steer them a full 360 degrees. This allows for simultaneous forwards-backwards, left-right, and rotational motion, but without sacrificing traction or object traversal capability like omnidrives. This comes, however, at the cost of higher mechanical and programattic complexity.
 
 \begin{figure}[H]
 \begin{subfigure}[b]{.45\linewidth}
@@ -2750,9 +2780,9 @@ A jump-drive version of a mecanum drive is sometimes called an \textit{octocanum
 \end{figure}
 
 \begin{asparaenum}[a)]
-	\item \textit{Distributed}\index{Distributed} modules are steered by an external motor, and have a motor in the module that spins with the module. This makes the module in some ways simpler as it does not need a bevel gear or other means to change the direction of rotation, but it does make the module quite large, and the motor leads limit the rotation of the module.
-	\item \textit{Coaxial}\index{Coaxial} modules are both steered and powered by an external motor.
-	\item \textit{Differential}\index{Differential} modules are a type of module (usually coaxial) that blends together steering and powering. Two motors are still required, but can both be utilized to create propulsive force. Additional gearing makes it such that
+	\item \textit{Distributed}\index{swerve!distributed} modules are steered by an external motor, and have a motor in the module that spins with the module. This makes the module in some ways simpler as it does not need a bevel gear or other means to change the direction of rotation, but it does make the module quite large, and the motor leads limit the rotation of the module.
+	\item \textit{Coaxial}\index{swerve!coaxial} modules are both steered and powered by an external motor.
+	\item \textit{Differential}\index{swerve!differential} modules are a type of module (usually coaxial) that blends together steering and powering. Two motors are still required, but can both be utilized to create propulsive force. Additional gearing makes it such that
 	\begin{align}
 		T_{steering} = T_{motor, 1} - T_{motor, 2}\\
 		T_{thrust}   = T_{motor, 1} + T_{motor, 2}
@@ -2763,34 +2793,34 @@ A jump-drive version of a mecanum drive is sometimes called an \textit{octocanum
 \subsection{Addons}
 Many add-on features can be added to any of these drivetrains to achieve special behavior.
 
-\textit{Vacuum pumps}\index{Vacuum pumps} or fans can be used to forcibly remove air from the underside of a drivetrain, creating additional normal force with the ground and thusly increased grip. Notable examples are the Brabham BT46 Fan Car, and \href{https://www.youtube.com/watch?v=O9CEOHX88mw}{\color{red}\underline{FRC 95's 2020 vacuum}}- both of which were extremely powerful features, but ultimately ruled illegal. 
+\textit{Vacuum pumps}\index{vacuum} or fans can be used to forcibly remove air from the underside of a drivetrain, creating additional normal force with the ground and thusly increased grip. Notable examples are the Brabham BT46 Fan Car, and \href{https://www.youtube.com/watch?v=O9CEOHX88mw}{\color{red}\underline{FRC 95's 2020 vacuum}}- both of which were extremely powerful features, but ultimately ruled illegal. 
 
 \begin{figure}[H]
 	\includegraphics[width=0.95\textwidth]{imgs/drivetrain_popupwheel.png}
-	\caption{Pop-up wheel on a drivetrain}
+	\caption{Pop-down wheel on a drivetrain}
 \end{figure}
 
-\textit{Pop-up wheels}\index{Pop-up wheels} are not jump drives, though they may look and behave like it at first sight. The wheel may be idle or powered, and can serve multple purposes. The first is to lift up the front wheels, enabling the drivetrain to crawl over terrain it would normally be unable to.
+\textit{Pop-down wheels}\index{pop-down wheels} are not jump drives, though they may look and behave like it at first sight. The wheel may be idle or powered, and can serve multple purposes. The first is to lift up the front wheels, enabling the drivetrain to crawl over terrain it would normally be unable to.
 
-Pop up wheels can also serve a third purpose of quick turns as illustrated in this \href{https://youtu.be/PtRewwr59d8?t=37}{\color{red}\underline{Example Video (0:37)}}.
+Pop down wheels can also serve a third purpose of quick turns as illustrated in this \href{https://youtu.be/PtRewwr59d8?t=37}{\color{red}\underline{Example Video (0:37)}}.
 
-One of the driving purposes behind pop up wheels is to help get out of \textit{friction pins}\index{friction pins}. Watch the \href{https://youtu.be/kLAkcn6l9v0?t=133}{\color{red}\underline{2011 FRC Championship Semi-Final 1 Match 1}} (match begins at 1:51, pinning begins at 2:13). 973 (in blue) is able to keep 217 (in red) from moving by pushing them in a t-bone configuration. As 217 moves sideways, their wheels lose static friction and so lose their ability to move except in an arc, which isn't an issue for 973.
+One of the driving purposes behind pop down wheels is to help get out of \textit{friction pins}\index{friction pins}. Watch the \href{https://youtu.be/kLAkcn6l9v0?t=133}{\color{red}\underline{2011 FRC Championship Semi-Final 1 Match 1}} (match begins at 1:51, pinning begins at 2:13). 973 (in blue) is able to keep 217 (in red) from moving by pushing them in a t-bone configuration. As 217 moves sideways, their wheels lose static friction and so lose their ability to move except in an arc, which isn't an issue for 973.
 
-Pop up wheels with omni wheels installed shift the rotation point from being in the middle of the robot (which is good for handling otherwise as the center of rotation matches the center of gravity) to being in the rear. At this point, the t-boning robot would simply push past, breaking the friction pin.
+Pop down wheels with omni wheels installed shift the rotation point from being in the middle of the robot (which is good for handling otherwise as the center of rotation matches the center of gravity) to being in the rear. At this point, the t-boning robot would simply push past, breaking the friction pin.
 
 \begin{figure}[H]
 	\includegraphics[width=0.6\textwidth]{imgs/drivetrain_octagon.png}
 	\caption{A robot with an octagonal frame.}
 \end{figure}
 
-\textit{Curved frames}\index{Curved frames} or \textit{multi-faceted frames}\index{multi-faceted frames} can also help with getting out of friction pins. These allow the pinned robot some ability to turn so they can leave the pin.
+\textit{Curved frames}\index{curved frames} or \textit{multi-faceted frames}\index{multi-faceted frames} can also help with getting out of friction pins. These allow the pinned robot some ability to turn so they can leave the pin.
 
 \begin{figure}[H]
 	\includegraphics[width=0.6\textwidth]{imgs/drivetrain_skirt.jpeg}
 	\caption{A battlebot with a skirt.}
 \end{figure}
 
-\textit{Wedge plates}\index{Wedge plates} or \textit{skirts}\index{skirts} are angular plates on the exterior of a frame which can be used to get underneath other machines, stealing their normal force much like a vacuum would, and giving an advantage in pushing.
+\textit{Wedge plates}\index{wedge plates} or \textit{skirts}\index{skirts} are angular plates on the exterior of a frame which can be used to get underneath other machines, stealing their normal force much like a vacuum would, and giving an advantage in pushing.
 
 %\subsection{Walkers} % pls no
 
