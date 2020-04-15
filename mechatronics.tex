@@ -1,0 +1,77 @@
+
+\ifdefined\isbook
+  \input{book_header.tex}
+\fi
+
+\ifdefined\isweb
+  \input{web_header.tex}
+\fi
+
+\begin{document}
+
+\clearpage
+%% temporary titles
+% command to provide stretchy vertical space in proportion
+\newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
+% allow some slack to avoid under/overfull boxes
+\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
+% To improve spacing on titlepages
+\newcommand{\nbtitlestretch}{\spaceskip0.6em}
+\pagestyle{plain}
+\begin{center}
+  \bfseries
+  \nbvspace[1]
+  \Huge
+  {\nbtitlestretch\huge
+    MECHATRONICS}
+
+  \nbvspace[1]
+  \normalsize
+  TECHNOLOGIES, PRINCIPLES, DESIGN, AND ANALYSIS\\
+  OF COMPLEX ELECTRO-MECHANICAL SYSTEMS\\
+  
+  \nbvspace[1]
+  \small BY\\
+  \Large THADDEUS HUGHES\\
+  \ \\
+  \tiny WITH CONTRIBUTIONS FROM\\
+  % ADD YOUR NAME HERE IF YOU DO SOMETHING!
+  \small CALEB HAGNER
+  \small AND HOPEFULLY MORE TO COME
+
+  \nbvspace[2]
+
+  \nbvspace[3]
+  \normalsize
+
+  \large
+  PUBLISHED IN THE WILD \\
+  \small APRIL 2020 \\
+\end{center}
+
+\ifdefined\isbook
+  \newgeometry{top=0.75in,bottom=0.75in,right=0.75in,left=1.25in}
+
+  \raggedbottom
+
+  \tableofcontents
+\fi
+\input{mechatronics_intro.tex}
+
+\input{mechatronics_construction.tex}
+	
+\input{mechatronics_components.tex}
+
+\input{mechatronics_systems.tex}
+
+%\subsection{Walkers} % pls no
+
+\input{mechatronics_design.tex}
+
+\chapter{Going Forth}
+
+\ifdefined\isbook
+  \printindex
+\fi
+
+\end{document}

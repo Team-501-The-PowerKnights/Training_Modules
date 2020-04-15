@@ -2,7 +2,6 @@
 %TODO: A section on "what do you want to gear in order to do?"
 
  {\slshape \scshape ``Power is worthless, if improperly wielded."}
- \\
  
 For any system powered by motors we may have a number of concerns.
  \index{cycle}
@@ -85,7 +84,7 @@ Let's examine a simple case of a motor accelerating a flywheel. This is also (es
 	
 	We can apply conservation of angular momentum to the flywheel.
 	\begin{align}
-		\sum M &= I \alpha + \cancelto{0 \ \mbox{(no mass transfer)}}{\sum \dot{m}(...)} \\
+		%\sum M &= I \alpha + \cancelto{0 \ \mbox{(no mass transfer)}}{\sum \dot{m}(...)} \\
 		T_{gbx} &= I \ \alpha_{wheel}
 	\end{align}
 	
@@ -175,7 +174,7 @@ Let's examine a simple case of a motor accelerating a flywheel. This is also (es
 	
 	We can go through and repeat the same analysis as before.
 	\begin{align}
-		\sum M &= I \alpha + \cancelto{0 \ \mbox{(no mass transfer)}}{\sum \dot{m}(...)}  \\
+		%\sum M &= I \alpha + \cancelto{0 \ \mbox{(no mass transfer)}}{\sum \dot{m}(...)}  \\
 		T_{gbx} - M_{resist} &= I \alpha_{wheel} \\
 		\alpha_{wheel} &= \frac{d}{dt} \omega_{wheel} \\
 	\end{align}
@@ -217,7 +216,6 @@ Before you look at the plots, go to the simulator and plug in those values, see 
 \chapter{Design Principles}
 
  {\slshape \scshape ``Learn the rules like a pro, so you can break them like an artist." - Pablo Picasso}
- \\
  
 Design is tough. Before we get in the weeds I want to acknowledge that it isn't for the faint of heart, and it isn't a straightforward linear process. Often when you finish solving one problem, you'll find you've introduced another in the process. Design is iterative. Design is also play. If everything we did just simply worked no better than anything else, we wouldn't need to design things and wouldn't get anything from us, so we should be thankful that it's hard.
 
@@ -480,7 +478,7 @@ Minimize the number of components.
 
 \textit{Positive retention}\index{positive retention} is ensuring that vibrations and loads will not effect the positioning of components. This means avoiding slots for adjustment (that do not have additional locking schemes like cams), and bolts that must be ``just properly tightened" in order to work properly.
 
-We discussed a number of mechanisms for keeping bolts from loosening under vibration in section \ref{section:threads}. Most of these solutions don't cost much to implement. There's generally no reason not to do them. And so,
+We discussed a number of mechanisms for keeping bolts from loosening under vibration in section \ref{subsec:threads}. Most of these solutions don't cost much to implement. There's generally no reason not to do them. And so,
 
 \begin{theorem}
 Positive retention is awesome, let's do more of that.
