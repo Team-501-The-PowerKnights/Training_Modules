@@ -5,6 +5,34 @@
 
 \subsection{Batteries}
 % Internal resistance, chemistries, ratings
+Power sources are a critical component of electrical systems. For mobile ones, a battery is the obvious choice- the question is, what battery? Batteries may be rated by many parameters.
+
+\begin{asparaenum}
+  \item \textit{Chemistry} refers to the type of chemicals and technologies being used in the battery. Spillable Lead-Acid, Sealed AGM, LiPo, NiCd are all different types of chemistries on the market each with their pros and cons. Some work better at cold temperatures, some cannot be used in extremely high temperatures, and some have much higher flammability hazards. Some require maintenance and watering, some do not.
+  \item \textit{Nominal voltage} is the approximate voltage that a battery will sit at. This will fluctuate throughout operation both due to internal resistance and chemical changes- over time the battery will drain and the voltage may sink. A 12 volt nominal AGM battery may be fully charged at 13.5 volts, but be depleted at 11.
+  \item \textit{Amp-hours} is a measure of how much energy can be stored by the battery, specifically, how many hours it could run for if one amp was constantly being used.
+  \item \textit{Cold Cranking Amps (CCA)} is a performance characteristic often found in car batteries, which must pull extremely high amounts of current in order to start an engine. As temperature negatively impacts the current-supplying ability of lead-acid batteries, the cranking capacity is usually measured at a representative worst-case temperature. The CCA rating is found by the number of amps a battery can support for 30 seconds at 0 Farenheit before the battery voltage drops to 1.2 volts per cell (7.2 volts for a 12V battery).
+  \item Other measures like \textit{Pulse Cranking Amps (PCA)}, \textit{Marine Cranking Amps (MCA)}, and \textit{Hot Cranking Amps (HCA)} also exist.
+  \item \textit{Internal resistance} is a key performance characteristic that is often not rated. This is a measurement that is found by realizing the battery is not an ideal voltage source, and instead modeling it as such:
+  \begin{figure}[H]
+    \begin{circuitikz}[american voltages]
+      \fill[lightgray] (-1.6,-0.5) -- (-1.6,4.5) -- (1.6,4.5) -- (1.6, -0.5) -- cycle;
+      \draw (-1.6,-0.5) -- (-1.6,4.5) -- (1.6,4.5) -- (1.6, -0.5) -- cycle;
+      \draw (0,0) to [battery, l=$V_{nom}$] (0,2)
+      to [R, l_=$R_{int}$] (0,4)
+      to [short] (4,4)
+      to [generic, l_=load] (4,0)
+      to [short] (0,0);
+    \end{circuitikz}
+  \end{figure}
+\begin{align}
+  V_{nom} - I_{load} R_{int} = V_{load} = V_{apparent}
+\end{align}
+  This behavior is fairly accurate: when more current is drawn, the apparent voltage of the battery will drop as well.
+\end{asparaenum}
+
+\subsection{Regulators}
+
 \subsection{Breakers}
 % Match gague to breakers
 \subsection{Wires}
@@ -35,6 +63,10 @@
 \item \textit{Inductive proximity switches} send out a magnetic field and detect interference in this field caused by metallic objects (\textit{ferrous} metals usually work best). This allows them to sense if an object is in position without risking dangerous mechanical contact. They require appropriate power to operate (refer to their datasheet for requirements). These sensors come in different packages, although the screw-body style shown is the most common. They are also rated by their minimum and maximum sensing distances.
 \item \textit{IR photoeyes} emit infrared radiation and measure how much is reflected back. This allows any object to be detected if it is within the sensing range. They require power to operate (refer to their datasheet for requirements). \item \textit{Beam breaks} emit infrared lasers and collect them on the opposite side. If an object blocks the path, the beam is broken, causing a change in signal. 
 \end{asparaenum}
+
+Switches and sensors may be denoted as <x>P<y>T to indicate how they may be wired. For example, a \textit{SPDT}, or \textit{Single-Pole Double-Throw} switch has a single contactor which can be switched between two positions. A \textit{DPST} may only alternatve the switch between a connected and unconnected state (single pole) but has a second electrically isolated version of the switch (double-throw).
+
+Switches also may be \textit{momentary}, reverting state as soon as they are unpressed, or \textit{toggle}, staying put until actively switched back (like a lightswitch, or a pushbutton pen). If the switch is momentary, it may be either \textit{normally open (NO)} or \textit{normally closed (NC)}, referring to if the switch is open or closed by default. If the switch has two poles, the poles may be referred to as NO and NC as one will be normally opened, and one normally closed.
 
 Sensors can be wired in various ways.
 
@@ -87,8 +119,8 @@ Sensors can be wired in various ways.
 \end{figure}
 
 \begin{asparaenum}[a)]
-\item \textit{Pull down resistors} make the inputs of a microprocessor rest naturally at ground level. When the connected switch is closed, the resistance of the switch is much much less than the pulldown resistor, so the voltage of the input will rise to the logic voltage. The resistor is sized so as not to consume too much current (usually R = 5 to 20 k\Omega). A microprocessor may have such a resistor built-in to the circuitry, although the resistor may need to be enabled.
-\item \textit{Pull up resistors} work on the same principle as pull down resistors but with reversed voltages. On the RoboRIO, 2.2 k\Omega pull-up resistors are on all DIO pins when in input mode.
+\item \textit{Pull down resistors} make the inputs of a microprocessor rest naturally at ground level. When the connected switch is closed, the resistance of the switch is much much less than the pulldown resistor, so the voltage of the input will rise to the logic voltage. The resistor is sized so as not to consume too much current (usually R = 5 to 20 k$\Omega$). A microprocessor may have such a resistor built-in to the circuitry, although the resistor may need to be enabled.
+\item \textit{Pull up resistors} work on the same principle as pull down resistors but with reversed voltages. On the RoboRIO, 2.2 k$\Omega$ pull-up resistors are on all DIO pins when in input mode.
 \item \textit{NPN} and \textit{PNP} sensors are to be wired as shown. You may note that the wiring looks the same as for a pull-up or pull-down; match the type of pulling resistor in your microprocessor to the type of sensor you intend to use, otherwise external pulling resistors may be necessary.
 \end{asparaenum}
 
