@@ -259,11 +259,16 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 \end{asparaenum}
 
 A \textit{gearbox} which contains multiple gears constrained with bearings must be designed to withstand the various loads produced by gears.
-% TODO: image
+
+\begin{figure}[H]
+	\includegraphics[width=0.5\textwidth]{imgs/gear_forces.jpeg}
+	\caption{Forces on a gear tooth.}
+\end{figure}
+
 \begin{asparaenum}[a)]
-	\item \textit{Tangential force} is found simply as $F_{tangential} = T_{gear} / r_{pitch, gear}$, and is the major and obvious load that must be withstood.
-	\item \textit{Radial force} is produced as a result of the pressure angle. It can be computed as $F_{radial} = F_{tangential} \text{tan}(\alpha)$ where $\alpha$ is the pressure angle. As such, higher pressure angles will produce higher radial forces, which will push gears apart.
-	\item \textit{Thrust force} exists for helical gears and is computed as $F_{thrust} = F_{tangential} \text{tan}(\beta)$ where $\beta$ is the helix angle.
+	\item \textit{Tangential force} is found simply as $F_{t} = T_{gear} / r_{pitch, gear}$, and is the major and obvious load that must be withstood.
+	\item \textit{Radial force} is produced as a result of the pressure angle. It can be computed as $F_{r} = F_{t} \text{tan}(\alpha)$ where $\alpha$ is the pressure angle. As such, higher pressure angles will produce higher radial forces, which will push gears apart.
+	\item \textit{Thrust force} exists for helical gears and is computed as $F_{x} = F_{t} \text{tan}(\beta)$ where $\beta$ is the helix angle.
 \end{asparaenum}
 
 \begin{figure}[H]
@@ -282,7 +287,10 @@ A \textit{gearbox} which contains multiple gears constrained with bearings must 
 
 This is desirable as a speed difference can be had between the left and right sides (for instance, a car that is turning has its wheels running at different speeds) while still sending power to both.
 
-% TODO: Differential Picture
+\begin{figure}[H]
+	\includegraphics[width=0.8\textwidth]{imgs/differential.png}
+	\caption{A differential.}
+\end{figure}
 
 A plain or \textit{open} differential uses an outer casing to drive a central \textit{spider} gear. This spider is connected to the left and right gears. Analysing the torque balance on the spider gear reveals
 
@@ -427,11 +435,25 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 	Belts can be crossed in order to transmit power while reversing direction, or even transmit power between non-parallel axles. This generally works best with polycord, but can be accomplished with any belt.
 	
 \section{Lead Screws}
-% TODO: picture
+\begin{figure}[H]
+	\includegraphics[width=0.5\textwidth]{imgs/lead_screw.png}
+	\caption{Lead screw and nut}
+\end{figure}
 
 \textit{Lead screws} are specially-formed screws that are intended for power transmission. They are used in conjunction with a correspondingly threaded nut to transform rotational motion into linear motion. Like worm gears, they may have multiple \textit{leads}, and depending on the angle, may be self-locking. The more leads and the coarser the thread pitch, the slower the nut will move, the efficiency will be decreased, and the arrangement will be more self-locking.
 
-% TODO: Acme/Butress/Square picture
+\begin{figure}[H]
+	\includegraphics[width=0.5\textwidth]{imgs/thread_forms.png}
+	\caption{Different thread forms}
+\end{figure}
+
+While typical screws use triangular thread forms, there are more types for lead screws, and lead screws generally have a much higher surface finish since they will be screwed and unscrewed repeatedly.
+\begin{asparaenum}[a)]
+\item \textit{Square} threads offer superior performance and reduced sliding friction. However, they are much harder to produce.
+\item \textit{Acme} threads are a particular standard using trapezoidal-shaped threads. The increased size of the thread provides more strength, and they have a shallower angle than a typical thread, providing a compromise from a square thread for manufacturability sake.
+\item \textit{Buttress} threads are asymmetrical, intended to be loaded dominantly in one direction (e.g. for a lift).
+\item \textit{Ball screws} have round cutouts intended for recirculating ball carriers. These are a class of their own, requiring the highest precision, but offerring the most efficient power transfer.
+\end{asparaenum}
 	
 \section{Energy Storage} \label{sec:energy_storage}
 
@@ -796,8 +818,6 @@ For a cylinder being retracted, the pressure doesn't act on the entire bore, but
 \end{align}
 
 My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{EveryCalc}} tool contains calculators to analyze pistons- including some analysis for fast-acting pistons (using much more complicated math than these equations).
-
-% TODO: \section{Air Usage Analysis}
 
 \chapter{Motors}
 
