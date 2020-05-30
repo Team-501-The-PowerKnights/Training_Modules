@@ -4,13 +4,20 @@
  {\slshape \scshape ``Complex is better than complicated." - The Zen of Python}
  
  There is often no need to reinvent the wheel. Many problems already have a solution, or at least some sort of prior art. Familiarity with this can help you quickly identify a design for a problem in a pinch, or at least have a jumping off point. Even these systems are building blocks that need put together. You will probably need to mix and match many of these together to make a machine.
- 
-%TODO: Grappling (claws, latches)
-%TODO: Straight arms
 
-\section{Intakes} \label{sec:intakes}
+\section{Grabbing} \label{sec:intakes}
 
-\textit{Intakes}\index{intake} grab uncontrolled components in a continuous, indiscriminate fashion. This makes them preferable to say, using a claw to grab items. A properly designed intake is often described as ``touch it, own it."
+\textit{Jaws} grab components that are in a relatively stationary state. They are many beginning designers' go-to thought of how to grab something, and are well-suited in many tasks, but begin showing their weaknesses when tasked with controlling objects that are not in an established position.
+
+Multiple jaws can be used to more reliably hold an object, such as a three-jaw chuck of a lathe.
+
+Jaws can also be oriented such that they pick the inside of an object rather than the outside.
+% TODO: images
+
+\textit{Latches} are claws that are mechanically actuated to snap shut automatically on an object, like a trap. This provides a major improvement over a claw in many circumstances, although the trapping action may require more sophisticated action to reset if multiple uses are desired. If they are not, though, they can be ideal for many tasks such as grabbing onto end-game items.
+% TODO: images
+
+\textit{Intakes}\index{intake} grab uncontrolled components in a continuous, indiscriminate fashion. This makes them preferable to claws in many cases. A properly designed intake is often described as ``touch it, own it."
 
 \subsection{Beater bars} 
 
@@ -96,9 +103,7 @@ An \textit{indexer}\index{indexer} is any mechanism that takes one or more alrea
 \textit{Agitated hoppers}\index{hopper!agitated} are slightly angled hoppers which also feature moving sidewalls or rollers that help agitate objects and may even influence them to move faster than gravity would normally allow for. These can be simple to design and integrate while allowing for greater throughput and less jamming than a gravity hopper. 
 
 \href{https://www.youtube.com/watch?v=9vIrTnXu7ho}{\color{red}\underline{Video Example}}
-\section{Lifts}
-
-A \textit{lift}\index{lift} is any mechanism that moves things up and down (though they all can be used to move objects in any direction). 
+\section{Connected Motion}
 
 \subsection{Elevators, Cascade and Continuous}
 \index{elevator}
@@ -112,6 +117,11 @@ A \textit{lift}\index{lift} is any mechanism that moves things up and down (thou
 An \textit{elevator} is a mechanism that moves back and forth in a straight line. The multiple \textit{stages} are held together with bearings or slides to reduce friction. \textit{Cascade}\index{elevator!cascade vs. continuous} and \textit{Continous} elevators are able to reach further than their initial size without additional degrees of freedom by using special rigging of string to pull multiple stages that are nested in each other.
 
 Cascade elevators have multiple strings to consider. They also have mechanical disadvantage by a factor of the number of stages in the lift. Continuous elevators do not have this mechanical disadvantage and only have one string to worry about.
+
+\subsection{Gantries}
+\index{gantry}
+%TODO: image
+A \textit{gantry} consists of multiple elevators or linear stages stacked in series, enabling motion in multiple axes. This is a common confiuration for many CNC routers, as it provides a sturdy base and control that is easy to accomplish and optimize.
 
 \href{https://youtu.be/HJVGgaAJefo?t=37}{\color{red}\underline{Video Example (0:37)}}
 \subsection{Scissor Lifts}
@@ -168,6 +178,23 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 %\subsection{Latches}
 %\subsection{Overcenter mechanisms}
 
+\subsection{Fixed arms}
+\index{arm!fixed}
+\textit{Fixed} arms are the simplest lifting mechanism, consisting of a beam which is driven about a pivot point. This means whatever is fixed to the end will rotate with the entire arm.
+
+\subsection{Compound arms}
+\index{arm!compound}
+\textit{Compound} arms consist of multiple fixed arms affixed to each other in \textit{series}. With sophisticated software, complex motions can be performed in one or more planes.
+
+\subsection{Parallel manipulators}
+\index{parallel manipulators}
+\textit{Parallel manipulators} are a very sophisticated class of mechanisms. Their name comes from the fact that instead of actuators being stacked on top of each other to produce the desired motion, the actuators are placed side-by-side and connected to the same base and mobile object. Although this requires much more complex software which is not intuitive to understand, the results can be quite astounding since the absence of stacking reduces compliance and power requirements to move actuators on the later stages.
+
+\begin{asparaenum}[a)]
+	\item \textit{Delta} platforms use three actuators, either rotary arms or linear stages, each connected to a mobile platform by two parallel linkages. These linkages keep the platform parallel to the base, and at a constant distance to each stage. This enables the mobile structure to be extremely light and fast, making them quite common on robots used for rapid pick-and-place operations.
+	\item \textit{Stewart} platforms use six linear actuators which can be controlled to control all six degrees of freedom of the mobile platform. They are commonly seen on flight simulators. % todo: there are others but I don't remember what they are
+\end{asparaenum}
+
 \subsection{Counterbalancing}
 \index{counterbalance} 
 \begin{figure}[H]
@@ -193,6 +220,7 @@ Any lift may be improved by the use of a \textit{counterbalance}. The purpose of
 \textit{Opposed wheel} shooters use mutiple sets of wheels to contact the ball. This allows for control over backspin, and may be easier to package. \href{https://youtu.be/pgMU_AxzxAE?t=67}{\color{red}\underline{Example Video (In Slow-Mo!) (1:07)}}
 
 Flywheel based shooters sometimes have multiple stages of flywheels in order to accelerate the ball over a longer period of time. Belts can also be used to achieve the same principle.
+
 \subsection{Catapults and Punches}
 \textit{Catapults}\index{shooter!catapult} and \textit{punches}\index{shooter!punch} store energy in by pulling back springs or compressing air. Catapults work as a lever arm while punches work linearly, but both use this stored energy to accelerate a sled or cradle containing the object to be launched.
 
@@ -217,9 +245,8 @@ Flywheel based shooters sometimes have multiple stages of flywheels in order to 
 \item \textit{Pneumatic cylinders}\index{pneumatic cylinder} are very simple ways of creating sudden bursts of energy. \href{https://youtu.be/1QOYdA5IPJQ?t=81}{\color{red}\underline{Video Example (1:21)}}
 \end{asparaenum}
 
-%TODO: Do these
-%\subsection{Flicker launchers}
-%\subsection{Throwers}
+\subsection{Cannons}
+\textit{Cannons} use rapidly expanding gas to propel projectiles. This gas could be in the form of gases from combustion, or could be simply the release of compressed air.
 
 \section{Drivetrains} \label{sec:drivetrains}
 Drivetrains allow for movement across surfaces. Drivetrains have many considerations which depend on the use case.

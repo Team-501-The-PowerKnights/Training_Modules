@@ -213,11 +213,6 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 	\item A gear's \textit{pressure angle}(PA) measures how steep the teeth are, or the angle of the contact line. This must be the same between two gears for them to be compatible. There is a lot of testing and science behind picking a good angle; higher angles are weaker and produce higher loads on the system, but do make oil flow better. Usually, though, this isn't a big concern- just make sure that you don't mix and match pressure angles. 14.5 degrees is common for greased gears.
 \end{asparaenum}
 
-%TODO: gear forces visualized
-%TODO: lead screws
-%TODO: backlash
-%TODO: example calculations of gear ratios (speed and torque)
-
 \index{gear!types}
 \begin{figure}[H]
 	\begin{subfigure}[b]{.32\linewidth}
@@ -263,14 +258,49 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 	\item A \textit{rack and pinion}\index{gear!rack and pinion} can be used to transform rotary motion into linear motion, or vice versa.	
 \end{asparaenum}
 
-% TODO: Differentials and LSDs
+A \textit{gearbox} which contains multiple gears constrained with bearings must be designed to withstand the various loads produced by gears.
+% TODO: image
+\begin{asparaenum}[a)]
+	\item \textit{Tangential force} is found simply as $F_{tangential} = T_{gear} / r_{pitch, gear}$, and is the major and obvious load that must be withstood.
+	\item \textit{Radial force} is produced as a result of the pressure angle. It can be computed as $F_{radial} = F_{tangential} \text{tan}(\alpha)$ where $\alpha$ is the pressure angle. As such, higher pressure angles will produce higher radial forces, which will push gears apart.
+	\item \textit{Thrust force} exists for helical gears and is computed as $F_{thrust} = F_{tangential} \text{tan}(\beta)$ where $\beta$ is the helix angle.
+\end{asparaenum}
 
 \begin{figure}[H]
 	\includegraphics[width=0.6\textwidth]{imgs/gearset_idler.jpeg}
 	\caption{A spur gear set with a idler gear (middle).}
 \end{figure}
 
+\index{gear!idler}
 \textit{Idlers} can be introduced to a gear set to change the direction of rotation, or to bridge a large gap and transmit power from one place to another. The idler does not impact the overall gear ratio, only the direction of motion.
+
+\index{differential}
+\textit{Differentials} are a special arrangement of gears that can be used to produce differential motion
+\begin{align}
+	\omega_{input} = \frac{\omega_{left} + \omega_{right}}{2} .
+\end{align}
+
+This is desirable as a speed difference can be had between the left and right sides (for instance, a car that is turning has its wheels running at different speeds) while still sending power to both.
+
+% TODO: Differential Picture
+
+A plain or \textit{open} differential uses an outer casing to drive a central \textit{spider} gear. This spider is connected to the left and right gears. Analysing the torque balance on the spider gear reveals
+
+\begin{align}
+	\Sigma T &= m \alpha = 0 \nonumber \\
+	0 &= \frac{T_{left}}{r_{left}} r_{spider} - \frac{T_{right}}{r_{right}} r_{spider}  \nonumber \\
+	T_{left} &= T_{right} \text{ if } r_{left} = r_{right}
+\end{align}
+
+Analysing the torque balance on the whole differential reveals
+
+\begin{align}
+	\Sigma T &= m \alpha = 0 \nonumber \\
+	0 &= T_{left} + T_{right} - T_{input} \nonumber \\
+	T_{left} = T_{right} &= \frac{T_{input}}{2}
+\end{align}
+
+As such, the open differential makes the torque on each wheel the same. This can be problematic if one wheel loses traction, as the other wheel will have its torque capacity correspondingly reduced. \index{differential!limited-slip} \textit{Limited-slip} differentials employ additional components or techniques such as clutch packs to limit the amount of speed difference $|\omega_{left} - \omega_{right}|$ and/or the amount of torque difference $|T_{left} - T_{right}|$ to continue delivering power in adverse conditions. 
 
 \newpage
 
@@ -388,7 +418,7 @@ A \textit{belt}\index{belts} is a continuous loop of a flexible material. There 
 
 Belts, like chain, must be properly tensioned and aligned. Most of the methods explained for chains also work for belts. Special considerations must be made for the back-bending capacity of the belt in question (every belt has a rated back-bending radius). Pulleys for timing belts usually require at least six (6) teeth of engagement, although this may increase or decrease based on your load case and manufacturer's recommendations.  Timing belt doesn't need tensioning, just correct and precise spacing.
 
-My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} has a calculator to determine the length of belt needed to achieve a certain center-to-center distance (or vice versa) for flat belts, polycord, and timing belts.
+My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{EveryCalc}} has a calculator to determine the length of belt needed to achieve a certain center-to-center distance (or vice versa) for flat belts, polycord, and timing belts.
 
 \begin{figure}[H]
 	\includegraphics[width=0.5\textwidth]{imgs/belt_crossed.png}
@@ -396,7 +426,12 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 \end{figure}
 	Belts can be crossed in order to transmit power while reversing direction, or even transmit power between non-parallel axles. This generally works best with polycord, but can be accomplished with any belt.
 	
-% \section{Lead Screws}
+\section{Lead Screws}
+% TODO: picture
+
+\textit{Lead screws} are specially-formed screws that are intended for power transmission. They are used in conjunction with a correspondingly threaded nut to transform rotational motion into linear motion. Like worm gears, they may have multiple \textit{leads}, and depending on the angle, may be self-locking. The more leads and the coarser the thread pitch, the slower the nut will move, the efficiency will be decreased, and the arrangement will be more self-locking.
+
+% TODO: Acme/Butress/Square picture
 	
 \section{Energy Storage} \label{sec:energy_storage}
 
@@ -526,6 +561,16 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 		\item \textit{Compliant wheels}\index{wheels!compliant} or \textit{flex rollers} look like tweels, but are much, much softer. Compliant wheels are usually made out of very soft urethane, enabling extreme amounts of compression. This allows them to conform to objects, especially irregular geometries.
 	\end{asparaenum}
 	
+	\subsection{Casters}
+
+	Any wheel can be placed on an offset pivot to create a \textit{swivel caster}. This a cheap solution, useful in permitting unpowered motion in any direction. However, casters do pose potential problems since their direction is uncontrolled.
+
+	One issue you may have encountered is instability at high speeds. The caster is like a weathervane- it reorients as a result of the movement of the ground underneath it. If the distance from the offset to the contact point on the ground is improperly sized, the caster may overshoot the correct position, or not come to it fast enough.
+
+	Another issue posed by this re-orienting nature is that casters impart a \textit{steering torque} when they are re-oriented. You may have noticed this if you try reversing a shopping cart after going forwards, as the casters will push the cart slightly to one side or another while they swivel around and change direction. This can produce inconsistent behavior in cases where precise motion is necessary.
+
+	Casters are also ill-suited to uneven terrain, as the side-forces which occur as a result of travelling sideways across an incline will steer the caster away from the direction of movement rather than towards it.
+	
 	\subsection{Omni Wheels}
 	
 	\begin{figure}[H]
@@ -542,7 +587,6 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 		\item \textit{Omni wheels} have rollers on them that are perpindicular to the axis of rotation. This allows them to transmit power back like a normal wheel, but they have no resistance to being pushed sideways. This can be desirable in drivetrains (see section \ref{sec:drivetrains}). They are also good as casters, as they do not have a swivel stem that needs to reorient before moving in a new direction.
 		\item \textit{Mecanum wheels} have rollers on them that are oriented 45 degrees to the axis of rotation. This allows them to transmit power at a 45 degree angle, while being able to be pushed at -45 degrees. This makes them useful in drivetrains and intake systems (see sections \ref{sec:drivetrains} and \ref{sec:intakes}).
 	\end{asparaenum}
-	% TODO: Casters? There are some considerations like steering torque if they're to be used
 
 \newpage
 \section{Engagement and Disengagement} \label{sec:disengagement}
@@ -672,7 +716,16 @@ Intentional flow restriction can be provided by throttling valves. These usually
 	\item \textit{Push-to-connect}\index{push-to-connect fitting} or PTC fittings consist of a gripping ring or collet that grips firm tube as it is inserted into an o-ring. Once inserted, the ring has a ratcheting effect, preventing removal of the hose unless the ring is pressed in. These allow for easy and reliable connection of firm tubing to other components.	
 \end{asparaenum}
 
-% TODO: Compressors
+\section{Compressors}
+Air compressors come in many different styles. They are generally rated by the volume of air they can compress in a given amount of time to a specific pressure. When operating below this pressure, they may be able to pump even greater amounts of air- and when above it, they will pump less, or maybe even none at all.
+
+Due to the ideal gas law,
+
+\begin{align}
+	P \volume = m R T
+\end{align}
+
+When compressing air (higher $P$), the volume necessarially decreases, but the temperature also rises. Couple this with the fact that air compression is not the most efficient process, and compressors can get extremely hot, which is why they usually have heat-sinking fins and may have active cooling.
 
 \section{Pneumatic Cylinders}
 
@@ -742,7 +795,7 @@ For a cylinder being retracted, the pressure doesn't act on the entire bore, but
 	F_{retract} = P \frac{\pi}{4} [ d_{bore}^2 - d_{rod}^2 ]
 \end{align}
 
-My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{Swiss Army Engineer}} tool contains calculators to analyze pistons- including some analysis for fast-acting pistons (using much more complicated math than these equations).
+My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\underline{EveryCalc}} tool contains calculators to analyze pistons- including some analysis for fast-acting pistons (using much more complicated math than these equations).
 
 % TODO: \section{Air Usage Analysis}
 

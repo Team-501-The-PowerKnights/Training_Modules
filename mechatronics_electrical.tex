@@ -226,30 +226,33 @@ If only speed data is need (i.e. for the tachometer of a car, where the engine n
 \subsection{Vision}
 
 \begin{figure}[H]
-\begin{subfigure}[b]{.24\linewidth}
+\begin{subfigure}[b]{.19\linewidth}
+\includegraphics[height=0.9in]{imgs/sensor_cv.png}  % TODO: Color/Light sensors
+\subcaption{Light/Color Sensor}
+\end{subfigure}\begin{subfigure}[b]{.19\linewidth}
 \includegraphics[height=0.9in]{imgs/sensor_ultrasonic.jpeg}
 \subcaption{Ultrasonic Sensor}
-\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
+\end{subfigure}\begin{subfigure}[b]{.19\linewidth}
 \includegraphics[height=0.9in]{imgs/sensor_tof.jpeg}
 \subcaption{Time of Flight Sensor}
-\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
+\end{subfigure}\begin{subfigure}[b]{.19\linewidth}
 \includegraphics[height=0.9in]{imgs/sensor_lidar.png}
 \subcaption{LIDAR}
-\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
+\end{subfigure}\begin{subfigure}[b]{.19\linewidth}
 \includegraphics[height=0.9in]{imgs/sensor_cv.png}
 \subcaption{Computer Vision}
-\end{subfigure} % TODO: Color/Light sensors
+\end{subfigure}
 \caption{Sensors for giving a sense of vision.}
 \end{figure}
 
 \begin{asparaenum}[a)]
+\item \textit{Light and color sensors} have a simple photoreciever which picks up light. This light may either be \textit{ambient} or produced by the sensor itself and reflected back. Calibration of color sensors is very important to gaining consistent readings, as unlike full-blown computer vision, shape and context are not (inherently) available.
 \item \textit{Ultrasonic sensors} send out high-pitched sound waves and measure how long it takes for them to return. These can be finnicky, and do not work to detect objects that absorb, rather than reflect sound.
 \item \textit{Time of flight} sensors work on the same principle as ultrasonic sensors, but with light. Light travels much, much faster- so these devices are more sophisticated and expensive.
 \item \textit{LIDAR} systems employ a moving time of flight sensor to build a 3D map of the surroundings.
 \item \textit{Computer Vision (CV)} can be used to pick up targets visually and determine their distance and relative position. It's particularly easy when the targets are a specialized color and shape that is distinct from everything else. CV systems can operate on even the simplest of hardware such as a smartphone, but the latency and image quality may suffer. Specialized sensors exist to improve the key performance parameters when using a camera in a real-time system.
 \end{asparaenum}
 
-% Don't go too in-depth on these; just talk about pros/cons
 \subsection{Inertial Measurement}
 Measurement of position in 3D space can be established alternatively by measuring accelerations and magnetic fields.
 
@@ -262,7 +265,6 @@ Measurement of position in 3D space can be established alternatively by measurin
 
 
 \section{Terminals and Connectors}
-% Encyclopedia of the different types
 
 \begin{figure}[H]
 \begin{subfigure}[b]{.24\linewidth}
