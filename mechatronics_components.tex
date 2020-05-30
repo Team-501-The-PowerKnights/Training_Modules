@@ -4,14 +4,6 @@
 
 Getting power transmitted over a shaft in a straight line is not terribly difficult, but still must be done properly.
 
-\subsection{Nomenclature}
-
-\begin{figure}[H]
-\includegraphics[width=0.5\textwidth]{imgs/radial_axial.png}
-\caption{Axial vs. radial directions.}
-\end{figure}
-%TODO: Tangential, angular
-
 \subsection{Shafts, Hubs, and Interfaces}
 	
 	\textit{Shafts}\index{shafts} or \textit{axles}\index{axles} are rotating components which mate into \textit{hubs}. \textit{Hubs}\index{hubs} may be used then to mount to other useful components like wheels or arms, or may be integral to said useful components.
@@ -221,6 +213,11 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 	\item A gear's \textit{pressure angle}(PA) measures how steep the teeth are, or the angle of the contact line. This must be the same between two gears for them to be compatible. There is a lot of testing and science behind picking a good angle; higher angles are weaker and produce higher loads on the system, but do make oil flow better. Usually, though, this isn't a big concern- just make sure that you don't mix and match pressure angles. 14.5 degrees is common for greased gears.
 \end{asparaenum}
 
+%TODO: gear forces visualized
+%TODO: lead screws
+%TODO: backlash
+%TODO: example calculations of gear ratios (speed and torque)
+
 \index{gear!types}
 \begin{figure}[H]
 	\begin{subfigure}[b]{.32\linewidth}
@@ -265,6 +262,8 @@ Gears are specified, among other things, by the number of teeth, their \textit{p
 	\item \textit{Worm} gears are extremely compact reductions, but are often not very efficient. The worm wheel (right) might have one or several \textit{leads}, or teeth. A lower number of leads will reduce the gear set's ability to be backdriven, which can be a desirable characteristic.
 	\item A \textit{rack and pinion}\index{gear!rack and pinion} can be used to transform rotary motion into linear motion, or vice versa.	
 \end{asparaenum}
+
+% TODO: Differentials and LSDs
 
 \begin{figure}[H]
 	\includegraphics[width=0.6\textwidth]{imgs/gearset_idler.jpeg}
@@ -397,6 +396,7 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 \end{figure}
 	Belts can be crossed in order to transmit power while reversing direction, or even transmit power between non-parallel axles. This generally works best with polycord, but can be accomplished with any belt.
 	
+% \section{Lead Screws}
 	
 \section{Energy Storage} \label{sec:energy_storage}
 
@@ -542,6 +542,7 @@ My \href{http://thaddeus-maximus.github.io/swissarmyengineer/}{\color{red}\under
 		\item \textit{Omni wheels} have rollers on them that are perpindicular to the axis of rotation. This allows them to transmit power back like a normal wheel, but they have no resistance to being pushed sideways. This can be desirable in drivetrains (see section \ref{sec:drivetrains}). They are also good as casters, as they do not have a swivel stem that needs to reorient before moving in a new direction.
 		\item \textit{Mecanum wheels} have rollers on them that are oriented 45 degrees to the axis of rotation. This allows them to transmit power at a 45 degree angle, while being able to be pushed at -45 degrees. This makes them useful in drivetrains and intake systems (see sections \ref{sec:drivetrains} and \ref{sec:intakes}).
 	\end{asparaenum}
+	% TODO: Casters? There are some considerations like steering torque if they're to be used
 
 \newpage
 \section{Engagement and Disengagement} \label{sec:disengagement}
