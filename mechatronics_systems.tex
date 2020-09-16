@@ -161,12 +161,12 @@ A \textit{gantry} consists of multiple elevators or linear stages stacked orthag
 	\caption{Parallel 4 bar mechanism}
 \end{figure}
 
-\subsection{Fixed Arms}
+\subsection{Pivoting Arms}
 \index{arm!fixed}
 
 \begin{figure}[H]
 	\includegraphics[height=2.5in]{imgs/simple_arm.jpeg}
-	\caption{A simple fixed arm.}
+	\caption{A simple pivoting arm.}
 \end{figure}
 
 \textit{Fixed} arms are the simplest lifting mechanism, consisting of a beam which is driven about a pivot point. This means whatever is fixed to the end will rotate with the entire arm.
@@ -298,7 +298,7 @@ Flywheel based shooters sometimes have multiple stages of flywheels in order to 
 \section{Drivetrains} \label{sec:drivetrains}
 Drivetrains allow for movement across surfaces. Drivetrains have many considerations which depend on the use case.
 \begin{asparaenum}[a)]
-\item The type of \textit{microterrain}\index{terrain} that must be traversed has to be considered- is it squishy? Is it solid? Is it slippery or icy? 
+\item The type of \textit{microterrain}\index{terrain} that must be traversed has to be considered- is it squishy? Is it solid? Is it slippery or icy? What materials will generate grip?
 \item The type of \textit{macroterrain} that must be traversed has to be considered- is it flat? Is it bumpy? What is the geometry of the bumps that must be traversed- will the drivetrain \textit{bottom out} or \textit{high-center}?
 \item There may be a \textit{target velocity} that must be reached.
 \item The \textit{ride quality} is important so as not to damage cargo, electronics, or passengers.
@@ -440,7 +440,7 @@ But there's one thing we're leaving out of the picture, and that's the \textit{c
 
 Our drop-center drivetrain will alternate between these two suboptimal centers of rotation. Some people don't like this, and thusly opt for an \textit{eight-wheel drive} (8WD). This way the center 4 wheels are normally in contact with the floor, so the center of gravity is very close to the center of rotation.
 
-An alternative (or additional remedy) to adding center drop is to add \textit{corner omnis} \index{wheels!omni}. Instead of the outside wheels being traction wheels, they are omni wheels. These have no resistance to turning scrub, so eliminate scrub entirely. Some designers opt to replace all of the wheels with omnis to make \textit{4 omni drivetrains}. These can produce very agile drifting maneuvers, but have no resistance to being pushed sideways.
+An alternative (or additional remedy) to adding center drop is to use \textit{corner omnis} \index{wheels!omni}. Instead of the outside wheels being traction wheels, they are omni wheels. These have minimal resistance to turning scrub, so eliminate scrub entirely. Some designers opt to replace all of the wheels with omnis to make \textit{4 omni drivetrains}. These can produce very agile drifting maneuvers, but have minimal resistance to being pushed sideways.
 
 \subsection{Omnidrives}
 \index{omnidirectional}
@@ -516,17 +516,18 @@ A jump-drive version of a mecanum drive is sometimes called an \textit{octocanum
 \end{subfigure}\begin{subfigure}[b]{.32\linewidth}
 	\includegraphics[height=1.7in]{imgs/drivetrain_swerve_coax.jpeg}
 	\caption{Coaxial module}
-\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
-	\includegraphics[height=1.7in]{imgs/drivetrain_swerve_diff.png}
-	\caption{Differential}
 \end{subfigure}
+%\begin{subfigure}[b]{.32\linewidth}
+%	\includegraphics[height=1.7in]{imgs/drivetrain_swerve_diff.png}
+%	\caption{Differential}
+%\end{subfigure}
 \caption{Swerve/crab module types.}
 \end{figure}
 
 \begin{asparaenum}[a)]
 	\item \textit{Distributed}\index{swerve!distributed} modules are steered by an external motor, and have a motor in the module that spins with the module. This makes the module in some ways simpler as it does not need a bevel gear or other means to change the direction of rotation, but it does make the module quite large, and the motor's electrical wires limit the rotation of the module.
 	\item \textit{Coaxial}\index{swerve!coaxial} modules are both steered and powered by an external motor.
-	\item \textit{Differential}\index{swerve!differential} modules are a type of module (usually coaxial) that blends together steering and powering. Two motors are still required, but can both be utilized to create propulsive force. Additional gearing makes it such that
+%	\item \textit{Differential}\index{swerve!differential} modules are a type of module (usually coaxial) that blends together steering and powering. Two motors are still required, but can both be utilized to create propulsive force. Additional gearing makes it such that
 	\begin{align}
 		T_{steering} = T_{motor, 1} - T_{motor, 2}\\
 		T_{thrust}   = T_{motor, 1} + T_{motor, 2}
