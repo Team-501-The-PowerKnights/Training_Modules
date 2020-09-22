@@ -108,7 +108,7 @@
  \subsection{Thermal Properties}
  \index{thermal characteristics}
  The thermal properties of a material may also be important to your application. There are three main ones to keep in mind if you are dealing with heat:
- \begin{asparaitem}
+ \begin{asparaitem}[ ]
  	\item \textit{Thermal conductivity} is how well the material transfers heat. If you're designing a heat sink, you want a high thermal conductivity.
  	\item The \textit{melting point} or \textit{glass transition temperature} are temperatures at which the material undergoes fundamental phase changes. You obviously need to make sure your part doesn't outright melt, but you should also have a bit of margin, as the phenomenon called \textit{creep} can cause parts that are at elevated temperatures to deform over time, even though below melting point.
  	\item The \textit{coefficient of thermal expansion} measures how much material expands as it heats up. If you're working with tight-tolerance equipment (or extreme temperatures), you may need to keep an eye on this.
@@ -165,9 +165,9 @@ A few interesting things to note:
 	\item Polycarbonate and Nylon are particularly good materials for their mechanical properties, especially in impact resistance. Their elongation at break is \textbf{more than 100\%}!
 \end{asparaenum}
 
-\begin{mdframed}[style=MyFrame]
+\begin{qbox}
 	You'll notice that many of the materials listed have a hyphenated code (-T6 and 6061-T6, -N in 4130-N). What does this mean? Does it affect the elastic modulus?
-\end{mdframed}
+\end{qbox}
 
  \section{Form Factors}
  
@@ -233,9 +233,9 @@ A few interesting things to note:
  
  \textit{DOM (Drawn-Over-Mandrel)} or \textit{seamless} tubing further processes this tubing to remove the inner seam and produce a product as if it were extruded. It is typically used in demanding applications such as aerospace or motorsports, as well as in components which cannot have a weld seam (such as a receiver hitch, or telescoping tubes).
 
- \begin{mdframed}[style=MyFrame]
+ \begin{qbox}
  	Other than telescoping tubes, why else is the weld seam problematic or annoying?
- \end{mdframed}
+ \end{qbox}
  
  \subsection{Sheet}
  Material that is sold as sheet rather than plate usually has little-to-no straightness tolerance (in especially thin gauges, it might even be sold as rolls).
@@ -369,9 +369,9 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  	\caption{Broach Detail}
  \end{figure}
 
- \begin{mdframed}[style=MyFrame]
+ \begin{qbox}
  	How could you put a female hexagon into a blind hole (like on a socket head screw)?
- \end{mdframed}
+ \end{qbox}
  
  
  \subsection{Path Cutting}
@@ -573,7 +573,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	Threaded fasteners (bolts, nuts, and screws) are a ubiquitous solution. There's an age old question of the difference between a screw and a bolt and the answer is merely in application: if it goes into a nut, it's a bolt. Otherwise, it's a screw. So, anything said about screws is true of bolts and vice versa.
 	
 	\begin{figure}[H]
-		\includesvg{dwgs/screw}
+		\includesvg[width=0.7\textwidth]{dwgs/screw}
 		\caption{Thread nomenclature and dimensions.}
 	\end{figure}
 	
@@ -707,9 +707,9 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	
 	The drive heads on flat head, button head, and shoulder screws are necessarily smaller than those of socket head screws, and thusly strip out easier.
 
-	\begin{mdframed}[style=QuestionBox]
+	\begin{qbox}
 		Why was the phillips head screw designed to cam out?
-	\end{mdframed}
+	\end{qbox}
 	
 	\index{screws and bolts!preload}
 	\begin{figure}[H]

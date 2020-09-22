@@ -27,7 +27,7 @@
 
 \usepackage{paralist}
 
-\usepackage[paper=a4paper,margin=1in]{geometry}
+\usepackage[paper=letterpaper,margin=1in]{geometry}
 
 \usepackage{etoolbox}
 
@@ -35,18 +35,14 @@
 \makeindex
 
 \usepackage{mdframed}
-\mdfdefinestyle{QuestionBox}{%
-    linecolor=black,
-    outerlinewidth=2pt,
-    %roundcorner=20pt,
-    innertopmargin=4pt,
-    innerbottommargin=4pt,
-    innerrightmargin=4pt,
-    innerleftmargin=4pt,
-        leftmargin = 4pt,
-        rightmargin = 4pt
-    %backgroundcolor=gray!50!white}
-        }
+\mdfdefinestyle{qbox}{
+	frametitlebackgroundcolor   =black!15,
+    frametitlerule          	=false,
+    backgroundcolor     = lightgray,
+    innertopmargin      =\topskip,
+    innerbottommargin   =\topskip,
+}
+\newmdenv[style=qbox]{qbox}
 
 %\addtolength{\oddsidemargin}{-.875in}
 %\addtolength{\evensidemargin}{-.875in}
