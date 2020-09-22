@@ -175,9 +175,9 @@ Getting power transmitted over a shaft in a straight line is not terribly diffic
 		\item \textit{Guibos} or \textit{flex discs} are a joint (can can be considered a CV joint) which use two hubs connected by some flexible (usually rubber) coupling. This helps to absorb vibrations, and handles shaft misalignment.
 	\end{asparaenum}
 
-	\begin{mdframed}[style=QuestionBox]
+	\begin{qbox}
 		What is this "constant velocity" behavior, and why is it important in some applications?
-	\end{mdframed}
+	\end{qbox}
 
 \section{Nonaxial Power Transmission}
 
@@ -314,9 +314,9 @@ Analysing the torque balance on the whole differential reveals
 
 As such, the open differential makes the torque on each wheel the same. This can be problematic if one wheel loses traction, as the other wheel will have its torque capacity correspondingly reduced. \index{differential!limited-slip} \textit{Limited-slip} differentials employ additional components or techniques such as clutch packs to limit the amount of speed difference $|\omega_{left} - \omega_{right}|$ and/or the amount of torque difference $|T_{left} - T_{right}|$ to continue delivering power in adverse conditions. 
 
-\begin{mdframed}[style=QuestionBox]
+\begin{qbox}
 	An adder-subtractor is an arrangment of differentials and gears that can be quite useful. Why would you want to use something like it? (Look up: ``differential swerve", ``differential elevator", ``adder-subtractor module").
-\end{mdframed}	
+\end{qbox}	
 
 \newpage
 
@@ -874,9 +874,9 @@ An \textit{Electronic Speed Controller (ESC)}\index{Electronic Speed Controller 
 
 Whether a motor is wired as delta or wye does not impact the fundamental behavior, but does change its performance characteristics.
 
-\begin{mdframed}[style=QuestionBox]
+\begin{qbox}
 	Why do delta and wye windings behave differently? Are there advantages and disadvantages?
-\end{mdframed}
+\end{qbox}
 
 The hard electrical connections are more robust, but does add some cost and complexity as the ESC is required in order for this motor to work. However, there is one major issue with this setup: what happens when the AC waveform is no longer in sync with the rotation of the rotor? Well, a loss of torque occurs. These motors are not very well-equipped to handle high torques, and so are better equipped for high-RPM, low-load applications, such as propellers on hobby aircraft.
 
@@ -1003,7 +1003,7 @@ Indeed an ugly equation, let's just plot it with some semi-realistic values.
 \end{figure}
 
 In summary:
-\begin{asparaitem}
+\begin{asparaitem}[ ]
 	\item Motors produce less and less torque as they spin up.
 	\item No power is produced when the motor is at maximum speed or maximum torque.
 	\item Maximum power is produced at 50\% of maximum speed, which is also at 50\% of maximum torque.

@@ -1,0 +1,1 @@
+pdflatex "\def\isbook{1} \input{mechatronics_construction.tex}"

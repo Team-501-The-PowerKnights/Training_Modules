@@ -11,13 +11,13 @@ Some sections of this will be dry... The human mind is a weird thing. It's bette
 
 I hope to keep this terse. We're going to go fast and I'm going to leave some things to your imagination or research to figure out exactly how they work. I love mechatronics and hope you do too, so I don't want to spoil it by chewing your steak for you.
 
-\begin{mdframed}[style=QuestionBox]
+\begin{qbox}
 	I'll ask some questions in boxes like these. The answers won't be in this text! It shouldn't be critical for you to know,either, but if you are so inclined, do some additional research and you'll learn more.
-\end{mdframed}
+\end{qbox}
 
 With that... let's begin.
 
-\chapter{Terminology}
+\chapter{Physics \& Terminology}
 
 Engineers use a lot of nomenclature. While some nomenclature is windowdressing, most of it in engineering is useful in saying exactly what you mean. If you've been through physics, or hung around engineers enough, most of these terms should be self-explanatory. Skim through this section- and use it like a glossary if you come across a word you don't know.
 
@@ -89,41 +89,63 @@ We use these terms to denote the shape of material deformation (indicated by the
 
 \end{figure}
 
+\begin{asparaenum}[a)]
+	\item \textit{Shear} is two surfaces sliding past each other, sometimes referred to as \textit{parallelogramming} \index{stress!shear}
+	\item \textit{Tension} is a form of \textit{axial} stress where material is being pulled apart. \index{stress!tension} \index{stress!axial}
+	\item \textit{Compression} is a form of \textit{axial} stress where material is being pushed together. \index{stress!compression}
+	\item \textit{Bending} is when a material bows with curvature. \textit{Cupping}, \textit{bowing}, and \textit{crooking} refer to this phenomenon about different axes of a board. \index{stress!bending}
+	\item \textit{Torsion} is when material twists along an axis. \index{stress!torsion}
+	\item \textit{Buckling} is bending that is induced by compressive loads.
+\end{asparaenum}
+
 \section{Directions and Coordinate Systems}
 \begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{imgs/radial_axial.png}
 \caption{Axial vs. radial directions.}
 \end{figure}
 
-The axial direction is along the axis of symmetry for a shaft, or along the axis of rotation for a rotating component.
-The radial direction(s) are perpindicular to this axis of symmetry, and coincide at a point, emanating outwards.
-The tangential direction(s) are perpindicular to both the radial and axial directions, curving around the axis of rotation.
+\begin{asparaenum}[a)]
+	\item The \textit{axial} direction is along the axis of symmetry for a shaft, or along the axis of rotation for a rotating component. \index{direction!axial}
+	\item The \textit{radial} direction(s) are perpindicular to this axis of symmetry, and coincide at a point, emanating outwards. \index{direction!radial}
+	\item The \textit{tangential} direction(s) are perpindicular to both the radial and axial directions, curving around the axis of rotation. \index{direction!tangential}
+\end{asparaenum}
 
-\textit{Orthogonal} is a synonym for \textit{perpindicular}; at 90 degrees to.
-An axis may be \textit{normal} to a plane if it is perpindicular in two directions.
-If the plane and axis have specified positive directions, it may be \textit{antinormal} if the positive directions are opposed to each other.
-Axes and planes may be \textit{parallel} to each other.
-Axes and planes may be \textit{antiparallel} to each other if the positive directions are opposed to each other.
-A surface (with nonzero curvature) can be \textit{tangent} to a line or another surface.
+\begin{asparaenum}[a)]
+	\item \textit{Orthogonal} is a synonym for \textit{perpindicular}; at 90 degrees to. \index{direction!orthogonal}
+	\item An axis may be \textit{normal} to a plane if it is perpindicular in two directions. \index{direction!normal}
+	If the plane and axis have specified positive directions, it may be \textit{antinormal} if the positive directions are opposed to each other. \index{direction!antinormal}
+	\item Axes and planes may be \textit{parallel} to each other. \index{direction!parallel}
+	\item Axes and planes may be \textit{antiparallel} to each other if the positive directions are opposed to each other. \index{direction!antiparallel}
+	\item A surface (with nonzero curvature) can be \textit{tangent} to a line or another surface. \index{direction!tangent}
+\end{asparaenum}
 
-\textit{Mass} ($m$) is the amount of matter an object has.
-\textit{Force} ($F$) is motive for objects to change velocity.
-\textit{Acceleration} ($a$) is a change in an object's velocity over time.
-\textit{Velocity} ($v$) is a change in an object's position over time.
-\textit{Position} ($x$) is an object's location in space.
+\section{Basic physics}
+
+\begin{asparaenum}[a)]
+	\item \textit{Mass} ($m$) is the amount of matter an object has.
+	\item \textit{Force} ($F$) is motive for objects to change velocity.
+	\item \textit{Acceleration} ($a$) is a change in an object's velocity over time.
+	\textit{Velocity} ($v$) is a change in an object's position over time.
+	\textit{Position} ($x$) is an object's location in space.
+\end{asparaenum}
+
 These three ideas are summed up in the equation of
 
-\begin{equation}
+\begin{align}
 	\vec{F_{net}} = m \times \vec{a}
-\end{equation}
+\end{align}
+\index{Newton's law}
 
 (for rigid objects which do not change mass). You may ask why the $\vec{F}$ and $\vec{a}$ have that little arrow over the top of them. That's to denote that they are \textit{vectors}; they have multiple components. You can break this equation down simply into
 
-\begin{equation}
+\begin{align}
 	F_x = m \times a_x \\
 	F_y = m \times a_y \\
 	F_z = m \times a_z
-\end{equation}
+\end{align}
+
+Oftentimes, engineers will draw \textit{free-body diagrams} to show the forces acting on a body, and \textit{kinetic diagrams} to show the movement. Drawing an examplary one, we see a similarity to the above equation.
+\index{free-body diagram} \index{kinetic diagram}
 
 which lets you see that simply exerting a force on an objet will cause it to accelerate in that given direction. If it has more mass, it will accelerate less.
 
@@ -133,16 +155,44 @@ These concepts exist in an analogue for rotating components as well.
 \textit{Torques} or \textit{Moments} ($T$ or $M$) are twisting forces. They can be quantified by how much force is applied multiplied by the lever arm which it is applied by.
 \textit{Angular acceleration, velocity, and positions} ($\alpha$, $\omega$, $\theta$) are just like their linear counterparts, except they are measured as rotation about an axis.
 
-\begin{equation}
+\begin{align}
 	\vec{M} = \frac{d}{dt} [I] \vec{\omega}
-\end{equation}
+\end{align}
 
-(which again holds for rigid objects). You may ask why the moment of inertia $[I]$ has those brackets around it. That's to denote that it's a \textit{matrix}. This means that breaking the equation down is difficult if there are multiple rotations. The \frac{d}{dt} is a derivative, concept from calculus. Luckily, for the simple case of an object of constant moment of inertia, and spinning only about one axis $x$,
+(which again holds for rigid objects). You may ask why the moment of inertia $[I]$ has those brackets around it. That's to denote that it's a \textit{matrix}. This means that breaking the equation down is difficult if there are multiple rotations. The $\frac{d}{dt}$ is a derivative, concept from calculus. Luckily, for the simple case of an object of constant moment of inertia, and spinning only about one axis $x$,
 
-\begin{equation}
+\begin{align}
 	M_x = I_x \alpha_x
-\end{equation}
+\end{align}
 
 which isn't so scary, and is just like the linear case.
 
 \textit{Energy} is a property that can be transformed in many ways to do useful \textit{work}. There are many forms of energy (spring, gravitational, electrical, chemical) and many different processes that can be used to transform it (combustion, releasing a spring, lifting a heavy object).
+\textit{Power} is a measure of energy transformation / transfer per unit time.
+
+\section{Basic electronics}
+There are a few basic electrical terms which can be confusing at first since they are not everyday, lived phenomena.
+
+\begin{asparaenum}[a)]
+	\item \textit{Current} $I$ (measured in \textit{Amperes}, or amps, $A$) is (roughly) a measure of how many electrons pass through a cross-sectional area (e.g. a wire) per second.
+	\item \textit{Voltage} $V$ or \textit{Electric Potential} (measured in \textit{Volts}, $V$) is a measure of the motive force that is available to push electrons. It is always a relative measurement taken between two points. If it is given as a plain number (e.g. ``this terminal has 12 volts"), then there must be an assumed \textit{ground} that the measurement is taken from.
+	\item \textit{Resistance} $R$ (measured in \textit{Ohms}, $\Omega$) is a measure of how much voltage is required to get a certain amount of current to flow though. Ohm's law expresses this as $\Delta V = I \times R$; the voltage drop across a wire is proportional to both the current passing through it and its resistance. Resistance of a wire can be reduced by using a superior material (copper rather than aluminum), using a larger cross-section (or wire \textit{gague}), and shortening the wire.
+\end{asparaenum}
+
+These concepts are often related to hydraulic systems; voltage is much like pressure, and current like flow rate.
+
+This also leads us to a few laws known as \textit{Kirchoff's laws}.
+
+Kirchoff's Voltage Law states that ``the sum of the voltages across all components in a loop add up to zero". Mathematically,
+\begin{align}
+	\Sigma_{loop} \Delta V = 0
+\end{align}
+
+Some thinking would reveal that this is merely a different way of stating that ``all voltages are relative."
+
+Kirchoff's Current Law states that ``the sum of currents entering a node (a point where multiple components meet) add up to zero". Mathematically,
+\begin{align}
+	\Sigma_{node} I = 0
+\end{align}
+
+This should make sense as the electrons must go somewhere. This is merely a different way of stating that ``electrons cannot be destroyed."

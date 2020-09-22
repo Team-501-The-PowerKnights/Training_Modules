@@ -9,13 +9,16 @@ A lot of this first chapter in design will be thinking about the design process 
 I'll say project, and not team because some projects are done by individuals, and projects are bigger than teams. There's a lot of adages about project management. This is not a project management book and doesn't set out to be, but the fact of the matter is that project management influences technical design, to the chagrin of many engineers. Management is wed to engineering, and the divorce is always an ugly one. May as well be good bedfellows, and make a happy marriage.
 
 What you can do in a project should always be considered. There are a number of mantras which dwell on this:
-"Good, fast, or cheap: choose two." (The delusional will realize "none" is also an option.)
-"A robot with 1 mechanism at 100\% is better than 10 working at 10\%"
-"The first 80\% of the task can be accomplished with 20\% of the work."
+
+\begin{asparaitem}
+	\item ``Good, fast, or cheap: choose two." (The delusional will realize ``none" is also an option.)
+	\item ``A robot with 1 mechanism at 100\% is better than 10 working at 10\%"
+	\item ``The first 80\% of the task can be accomplished with 20\% of the work."
+\end{asparaitem}
 
 \section{Designing Metrics}
 
-A lot of my thoughts on high-level design and metrics are grafted from the world of software. \href{https://www.destroyallsoftware.com/talks/boundaries}{\color{red}\underline{Gary Berndhart's Boundaries Talk}} is a particularly good example of this because it highlights what so many engineers do wrong in their testing and design. The essential problem is that they get locked into a particular set of units which must exist, and so metrics are formed based around these units rather than end results.
+A lot of my thoughts on high level design and metrics are grafted from the world of software. Gary Berndhart's \href{https://www.destroyallsoftware.com/talks/boundaries}{\color{red}\underline{Boundaries}} is a particularly good example of this because it highlights what so many engineers do wrong in their testing and design. The essential problem is that they get locked into a particular set of units which must exist, and so metrics are formed based around these units rather than end results.
 
 %There are a number of fallacies people make about metrics:
 %- Metrics are just suggestions
@@ -25,15 +28,17 @@ A lot of my thoughts on high-level design and metrics are grafted from the world
 
 Competitive robotics is a good case study. Take these two sets of requirements which show the extremes of this axis:
 
-1. Score as many points (at least 150) as possible during a match
-2. Be easily resettable after a match
+\begin{asparaenum}[1)]
+	\item Score as many points (at least 150) as possible during a match
+	\item Be easily resettable after a match
+\end{asparaenum}
 
-1. 200 Watts of shooter power
-2. Drivetrain free-speed of 15 ft/s
-3. Total machine weight under 90 pounds
-4. Intake spins at 30 ft/s
-5. 
-...
+\begin{asparaenum}[1)]
+	\item 200 Watts of shooter power
+	\item Drivetrain free-speed of 15 ft/s
+	\item Total machine weight under 90 pounds
+	\item Intake spins at 30 ft/s
+\end{asparaenum}
 
 The first set of requirements is... well it's pretty shallow. It doesn't give you much to really go off of, and it doesn't allow you to test the results incrementally. There's no way of knowing you're going to achieve your overarching goal of 150 points until you build everything and play some matches.
 
@@ -41,7 +46,7 @@ The first set of requirements is... well it's pretty shallow. It doesn't give yo
 	Metrics should be unit-testable, to help gain confidence in your design.
 \end{theorem}
 
-The second requirement has a problem of measurement- how easy is "easy"? Do we quantify it with time, with tools required, with amount of swears uttered by the pit crew?
+The second requirement has a problem of measurement- how easy is ``easy"? Do we quantify it with time, with tools required, with amount of swears uttered by the pit crew?
 
 \begin{theorem}
 	Metrics should be measurable.
@@ -78,7 +83,7 @@ It is well to design something so that it \textit{could} achieve the desired met
 
 \textit{modularity}, breaking a system down into modules which have clearly defined inputs and outputs, helps to perform \textit{unit testing}, where an individual portion is tested in isolation before being inserted to the rest of the system. Especially in the mechanical world, unit tests are not perfect, but they reduce overall testing effort. How does adding additional tests reduce testing effort?
 
-This is due to \textit{combinatorial explosion}. A machine may be subject to lots of variance in the inputs. Take a machine with three modules A, B, and C. If input to A has 3 possibilities, B has 4 possibilities, and C has 8 possibilities, then there are $3 \times 4 \times 8 \eq 96$ different possibilities which the machine would need to be tested under. If, however, each unit were tested individually at all possibilities, only $3+4+8 \eq 15$ tests would be needed. Additionally, these tests could be conducted in parallel, so only 8 tests worth of time would be needed.
+This is due to \textit{combinatorial explosion}. A machine may be subject to lots of variance in the inputs. Take a machine with three modules A, B, and C. If input to A has 3 possibilities, B has 4 possibilities, and C has 8 possibilities, then there are $3 \times 4 \times 8 = 96$ different possibilities which the machine would need to be tested under. If, however, each unit were tested individually at all possibilities, only $3 + 4 + 8 = 15$ tests would be needed. Additionally, these tests could be conducted in parallel, so only 8 tests worth of time would be needed.
 
 This of course assumes that there are no complications and the interactions between A, B, and C are fully understood. Some degree of \textit{integration testing} is still needed. Perhaps unit tests could be repeated many times on these units in isolation, then when they are combined, they are only ran once, since all acted as they should have.
 
@@ -400,21 +405,21 @@ If someone can screw it up, don't let them.
 The parts for your machine need to be built. After they're built, they need to be assembled together. After assembly, they will be serviced at some point. One of your objectives as an engineer is to not make the people involved with this process frustrated. If you can add a little bit of material, or avoid making a strange hole, for the sake of your machinist, do it. The many things you can do to make manufacture easy depend on the processes being used.
 
 Designing for assembly and service is a little more straightforward. There are a few general principles:
-\begin{itemize}
+\begin{asparaitem}
 	\item Provide clearance for tools (wrenches, sockets, and rivet guns) both in the axial and radial directions.
-	\item Commonize the tools needed to put a system together. If you need to use both 1/4" and #10 screws, use button head 1/4" and socket head #10, so that the same allen wrench can be used. Better yet, just use all 1/4" or #10.
-	\item Maximize the number of ways the assembly can be put together. At least do this at the higher levels. You shouldn't need to remove 30 pounds of machine to tighten a screw. Another way to think about this is "design for random assembly order".
+	\item Commonize the tools needed to put a system together. If you need to use both 1/4" and \#10 screws, use button head 1/4" and socket head \#10, so that the same allen wrench can be used. Better yet, just use all 1/4" or \#10.
+	\item Maximize the number of ways the assembly can be put together. At least do this at the higher levels. You shouldn't need to remove 30 pounds of machine to tighten a screw. Another way to think about this is ``design for random assembly order".
 	\item Prioritize the common service routines. If a certain bolt is going to be loosened/removed a lot, make sure it's easy to get to.
-\end{itemize}
+\end{asparaitem}
 
 Designing for tuning can save you hours of valuable test time. If you foresee that a mechanism will need to be adjusted, try to ensure that adjustments are simple to make, and that the adjustment can be measured and recorded in a lab manual for reference.
-\begin{itemize}
+\begin{asparaitem}
 	\item Quick pins are the ultimate in quick adjustment. The new position is immediately evident, adjustment doesn't require a tool, and there is no concern of loosening.
 	\item Slotted shims, depending on how they are placed, can be a good option for adjustment. They allow the tuner to write down at a glance what the current position and newly adjusted position are for testing. However, a set of shims is required to make adjustments- meaning that the machine is not self-contained and requires a special toolkit. They also cannot be used to adjust under preload (i.e. adjusting suspension on a car while it is on the ground).
 	\item Tie rods are a simple option for adjustment in many cases. Unlike shims or pins, though, they do not provide any inherent feedback about where they have been adjusted to. The eye-to-eye length could be measured and recorded, but this requires additional tools and may be prone to error.
-	\item Slotted holes (by themselves) are poor methods of adjustment (See: "Loosening"). They can be improved by using a set screw to push against the part in the slot and provide positive positioning. Like tie rods, they do not provide any inherent information about where they have been adjusted to.
+	\item Slotted holes (by themselves) are poor methods of adjustment (See: ``Loosening"). They can be improved by using a set screw to push against the part in the slot and provide positive positioning. Like tie rods, they do not provide any inherent information about where they have been adjusted to.
 	\item Set screws to clamp on rods are awful methods of adjustment. They are extremely prone to loosening... but can be useful for prototypes. They come with (or can be made to have) different tips that are more suited to frequent or infrequent adjustment.
-\end{itemize}
+\end{asparaitem}
 
 \chapter{Choosing Motors and Gear Ratios}
 
@@ -515,7 +520,7 @@ Let's examine a simple case of a motor accelerating a flywheel. This is also (es
 		G T_{stall} \frac{\omega_{free} - \omega}{\omega_{free}} &= \frac{I}{G} \frac{d \omega}{dt}
 	\end{align}
 	
-		This is a "differential equation" ($\frac{d \omega}{dt}$ and $\omega$ appear in the same equation). These are tricky to solve. \textit{There be dragons ahead. If you don't care to know all the intricate mathy details, skim ahead. I don't blame you.}
+		This is a ``differential equation" ($\frac{d \omega}{dt}$ and $\omega$ appear in the same equation). These are tricky to solve. \textit{There be dragons ahead. If you don't care to know all the intricate mathy details, skim ahead. I don't blame you.}
 		
 	\subsection{The Full-Blown Calculus Approach}
 	
@@ -572,7 +577,7 @@ Let's examine a simple case of a motor accelerating a flywheel. This is also (es
 		\caption{Graphical representation of Euler's method.}
 	\end{figure}
 	
-	Another way of putting it... "the next value is the current value, plus the rate of change times the timestep of the simulation". 	We just need to get an expression for the $\frac{d}{dt}f(t)$ we are interested in, and write some code that will repeat this process with a small enough $\Delta t$. This process is sometimes called 'discretization' since we are taking a continuous field of time $t$ and separating it into little $\Delta t$ chunks.	
+	Another way of putting it... ``the next value is the current value, plus the rate of change times the timestep of the simulation". 	We just need to get an expression for the $\frac{d}{dt}f(t)$ we are interested in, and write some code that will repeat this process with a small enough $\Delta t$. This process is sometimes called 'discretization' since we are taking a continuous field of time $t$ and separating it into little $\Delta t$ chunks.	
 		
 	Let's go back to our flywheel example, and add resistance $M_{resist}$ to it. This $M_{resist}$ can be anything- it can represent friction, air resistance, a spring, you name it! The numeric simulation approach makes this trivial.
 	
