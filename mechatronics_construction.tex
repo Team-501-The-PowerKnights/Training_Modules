@@ -7,7 +7,7 @@
  
  \section{Materials}
  
- Everything is made from materials. There are a lot of different materials out there, all with different properties. Some are natural and some are completely synthetic, but all can be measured, quantified, and compared. Important properties we'll focus on are:
+ There are a lot of different materials to build with, all with different properties. Some are natural and some are completely synthetic, but all can be measured, quantified, and compared. Important properties we'll focus on are:
  
  \begin{compactitem}
  	\item Density (weight)
@@ -165,6 +165,10 @@ A few interesting things to note:
 	\item Polycarbonate and Nylon are particularly good materials for their mechanical properties, especially in impact resistance. Their elongation at break is \textbf{more than 100\%}!
 \end{asparaenum}
 
+\begin{mdframed}[style=MyFrame]
+	You'll notice that many of the materials listed have a hyphenated code (-T6 and 6061-T6, -N in 4130-N). What does this mean? Does it affect the elastic modulus?
+\end{mdframed}
+
  \section{Form Factors}
  
  Just because the material you want exists doesn't mean that it's widely available in the shape you want. There are a lot of different shapes that a material may be available in, and there are trade-offs with each different form factor.
@@ -228,6 +232,10 @@ A few interesting things to note:
 \end{figure}
  
  \textit{DOM (Drawn-Over-Mandrel)} or \textit{seamless} tubing further processes this tubing to remove the inner seam and produce a product as if it were extruded. It is typically used in demanding applications such as aerospace or motorsports, as well as in components which cannot have a weld seam (such as a receiver hitch, or telescoping tubes).
+
+ \begin{mdframed}[style=MyFrame]
+ 	Other than telescoping tubes, why else is the weld seam problematic or annoying?
+ \end{mdframed}
  
  \subsection{Sheet}
  Material that is sold as sheet rather than plate usually has little-to-no straightness tolerance (in especially thin gauges, it might even be sold as rolls).
@@ -360,6 +368,10 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  	\includegraphics[width=0.7\textwidth]{imgs/broach_detail.jpeg}
  	\caption{Broach Detail}
  \end{figure}
+
+ \begin{mdframed}[style=MyFrame]
+ 	How could you put a female hexagon into a blind hole (like on a socket head screw)?
+ \end{mdframed}
  
  
  \subsection{Path Cutting}
@@ -384,29 +396,29 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  
  \begin{asparaenum}[a)]
   	\item \textit{Plasma cutters}\index{path cutting!plasma cutting} use an arc to melt metal and pressurized air to blow it away. The tolerances are usually good for large shapes, but not for precision work.
- 	\item \textit{Laser cutters}\index{path cutting!laser cutting} melt material with a laser and either simply vaporize it or use pressurized air to blow it away. Hobby lasers can cut some plastics and plywood, while industrial systems can cut metal. The tolerances are usually acceptable with these machines ($\pm 0.020"$).
+ 	\item \textit{Laser cutters}\index{path cutting!laser cutting} melt material with a laser and either simply vaporize it or use pressurized air to blow it away. Hobby lasers can cut some plastics and plywood, while industrial systems can cut metal. The tolerances are usually acceptable with these machines ($\pm 0.020" or better$).
  	\item \textit{Waterjet cutters}\index{path cutting!waterjet cutting} mix high-pressure water with garnet sand and blast it at material, rapidly abrading it. The tolerances are usually good with this process ($\pm 0.010"$ or better).
  	\item \textit{EDMs}\index{path cutting!EDM} (electric-discharge-machines) use an electrified wire to remove material. The wire is fed through or plunged into material. The electrification zaps away material next to the wire. The tolerances with this process can be impeccable ($\pm 0.001"$ or better). 
 \end{asparaenum}
  	
- 	These all allow us to overcome the depth-to-diamter ratio imposed by milling, and can sometimes be much quicker setup than traditional machining, though they all come with their own drawbacks.
+ 	These all allow machinists to overcome the depth-to-diamter ratio imposed by milling, and can sometimes be much quicker setup than traditional machining, though they all come with their own drawbacks.
+  
+  The first limitation is the width of the beam. Since a finitely sized beam muse be used, infinitely sharp interior corners cannot be made.
  
+  Draft is also an issue. Laser-cutters typically have a point in the thickness where the beam is focused to. This means that the laser doesn't cut a line in its cross-section, but rather an X. Thus the resulting shape is two-dimensional. With a waterjet or plasma cutter, the draft grows exponentially. This may be acceptable, or require further post-machining to bring it into specification.
+ 
+  Draft (and power) also limits how thick of material can feasibly be cut with these processes, although it should be noted that EDM can cut extremely thick materials compared to the other processes.
+
  \begin{figure}[H] \centering
  	\includegraphics[width=0.5\textwidth]{imgs/lasercut_focus.jpeg}
  	\caption{Focal properties of a laser cutter's beam.}
  \end{figure}
  
-  The first limitation is the width of the beam. Since a finitely sized beam muse be used, infinitely sharp interior corners cannot be made.
- 
  \begin{figure}[H] \centering
  	\includegraphics[width=0.9\textwidth]{imgs/waterjet_draft.jpeg}
  	\caption{Draft and surface quality samples on a waterjet with different settings.}
  \end{figure}
- 
-  The next consideration that must be made is draft. Laser-cutters typically have a point in the thickness where the beam is focused to. This means that the laser doesn't cut a line in its cross-section, but rather an X. Thus the resulting shape is two-dimensional. With a waterjet or plasma cutter, the draft grows exponentially. This may be acceptable, or require further post-machining to bring it into specification.
- 
- Draft (and power) also limits how thick of material can feasibly be cut with these processes, although it should be noted that EDM can cut extremely thick materials compared to the other processes.
- 
+
  \subsection{Sheet Forming}
  \index{sheet metal!forming}
  \index{sheet metal!bending}
@@ -688,12 +700,16 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\item \textit{External hex} is very robust, although preferred only when side access is available as it has a large profile.
 		\item \textit{Socket hex} has become an industry preferred head, very easy to access from head-on or in a deep pocket.
 		\item \textit{Flathead} is not a preferred drive type; it is very easy to have driver fall out while using, and the torque-transferring capacity is quite low.
-		\item \textit{Phillips} heads are very much not preferred as they are very easy to cam out (in fact, they were designed to do so as a means of limiting the installation torque). When driving a Phillips screw, apply inward pressure, and make sure the proper size driver is selected (it should fit nicely).
+		\item \textit{Phillips} heads are very much not preferred as they are very easy to cam out (in fact, they were designed to do so). When driving a Phillips screw, apply inward pressure, and make sure the proper size driver is selected (it should fit nicely).
 		\item \textit{Torx} is a preferred drive method, but more expensive and the tools to use it are less common. Very difficult to strip out. When using button-head or flat-head screws, if a Torx variant is available, it can be wise to opt for it as the torque-transferring capacity is higher.
 		\item \textit{Robertson} or square drive is somewhat preferred, but not common. It is usually found only in wood screws.
 	\end{asparaenum}
 	
 	The drive heads on flat head, button head, and shoulder screws are necessarily smaller than those of socket head screws, and thusly strip out easier.
+
+	\begin{mdframed}[style=QuestionBox]
+		Why was the phillips head screw designed to cam out?
+	\end{mdframed}
 	
 	\index{screws and bolts!preload}
 	\begin{figure}[H]
@@ -702,7 +718,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		 \label{fig:bolted_joint} 
 	\end{figure}
 	
-	When you tighten a screw to a torque, this not only prevents the nut from falling off, but clamps the parts together. This clamping force that is imparted upon installation is \textit{preload}\index{preload}, which is very important in threaded joints. For shear loads as illustrated in Figure \ref{fig:bolted_joint}, the load is best carried by the friction inbetween plates rather than shearing the pin itself, since the load is distributed across a larger area. For joints that seal against pressures, preload is imperative as it prevents separation under pressure.
+	When you tighten a screw, this not only prevents the nut from falling off, but clamps the parts together. This axial clamping force that is imparted upon installation is \textit{preload}\index{preload}, which is very important in threaded joints. For shear loads as illustrated in Figure \ref{fig:bolted_joint}, the load is best carried by the friction inbetween plates rather than shearing the pin itself, since the load is distributed across a larger area. For joints that seal against pressures, preload is imperative as it prevents separation under pressure.
 	
 	\index{thread!pitch}
 	The preload depends both on how much torque is applied to the fastener, and the pitch of the thread. A finer-pitched screw will impart greater preload. Finer-pitched screws also have the benefit of an increased core (minor) diameter, so greater strength in shear. The finer threads may be more fragile and require tighter tolerance, though.
