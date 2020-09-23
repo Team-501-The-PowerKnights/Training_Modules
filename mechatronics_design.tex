@@ -1,4 +1,6 @@
 \chapter{High-Level Design Principles}
+ 
+ {\slshape \scshape ``Everything should be made simple, but no simpler." - Albert Einstein}
 
 Welcome to the opinionated part of this text. Like many opinions, they're held for particular reasons, and made by a human rather than divine intervention. The best you can hope is that I've been divinely inspired, so ask yourself constantly, "does this make sense?"
 
@@ -16,6 +18,14 @@ What you can do in a project should always be considered. There are a number of 
 	\item ``The first 80\% of the task can be accomplished with 20\% of the work."
 \end{asparaitem}
 
+There's a lot of bad management out there. I'm not going to profess to know everything. I'm compiling from lots of stories, observations, and lived experiences. Above all, what I've noticed is this:
+
+\begin{theorem}
+	Good management works. If your management isn't adding value, it's bad and you should stop it.
+\end{theorem}
+
+This sounds... obvious, but I've watched many teams led into processes on the basis of ``this is the way we do it." Good management working doesn't mean you're winning and succeeding all of the time- it just means that it's increasing the likelihood. Do not be afraid to re-assess mid-stream and change course. Management is continuous development, not divine revelation.
+
 \section{Designing Metrics}
 
 A lot of my thoughts on high level design and metrics are grafted from the world of software. Gary Berndhart's \href{https://www.destroyallsoftware.com/talks/boundaries}{\color{red}\underline{Boundaries}} is a particularly good example of this because it highlights what so many engineers do wrong in their testing and design. The essential problem is that they get locked into a particular set of units which must exist, and so metrics are formed based around these units rather than end results.
@@ -26,50 +36,62 @@ A lot of my thoughts on high level design and metrics are grafted from the world
 %- Metrics just need to be a "direction of goodness"
 %- Metrics need to be fully detailed before design can be started
 
-Competitive robotics is a good case study. Take these two sets of requirements which show the extremes of this axis:
+Let's look at a few sets of metrics that a team partaking in competitive robotics might generate after recieving their challenge.
 
 \begin{asparaenum}[1)]
 	\item Score as many points (at least 150) as possible during a match
 	\item Be easily resettable after a match
 \end{asparaenum}
 
-\begin{asparaenum}[1)]
-	\item 200 Watts of shooter power
-	\item Drivetrain free-speed of 15 ft/s
-	\item Total machine weight under 90 pounds
-	\item Intake spins at 30 ft/s
-\end{asparaenum}
-
-The first set of requirements is... well it's pretty shallow. It doesn't give you much to really go off of, and it doesn't allow you to test the results incrementally. There's no way of knowing you're going to achieve your overarching goal of 150 points until you build everything and play some matches.
+This first set of metrics is... well it's pretty shallow. It doesn't give engineers any meaningful guidance, and it doesn't allow you to test the results incrementally (more on this later). There's no way of knowing you're going to achieve your overarching goal of 150 points until you build everything and play some matches.
 
 \begin{theorem}
 	Metrics should be unit-testable, to help gain confidence in your design.
 \end{theorem}
 
-The second requirement has a problem of measurement- how easy is ``easy"? Do we quantify it with time, with tools required, with amount of swears uttered by the pit crew?
+The second metric also has a problem of measurement- how easy is ``easy"? Do we quantify it with time, with tools required, with amount of swears uttered by the pit crew?
 
 \begin{theorem}
 	Metrics should be measurable.
 \end{theorem}
 
-The second set of requirements is actually valid, you could definitely build a machine to achieve these results. You could even build a machine that validates these results. But the end behavior may not be desirable. These requirements could be useful to develop at later stages beyond initial development but initially, it already boxes the design into a tall robot with a flywheel shooter. It's easy to get into "requirements hell" as you develop an exhaustive list of requirements you think you'll need, but prototyping might reveal are not so.
+OK, let's try being more detailed with our metrics!
+
+\begin{asparaenum}[1)]
+	\item 200 Watts of shooter power
+	\item Drivetrain free-speed of 15 ft/s
+	\item Total machine weight under 90 pounds
+	\item Intake spins at 30 ft/s
+	\item Drivetrain shifter spread of 1.5
+	\item Drivetrain uses 4 CIM Motors
+	\item ...
+\end{asparaenum}
+
+This is much more helpful for engineers in terms of getting work done; you could definitely build a machine to achieve these results. You could even build a machine that validates these results (by inspection, you could easily tell how many motors it uses!). But the end behavior may not be desirable. These requirements could be useful to develop at later stages beyond initial development but initially, it already boxes in the design. It's easy to get into "requirements hell" as you develop an exhaustive list of requirements you think you'll need, but prototyping might reveal are not so.
 
 \begin{theorem}
 	Metrics should not try to box in a design until they need to.
 \end{theorem}
 
-A more useful set of requirements would be:
+To make this more clear, let's look at a last set of metrics that is much better.
 
-1. Score 5 balls into a goal in under 10 seconds
-1A. Collect 5 balls from ground in 5 seconds
-1B. Shoot 5 balls into goal in 2 seconds
-1C. Shooting accuracy of 90%
-2. Play defense
-2A. Push with 120 pounds of force
-2B. Not get caught in friction pins
-2C. Move 10 feet in 1.5 seconds
-2D. Does not brown out under stall
-3. Able to be reset by field crew with standard toolkit in under 10 minutes
+\begin{asparaenum}[1)]
+	\item Score 5 balls into a goal in under 10 seconds
+	\begin{asparaenum}[\ \ a)]
+		\item Collect 5 balls from ground in 5 seconds
+		\item Shoot 5 balls into goal in 2 seconds
+		\item Shooting accuracy of 90\%
+	\end{asparaenum}
+	\item Play defense
+	\begin{asparaenum}[\ \ a)]
+		\item Push with 120 pounds of force
+		\item Not get caught in friction pins
+		\item Move 10 feet in 1.5 seconds
+		\item Does not brown out under stall
+	\end{asparaenum}
+	\item Able to be reset by field crew with standard toolkit in under 10 minutes
+	\item ...
+\end{asparaenum}
 
 These metrics refer to particular subsystems and behaviors, are measurable, and do not box in one particular design. They would be crafted with some care and strategic analysis.
 
@@ -81,7 +103,7 @@ Of course, sometimes you get suprises. Maybe one of your metrics cannot be accom
 
 It is well to design something so that it \textit{could} achieve the desired metrics, but \textit{tuning} it so that it does and \textit{testing} it to confirm it does, are different stories. 
 
-\textit{modularity}, breaking a system down into modules which have clearly defined inputs and outputs, helps to perform \textit{unit testing}, where an individual portion is tested in isolation before being inserted to the rest of the system. Especially in the mechanical world, unit tests are not perfect, but they reduce overall testing effort. How does adding additional tests reduce testing effort?
+\textit{Modularity}, breaking a system down into modules which have clearly defined inputs and outputs, helps to perform \textit{unit testing}, where an individual portion is tested in isolation before being inserted to the rest of the system. Especially in the mechanical world, unit tests are not perfect, but they reduce overall testing effort. How does adding additional tests reduce testing effort?
 
 This is due to \textit{combinatorial explosion}. A machine may be subject to lots of variance in the inputs. Take a machine with three modules A, B, and C. If input to A has 3 possibilities, B has 4 possibilities, and C has 8 possibilities, then there are $3 \times 4 \times 8 = 96$ different possibilities which the machine would need to be tested under. If, however, each unit were tested individually at all possibilities, only $3 + 4 + 8 = 15$ tests would be needed. Additionally, these tests could be conducted in parallel, so only 8 tests worth of time would be needed.
 
@@ -89,7 +111,26 @@ This of course assumes that there are no complications and the interactions betw
 
 Designing for unit testing has an additional advantage for the upfront design phase in that a module does not depend upon the others for testing and iteration. It also is advantageous in that the inputs and outputs of units can be better understood through observation.
 
-How does one go about designing such that testing is easy? Well, it goes back to metrics! Metrics must be established for a unit. The inputs and outputs must be understood. The unit can then be designed as intended, and \textit{mocks} can be made for missing or dependent components (a full electrical system may be replaced by, say, a battery and a switch... a drivetrain may be replaced by a dolly). The mocks should be as close to the real components as possible in order to minimize mis-testing.
+\begin{theorem}
+	Modular testing with good fakes helps understanding, prototyping, and final testing.
+\end{theorem}
+
+How does one go about designing such that testing is easy? Well, it goes back to metrics! Metrics must be established for a unit to be tested. The inputs and outputs must be understood. The unit can then be designed as intended, and \textit{fakes} can be made for missing or dependent components (a full electrical system may be replaced by, say, a battery and a switch... a drivetrain may be replaced by a dolly). The fakes should be as close to the real components as possible in order to minimize mis-testing.
+
+\addvspace{2.0ex}
+\begin{qbox}
+	There are a lot of terms other than \textit{fake}. \textit{Dummies, spies, mocks, and stubs} are all aspects of software testing. Why so many different terms?
+\end{qbox}
+
+\section{Pick the Right Methods}
+
+Finding the right level to solve a problem on is often a problem. I lump this into high-level design because oftentimes, one must step back to their metrics and ask: ``am I solving the right problem?"
+
+For instance, one might need to grab an item. If one locks into a particular end effector design like a claw, they may start down a path of adding a computer vision system and additional sensing to increase process reliability or speed. However, a more simple mechanical solution may often be the solution: use funnelling, wider grip range, or even powered rollers to quickly acquire the item. Stepping back and re-assessing what will make the overall system better, rather than improving the system as it exists, can be beneficial.
+
+Often this manifests in the idea of ``don't solve a hardware problem with software", but it does sometimes work in the reverse. If multiple target positions on an arm are required, creating pneumatic hard stops which the arm would run against may not be the easiest. Simply developing a control system with closed-loop control may prove to be the simpler and more robust solution.
+
+
 
 \chapter{Low-Level Design Principles}
 
@@ -97,7 +138,7 @@ How does one go about designing such that testing is easy? Well, it goes back to
  
 Design is tough. Before we get in the weeds I want to acknowledge that it isn't for the faint of heart, and it isn't a straightforward linear process. Often when you finish solving one problem, you'll find you've introduced another in the process. Design is iterative. Design is also play. If everything we did just simply worked no better than anything else, we wouldn't need to design things and wouldn't get anything from us, so we should be thankful that it's hard.
 
-There are some general strategies designers have come up with that help while we play within the rules that physics gives us. Like any rules, there are times for them to be broken but you need to know the rule before you can break it. Every design is a compromise.
+There are some general strategies designers have come up with that help while we play within the rules that physics gives us. Like any rules, there are times for them to be broken but you should be conscious of the rule so you can break it with success. Every design is a compromise.
 
 \section{Load paths}
 
@@ -204,7 +245,7 @@ The stress that the cantilevered beam sees varies along the cross-section as sho
 \caption{Stress (red arrows) in a cantilevered beam (teal).}
 \end{figure}
 
-The stress is the highest at the outer portions of the tube, and can be found by the bending moment $M$ induced on the tube, the radius of the tube $y$ and moment of inertia $I$, or the section modulus $S$. You can conduct your own research into these if you want, but an important takeaway from this is that increasing the diameter of the tube will have a huge impact on $I$, so we'd ideally want a very large $I$.
+The stress is the highest at the outer portions of the tube, and can be found by the bending moment $M$ induced on the tube, the radius of the tube $y$ and second moment of area $I$ (not to be confused with moment of inertia), or the section modulus $S$. You can conduct your own research into these if you want, but an important takeaway from this is that increasing the diameter of the tube will have a huge impact on $I$, so we'd ideally want a very large $I$.
 
 For our example of a round bar,
 \begin{align}
@@ -257,7 +298,7 @@ For simple links like these, the stress is simply the force in the link, divided
 
 This isn't immediately comparable to the cantilever, as it doesn't have $l$ in its expression, and the cantilever example doesn't have $\theta$. But we can consider the example of:
 
-\begin{table}[]
+\begin{table}[H]
 \begin{tabular}{llll}
 $F$       & $d$      & $\theta$      & $l$     \\
 $100$ lbf & $0.5$ in & $30$ degrees & $10$ in
@@ -293,7 +334,7 @@ Recalling the equation for bending stress,
 
 and looking at \href{https://en.wikipedia.org/wiki/List_of_second_moments_of_area}{\color{red}\underline{a number of shapes and their equation for $I$}},
 
- we notice that the moment of inertia $I$ grows roughly with the cube of the tube diameter. If we think about this and the geometry, that would mean that in a piece of tubing with the same cross-sectional area, we could get a greater $I$ by maximizing the diameter and minimizing the wall thickness. There is a problem with taking this to an extreme (consider the humble aluminum beverage can), but in general, the effect of increasing the diameter of a section dwarfs the effect of increasing the thickness by the same relative amount.
+ we notice that the second moment of area $I$ (not to be confused with the moment of inertia) grows roughly with the cube of the tube diameter. If we think about this and the geometry, that would mean that in a piece of tubing with the same cross-sectional area, we could get a greater $I$ by maximizing the diameter and minimizing the wall thickness. There is a problem with taking this to an extreme (consider the humble aluminum beverage can), but in general, the effect of increasing the diameter of a section dwarfs the effect of increasing the thickness by the same relative amount.
 
 The same is also true of shafts in torsion / carrying torque.
 
@@ -307,7 +348,7 @@ Additionally, notice how multiple moments of inertia are listed for some shapes.
 
 \begin{figure}
 	\includegraphics[width=0.5\textwidth]{imgs/cg_explanation.png}
-	\caption{Center of gravity of an object about to tip}
+	\caption{Center of gravity of an object that is tipping.}
 \end{figure}
 
 Minimizing the center of gravity of mobile platforms is almost always an extremely important design consideration, as it is what determines the fundamental tipping characteristics of the platform. For a non-accelerating and free-standing object, if the center of gravity passes outside of the support base of the object, it will begin to fall. For accelerating objectss, a higher center of gravity will tend to make the object tilt against the direction of acceleration, increasing the likelihood of tipping.
@@ -360,6 +401,7 @@ Angularity adds up, proportional to the distance.
 
 If precision matters, minimize the angular error of your mechanism, or minimize the lever arm associated with the angular error.
 
+For example, if a turret is shooting a target from 30 feet away, and its rotational accuracy is 1 degree, this results in a potential error of 6 inches!
 
 \section{Tolerance Stacking}
 
@@ -370,6 +412,8 @@ Considering also that more components means more cost, and more potential weak l
 \begin{theorem}
 Minimize the number of components.
 \end{theorem}
+
+This also means that you should measure outputs as closely as possible. E.g. if you have the option to place an encoder on a motor or on the output shaft of its gearbox, the gearbox is usually preferable. While this may decrease the resolution of the encoder, the reduced backlash will result in a higher accuracy.
 
 \section{Loosening}
 

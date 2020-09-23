@@ -1,1 +1,2 @@
-pdflatex "\def\isbook{1} \input{mechatronics_construction.tex}"
+pdflatex --shell-escape "\def\isbook{1} \input{mechatronics.tex}"
+mupdf mechatronics.pdf
