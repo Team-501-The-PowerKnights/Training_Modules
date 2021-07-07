@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{tikz}
 \usepackage{circuitikz}
+\usepackage{svg}
 
 \usepackage{hyperref}
 \usepackage{enumitem}
@@ -26,12 +27,22 @@
 
 \usepackage{paralist}
 
-\usepackage[paper=a4paper,margin=1in]{geometry}
+\usepackage[paper=letterpaper,margin=1in]{geometry}
 
 \usepackage{etoolbox}
 
 \usepackage{imakeidx}
 \makeindex
+
+\usepackage{mdframed}
+\mdfdefinestyle{qbox}{
+	frametitlebackgroundcolor   =black!15,
+    frametitlerule          	=false,
+    backgroundcolor     = lightgray,
+    innertopmargin      =\topskip,
+    innerbottommargin   =\topskip,
+}
+\newmdenv[style=qbox]{qbox}
 
 %\addtolength{\oddsidemargin}{-.875in}
 %\addtolength{\evensidemargin}{-.875in}

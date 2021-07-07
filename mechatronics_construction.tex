@@ -7,7 +7,7 @@
  
  \section{Materials}
  
- Everything is made from materials. There are a lot of different materials out there, all with different properties. Some are natural and some are completely synthetic, but all can be measured, quantified, and compared. Important properties we'll focus on are:
+ There are a lot of different materials to build with, all with different properties. Some are natural and some are completely synthetic, but all can be measured, quantified, and compared. Important properties we'll focus on are:
  
  \begin{compactitem}
  	\item Density (weight)
@@ -108,7 +108,7 @@
  \subsection{Thermal Properties}
  \index{thermal characteristics}
  The thermal properties of a material may also be important to your application. There are three main ones to keep in mind if you are dealing with heat:
- \begin{asparaitem}
+ \begin{asparaitem}[ ]
  	\item \textit{Thermal conductivity} is how well the material transfers heat. If you're designing a heat sink, you want a high thermal conductivity.
  	\item The \textit{melting point} or \textit{glass transition temperature} are temperatures at which the material undergoes fundamental phase changes. You obviously need to make sure your part doesn't outright melt, but you should also have a bit of margin, as the phenomenon called \textit{creep} can cause parts that are at elevated temperatures to deform over time, even though below melting point.
  	\item The \textit{coefficient of thermal expansion} measures how much material expands as it heats up. If you're working with tight-tolerance equipment (or extreme temperatures), you may need to keep an eye on this.
@@ -164,6 +164,11 @@ A few interesting things to note:
 	\item Not all plastic is created equal.
 	\item Polycarbonate and Nylon are particularly good materials for their mechanical properties, especially in impact resistance. Their elongation at break is \textbf{more than 100\%}!
 \end{asparaenum}
+
+\addvspace{2.0ex}
+\begin{qbox}
+	You'll notice that many of the materials listed have a hyphenated code (-T6 and 6061-T6, -N in 4130-N). What does this mean? Does it affect the elastic modulus?
+\end{qbox}
 
  \section{Form Factors}
  
@@ -228,6 +233,11 @@ A few interesting things to note:
 \end{figure}
  
  \textit{DOM (Drawn-Over-Mandrel)} or \textit{seamless} tubing further processes this tubing to remove the inner seam and produce a product as if it were extruded. It is typically used in demanding applications such as aerospace or motorsports, as well as in components which cannot have a weld seam (such as a receiver hitch, or telescoping tubes).
+
+\addvspace{2.0ex}
+ \begin{qbox}
+ 	Other than telescoping tubes, why else is the weld seam problematic or annoying?
+ \end{qbox}
  
  \subsection{Sheet}
  Material that is sold as sheet rather than plate usually has little-to-no straightness tolerance (in especially thin gauges, it might even be sold as rolls).
@@ -360,6 +370,11 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  	\includegraphics[width=0.7\textwidth]{imgs/broach_detail.jpeg}
  	\caption{Broach Detail}
  \end{figure}
+
+\addvspace{2.0ex}
+ \begin{qbox}
+ 	How could you put a female hexagon into a blind hole (like on a socket head screw)?
+ \end{qbox}
  
  
  \subsection{Path Cutting}
@@ -384,29 +399,29 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
  
  \begin{asparaenum}[a)]
   	\item \textit{Plasma cutters}\index{path cutting!plasma cutting} use an arc to melt metal and pressurized air to blow it away. The tolerances are usually good for large shapes, but not for precision work.
- 	\item \textit{Laser cutters}\index{path cutting!laser cutting} melt material with a laser and either simply vaporize it or use pressurized air to blow it away. Hobby lasers can cut some plastics and plywood, while industrial systems can cut metal. The tolerances are usually acceptable with these machines ($\pm 0.020"$).
+ 	\item \textit{Laser cutters}\index{path cutting!laser cutting} melt material with a laser and either simply vaporize it or use pressurized air to blow it away. Hobby lasers can cut some plastics and plywood, while industrial systems can cut metal. The tolerances are usually acceptable with these machines ($\pm 0.020" or better$).
  	\item \textit{Waterjet cutters}\index{path cutting!waterjet cutting} mix high-pressure water with garnet sand and blast it at material, rapidly abrading it. The tolerances are usually good with this process ($\pm 0.010"$ or better).
  	\item \textit{EDMs}\index{path cutting!EDM} (electric-discharge-machines) use an electrified wire to remove material. The wire is fed through or plunged into material. The electrification zaps away material next to the wire. The tolerances with this process can be impeccable ($\pm 0.001"$ or better). 
 \end{asparaenum}
  	
- 	These all allow us to overcome the depth-to-diamter ratio imposed by milling, and can sometimes be much quicker setup than traditional machining, though they all come with their own drawbacks.
+ 	These all allow machinists to overcome the depth-to-diamter ratio imposed by milling, and can sometimes be much quicker setup than traditional machining, though they all come with their own drawbacks.
+  
+  The first limitation is the width of the beam. Since a finitely sized beam muse be used, infinitely sharp interior corners cannot be made.
  
+  Draft is also an issue. Laser-cutters typically have a point in the thickness where the beam is focused to. This means that the laser doesn't cut a line in its cross-section, but rather an X. Thus the resulting shape is two-dimensional. With a waterjet or plasma cutter, the draft grows exponentially. This may be acceptable, or require further post-machining to bring it into specification.
+ 
+  Draft (and power) also limits how thick of material can feasibly be cut with these processes, although it should be noted that EDM can cut extremely thick materials compared to the other processes.
+
  \begin{figure}[H] \centering
  	\includegraphics[width=0.5\textwidth]{imgs/lasercut_focus.jpeg}
  	\caption{Focal properties of a laser cutter's beam.}
  \end{figure}
  
-  The first limitation is the width of the beam. Since a finitely sized beam muse be used, infinitely sharp interior corners cannot be made.
- 
  \begin{figure}[H] \centering
  	\includegraphics[width=0.9\textwidth]{imgs/waterjet_draft.jpeg}
  	\caption{Draft and surface quality samples on a waterjet with different settings.}
  \end{figure}
- 
-  The next consideration that must be made is draft. Laser-cutters typically have a point in the thickness where the beam is focused to. This means that the laser doesn't cut a line in its cross-section, but rather an X. Thus the resulting shape is two-dimensional. With a waterjet or plasma cutter, the draft grows exponentially. This may be acceptable, or require further post-machining to bring it into specification.
- 
- Draft (and power) also limits how thick of material can feasibly be cut with these processes, although it should be noted that EDM can cut extremely thick materials compared to the other processes.
- 
+
  \subsection{Sheet Forming}
  \index{sheet metal!forming}
  \index{sheet metal!bending}
@@ -561,7 +576,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 	Threaded fasteners (bolts, nuts, and screws) are a ubiquitous solution. There's an age old question of the difference between a screw and a bolt and the answer is merely in application: if it goes into a nut, it's a bolt. Otherwise, it's a screw. So, anything said about screws is true of bolts and vice versa.
 	
 	\begin{figure}[H]
-		\includegraphics[width=0.7\textwidth]{imgs/thread_nomenclature.png}
+		\includesvg[width=0.7\textwidth]{dwgs/screw}
 		\caption{Thread nomenclature and dimensions.}
 	\end{figure}
 	
@@ -573,6 +588,38 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\item The handedness of the thread - most threads are right handed (meaning turning them in a clockwise fashion will make them move away) unless specified as left-handed.
 		\item The grade or class - this refers to the strength of the material. English bolts are specified by \textit{grade}\index{thread!grade}, and metric bolts by \textit{class}\index{thread!class}. Bolts usually have head markings that reflect the material. Grade and class are only for steel, though - other materials have more exotic standards.
 	\end{asparaitem}
+
+	The thread or end-features on a screw may be specialized to work better going into a particular substrate, rather than the typical 'machine threads' one would find on a nut or bolt.
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[b]{.33\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/wood_self_tapper.jpeg}
+			\caption{Wood Screw}
+		\end{subfigure}\begin{subfigure}[b]{.33\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/self_tapper.jpeg}
+			\caption{Self drilling screw}
+		\end{subfigure}\begin{subfigure}[b]{.33\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/tapcon.jpeg}
+			\caption{Tapcon}
+		\end{subfigure}
+
+		\begin{subfigure}[b]{.33\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/plastite.jpeg}
+			\caption{Plastite Screw}
+		\end{subfigure}\begin{subfigure}[b]{.33\linewidth}
+			\includegraphics[width=0.7\textwidth]{imgs/dogpoint.jpeg}
+			\caption{Dogpoint Screw}
+		\end{subfigure}
+		\caption{Specialized Screws.}
+	\end{figure}
+	
+	\begin{asparaenum}[a)]
+		\item \textit{Wood screws} have a tapered tip to help guide the screw in, much larger threads to engage with the wood, and a coarser pitch. While most screws benefit from being predrilled, some are designed to include features in the tip that perform this drilling operation (to some degree) as the fastener is installed, though this only works well for softwood (like a 2x4). \textit{Lag Screws} are larger wood screws, generally with a hex or large-Torx head, and generally rated for some load-bearing capacity.
+		\item \textit{Self-drilling screws} have a tip like a drillbit to perform the drilling operation and are well-suited to sheetmetal. These have the same idea as a self-drilling wood screw: the fastener can be installed with no drilling operation required.
+		\item \textit{Masonry screws}, often known by the brand name \textit{Tapcon}, allow screwing into masonry and concrete. They are hardened and coated. Proper predrilling with a masonry bit is an absolute requirement for these.
+		\item \textit{Plastite screws} are specialized to go into plastic. They are generally thread-forming screws (meaning they go into a hole smaller than the threads, and shove the material out of the way as they go in). This makes for a very 'tight' connection that will not wiggle loose.
+		\item \textit{Dogpoint screws} have a blunted, non-threaded tip. This tip registers into what the fastener should thread into, which eases assembly. The tip generally serves no other purpose. They are common in the automotive world.
+	\end{asparaenum}
 	
 	There are many different types of bolts out there.
 	\index{screws and bolts}
@@ -688,12 +735,17 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\item \textit{External hex} is very robust, although preferred only when side access is available as it has a large profile.
 		\item \textit{Socket hex} has become an industry preferred head, very easy to access from head-on or in a deep pocket.
 		\item \textit{Flathead} is not a preferred drive type; it is very easy to have driver fall out while using, and the torque-transferring capacity is quite low.
-		\item \textit{Phillips} heads are very much not preferred as they are very easy to cam out (in fact, they were designed to do so as a means of limiting the installation torque). When driving a Phillips screw, apply inward pressure, and make sure the proper size driver is selected (it should fit nicely).
+		\item \textit{Phillips} heads are very much not preferred as they are very easy to cam out (in fact, they were designed to do so). When driving a Phillips screw, apply inward pressure, and make sure the proper size driver is selected (it should fit nicely).
 		\item \textit{Torx} is a preferred drive method, but more expensive and the tools to use it are less common. Very difficult to strip out. When using button-head or flat-head screws, if a Torx variant is available, it can be wise to opt for it as the torque-transferring capacity is higher.
 		\item \textit{Robertson} or square drive is somewhat preferred, but not common. It is usually found only in wood screws.
 	\end{asparaenum}
 	
 	The drive heads on flat head, button head, and shoulder screws are necessarily smaller than those of socket head screws, and thusly strip out easier.
+
+\addvspace{2.0ex}
+	\begin{qbox}
+		Why was the phillips head screw designed to cam out?
+	\end{qbox}
 	
 	\index{screws and bolts!preload}
 	\begin{figure}[H]
@@ -702,7 +754,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		 \label{fig:bolted_joint} 
 	\end{figure}
 	
-	When you tighten a screw to a torque, this not only prevents the nut from falling off, but clamps the parts together. This clamping force that is imparted upon installation is \textit{preload}\index{preload}, which is very important in threaded joints. For shear loads as illustrated in Figure \ref{fig:bolted_joint}, the load is best carried by the friction inbetween plates rather than shearing the pin itself, since the load is distributed across a larger area. For joints that seal against pressures, preload is imperative as it prevents separation under pressure.
+	When you tighten a screw, this not only prevents the nut from falling off, but clamps the parts together. This axial clamping force that is imparted upon installation is \textit{preload}\index{preload}, which is very important in threaded joints. For shear loads as illustrated in Figure \ref{fig:bolted_joint}, the load is best carried by the friction inbetween plates rather than shearing the pin itself, since the load is distributed across a larger area. For joints that seal against pressures, preload is imperative as it prevents separation under pressure.
 	
 	\index{thread!pitch}
 	The preload depends both on how much torque is applied to the fastener, and the pitch of the thread. A finer-pitched screw will impart greater preload. Finer-pitched screws also have the benefit of an increased core (minor) diameter, so greater strength in shear. The finer threads may be more fragile and require tighter tolerance, though.
@@ -753,6 +805,9 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
 			\includegraphics[width=0.5\textwidth]{imgs/woodsti.png}
 			\caption{Wood tapping insert}
+		\end{subfigure}\begin{subfigure}[b]{.24\linewidth}
+			\includegraphics[width=0.5\textwidth]{imgs/concrete_anchor.jpeg}
+			\caption{Concrete Anchor}
 		\end{subfigure}
 		\caption{Various threaded inserts}
 	\end{figure}
@@ -765,6 +820,7 @@ If you can consider briefly how these machines work, you can perhaps spot a few 
 		\item \textit{Heat-set inserts} are for plastic. They are installed by heating them up with a soldering iron and pressing them into thermoplastic. An excellent addition to 3D prints. \index{3D printing!heat-set inserts}
 		\item \textit{Tee nuts} are meant to be pressed into wood, much like a PEM nut. The large flange prevents tear-out and helps distribute load in soft wood.
 		\item \textit{Wood tapping inserts} are much like tang-lock inserts, but with larger wings suitable for wood.
+		\item \textit{Concrete anchors} come in different flavors (epoxy-in, sleeve, etc) but allow for reusable machine threads to exist in concrete or masonry. The exact type you use, as with most things, is a cost-benefit tradeoff: the more expensive options hold better, but may even require special tools to get them to work properly (especially in the epoxy-in ones).
 	\end{asparaenum}
 	
 	Threaded joints have one big weakness, and that is their subsceptibility to vibration. There are many solutions to try and combat this.

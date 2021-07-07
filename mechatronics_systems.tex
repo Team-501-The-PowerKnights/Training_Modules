@@ -4,13 +4,38 @@
  {\slshape \scshape ``Complex is better than complicated." - The Zen of Python}
  
  There is often no need to reinvent the wheel. Many problems already have a solution, or at least some sort of prior art. Familiarity with this can help you quickly identify a design for a problem in a pinch, or at least have a jumping off point. Even these systems are building blocks that need put together. You will probably need to mix and match many of these together to make a machine.
- 
-%TODO: Grappling (claws, latches)
-%TODO: Straight arms
 
-\section{Intakes} \label{sec:intakes}
+\section{Grabbing} \label{sec:intakes}
 
-\textit{Intakes}\index{intake} grab uncontrolled components in a continuous, indiscriminate fashion. This makes them preferable to say, using a claw to grab items. A properly designed intake is often described as ``touch it, own it."
+\subsection{Jaws}
+
+\begin{figure}[H]
+	\includegraphics[height=2in]{imgs/jaws_claw.jpeg}
+	\includegraphics[height=2in]{imgs/jaws_3jawchuck.png}
+	\includegraphics[height=2in]{imgs/jaws_internal.png}
+	\caption{Jaw-based grippers.}
+\end{figure}
+
+\textit{Jaws} grab components that are in a relatively stationary state. They are many beginning designers' go-to thought of how to grab something, and are well-suited in many tasks, but begin showing their weaknesses when tasked with controlling objects that are not in an established position.
+
+Multiple jaws can be used to more reliably hold an object, such as a three-jaw chuck of a lathe.
+
+Jaws can also be oriented such that they pick the inside of an object rather than the outside.
+
+\subsection{Latches}
+
+
+\begin{figure}[H]
+	\includegraphics[height=2in]{imgs/gate_latch.jpeg}
+	\caption{Gate latch, which is naturally gravity-closed.}
+\end{figure}
+
+\textit{Latches} are claws that are mechanically actuated to snap shut automatically on an object, like a trap. This provides a major improvement over a claw in many circumstances, although the trapping action may require more sophisticated action to reset if multiple uses are desired. If they are not, though, they can be ideal for many tasks such as grabbing onto end-game items.
+
+\href{https://youtu.be/_hTyXQUgYLE?t=207}{\color{red}\underline{Pole Latch Video Example (3:27)}}
+\href{https://youtu.be/sWHwDfpeYjo?t=45}{\color{red}\underline{Grappling Hook Video Example (0:45)}}
+
+\textit{Intakes}\index{intake} grab uncontrolled components in a continuous, indiscriminate fashion. This makes them preferable to claws in many cases. A properly designed intake is often described as ``touch it, own it."
 
 \subsection{Beater bars} 
 
@@ -96,9 +121,7 @@ An \textit{indexer}\index{indexer} is any mechanism that takes one or more alrea
 \textit{Agitated hoppers}\index{hopper!agitated} are slightly angled hoppers which also feature moving sidewalls or rollers that help agitate objects and may even influence them to move faster than gravity would normally allow for. These can be simple to design and integrate while allowing for greater throughput and less jamming than a gravity hopper. 
 
 \href{https://www.youtube.com/watch?v=9vIrTnXu7ho}{\color{red}\underline{Video Example}}
-\section{Lifts}
-
-A \textit{lift}\index{lift} is any mechanism that moves things up and down (though they all can be used to move objects in any direction). 
+\section{Connected Motion}
 
 \subsection{Elevators, Cascade and Continuous}
 \index{elevator}
@@ -114,6 +137,15 @@ An \textit{elevator} is a mechanism that moves back and forth in a straight line
 Cascade elevators have multiple strings to consider. They also have mechanical disadvantage by a factor of the number of stages in the lift. Continuous elevators do not have this mechanical disadvantage and only have one string to worry about.
 
 \href{https://youtu.be/HJVGgaAJefo?t=37}{\color{red}\underline{Video Example (0:37)}}
+
+\subsection{Gantries}
+\index{gantry}
+\begin{figure}[H]
+	\includegraphics[height=3in]{imgs/gantry.jpeg}
+	\caption{Gantry platform.}
+\end{figure}
+A \textit{gantry} consists of multiple elevators or linear stages stacked orthagonally and in series, enabling motion in multiple axes. This is a common confiuration for many CNC routers, as it provides a sturdy base and control that is easy to accomplish and optimize.
+
 \subsection{Scissor Lifts}
 \begin{figure}[H]
 	\includegraphics[height=2.5in]{imgs/scissorlift.jpeg}
@@ -128,6 +160,16 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 	\includegraphics[height=2.5in]{imgs/parallel_4bar.jpeg}
 	\caption{Parallel 4 bar mechanism}
 \end{figure}
+
+\subsection{Pivoting Arms}
+\index{arm!fixed}
+
+\begin{figure}[H]
+	\includegraphics[height=2.5in]{imgs/simple_arm.jpeg}
+	\caption{A simple pivoting arm.}
+\end{figure}
+
+\textit{Fixed} arms are the simplest lifting mechanism, consisting of a beam which is driven about a pivot point. This means whatever is fixed to the end will rotate with the entire arm.
 
 \textit{Parallel 4 bar linkages}\index{4-bar linkage} have four links forming a parallelogram, where two opposing sides are the input and output. These are simple to make but do not lift straight up and down- they will move outwards in an arc as they rise. This may be a desirable trait. \href{https://www.youtube.com/watch?v=hnxqZlG-508}{\color{red}\underline{Video Example 1}} \href{https://youtu.be/LaV0zbKz-Qg?t=36}{\color{red}\underline{Video Example 2 (0:36)}}
 \subsection{Virtual 4 Bar}
@@ -163,10 +205,42 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 
 \href{https://www.youtube.com/watch?v=iFq8dKUZOww}{\color{red}\underline{Video Example}}
 
-%\section{Latches}
-%\textit{Latches}\index{Latches} grab onto things and don't let go.
-%\subsection{Latches}
-%\subsection{Overcenter mechanisms}
+\subsection{Compound Arms}
+\index{arm!compound}
+
+\begin{figure}[H]
+	\includegraphics[height=2.5in]{imgs/universal_robot.jpeg}
+	\includegraphics[height=2.5in]{imgs/tachyon.jpeg}
+	\caption{Compound arms.}
+\end{figure}
+
+\textit{Compound} arms consist of multiple fixed arms affixed to each other in \textit{series}. With sophisticated software, complex motions can be performed in one or more planes.
+
+\href{https://youtu.be/Hf9W-FHmfg0?t=15}{\color{red}\underline{Video Example}}
+
+\subsection{Parallel Manipulators}
+\index{parallel manipulators}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.4\linewidth}
+	\includegraphics[height=1.5in]{imgs/delta_platform.jpeg}
+	\caption{Delta}
+	\end{subfigure}\begin{subfigure}[b]{.28\linewidth}
+	\includegraphics[height=1.5in]{imgs/stewart_platform.png}
+	\caption{Stewart}
+	\end{subfigure}\begin{subfigure}[b]{.28\linewidth}
+	\includegraphics[height=1.5in]{imgs/5bar_platform.png}
+	\caption{5-Bar}
+	\end{subfigure}
+\end{figure}
+
+\textit{Parallel manipulators} are a very sophisticated class of mechanisms. Their name comes from the fact that instead of actuators being stacked on top of each other to produce the desired motion, the actuators are placed side-by-side and connected to the same base and mobile object. Although this requires much more complex software which is not intuitive to understand, the results can be quite astounding since the absence of stacking reduces compliance and power requirements to move actuators on the later stages.
+
+\begin{asparaenum}[a)]
+	\item \textit{Delta} platforms use three actuators, either rotary arms or linear stages, each connected to a mobile platform by two parallel linkages. These linkages keep the platform parallel to the base, and at a constant distance to each stage. This enables the mobile structure to be extremely light and fast, making them quite common on robots used for rapid pick-and-place operations. \href{https://www.youtube.com/watch?v=Gv5B63HeF1E}{\color{red}\underline{Video Example}}
+	\item \textit{Stewart} platforms use six linear actuators which can be controlled to control all six degrees of freedom of the mobile platform. They are commonly seen on flight simulators. \href{https://www.youtube.com/watch?v=zNUBZfrOXUc}{\color{red}\underline{Video Example}}
+	\item \textit{Five-bar} platforms use two rotary actuators to drive parts of a five bar mechanism. \href{https://www.youtube.com/watch?v=dnixuCu49o4}{\color{red}\underline{Video Example}}
+\end{asparaenum}
 
 \subsection{Counterbalancing}
 \index{counterbalance} 
@@ -175,7 +249,7 @@ Cascade elevators have multiple strings to consider. They also have mechanical d
 	\caption{A counterbalance.}
 \end{figure}
 
-Any lift may be improved by the use of a \textit{counterbalance}. The purpose of a counterbalance is to provide load that counteracts the normally seen load or weight. This way force exerted on the lift is used not to fight gravity, but to accelerate the mass of the system. Because weight is usually a concern (and adding mass would increase the inertial loads of the system), a \textit{counterspring} may be used to offset the load without much added mass. Constant-force springs are particularly equipped for this task as they can extend a great distance and provide constant force rather than counterweight that varies with position.
+Most lifts may be improved by the use of a \textit{counterbalance}. The purpose of a counterbalance is to provide load that counteracts the normally seen load or weight. This way force exerted on the lift is used not to fight gravity, but to accelerate the mass of the system. Because weight is usually a concern (and adding mass would increase the inertial loads of the system), a \textit{counterspring} may be used to offset the load without much added mass. Constant-force springs are particularly equipped for this task as they can extend a great distance and provide constant force rather than counterweight that varies with position.
 
 \section{Shooters}
 \textit{Shooters}\index{shooter} take objects and propel them great distances.
@@ -193,6 +267,7 @@ Any lift may be improved by the use of a \textit{counterbalance}. The purpose of
 \textit{Opposed wheel} shooters use mutiple sets of wheels to contact the ball. This allows for control over backspin, and may be easier to package. \href{https://youtu.be/pgMU_AxzxAE?t=67}{\color{red}\underline{Example Video (In Slow-Mo!) (1:07)}}
 
 Flywheel based shooters sometimes have multiple stages of flywheels in order to accelerate the ball over a longer period of time. Belts can also be used to achieve the same principle.
+
 \subsection{Catapults and Punches}
 \textit{Catapults}\index{shooter!catapult} and \textit{punches}\index{shooter!punch} store energy in by pulling back springs or compressing air. Catapults work as a lever arm while punches work linearly, but both use this stored energy to accelerate a sled or cradle containing the object to be launched.
 
@@ -217,14 +292,13 @@ Flywheel based shooters sometimes have multiple stages of flywheels in order to 
 \item \textit{Pneumatic cylinders}\index{pneumatic cylinder} are very simple ways of creating sudden bursts of energy. \href{https://youtu.be/1QOYdA5IPJQ?t=81}{\color{red}\underline{Video Example (1:21)}}
 \end{asparaenum}
 
-%TODO: Do these
-%\subsection{Flicker launchers}
-%\subsection{Throwers}
+\subsection{Cannons}
+\textit{Cannons} use rapidly expanding gas to propel projectiles. This gas could be in the form of gases from combustion, or could be simply the release of compressed air.
 
 \section{Drivetrains} \label{sec:drivetrains}
 Drivetrains allow for movement across surfaces. Drivetrains have many considerations which depend on the use case.
 \begin{asparaenum}[a)]
-\item The type of \textit{microterrain}\index{terrain} that must be traversed has to be considered- is it squishy? Is it solid? Is it slippery or icy? 
+\item The type of \textit{microterrain}\index{terrain} that must be traversed has to be considered- is it squishy? Is it solid? Is it slippery or icy? What materials will generate grip?
 \item The type of \textit{macroterrain} that must be traversed has to be considered- is it flat? Is it bumpy? What is the geometry of the bumps that must be traversed- will the drivetrain \textit{bottom out} or \textit{high-center}?
 \item There may be a \textit{target velocity} that must be reached.
 \item The \textit{ride quality} is important so as not to damage cargo, electronics, or passengers.
@@ -366,7 +440,7 @@ But there's one thing we're leaving out of the picture, and that's the \textit{c
 
 Our drop-center drivetrain will alternate between these two suboptimal centers of rotation. Some people don't like this, and thusly opt for an \textit{eight-wheel drive} (8WD). This way the center 4 wheels are normally in contact with the floor, so the center of gravity is very close to the center of rotation.
 
-An alternative (or additional remedy) to adding center drop is to add \textit{corner omnis} \index{wheels!omni}. Instead of the outside wheels being traction wheels, they are omni wheels. These have no resistance to turning scrub, so eliminate scrub entirely. Some designers opt to replace all of the wheels with omnis to make \textit{4 omni drivetrains}. These can produce very agile drifting maneuvers, but have no resistance to being pushed sideways.
+An alternative (or additional remedy) to adding center drop is to use \textit{corner omnis} \index{wheels!omni}. Instead of the outside wheels being traction wheels, they are omni wheels. These have minimal resistance to turning scrub, so eliminate scrub entirely. Some designers opt to replace all of the wheels with omnis to make \textit{4 omni drivetrains}. These can produce very agile drifting maneuvers, but have minimal resistance to being pushed sideways.
 
 \subsection{Omnidrives}
 \index{omnidirectional}
@@ -442,17 +516,18 @@ A jump-drive version of a mecanum drive is sometimes called an \textit{octocanum
 \end{subfigure}\begin{subfigure}[b]{.32\linewidth}
 	\includegraphics[height=1.7in]{imgs/drivetrain_swerve_coax.jpeg}
 	\caption{Coaxial module}
-\end{subfigure}\begin{subfigure}[b]{.32\linewidth}
-	\includegraphics[height=1.7in]{imgs/drivetrain_swerve_diff.png}
-	\caption{Differential}
 \end{subfigure}
+%\begin{subfigure}[b]{.32\linewidth}
+%	\includegraphics[height=1.7in]{imgs/drivetrain_swerve_diff.png}
+%	\caption{Differential}
+%\end{subfigure}
 \caption{Swerve/crab module types.}
 \end{figure}
 
 \begin{asparaenum}[a)]
 	\item \textit{Distributed}\index{swerve!distributed} modules are steered by an external motor, and have a motor in the module that spins with the module. This makes the module in some ways simpler as it does not need a bevel gear or other means to change the direction of rotation, but it does make the module quite large, and the motor's electrical wires limit the rotation of the module.
 	\item \textit{Coaxial}\index{swerve!coaxial} modules are both steered and powered by an external motor.
-	\item \textit{Differential}\index{swerve!differential} modules are a type of module (usually coaxial) that blends together steering and powering. Two motors are still required, but can both be utilized to create propulsive force. Additional gearing makes it such that
+%	\item \textit{Differential}\index{swerve!differential} modules are a type of module (usually coaxial) that blends together steering and powering. Two motors are still required, but can both be utilized to create propulsive force. Additional gearing makes it such that
 	\begin{align}
 		T_{steering} = T_{motor, 1} - T_{motor, 2}\\
 		T_{thrust}   = T_{motor, 1} + T_{motor, 2}
